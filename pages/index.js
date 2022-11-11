@@ -1,4 +1,20 @@
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
 export default function Home() {
+  const settings = {
+    className: "homepage-carousel",
+    autoplay: true,
+    autoplaySpeed: 6500,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    speed: 1700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
   return (
     <div>
       <div className="grid grid-cols-8">
@@ -6,23 +22,26 @@ export default function Home() {
           <h1>IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.</h1>
         </div>
       </div>
-      <div className="columns-4 mt-8">
-        <div>
-          <img src="/Hero1.jpg" />
-          <p className="mt-4">Architecture</p>
+      <div className="slider-outer">
+        <div className="pillar-container">
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-        <div>
-          <img src="/Hero2.jpg" />
-          <p className="mt-4">For People</p>
-        </div>
-        <div>
-          <img src="/Hero3.jpg" />
-          <p className="mt-4">Utah</p>
-        </div>
-        <div>
-          <img src="/Hero4.jpg" />
-          <p className="mt-4">1973</p>
-        </div>
+        <Slider {...settings}>
+          <div className="img-container">
+            <img src="/carousel/carousel1.jpg" />
+          </div>
+          <div className="img-container">
+            <img src="/carousel/carousel2.jpg" />
+          </div>
+          <div className="img-container">
+            <img src="/carousel/carousel3.jpg" />
+          </div>
+          <div className="img-container">
+            <img src="/carousel/carousel4.jpg" />
+          </div>
+        </Slider>
       </div>
       <div className="grid grid-cols-4 mt-40">
         <div className="col-span-2">
