@@ -16,7 +16,7 @@ export default function Home() {
   }
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="grid grid-cols-8">
         <div className="col-span-6">
           <h1>IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.</h1>
