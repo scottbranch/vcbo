@@ -37,7 +37,23 @@
   --red: #c82814;
 }
 
+/* SCROLL STUFF */
+.scroll-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.scroll-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* CAROUSEL STUFF */
+
+.slider-scroll {
+  transition-delay: 150ms;
+}
 
 .slider-outer {
   max-width: 1450px;
