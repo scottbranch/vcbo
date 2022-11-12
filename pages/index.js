@@ -20,7 +20,9 @@ export default function Home() {
     <div className="container mx-auto">
       <div className="grid grid-cols-8">
         <div className="col-span-6">
-          <h1>IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.</h1>
+          <h1 className="ml-14 mb-10">
+            IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
+          </h1>
         </div>
       </div>
       <div className="slider-outer">
@@ -66,7 +68,9 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-4 mt-4">
         <div className="col-span-1">
-          <p>Environments That Evoke Possibility—Featured Project Name Here</p>
+          <h4>
+            Environments That Evoke Possibility—Featured Project Name Here
+          </h4>
         </div>
         <div className="col-start-2 col-span-3">
           <img className="w-full" src="/Feat2.jpg" />

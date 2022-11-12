@@ -1,4 +1,6 @@
 .button-row {
+  font-family: "founders";
+  font-weight: 500;
   display: inline-flex;
   font-size: 15px;
   text-transform: uppercase;
@@ -49,6 +51,14 @@
   color: #f0eeee;
   transform: rotateX(-90deg) translateZ(22px);
 }
+
+span.first > span,
+span.last > span {
+  top: 2px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
 .button-row:hover > div > span.last {
   transform: rotateX(90deg) translateZ(22px);
 }

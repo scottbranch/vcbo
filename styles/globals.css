@@ -10,6 +10,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "founders";
+  src: url("../public/fonts/foundersMedium.woff") format("woff");
+  src: url("../public/fonts/foundersMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "founders";
+  src: url("../public/fonts/foundersRegular.woff") format("woff");
+  src: url("../public/fonts/foundersRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* CAROUSEL STUFF */
 
 .slider-outer {
@@ -76,11 +92,15 @@ h2 {
 }
 
 h3 {
+  font-family: "founders";
+  font-weight: 500;
   font-size: 50px;
   line-height: 54px;
 }
 
 h4 {
+  font-family: "founders";
+  font-weight: 400;
   font-size: 34px;
   line-height: 38px;
 }
@@ -95,9 +115,13 @@ p.large {
   font-size: 30px;
   line-height: 36px;
   font-weight: 500;
+  -webkit-font-smoothing: antialiased;
 }
 
 p {
+  font-family: "founders";
+  font-weight: 400;
   font-size: 20px;
   line-height: 26px;
+  -webkit-font-smoothing: antialiased;
 }

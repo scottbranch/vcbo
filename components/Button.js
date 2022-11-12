@@ -4,13 +4,13 @@ export const Button = (props) => {
     <a href={link} className="button-row">
       <div>
         <span className="first">
-          {text}{" "}
+          <span>{text} </span>
           <div className="white-arrow">
             <img src="/icons/circle-arrow-white.svg" />
           </div>
         </span>
         <span className="last">
-          {text} <img src="/icons/circle-arrow.svg" />
+          <span>{text}</span> <img src="/icons/circle-arrow.svg" />
         </span>
       </div>
     </a>
