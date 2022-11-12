@@ -9,7 +9,7 @@ const ScrollAnimate = (props) => {
 
   const options = {
     root: null,
-    threshold: [0.1],
+    threshold: [0.15],
   }
 
   const observeCallback = (entry, observer) => {

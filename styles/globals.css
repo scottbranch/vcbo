@@ -51,10 +51,6 @@
 
 /* CAROUSEL STUFF */
 
-.slider-scroll {
-  transition-delay: 150ms;
-}
-
 .slider-outer {
   max-width: 1450px;
   width: 100%;

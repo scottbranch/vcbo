@@ -31,7 +31,7 @@ export default function Home() {
           </ScrollAnimate>
         </div>
       </div>
-      <ScrollAnimate className="slider-scroll">
+      <ScrollAnimate delay={150}>
         <div className="slider-outer">
           <div className="pillar-container">
             <div></div>
