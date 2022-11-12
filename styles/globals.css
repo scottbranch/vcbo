@@ -26,6 +26,17 @@
   font-style: normal;
 }
 
+:root {
+  --black: #0a0707;
+  --darkestGrey: #2d2a2a;
+  --darkGrey: #555252;
+  --mediumGrey: #7d7a7a;
+  --lightGrey: #b9b6b6;
+  --lightestGrey: #dcdada;
+  --white: #f0eeee;
+  --red: #c82814;
+}
+
 /* CAROUSEL STUFF */
 
 .slider-outer {
@@ -118,10 +129,16 @@ p.large {
   -webkit-font-smoothing: antialiased;
 }
 
-p {
+p,
+a {
   font-family: "founders";
   font-weight: 400;
   font-size: 20px;
   line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  font-family: "founders";
   -webkit-font-smoothing: antialiased;
 }

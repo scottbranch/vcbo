@@ -2,6 +2,8 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Button } from "../components/Button"
+import { Header } from "../components/Header"
+import { Footer } from "../components/Footer"
 
 export default function Home() {
   const settings = {
@@ -18,9 +20,10 @@ export default function Home() {
 
   return (
     <div className="container mx-auto">
+      <Header />
       <div className="grid grid-cols-8">
         <div className="col-span-6">
-          <h1 className="ml-14 mb-10">
+          <h1 className="ml-14 mb-10 mt-40">
             IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
           </h1>
         </div>
@@ -116,7 +119,7 @@ export default function Home() {
           <img className="w-full" src="/ArticleImage.jpg" />
         </div>
       </div>
-      <footer></footer>
+      <Footer />
     </div>
   )
 }
