@@ -1,0 +1,104 @@
+.button-row {
+  font-family: "founders";
+  font-weight: 500;
+  display: inline-flex;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-top: 80px;
+}
+.button-row > div {
+  position: relative;
+  width: 250px;
+  height: 44px;
+  perspective: 1000px;
+}
+.button-row > div > span {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px) rotateX(-90deg);
+  transition: transform 0.5s;
+}
+.button-row > div > span.first,
+.button-row > div > span.last {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 250px;
+  height: 44px;
+  position: absolute;
+  border: 5px solid black;
+  box-sizing: border-box;
+  content: attr(title);
+  display: flex;
+  padding: 0 12px;
+}
+.button-row > div > span.last {
+  background: #f0eeee;
+  border: 1px solid #7d7a7a;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transform: rotateX(0deg) translateZ(22px);
+}
+.button-row > div > span.first {
+  background: #0a0707;
+  border: 1px solid #0a0707;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #f0eeee;
+  transform: rotateX(-90deg) translateZ(22px);
+}
+
+span.first > span,
+span.last > span {
+  top: 2px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button-row:hover > div > span.last {
+  transform: rotateX(90deg) translateZ(22px);
+}
+
+.button-row:hover > div > span.first {
+  transform: rotateX(0deg) translateZ(22px);
+}
+
+.white-arrow {
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px 3px #7d7a7a;
+}
+
+/* Footer Begins */
+footer h3 {
+  color: var(--mediumGrey);
+  font-family: "arctic";
+  font-size: 54px;
+  line-height: 56px;
+}
+
+footer .small-subhead {
+  text-transform: uppercase;
+}
+
+footer p,
+footer a {
+  color: var(--mediumGrey);
+}
+
+.lower-footer a {
+  text-transform: uppercase;
+}
+
+/* Footer Ends */
+
+/* Header Begins */
+header a {
+  color: var(--mediumGrey);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 8px;
+}

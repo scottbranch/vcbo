@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "arctic";
+  src: url("../public/fonts/arctic.woff") format("woff");
+  src: url("../public/fonts/arctic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "founders";
+  src: url("../public/fonts/foundersMedium.woff") format("woff");
+  src: url("../public/fonts/foundersMedium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "founders";
+  src: url("../public/fonts/foundersRegular.woff") format("woff");
+  src: url("../public/fonts/foundersRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --black: #0a0707;
+  --darkestGrey: #2d2a2a;
+  --darkGrey: #555252;
+  --mediumGrey: #7d7a7a;
+  --lightGrey: #b9b6b6;
+  --lightestGrey: #dcdada;
+  --white: #f0eeee;
+  --red: #c82814;
+}
+
+/* CAROUSEL STUFF */
+
+.slider-outer {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.pillar-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+
+.pillar-container div {
+  width: 20px;
+  height: 100%;
+  background: #f0eeee;
+}
+
+.homepage-carousel {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.img-container {
+  max-height: 620px;
+  background-size: cover;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  display: block;
+}
+
+.img-container img {
+  transform: translateY(-50%);
+  margin-top: 320px;
+}
+
+/* END CAROUSEL STUFF */
+
+html,
+body {
+  background: #f0eeee;
+}
+
+h1 {
+  font-family: "arctic";
+  font-size: 90px;
+  line-height: 90px;
+}
+
+h2 {
+  font-size: 84px;
+  line-height: 76px;
+}
+
+h3 {
+  font-family: "founders";
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 54px;
+}
+
+h4 {
+  font-family: "founders";
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 38px;
+}
+
+.small-subhead {
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 500;
+}
+
+p.large {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+a {
+  font-family: "founders";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  font-family: "founders";
+  -webkit-font-smoothing: antialiased;
+}
