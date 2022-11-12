@@ -1,6 +1,7 @@
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { Button } from "../components/Button"
 
 export default function Home() {
   const settings = {
@@ -55,6 +56,7 @@ export default function Home() {
             connection, balancing skill and precision with an unmatched passion
             for architecture, design, planning, and sustainability.
           </p>
+          <Button link="/" text="enter epic spaces" />
         </div>
       </div>
       <div className="grid grid-cols-4 mt-40">
@@ -78,6 +80,7 @@ export default function Home() {
             lobortis sapien laoreet, in rutrum mauris pharetra. In posuere
             faucibus est quis tempus.
           </p>
+          <Button link="/" text="view project" />
         </div>
       </div>
       <div className="grid grid-cols-4 mt-40">
@@ -88,6 +91,7 @@ export default function Home() {
           <h4>
             We’re curiosity-driven. So we create places for curiosity to thrive.
           </h4>
+          <Button link="/" text="discover the vcbo story" />
         </div>
       </div>
       <div className="grid grid-cols-4 mt-40">
@@ -102,6 +106,7 @@ export default function Home() {
             lobortis sapien laoreet, in rutrum mauris pharetra. In posuere
             faucibus est quis tempus.
           </p>
+          <Button link="/" text="read the full article" />
         </div>
         <div className="col-start-3 col-span-2">
           <img className="w-full" src="/ArticleImage.jpg" />
