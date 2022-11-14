@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { Button } from "../components/Button"
 import { Header } from "../components/Header"
 import { Footer } from "../components/Footer"
-import ScrollAnimate from "../components/scrollAnimate"
+import ScrollAnimate from "../components/ScrollAnimate"
 
 export default function Home() {
   const settings = {
