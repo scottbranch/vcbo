@@ -1,7 +1,7 @@
 export const Footer = (props) => {
   const {} = props
   return (
-    <footer className="mt-40 pb-10">
+    <footer className="container mx-auto mt-40 pb-10">
       <div className="grid grid-cols-4">
         <div className="col-start-1 col-span-1">
           <h3>Spaces for people to thrive.</h3>

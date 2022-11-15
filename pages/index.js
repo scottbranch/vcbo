@@ -1,9 +1,8 @@
+import { useEffect } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Button } from "../components/Button"
-import { Header } from "../components/Header"
-import { Footer } from "../components/Footer"
 import ScrollAnimate from "../components/ScrollAnimate"
 
 export default function Home() {
@@ -19,9 +18,35 @@ export default function Home() {
     slidesToScroll: 1,
   }
 
+  useEffect(() => {
+    if (process.browser) {
+      document.body.classList.add("homepage")
+      document.body.classList.add("dark-mode")
+
+      let scrollpos = window.scrollY
+      let slider = document.querySelector(".slider-outer")
+      let pageWrapper = document.querySelector(".homepage")
+
+      const add_class_on_scroll = () =>
+        pageWrapper.classList.remove("dark-mode")
+      const remove_class_on_scroll = () =>
+        pageWrapper.classList.add("dark-mode")
+
+      window.addEventListener("scroll", function () {
+        scrollpos = window.scrollY
+        console.log(slider.getBoundingClientRect().y + slider.offsetHeight)
+
+        if (slider.getBoundingClientRect().y + slider.offsetHeight < 0) {
+          add_class_on_scroll()
+        } else {
+          remove_class_on_scroll()
+        }
+      })
+    }
+  }, [])
+
   return (
     <div className="container mx-auto">
-      <Header />
       <div className="grid grid-cols-8">
         <div className="col-span-6">
           <ScrollAnimate>
@@ -52,6 +77,20 @@ export default function Home() {
               <img src="/carousel/carousel4.jpg" />
             </div>
           </Slider>
+          <div className="label-container">
+            <div>
+              <p>Architecture</p>
+            </div>
+            <div>
+              <p>For People</p>
+            </div>
+            <div>
+              <p>Utah</p>
+            </div>
+            <div>
+              <p>1973</p>
+            </div>
+          </div>
         </div>
       </ScrollAnimate>
       <div className="grid grid-cols-4 mt-40">
@@ -109,7 +148,7 @@ export default function Home() {
           </ScrollAnimate>
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-40">
+      <div className="mt-40">
         <ScrollAnimate>
           <img className="col-span-4 w-full" src="/FullImage.jpg" />
         </ScrollAnimate>
@@ -153,7 +192,6 @@ export default function Home() {
           </ScrollAnimate>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
