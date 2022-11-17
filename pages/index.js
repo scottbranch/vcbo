@@ -1,9 +1,9 @@
-import { useEffect } from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { Button } from "../components/Button"
 import ScrollAnimate from "../components/ScrollAnimate"
+import { useEffect } from "react"
 
 export default function Home() {
   const settings = {
@@ -34,9 +34,11 @@ export default function Home() {
 
       window.addEventListener("scroll", function () {
         scrollpos = window.scrollY
-        console.log(slider.getBoundingClientRect().y + slider.offsetHeight)
 
-        if (slider.getBoundingClientRect().y + slider.offsetHeight < 0) {
+        if (
+          slider.getBoundingClientRect().y + slider.offsetHeight < 0 &&
+          document.body.classList.contains("homepage")
+        ) {
           add_class_on_scroll()
         } else {
           remove_class_on_scroll()

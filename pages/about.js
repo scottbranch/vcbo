@@ -1,6 +1,14 @@
 import ScrollAnimate from "../components/ScrollAnimate"
+import { useEffect } from "react"
 
 export default function About() {
+  useEffect(() => {
+    if (process.browser) {
+      document.body.classList.remove("homepage")
+      document.body.classList.remove("dark-mode")
+    }
+  })
+
   return (
     <div className="container mx-auto">
       <div className="grid grid-cols-8">
