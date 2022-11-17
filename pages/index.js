@@ -34,14 +34,14 @@ export default function Home() {
 
       window.addEventListener("scroll", function () {
         scrollpos = window.scrollY
-
-        if (
-          slider.getBoundingClientRect().y + slider.offsetHeight < 0 &&
-          document.body.classList.contains("homepage")
-        ) {
-          add_class_on_scroll()
+        if (document.body.classList.contains("homepage")) {
+          if (slider.getBoundingClientRect().y + slider.offsetHeight < 0) {
+            add_class_on_scroll()
+          } else {
+            remove_class_on_scroll()
+          }
         } else {
-          remove_class_on_scroll()
+          add_class_on_scroll()
         }
       })
     }
