@@ -1,9 +1,11 @@
+import Link from "next/link"
+
 export const Header = (props) => {
   const {} = props
   return (
     <header className="container mx-auto">
       <div className="grid grid-cols-8 pt-10 items-end">
-        <a href="#" className="col-start-1 col-span-4">
+        <Link href="/" className="col-start-1 col-span-4">
           <svg
             width="160"
             height="47"
@@ -36,19 +38,19 @@ export const Header = (props) => {
               fill="#0A0707"
             />
           </svg>
-        </a>
-        <a href="/about" className="col-start-5 col-span-1">
+        </Link>
+        <Link href="/about" className="col-start-5 col-span-1">
           About
-        </a>
-        <a href="#" className="col-start-6 col-span-1">
+        </Link>
+        <Link href="#" className="col-start-6 col-span-1">
           Services
-        </a>
-        <a href="#" className="col-start-7 col-span-1">
+        </Link>
+        <Link href="#" className="col-start-7 col-span-1">
           Projects
-        </a>
-        <a href="#" className="col-start-8 col-span-1">
+        </Link>
+        <Link href="#" className="col-start-8 col-span-1">
           Etc.
-        </a>
+        </Link>
       </div>
     </header>
   )
