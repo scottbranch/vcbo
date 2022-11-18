@@ -17,7 +17,7 @@ export default function Services() {
         <div className="col-span-1 relative item-wrap">
           <a className="menu-panel" href="">
             <div className="inner-menu">
-              <img src="/services/Interiors.jpg" />
+              <img className="block mx-auto" src="/services/Interiors.jpg" />
               <h1 className="absolute">Interior Design</h1>
               <p>02</p>
             </div>
@@ -26,7 +26,7 @@ export default function Services() {
         <div className="col-span-1 relative item-wrap">
           <a className="menu-panel" href="">
             <div className="inner-menu justify-end">
-              <img src="/services/Planning.jpg" />
+              <img className="block" src="/services/Planning.jpg" />
               <h1 className="absolute">Planning</h1>
               <p>03</p>
             </div>
@@ -35,15 +35,18 @@ export default function Services() {
         <div className="col-span-1 relative item-wrap">
           <a className="menu-panel" href="">
             <div className="inner-menu justify-center pt-20">
-              <img className="block" src="/services/Sustainability.jpg" />
+              <img
+                className="block mx-auto"
+                src="/services/Sustainability.jpg"
+              />
               <h1 className="absolute">Sustainability</h1>
               <p>04</p>
             </div>
           </a>
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-60">
-        <div className="grid grid-cols-2 col-span-2">
+      <div className="grid grid-cols-4 mt-60 gap-x-8">
+        <div className="grid grid-cols-2 col-span-2 gap-x-8">
           <h3 className="col-start-1 col-span-2">Architecture with Feeling</h3>
           <div className="col-start-1 col-span-1 flex items-baseline justify-between mt-40">
             <p className="col-start-1 col-span-1 small-subhead">ARCHITECTURE</p>
@@ -67,7 +70,7 @@ export default function Services() {
         </div>
         <img className="col-start-3 col-span-2 w-full" src="/services/1.jpg" />
       </div>
-      <div className="grid grid-cols-4 mt-60">
+      <div className="grid grid-cols-4 mt-60 gap-x-8">
         <div className="col-start-1 col-span-1">
           <h3>Design and Interiors for People.</h3>
         </div>
@@ -101,7 +104,7 @@ export default function Services() {
           <Button link="/" text="read more" />
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-60">
+      <div className="grid grid-cols-4 mt-60 gap-x-8">
         <div className="col-start-1 col-span-2">
           <img src="/services/4.jpg" />
         </div>
@@ -145,7 +148,7 @@ export default function Services() {
           <Button link="/" text="learn more" />
         </div>
       </div>
-      <div className="grid grid-cols-4 mt-60">
+      <div className="grid grid-cols-4 mt-60 gap-x-8">
         <div className="col-start-1 col-span-1">
           <img src="/services/5.jpg" />
         </div>

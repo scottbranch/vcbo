@@ -42,7 +42,8 @@
   transition: background-color 500ms ease-out;
 }
 
-.homepage.dark-mode {
+.homepage.dark-mode,
+.projects-page.dark-mode {
   background-color: var(--black);
   transition: background-color 500ms ease-out;
 }
@@ -268,3 +269,10 @@ a {
 }
 
 /* Services Page Ends */
+
+/* Projects Page Begins */
+.projects-page sup {
+  font-size: 20px;
+  top: -2em;
+}
+/* Projects Page Ends */

@@ -45,7 +45,7 @@ export const Header = (props) => {
         <Link href="/services" className="col-start-6 col-span-1">
           Services
         </Link>
-        <Link href="#" className="col-start-7 col-span-1">
+        <Link href="/projects" className="col-start-7 col-span-1">
           Projects
         </Link>
         <Link href="#" className="col-start-8 col-span-1">
