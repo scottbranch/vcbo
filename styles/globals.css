@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @variants responsive {
+    .masonry {
+      column-gap: 1.5em;
+      column-count: 2;
+    }
+    .masonry-sm {
+      column-gap: 1.5em;
+      column-count: 3;
+    }
+    .masonry-md {
+      column-gap: 1.5em;
+      column-count: 4;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
+
 @font-face {
   font-family: "arctic";
   src: url("../public/fonts/arctic.woff") format("woff");
@@ -276,3 +296,21 @@ a {
   top: -2em;
 }
 /* Projects Page Ends */
+
+.article .body-large {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.article .body-copy p {
+  margin-bottom: 24px;
+}
+.article .body-copy img {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.articles .tags h4 {
+  margin: 16px 36px;
+}

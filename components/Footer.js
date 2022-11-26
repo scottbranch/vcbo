@@ -23,7 +23,7 @@ export const Footer = (props) => {
             <p className="small-subhead mb-4">Careers</p>
             <p>Create something great.</p>
             <p>
-              <a href="#" className="underline">
+              <a href="/etc/careers" className="underline">
                 See Open Positions
               </a>
             </p>
