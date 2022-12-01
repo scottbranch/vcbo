@@ -80,7 +80,7 @@
   transition: color 500ms ease-out;
 }
 
-.dark-mode svg path {
+.dark-mode svg.logo path {
   fill: var(--white);
   transition: color 500ms ease-out;
 }
@@ -294,6 +294,28 @@ a {
 .projects-page sup {
   font-size: 20px;
   top: -2em;
+}
+
+.projects-page select {
+  font-family: "founders";
+  width: 100%;
+  max-width: 320px;
+  background: transparent;
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+}
+
+.filter-button {
+  width: 100%;
+  max-width: 165px;
+  border: 1px solid var(--darkestGrey);
+  color: var(--white);
+  padding: 5px 0;
+  border-radius: 4px;
+}
+
+.filter-button.active {
+  box-shadow: 0px 0px 5px 3px #7d7a7a;
 }
 /* Projects Page Ends */
 

@@ -72,6 +72,16 @@ span.last > span {
   box-shadow: 0px 0px 5px 3px #7d7a7a;
 }
 
+/* dark button */
+.button-row.dark > div > span.last {
+  background: #0a0707;
+}
+
+.button-row.dark > div > span.first {
+  background: #f0eeee;
+  color: #0a0707;
+}
+
 /* Footer Begins */
 footer h3 {
   color: var(--mediumGrey);

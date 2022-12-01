@@ -7,6 +7,7 @@ export const Header = (props) => {
       <div className="grid grid-cols-8 pt-10 items-end">
         <Link href="/" className="col-start-1 col-span-4">
           <svg
+            className="logo"
             width="160"
             height="47"
             viewBox="0 0 160 47"
@@ -39,14 +40,14 @@ export const Header = (props) => {
             />
           </svg>
         </Link>
-        <Link href="/about" className="col-start-5 col-span-1">
-          About
+        <Link href="/projects" className="col-start-5 col-span-1">
+          Projects
         </Link>
         <Link href="/services" className="col-start-6 col-span-1">
           Services
         </Link>
-        <Link href="/projects" className="col-start-7 col-span-1">
-          Projects
+        <Link href="/about" className="col-start-7 col-span-1">
+          About
         </Link>
         <Link href="#" className="col-start-8 col-span-1">
           Etc.
