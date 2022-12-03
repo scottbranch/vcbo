@@ -22,6 +22,7 @@ export default function Home() {
     if (process.browser) {
       document.body.classList.add("homepage")
       document.body.classList.add("dark-mode")
+      document.body.classList.remove("projects-page")
 
       let scrollpos = window.scrollY
       let slider = document.querySelector(".slider-outer")

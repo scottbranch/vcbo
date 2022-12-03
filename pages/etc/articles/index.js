@@ -1,9 +1,22 @@
+import ScrollAnimate from "../../../components/ScrollAnimate"
+import { useEffect } from "react"
+
 export default function Articles() {
+  useEffect(() => {
+    if (process.browser) {
+      document.body.classList.remove("homepage")
+      document.body.classList.remove("dark-mode")
+      document.body.classList.remove("projects-page")
+    }
+  })
+
   return (
     <div className="container mx-auto mt-40 articles">
       <div className="grid grid-cols-4">
-        <h2>ETC.</h2>
-        <div className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
+        <ScrollAnimate>
+          <h2>ETC.</h2>
+        </ScrollAnimate>
+        <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
           <h4>
             Culture <sup>5</sup>
           </h4>
@@ -28,121 +41,121 @@ export default function Articles() {
           <h4>
             Another Tag <sup>20</sup>
           </h4>
-        </div>
+        </ScrollAnimate>
       </div>
       <div className="masonry sm:masonry-sm md:masonry-md mt-40">
-        <div className="break-inside mb-16">
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle3.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle1.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle3.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle2.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle4.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle2.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle1.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle3.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle2.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle1.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle4.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle3.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle2.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle1.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle1.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
-        <div className="break-inside mb-16">
+        </ScrollAnimate>
+        <ScrollAnimate className="break-inside mb-16">
           <a href="/etc/articles/article">
             <img className="mb-4" src="/etc/articles/Rectangle4.jpg" />
             <p className="font-medium">Article Title</p>
             <p>Date</p>
           </a>
-        </div>
+        </ScrollAnimate>
       </div>
     </div>
   )

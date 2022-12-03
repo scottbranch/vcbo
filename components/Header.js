@@ -49,7 +49,7 @@ export const Header = (props) => {
         <Link href="/about" className="col-start-7 col-span-1">
           About
         </Link>
-        <Link href="#" className="col-start-8 col-span-1">
+        <Link href="/etc/articles" className="col-start-8 col-span-1">
           Etc.
         </Link>
       </div>

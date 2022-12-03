@@ -291,6 +291,40 @@ a {
 /* Services Page Ends */
 
 /* Projects Page Begins */
+.projects-page {
+  background-color: var(--black);
+  transition: background-color 500ms ease-out;
+}
+
+.projects-page h1,
+.projects-page h2,
+.projects-page h3,
+.projects-page h4,
+.projects-page h5,
+.projects-page h6,
+.projects-page p,
+.projects-page a:not(.button-row):not(header a) {
+  color: var(--white);
+  transition: color 500ms ease-out;
+}
+
+.projects-page svg.logo path {
+  fill: var(--white);
+  transition: color 500ms ease-out;
+}
+
+.list-image {
+  position: absolute;
+  left: 25%;
+  top: -40px;
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.project-wrapper-list:hover .list-image {
+  opacity: 1;
+}
+
 .projects-page sup {
   font-size: 20px;
   top: -2em;

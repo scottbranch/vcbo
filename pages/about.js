@@ -6,6 +6,7 @@ export default function About() {
     if (process.browser) {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
+      document.body.classList.remove("projects-page")
     }
   })
 

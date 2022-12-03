@@ -1,43 +1,45 @@
+import ScrollAnimate from "../../components/ScrollAnimate"
+
 export default function Careers() {
   return (
     <div className="container mx-auto mt-40">
       <div className="grid grid-cols-4">
         <div className="col-span-2 flex content-end flex-wrap">
-          <div>
+          <ScrollAnimate>
             <h1>Join the VCBO Family</h1>
-          </div>
-          <div className="mt-16">
+          </ScrollAnimate>
+          <ScrollAnimate className="mt-16">
             <h4>See Open Positions</h4>
-          </div>
+          </ScrollAnimate>
         </div>
-        <div className="col-span-2">
+        <ScrollAnimate className="col-span-2">
           <img src="/etc/Rectangle.jpg" />
-        </div>
+        </ScrollAnimate>
       </div>
       <div className="grid grid-cols-4 mt-60">
-        <div className="col-span-1">
+        <ScrollAnimate className="col-span-1">
           <h4>
             Architectural
             <br />
             Team
           </h4>
-        </div>
-        <div className="col-span-1">
+        </ScrollAnimate>
+        <ScrollAnimate className="col-span-1">
           <p className="small-subhead">POSITION</p>
           <p className="mt-6">Architect II</p>
           <p className="mt-6">Architect II</p>
           <p className="mt-6">BIM Technician</p>
           <p className="mt-6">Specification Writer</p>
-        </div>
-        <div className="col-span-1">
+        </ScrollAnimate>
+        <ScrollAnimate className="col-span-1">
           <p className="small-subhead">LOCATION</p>
           <p className="mt-6">Salt Lake City, UT</p>
           <p className="mt-6">Salt Lake City, UT</p>
           <p className="mt-6">Salt Lake City, UT</p>
           <p className="mt-6">Salt Lake City, UT</p>
-        </div>
+        </ScrollAnimate>
       </div>
-      <div className="grid grid-cols-4 mt-60">
+      <ScrollAnimate className="grid grid-cols-4 mt-60">
         <div className="col-span-1">
           <h4>
             Interior Design
@@ -55,8 +57,8 @@ export default function Careers() {
           <p className="mt-6">Salt Lake City, UT</p>
           <p className="mt-6">Salt Lake City, UT</p>
         </div>
-      </div>
-      <div className="grid grid-cols-4 mt-60 mb-60">
+      </ScrollAnimate>
+      <ScrollAnimate className="grid grid-cols-4 mt-60 mb-60">
         <div className="col-span-1">
           <h4>Benefits</h4>
         </div>
@@ -72,7 +74,7 @@ export default function Careers() {
             semper eget duis at tellus at urna.
           </p>
         </div>
-      </div>
+      </ScrollAnimate>
     </div>
   )
 }
