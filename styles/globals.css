@@ -192,29 +192,52 @@ body {
 
 h1 {
   font-family: "arctic";
-  font-size: 90px;
-  line-height: 90px;
-}
-
-h2 {
-  font-size: 84px;
-  line-height: 76px;
-}
-
-h3 {
-  font-family: "founders";
-  font-weight: 500;
-  font-size: 50px;
-  line-height: 54px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 h4 {
   font-family: "founders";
   font-weight: 400;
-  font-size: 34px;
-  line-height: 38px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+p,
+a {
+  font-family: "founders";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 90px;
+    line-height: 90px;
+  }
+
+  h2 {
+    font-size: 84px;
+    line-height: 76px;
+  }
+
+  h3 {
+    font-size: 50px;
+    line-height: 54px;
+  }
+
+  h4 {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  p,
+  a {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 .small-subhead {
@@ -227,15 +250,6 @@ p.large {
   font-size: 30px;
   line-height: 36px;
   font-weight: 500;
-  -webkit-font-smoothing: antialiased;
-}
-
-p,
-a {
-  font-family: "founders";
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
   -webkit-font-smoothing: antialiased;
 }
 

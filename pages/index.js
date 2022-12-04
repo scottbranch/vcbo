@@ -50,10 +50,10 @@ export default function Home() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-8">
+      <div className="grid grid-cols-14 md:grid-cols-8">
         <div className="col-span-6">
           <ScrollAnimate>
-            <h1 className="ml-14 mb-10 mt-40">
+            <h1 className="ml-2 md:ml-14 md:mb-10 md:mt-40 mt-20">
               IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
             </h1>
           </ScrollAnimate>
@@ -104,8 +104,8 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-4 mt-10">
-        <div className="col-start-3 col-span-1">
-          <ScrollAnimate>
+        <div className="md:col-start-3 md:col-span-1 col-start-2 col-span-3">
+          <ScrollAnimate className="mb-5 md:mb-20">
             <p>
               Since 1973, we have been shaping built environments to support
               human connection, balancing skill and precision with an unmatched
@@ -118,27 +118,27 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-4 mt-40">
-        <div className="col-start-2 col-span-1">
+        <div className="col-start-3 col-span-1 md:col-start-2 md:col-span-1">
           <ScrollAnimate>
             <img src="/Feat1.jpg" />
           </ScrollAnimate>
         </div>
       </div>
       <div className="grid grid-cols-4 mt-4">
-        <div className="col-span-1">
+        <div className="col-span-2 md:col-span-1">
           <ScrollAnimate>
             <h4>
               Environments That Evoke Possibility—Featured Project Name Here
             </h4>
           </ScrollAnimate>
         </div>
-        <div className="col-start-2 col-span-3">
+        <div className="col-start-3 col-span-2 md:col-start-2 md:col-span-3">
           <img className="w-full" src="/Feat2.jpg" />
         </div>
       </div>
       <div className="grid grid-cols-4 mt-8">
-        <div className="col-span-2 col-start-2">
-          <ScrollAnimate>
+        <div className="col-span-3 md:col-span-2 col-start-2">
+          <ScrollAnimate className="mb-5 md:mb-20">
             <p>
               Small teaser blurb. Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Morbi et bibendum libero. Donec ultricies turpis
@@ -157,8 +157,8 @@ export default function Home() {
         </ScrollAnimate>
       </div>
       <div className="grid grid-cols-4 mt-16">
-        <div className="col-start-3 col-span-2">
-          <ScrollAnimate>
+        <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2">
+          <ScrollAnimate className="mb-5 md:mb-20">
             <h4>
               We’re curiosity-driven. So we create places for curiosity to
               thrive.
@@ -177,8 +177,8 @@ export default function Home() {
               adipiscing elit. Morbi et libero.
             </h4>
           </ScrollAnimate>
-          <ScrollAnimate>
-            <p className="mt-80">
+          <ScrollAnimate className="mb-5 md:mb-20">
+            <p className="mt-10 md:mt-80">
               Small teaser blurb. Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Morbi et bibendum libero. Donec ultricies turpis
               lobortis sapien laoreet, in rutrum mauris pharetra. In posuere

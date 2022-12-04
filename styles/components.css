@@ -83,10 +83,19 @@ span.last > span {
 
 /* Footer Begins */
 footer h3 {
-  color: var(--mediumGrey);
   font-family: "arctic";
-  font-size: 54px;
-  line-height: 56px;
+  color: var(--mediumGrey);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 769px) {
+  footer h3 {
+    font-size: 54px;
+    line-height: 56px;
+  }
 }
 
 footer .small-subhead {
