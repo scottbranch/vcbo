@@ -55,7 +55,7 @@ export const Footer = (props) => {
           </a>
         </div>
         <div className="mt-7 md:mt-0 col-start-1 col-span-2">
-          <p>© 2022 VCBO Architecture</p>
+          <p>© {new Date().getFullYear()} VCBO Architecture</p>
         </div>
       </div>
     </footer>

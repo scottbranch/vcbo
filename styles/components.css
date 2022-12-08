@@ -120,3 +120,41 @@ header a {
   font-size: 24px;
   line-height: 8px;
 }
+
+.overlay-header,
+.overlay-nav-links,
+.overlay-footer {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: 550ms ease;
+}
+
+.overlay-header {
+  transition-delay: 250ms;
+}
+
+.overlay-nav-links {
+  transition-delay: 350ms;
+}
+
+.overlay-footer {
+  transition-delay: 450ms;
+}
+
+header .mobile-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease;
+}
+
+header.mobile-menu-active .mobile-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-active .mobile-overlay .overlay-header,
+.mobile-menu-active .mobile-overlay .overlay-nav-links,
+.mobile-menu-active .mobile-overlay .overlay-footer {
+  opacity: 1;
+  transform: translateY(0px);
+}
