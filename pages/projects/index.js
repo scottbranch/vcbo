@@ -13,7 +13,7 @@ export default function Projects(props) {
   return (
     <div className="container mx-auto projects-page">
       <div className="grid grid-cols-4 mt-40 gap-x-8">
-        <div className="col-start-1 col-span-2">
+        <div className="col-start-1 col-span-4 md:col-span-2">
           <ScrollAnimate>
             <h2>
               Projects
@@ -23,7 +23,7 @@ export default function Projects(props) {
             </h2>
           </ScrollAnimate>
         </div>
-        <div className="flex items-center col-start-3 col-span-8 gap-4">
+        <div className="flex items-center col-start-1 md:col-start-3 col-span-8 gap-4">
           <select>
             <option>ALL Projects</option>
           </select>
@@ -42,8 +42,8 @@ export default function Projects(props) {
         </div>
       </div>
       <div
-        className={`grid grid-cols-${
-          theme === "grid" ? "2" : "1"
+        className={`grid mx-5 md:mx-0 ${
+          theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
         } mt-40 gap-x-4 gap-y-16`}
       >
         <ScrollAnimate>

@@ -3,7 +3,7 @@ import { Button } from "./Button"
 export const Project = (props) => {
   const { theme } = props
   return (
-    <div className="project-col col-span-1">
+    <div className="project-col col-span-2 md:col-span-1">
       <a
         href="/projects/test-post"
         className={`project-wrapper${theme === "list" ? "-list" : ""}`}

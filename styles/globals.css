@@ -418,9 +418,11 @@ a {
   opacity: 1;
 }
 
-.projects-page sup {
-  font-size: 20px;
-  top: -2em;
+@media screen and (min-width: 769px) {
+  .projects-page sup {
+    font-size: 20px;
+    top: -2em;
+  }
 }
 
 .projects-page select {
