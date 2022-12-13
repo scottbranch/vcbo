@@ -5,7 +5,19 @@ import { Button } from "../components/Button"
 import ScrollAnimate from "../components/ScrollAnimate"
 import { useEffect } from "react"
 
-export default function Home() {
+import { createClient } from "../prismicio"
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const page = await client.getSingle("homepage")
+
+  return {
+    props: { page }, // Will be passed to the page component as props
+  }
+}
+
+export default function Home({ page }) {
   const settings = {
     className: "homepage-carousel",
     autoplay: true,
@@ -19,6 +31,8 @@ export default function Home() {
   }
 
   useEffect(() => {
+    console.log({ page })
+
     if (process.browser) {
       document.body.classList.add("homepage")
       document.body.classList.add("dark-mode")

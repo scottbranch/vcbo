@@ -1,0 +1,79 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "project",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "sector": "Religious",
+    "specialty": "N/A",
+    "name": [
+      {
+        "type": "paragraph",
+        "text": "Duis veniam culpa culpa ex Lorem in deserunt ex sint sint anim ex consectetur. Cupidatat Lorem et do labore ipsum consequat.",
+        "spans": []
+      }
+    ],
+    "client": [
+      {
+        "type": "paragraph",
+        "text": "Lorem cupidatat nulla ex cupidatat labore. Labore nostrud esse deserunt ipsum ipsum aliquip incididunt pariatur laboris anim cupidatat amet.",
+        "spans": []
+      }
+    ],
+    "project_location": [
+      {
+        "type": "paragraph",
+        "text": "Incididunt minim magna aute anim mollit quis. Consectetur veniam excepteur quis eiusmod deserunt exercitation consectetur excepteur dolore consequat non magna.",
+        "spans": []
+      }
+    ],
+    "sq_ft": [
+      {
+        "type": "paragraph",
+        "text": "Velit cupidatat sit ut esse culpa commodo sint sint adipisicing sint. Aute deserunt duis mollit Lorem nisi et dolor minim.",
+        "spans": []
+      }
+    ],
+    "headline": [
+      {
+        "type": "heading1",
+        "text": "Shells",
+        "spans": []
+      }
+    ],
+    "featured_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+    },
+    "text_blurb": [
+      {
+        "heading": [
+          {
+            "type": "heading2",
+            "text": "Mirror",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Dolore deserunt cupidatat cillum pariatur labore ut sunt do incididunt culpa cupidatat tempor dolore. Occaecat sint ut cillum elit ex qui labore cupidatat.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
