@@ -1,0 +1,37 @@
+{
+  "id": "sector",
+  "label": "Sector",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Name",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "specialties": {
+        "type": "Group",
+        "config": {
+          "label": "Specialties",
+          "fields": {
+            "specialty": {
+              "type": "Link",
+              "config": {
+                "label": "Specialty",
+                "select": "document",
+                "customtypes": [
+                  "specialty"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

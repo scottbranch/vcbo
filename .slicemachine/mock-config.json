@@ -26,6 +26,20 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "quote": {
+        "quote_text": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      },
+      "concluding_statement": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     },
     "homepage": {
@@ -35,6 +49,10 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "sector": {
+      "specialties": {}
+    },
+    "specialty": {}
   }
 }

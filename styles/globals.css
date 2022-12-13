@@ -323,6 +323,7 @@ a {
   font-size: 15px;
   line-height: 15px;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 p.large {
@@ -464,4 +465,30 @@ a {
 
 .articles .tags h4 {
   margin: 16px 36px;
+}
+
+.slick-dots li button:before {
+  color: white !important;
+}
+
+.slick-dots li {
+  margin: 0 !important;
+}
+
+.quote-text p {
+  font-family: "founders";
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+@media screen and (min-width: 769px) {
+  .quote-text p {
+    font-size: 34px;
+    line-height: 38px;
+  }
+}
+
+.concluding-statement a {
+  text-decoration: underline;
 }

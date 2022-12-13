@@ -13,44 +13,23 @@
         }
       },
       "sector": {
-        "type": "Select",
+        "type": "Link",
         "config": {
           "label": "Sector",
-          "placeholder": "",
-          "options": [
-            "Civic",
-            "Commercial",
-            "Healthcare",
-            "Higher Ed",
-            "Industrial",
-            "K-12",
-            "Religious",
-            "Sports & Recreation"
+          "select": "document",
+          "customtypes": [
+            "sector"
           ]
         }
       },
       "specialty": {
-        "type": "Select",
+        "type": "Link",
         "config": {
           "label": "Specialty",
-          "placeholder": "",
-          "options": [
-            "N/A",
-            "Office",
-            "Mixed-use",
-            "Classrooms & Libraries",
-            "Campus Life",
-            "Science, Engineering & Technology",
-            "Athletics",
-            "Health Science",
-            "Master Planning & Programming",
-            "Elementary",
-            "Middle/Junior",
-            "High",
-            "Specialty",
-            "Parking Structures"
-          ],
-          "default_value": "N/A"
+          "select": "document",
+          "customtypes": [
+            "specialty"
+          ]
         }
       },
       "name": {
@@ -98,10 +77,10 @@
           "single": "heading1"
         }
       },
-      "featured_image": {
+      "hero_image": {
         "type": "Image",
         "config": {
-          "label": "Featured Image",
+          "label": "Hero Image",
           "constraint": {},
           "thumbnails": []
         }
@@ -130,6 +109,80 @@
               }
             }
           }
+        }
+      },
+      "content_image_1": {
+        "type": "Image",
+        "config": {
+          "label": "Content Image 1",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "image_carousel": {
+        "type": "Group",
+        "config": {
+          "label": "Image Carousel",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "hero_image_2": {
+        "type": "Image",
+        "config": {
+          "label": "Hero Image 2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "quote": {
+        "type": "Group",
+        "config": {
+          "label": "Quote",
+          "fields": {
+            "quote_text": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Quote Text",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,hyperlink,preformatted,strong,em"
+              }
+            }
+          }
+        }
+      },
+      "content_image_2": {
+        "type": "Image",
+        "config": {
+          "label": "Content Image 2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "content_image_3": {
+        "type": "Image",
+        "config": {
+          "label": "Content Image 3",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "concluding_statement": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Concluding Statement",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em,hyperlink"
         }
       }
     }

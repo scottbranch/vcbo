@@ -3,6 +3,10 @@ import ScrollAnimate from "../../components/ScrollAnimate"
 import { Button } from "../../components/Button"
 import * as prismicH from "@prismicio/helpers"
 import { createClient } from "../../prismicio"
+import { PrismicRichText } from "@prismicio/react"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 
 // Fetch project content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -37,6 +41,19 @@ export default function Project(props) {
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
   })
+
+  const settings = {
+    className: "project-carousel",
+    autoplay: true,
+    autoplaySpeed: 6500,
+    arrows: false,
+    dots: true,
+    infinite: true,
+    speed: 1700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  }
+
   return (
     <div className="container mx-auto projects-page">
       <div className="grid grid-cols-4 mt-40 gap-x-8">
@@ -49,7 +66,7 @@ export default function Project(props) {
           <ScrollAnimate>
             <img
               className="block w-full mt-24"
-              src="/projects/test-project/Hero.jpg"
+              src={pageData?.hero_image.url}
             />
           </ScrollAnimate>
         </div>
@@ -57,31 +74,13 @@ export default function Project(props) {
       <div className="grid grid-cols-4 mt-24 gap-x-8">
         <div className="col-start-3 col-span-2">
           <ScrollAnimate>
-            <h3 className="max-w-md">The Salt Lake City Public Library</h3>
+            <h3 className="max-w-md">
+              {pageData?.text_blurb[0]?.heading[0]?.text}
+            </h3>
           </ScrollAnimate>
           <div className="max-w-lg mt-12">
             <ScrollAnimate>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                venenatis libero augue, in ultricies velit tempus vel.
-                Suspendisse eu consectetur ligula. Morbi sollicitudin ornare
-                felis eget mattis. Nunc ac dolor ac metus malesuada sagittis eu
-                et augue. In suscipit fringilla elit sit amet consequat. Cras
-                consectetur erat et dui elementum convallis. Nulla viverra lorem
-                et augue sollicitudin, sodales pellentesque massa hendrerit.
-                Nulla in risus ac nisl bibendum tristique a eget tellus.
-                Pellentesque hendrerit ante mattis eros mattis, ut ullamcorper
-                erat hendrerit. Nam vitae ornare ligula, vitae posuere sem.
-                Aenean tempus augue rutrum, facilisis erat finibus, viverra
-                ante.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                venenatis libero augue, in ultricies velit tempus vel.
-                Suspendisse eu consectetur ligula. Morbi sollicitudin ornare
-                felis eget mattis.
-              </p>
+              <PrismicRichText field={pageData?.text_blurb[0]?.paragraph} />
             </ScrollAnimate>
           </div>
         </div>
@@ -90,70 +89,73 @@ export default function Project(props) {
         <div className="col-start-1 col-span-1">
           <ScrollAnimate>
             <p className="small-subhead">
-              ARCHITECTURE,
-              <br /> PLANNING
+              {page?.tags.map((tag, index, arr) => {
+                const returnComma = arr.length - 1 === index ? "" : ","
+                return (
+                  <>
+                    {tag}
+                    {returnComma}
+                    <br />
+                  </>
+                )
+              })}
             </p>
           </ScrollAnimate>
         </div>
         <div className="col-start-2 col-span-1">
           <ScrollAnimate>
-            <p className="small-subhead">240,000 SQFT</p>
+            <p className="small-subhead">{pageData?.sq_ft[0]?.text} SQFT</p>
           </ScrollAnimate>
         </div>
         <div className="col-start-3 col-span-1">
           <ScrollAnimate>
-            <p className="small-subhead">SALT LAKE CITY</p>
+            <p className="small-subhead">{pageData?.client[0]?.text}</p>
           </ScrollAnimate>
         </div>
         <div className="col-start-4 col-span-1">
           <ScrollAnimate>
-            <p className="small-subhead">SALT LAKE CITY, UT</p>
+            <p className="small-subhead">
+              {pageData?.project_location[0]?.text}
+            </p>
           </ScrollAnimate>
         </div>
         <div className="col-start-2 col-span-3 mt-32">
           <ScrollAnimate>
-            <img className="w-full" src="/projects/test-project/Image 01.jpg" />
+            <img className="w-full" src={pageData?.content_image_1.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-3 col-span-2 mt-4">
           <ScrollAnimate>
-            <img
-              className="w-full"
-              src="/projects/test-project/Rectangle 9.jpg"
-            />
+            <Slider {...settings}>
+              {pageData?.image_carousel?.map((item) => {
+                return <img className="w-full" src={item.image.url} />
+              })}
+            </Slider>
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-4 mt-40">
           <ScrollAnimate>
-            <img className="w-full" src="/projects/test-project/Image 03.jpg" />
+            <img className="w-full" src={pageData?.hero_image_2.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-3 mt-40">
           <ScrollAnimate>
-            <h4>
-              “Testimonial Quote. Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Ut venenatis libero augue, in ultricies velit
-              tempus vel. Arcu suspendisse eu consect ligula. Sollicitudin
-              ornare felis eget mattis.” <br />
-              —Name, Position, Organization
+            <h4 className="quote-text">
+              <PrismicRichText field={pageData?.quote[0]?.quote_text} />
             </h4>
           </ScrollAnimate>
         </div>
         <div className="col-start-3 col-span-2 mt-40">
           <ScrollAnimate>
-            <img className="w-full" src="/projects/test-project/Image 05.jpg" />
+            <img className="w-full" src={pageData?.content_image_2.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-2 mt-8">
           <ScrollAnimate>
-            <img className="w-full" src="/projects/test-project/Image 06.jpg" />
+            <img className="w-full mb-8" src={pageData?.content_image_3.url} />
           </ScrollAnimate>
-          <ScrollAnimate>
-            <p className="mt-8">
-              Concluding statement about the Project. Lorem ipsum dolor sit
-              amet, consectetur adipiscing elit. Or <a href="#">click here</a>{" "}
-              to view similar projects.
-            </p>
+          <ScrollAnimate className="concluding-statement">
+            <PrismicRichText field={pageData?.concluding_statement} />
           </ScrollAnimate>
         </div>
       </div>

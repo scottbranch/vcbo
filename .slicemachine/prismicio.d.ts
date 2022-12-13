@@ -35,26 +35,25 @@ interface ProjectDocumentData {
     /**
      * Sector field in *Project*
      *
-     * - **Field Type**: Select
+     * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
      * - **API ID Path**: project.sector
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    sector: prismicT.SelectField<"Civic" | "Commercial" | "Healthcare" | "Higher Ed" | "Industrial" | "K-12" | "Religious" | "Sports & Recreation">;
+    sector: prismicT.RelationField<"sector">;
     /**
      * Specialty field in *Project*
      *
-     * - **Field Type**: Select
+     * - **Field Type**: Content Relationship
      * - **Placeholder**: *None*
-     * - **Default Value**: N/A
      * - **API ID Path**: project.specialty
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
      *
      */
-    specialty: prismicT.SelectField<"N/A" | "Office" | "Mixed-use" | "Classrooms & Libraries" | "Campus Life" | "Science, Engineering & Technology" | "Athletics" | "Health Science" | "Master Planning & Programming" | "Elementary" | "Middle/Junior" | "High" | "Specialty" | "Parking Structures", "filled">;
+    specialty: prismicT.RelationField<"specialty">;
     /**
      * Name field in *Project*
      *
@@ -111,16 +110,16 @@ interface ProjectDocumentData {
      */
     headline: prismicT.TitleField;
     /**
-     * Featured Image field in *Project*
+     * Hero Image field in *Project*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: project.featured_image
+     * - **API ID Path**: project.hero_image
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    featured_image: prismicT.ImageField<never>;
+    hero_image: prismicT.ImageField<never>;
     /**
      * Text Blurb field in *Project*
      *
@@ -132,6 +131,83 @@ interface ProjectDocumentData {
      *
      */
     text_blurb: prismicT.GroupField<Simplify<ProjectDocumentDataTextBlurbItem>>;
+    /**
+     * Content Image 1 field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.content_image_1
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    content_image_1: prismicT.ImageField<never>;
+    /**
+     * Image Carousel field in *Project*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.image_carousel[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    image_carousel: prismicT.GroupField<Simplify<ProjectDocumentDataImageCarouselItem>>;
+    /**
+     * Hero Image 2 field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.hero_image_2
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    hero_image_2: prismicT.ImageField<never>;
+    /**
+     * Quote field in *Project*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.quote[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    quote: prismicT.GroupField<Simplify<ProjectDocumentDataQuoteItem>>;
+    /**
+     * Content Image 2 field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.content_image_2
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    content_image_2: prismicT.ImageField<never>;
+    /**
+     * Content Image 3 field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.content_image_3
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    content_image_3: prismicT.ImageField<never>;
+    /**
+     * Concluding Statement field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.concluding_statement
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    concluding_statement: prismicT.RichTextField;
 }
 /**
  * Item in Project → Text Blurb
@@ -160,6 +236,38 @@ export interface ProjectDocumentDataTextBlurbItem {
     paragraph: prismicT.RichTextField;
 }
 /**
+ * Item in Project → Image Carousel
+ *
+ */
+export interface ProjectDocumentDataImageCarouselItem {
+    /**
+     * Image field in *Project → Image Carousel*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.image_carousel[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Item in Project → Quote
+ *
+ */
+export interface ProjectDocumentDataQuoteItem {
+    /**
+     * Quote Text field in *Project → Quote*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.quote[].quote_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    quote_text: prismicT.RichTextField;
+}
+/**
  * Project document from Prismic
  *
  * - **API ID**: `project`
@@ -169,12 +277,87 @@ export interface ProjectDocumentDataTextBlurbItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
-export type AllDocumentTypes = HomepageDocument | ProjectDocument;
+/** Content for Sector documents */
+interface SectorDocumentData {
+    /**
+     * Name field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Specialties field in *Sector*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.specialties[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    specialties: prismicT.GroupField<Simplify<SectorDocumentDataSpecialtiesItem>>;
+}
+/**
+ * Item in Sector → Specialties
+ *
+ */
+export interface SectorDocumentDataSpecialtiesItem {
+    /**
+     * Specialty field in *Sector → Specialties*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.specialties[].specialty
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    specialty: prismicT.RelationField<"specialty">;
+}
+/**
+ * Sector document from Prismic
+ *
+ * - **API ID**: `sector`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SectorDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SectorDocumentData>, "sector", Lang>;
+/** Content for Specialty documents */
+interface SpecialtyDocumentData {
+    /**
+     * Name field in *Specialty*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+}
+/**
+ * Specialty document from Prismic
+ *
+ * - **API ID**: `specialty`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
+export type AllDocumentTypes = HomepageDocument | ProjectDocument | SectorDocument | SpecialtyDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocument, AllDocumentTypes };
+        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, SectorDocumentData, SectorDocumentDataSpecialtiesItem, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes };
     }
 }
