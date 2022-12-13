@@ -11,11 +11,11 @@ export default function About() {
   })
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4 md:px-0">
       <div className="grid grid-cols-8">
-        <div className="col-span-6">
+        <div className="col-span-12 md:col-span-6">
           <ScrollAnimate>
-            <h3 className="ml-4 mb-10 mt-40">
+            <h3 className="md:ml-4 mb-10 mt-40">
               For 50 years now, VCBO Architecture has delivered iconic
               architecture with a focus on impeccable design, innovative
               thinking, and unparalleled client service. Today, we actively
@@ -24,12 +24,12 @@ export default function About() {
             </h3>
           </ScrollAnimate>
         </div>
-        <div className="col-span-5 col-start-4">
+        <div className="col-span-8 md:col-span-5 md:col-start-4">
           <ScrollAnimate>
             <img src="about-hero.png" />
           </ScrollAnimate>
         </div>
-        <div className="col-span-4 col-start-5 mt-28">
+        <div className="col-span-8 md:col-span-4 md:col-start-5 mt-14 md:mt-28">
           <ScrollAnimate>
             <p className="large mb-5">History &amp; Culture</p>
             <p className="mb-4">
@@ -60,10 +60,14 @@ export default function About() {
         </div>
         <div className="col-span-8 mx-auto">
           <ScrollAnimate>
-            <img src="about-grid.png" />
+            <img className="md:block hidden" src="about-grid.png" />
+            <img
+              className="md:hidden w-full mt-14"
+              src="about-grid-mobile.png"
+            />
           </ScrollAnimate>
         </div>
-        <div className="col-span-4 mt-28">
+        <div className="col-span-8 md:col-span-4 mt-14 md:mt-28">
           <ScrollAnimate>
             <p className="large mb-5">Social Responsibility</p>
             <p className="mb-4">
@@ -80,12 +84,12 @@ export default function About() {
             </p>
           </ScrollAnimate>
         </div>
-        <div className="col-start-3 mt-20 col-span-4">
+        <div className="col-start-3 col-span-6 md:col-start-3 mt-8 md:mt-20 md:col-span-4">
           <ScrollAnimate>
             <img src="about-image.png" />
           </ScrollAnimate>
         </div>
-        <div className="col-start-3 col-span-4 mt-28">
+        <div className="col-span-8 md:col-start-3 md:col-span-4 mt-14 md:mt-28">
           <ScrollAnimate>
             <p className="large mb-5">Commitment to Sustainability</p>
             <p className="mb-4">
@@ -115,13 +119,13 @@ export default function About() {
             </p>
           </ScrollAnimate>
         </div>
-        <div className="col-span-2"></div>
-        <div className="col-span-8 mt-40 mb-10">
+        <div className="col-span-6 md:col-span-2"></div>
+        <div className="col-span-8 mt-8 md:mt-40 mb-10">
           <ScrollAnimate>
             <h3>Leadership</h3>
           </ScrollAnimate>
         </div>
-        <div className="grid grid-cols-4 gap-4 col-span-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 col-span-8">
           <ScrollAnimate>
             <div className="headshot">
               <img src="about-headshot.png" />

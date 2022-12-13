@@ -1,7 +1,7 @@
 export const Footer = (props) => {
   const {} = props
   return (
-    <footer className="container mx-auto mt-40 pb-10">
+    <footer className="container mx-auto mt-28 md:mt-40 pb-10 px-4 md:px-0">
       <div className="flex flex-col md:flex-row grid-cols-4 md:justify-between">
         <div className="grid grid-cols-4 mb-20 md:grid-cols-1 md:mr-20">
           <h3 className="col-start-1 col-span-2 md:col-span-1 md:grid-cols-1">
