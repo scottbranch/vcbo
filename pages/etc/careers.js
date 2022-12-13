@@ -2,29 +2,29 @@ import ScrollAnimate from "../../components/ScrollAnimate"
 
 export default function Careers() {
   return (
-    <div className="container mx-auto mt-40">
+    <div className="container mx-auto mt-40 px-4 md:px-0">
       <div className="grid grid-cols-4">
-        <div className="col-span-2 flex content-end flex-wrap">
+        <div className="col-span-4 md:col-span-2 flex content-end flex-wrap">
           <ScrollAnimate>
-            <h1>Join the VCBO Family</h1>
+            <h1 className="w-full">Join the VCBO Family</h1>
           </ScrollAnimate>
-          <ScrollAnimate className="mt-16">
-            <h4>See Open Positions</h4>
+          <ScrollAnimate className="mt-12 md:mt-16">
+            <h4 className="w-full">See Open Positions</h4>
           </ScrollAnimate>
         </div>
-        <ScrollAnimate className="col-span-2">
+        <ScrollAnimate className="col-span-4 md:col-span-2 mt-12 md:mt-0">
           <img src="/etc/Rectangle.jpg" />
         </ScrollAnimate>
       </div>
-      <div className="grid grid-cols-4 mt-60">
-        <ScrollAnimate className="col-span-1">
+      <div className="grid grid-cols-4 mt-24 md:mt-60">
+        <ScrollAnimate className="col-span-4 md:col-span-1 mb-8 md:mb-0">
           <h4>
             Architectural
-            <br />
+            <br className="hidden md:block" />
             Team
           </h4>
         </ScrollAnimate>
-        <ScrollAnimate className="col-span-1">
+        <ScrollAnimate className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
           <p className="mt-6">Architect II</p>
           <p className="mt-6">Architect II</p>
@@ -39,15 +39,15 @@ export default function Careers() {
           <p className="mt-6">Salt Lake City, UT</p>
         </ScrollAnimate>
       </div>
-      <ScrollAnimate className="grid grid-cols-4 mt-60">
-        <div className="col-span-1">
+      <ScrollAnimate className="grid grid-cols-4 mt-24 md:mt-60">
+        <div className="col-span-4 md:col-span-1 mb-8 md:mb-0">
           <h4>
             Interior Design
-            <br />
+            <br className="hidden md:block" />
             Team
           </h4>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
           <p className="mt-6">Interior Designer II</p>
           <p className="mt-6">Interior Designer Intern</p>
@@ -58,11 +58,11 @@ export default function Careers() {
           <p className="mt-6">Salt Lake City, UT</p>
         </div>
       </ScrollAnimate>
-      <ScrollAnimate className="grid grid-cols-4 mt-60 mb-60">
-        <div className="col-span-1">
+      <ScrollAnimate className="grid grid-cols-4 mt-24 mb-24 md:mt-60 md:mb-60">
+        <div className="col-span-4 md:col-span-1 mb-4 md:mb-0">
           <h4>Benefits</h4>
         </div>
-        <div className="col-span-2">
+        <div className="col-span-4 md:col-span-2">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis

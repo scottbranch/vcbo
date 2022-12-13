@@ -11,7 +11,7 @@ export const Header = (props) => {
       className={`container mx-auto ${menuOpen ? "mobile-menu-active" : ""}`}
     >
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
-        <Link href="/" className="col-start-1 col-span-4">
+        <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
           <svg
             className="logo"
             width="160"
