@@ -291,33 +291,22 @@ interface SectorDocumentData {
      */
     name: prismicT.RichTextField;
     /**
-     * Specialties field in *Sector*
+     * Slice Zone field in *Sector*
      *
-     * - **Field Type**: Group
+     * - **Field Type**: Slice Zone
      * - **Placeholder**: *None*
-     * - **API ID Path**: sector.specialties[]
+     * - **API ID Path**: sector.slices[]
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
      *
      */
-    specialties: prismicT.GroupField<Simplify<SectorDocumentDataSpecialtiesItem>>;
+    slices: prismicT.SliceZone<SectorDocumentDataSlicesSlice>;
 }
 /**
- * Item in Sector → Specialties
+ * Slice for *Sector → Slice Zone*
  *
  */
-export interface SectorDocumentDataSpecialtiesItem {
-    /**
-     * Specialty field in *Sector → Specialties*
-     *
-     * - **Field Type**: Content Relationship
-     * - **Placeholder**: *None*
-     * - **API ID Path**: sector.specialties[].specialty
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    specialty: prismicT.RelationField<"specialty">;
-}
+type SectorDocumentDataSlicesSlice = SpecialtiesSlice;
 /**
  * Sector document from Prismic
  *
@@ -353,11 +342,50 @@ interface SpecialtyDocumentData {
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
 export type AllDocumentTypes = HomepageDocument | ProjectDocument | SectorDocument | SpecialtyDocument;
+/**
+ * Item in Specialties → Items
+ *
+ */
+export interface SpecialtiesSliceDefaultItem {
+    /**
+     * Specialty field in *Specialties → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialties.items[].specialty
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    specialty: prismicT.RelationField<"specialty">;
+}
+/**
+ * Default variation for Specialties Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Specialties`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SpecialtiesSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<SpecialtiesSliceDefaultItem>>;
+/**
+ * Slice variation for *Specialties*
+ *
+ */
+type SpecialtiesSliceVariation = SpecialtiesSliceDefault;
+/**
+ * Specialties Shared Slice
+ *
+ * - **API ID**: `specialties`
+ * - **Description**: `Specialties`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SpecialtiesSlice = prismicT.SharedSlice<"specialties", SpecialtiesSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, SectorDocumentData, SectorDocumentDataSpecialtiesItem, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes };
+        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

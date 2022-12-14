@@ -50,9 +50,15 @@
         }
       }
     },
-    "sector": {
-      "specialties": {}
-    },
+    "sector": {},
     "specialty": {}
+  },
+  "slices": {
+    "Specialties": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    }
   }
 }

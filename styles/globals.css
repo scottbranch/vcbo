@@ -426,13 +426,28 @@ a {
   }
 }
 
-.projects-page select {
+.filter-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 320px;
+}
+
+.projects-page .filter-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "founders";
   width: 100%;
-  max-width: 320px;
   background: transparent;
   border-bottom: 1px solid var(--white);
-  color: var(--white);
+  color: var(--lightGrey);
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  height: 25px;
 }
 
 .filter-button {
@@ -446,6 +461,52 @@ a {
 
 .filter-button.active {
   box-shadow: 0px 0px 5px 3px #7d7a7a;
+}
+
+.filter-dropdown {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 100%;
+  background: var(--darkestGrey);
+  transition: opacity 250ms ease;
+  z-index: 100;
+}
+
+.filter-dropdown.open {
+  opacity: 1;
+}
+
+.filter-dropdown .sector {
+  font-family: "founders";
+  font-weight: 500;
+  border-top: 1px solid var(--mediumGrey);
+  width: 100%;
+  display: block;
+  padding: 7px 0 2px 25px;
+  color: var(--lightGrey) !important;
+}
+
+.filter-dropdown li a {
+  color: var(--lightGrey) !important;
+  transition: 150ms ease;
+}
+
+.filter-dropdown li a:hover {
+  color: var(--white) !important;
+}
+
+.filter-dropdown .specialties li {
+  border-top: 1px solid var(--mediumGrey);
+  padding: 6px 0 3px;
+}
+
+.filter-dropdown .specialties li a {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding-left: 55px;
 }
 /* Projects Page Ends */
 

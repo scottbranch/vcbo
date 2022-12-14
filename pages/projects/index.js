@@ -2,11 +2,30 @@ import ScrollAnimate from "../../components/ScrollAnimate"
 import { Button } from "../../components/Button"
 import { useEffect, useState } from "react"
 import { Project } from "../../components/Project"
+import { DownArrow } from "../../components/DownArrow"
+import Link from "next/link"
+import { createClient } from "../../prismicio"
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const page = await client.getAllByType("sector", {
+    fetchLinks: ["specialty.name"],
+  })
+
+  return {
+    props: { page }, // Will be passed to the page component as props
+  }
+}
 
 export default function Projects(props) {
+  const { page } = props
+
   const [theme, setTheme] = useState("grid")
+  const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
+    console.log({ page })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
   })
@@ -24,9 +43,41 @@ export default function Projects(props) {
           </ScrollAnimate>
         </div>
         <div className="flex items-center col-start-1 md:col-start-3 col-span-8 gap-4">
-          <select>
-            <option>ALL Projects</option>
-          </select>
+          <div className="filter-container">
+            <button
+              className="filter-select"
+              onClick={() => setShowDropdown(!showDropdown)}
+            >
+              <span>Project Types...</span>
+              <DownArrow />
+            </button>
+            <div className={`filter-dropdown ${showDropdown ? "open" : ""}`}>
+              <ul>
+                {page.map((item) => {
+                  return (
+                    <li>
+                      <Link className="sector" href="/">
+                        {item?.data?.name[0]?.text}
+                      </Link>
+                      {item?.data?.slices[0]?.items?.length > 0 ? (
+                        <ul className="specialties">
+                          {item?.data?.slices[0].items.map((item) => (
+                            <li>
+                              <Link href="/">
+                                {item?.specialty?.data?.name[0]?.text}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        ""
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </div>
           <button
             className={`filter-button ${theme === "grid" ? "active" : ""}`}
             onClick={() => setTheme("grid")}

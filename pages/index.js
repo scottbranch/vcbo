@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css"
 import { Button } from "../components/Button"
 import ScrollAnimate from "../components/ScrollAnimate"
 import { useEffect } from "react"
-
 import { createClient } from "../prismicio"
 
 export async function getStaticProps({ previewData }) {
