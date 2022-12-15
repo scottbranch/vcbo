@@ -5,6 +5,7 @@ import { Project } from "../../components/Project"
 import { DownArrow } from "../../components/DownArrow"
 import Link from "next/link"
 import { createClient } from "../../prismicio"
+import SelectDropdown from "../../components/SelectDropdown"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -13,22 +14,26 @@ export async function getStaticProps({ previewData }) {
     fetchLinks: ["specialty.name"],
   })
 
+  const projects = await client.getAllByType("project", {
+    fetchLinks: ["sector.name", "sector.description"],
+  })
+
   return {
-    props: { page }, // Will be passed to the page component as props
+    props: { page, projects }, // Will be passed to the page component as props
   }
 }
 
 export default function Projects(props) {
-  const { page } = props
+  const { page, projects } = props
 
   const [theme, setTheme] = useState("grid")
   const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
-    console.log({ page })
+    console.log({ projects })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
-  })
+  }, [])
   return (
     <div className="container mx-auto projects-page">
       <div className="grid grid-cols-4 mt-40 gap-x-8">
@@ -37,47 +42,13 @@ export default function Projects(props) {
             <h2>
               Projects
               <sup>
-                <small>38</small>
+                <small>{projects.length}</small>
               </sup>
             </h2>
           </ScrollAnimate>
         </div>
         <div className="flex items-center col-start-1 md:col-start-3 col-span-8 gap-4">
-          <div className="filter-container">
-            <button
-              className="filter-select"
-              onClick={() => setShowDropdown(!showDropdown)}
-            >
-              <span>Project Types...</span>
-              <DownArrow />
-            </button>
-            <div className={`filter-dropdown ${showDropdown ? "open" : ""}`}>
-              <ul>
-                {page.map((item) => {
-                  return (
-                    <li>
-                      <Link className="sector" href="/">
-                        {item?.data?.name[0]?.text}
-                      </Link>
-                      {item?.data?.slices[0]?.items?.length > 0 ? (
-                        <ul className="specialties">
-                          {item?.data?.slices[0].items.map((item) => (
-                            <li>
-                              <Link href="/">
-                                {item?.specialty?.data?.name[0]?.text}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : (
-                        ""
-                      )}
-                    </li>
-                  )
-                })}
-              </ul>
-            </div>
-          </div>
+          <SelectDropdown items={page} defaultText="Project Types..." />
           <button
             className={`filter-button ${theme === "grid" ? "active" : ""}`}
             onClick={() => setTheme("grid")}
@@ -97,24 +68,20 @@ export default function Projects(props) {
           theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
         } mt-40 gap-x-4 gap-y-16`}
       >
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
-        <ScrollAnimate>
-          <Project theme={theme} />
-        </ScrollAnimate>
+        {projects.map((project) => {
+          return (
+            <ScrollAnimate>
+              <Project
+                theme={theme}
+                image={project?.data?.hero_image?.url}
+                sector={project?.data?.sector?.data?.name[0].text}
+                blurb={project?.data?.sector?.data?.description[0]?.text}
+                sectorLink={project?.data?.sector?.url}
+                projectLink={project?.url}
+              />
+            </ScrollAnimate>
+          )
+        })}
       </div>
     </div>
   )

@@ -291,6 +291,17 @@ interface SectorDocumentData {
      */
     name: prismicT.RichTextField;
     /**
+     * Description field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
      * Slice Zone field in *Sector*
      *
      * - **Field Type**: Slice Zone
@@ -316,7 +327,7 @@ type SectorDocumentDataSlicesSlice = SpecialtiesSlice;
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SectorDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SectorDocumentData>, "sector", Lang>;
+export type SectorDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SectorDocumentData>, "sector", Lang>;
 /** Content for Specialty documents */
 interface SpecialtyDocumentData {
     /**
@@ -340,7 +351,7 @@ interface SpecialtyDocumentData {
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
+export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
 export type AllDocumentTypes = HomepageDocument | ProjectDocument | SectorDocument | SpecialtyDocument;
 /**
  * Item in Specialties → Items

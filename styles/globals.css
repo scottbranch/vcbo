@@ -465,6 +465,7 @@ a {
 
 .filter-dropdown {
   opacity: 0;
+  visibility: hidden;
   position: absolute;
   left: 0;
   top: 25px;
@@ -476,6 +477,7 @@ a {
 
 .filter-dropdown.open {
   opacity: 1;
+  visibility: visible;
 }
 
 .filter-dropdown .sector {
@@ -508,6 +510,24 @@ a {
   width: 100%;
   padding-left: 55px;
 }
+
+/* Filtered sector stuff */
+.filtered-project .project-name {
+  font-family: "Founders";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--lightGrey);
+}
+
+.filtered-project .project-specialty {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--lightGrey);
+}
+
 /* Projects Page Ends */
 
 .article .body-large {
