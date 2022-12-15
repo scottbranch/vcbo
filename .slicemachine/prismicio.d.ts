@@ -277,6 +277,35 @@ export interface ProjectDocumentDataQuoteItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
+/** Content for Projects Page documents */
+interface ProjectsPageDocumentData {
+    /**
+     * Slice Zone field in *Projects Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ProjectsPageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Projects Page → Slice Zone*
+ *
+ */
+type ProjectsPageDocumentDataSlicesSlice = FeaturedProjectsSlice;
+/**
+ * Projects Page document from Prismic
+ *
+ * - **API ID**: `projects_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectsPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectsPageDocumentData>, "projects_page", Lang>;
 /** Content for Sector documents */
 interface SectorDocumentData {
     /**
@@ -352,7 +381,46 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = HomepageDocument | ProjectDocument | SectorDocument | SpecialtyDocument;
+export type AllDocumentTypes = HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
+/**
+ * Item in FeaturedProjects → Items
+ *
+ */
+export interface FeaturedProjectsSliceDefaultItem {
+    /**
+     * Project field in *FeaturedProjects → Items*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: featured_projects.items[].project
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    project: prismicT.RelationField<"project">;
+}
+/**
+ * Default variation for FeaturedProjects Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FeaturedProjects`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturedProjectsSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<FeaturedProjectsSliceDefaultItem>>;
+/**
+ * Slice variation for *FeaturedProjects*
+ *
+ */
+type FeaturedProjectsSliceVariation = FeaturedProjectsSliceDefault;
+/**
+ * FeaturedProjects Shared Slice
+ *
+ * - **API ID**: `featured_projects`
+ * - **Description**: `FeaturedProjects`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FeaturedProjectsSlice = prismicT.SharedSlice<"featured_projects", FeaturedProjectsSliceVariation>;
 /**
  * Item in Specialties → Items
  *
@@ -397,6 +465,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

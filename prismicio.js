@@ -20,6 +20,11 @@ const routes = [
     path: "/projects/:uid",
   },
   {
+    type: "projects_page",
+    uid: "projects-page",
+    path: "/projects",
+  },
+  {
     type: "sector",
     path: "/projects/sector/:uid",
   },

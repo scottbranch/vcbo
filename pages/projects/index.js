@@ -10,27 +10,26 @@ import SelectDropdown from "../../components/SelectDropdown"
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const page = await client.getAllByType("sector", {
-    fetchLinks: ["specialty.name"],
+  const sectors = await client.getAllByType("sector", {
+    fetchLinks: ["specialty.name", "sector.name", "sector.description"],
   })
 
-  const projects = await client.getAllByType("project", {
-    fetchLinks: ["sector.name", "sector.description"],
+  const projects = await client.getByUID("projects_page", "projects-page", {
+    fetchLinks: ["project.name", "project.hero_image", "project.sector"],
   })
 
   return {
-    props: { page, projects }, // Will be passed to the page component as props
+    props: { sectors, projects }, // Will be passed to the sectors component as props
   }
 }
 
 export default function Projects(props) {
-  const { page, projects } = props
+  const { sectors, projects } = props
 
   const [theme, setTheme] = useState("grid")
   const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
-    console.log({ projects })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
   }, [])
@@ -42,13 +41,13 @@ export default function Projects(props) {
             <h2>
               Projects
               <sup>
-                <small>{projects.length}</small>
+                <small>{projects?.data?.slices[0]?.items?.length}</small>
               </sup>
             </h2>
           </ScrollAnimate>
         </div>
         <div className="flex items-center col-start-1 md:col-start-3 col-span-8 gap-4">
-          <SelectDropdown items={page} defaultText="Project Types..." />
+          <SelectDropdown items={sectors} defaultText="Project Types..." />
           <button
             className={`filter-button ${theme === "grid" ? "active" : ""}`}
             onClick={() => setTheme("grid")}
@@ -68,16 +67,26 @@ export default function Projects(props) {
           theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
         } mt-40 gap-x-4 gap-y-16`}
       >
-        {projects.map((project) => {
+        {projects?.data?.slices[0]?.items?.map((project, index) => {
+          const projectSector = project.project
+
+          const sectorInfo = sectors.find(
+            (item) => item.uid === projectSector.data.sector.uid
+          )
+
           return (
             <ScrollAnimate>
               <Project
                 theme={theme}
-                image={project?.data?.hero_image?.url}
-                sector={project?.data?.sector?.data?.name[0].text}
-                blurb={project?.data?.sector?.data?.description[0]?.text}
-                sectorLink={project?.data?.sector?.url}
-                projectLink={project?.url}
+                image={
+                  project?.project?.data?.hero_image?.url === undefined
+                    ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                    : project?.project?.data?.hero_image?.url
+                }
+                sector={sectorInfo?.data?.name[0]?.text}
+                blurb={sectorInfo?.data?.description[0]?.text}
+                sectorLink={project?.project?.data?.sector?.url}
+                projectLink={project?.project?.data?.sector?.url}
               />
             </ScrollAnimate>
           )

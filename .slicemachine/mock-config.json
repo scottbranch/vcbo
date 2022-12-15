@@ -58,10 +58,17 @@
         }
       }
     },
-    "specialty": {}
+    "specialty": {},
+    "projects_page": {}
   },
   "slices": {
     "Specialties": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "FeaturedProjects": {
       "default": {
         "primary": {},
         "items": {}

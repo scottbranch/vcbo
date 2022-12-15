@@ -10,10 +10,6 @@ export default function SelectDropdown(props) {
   const [showDropdown, setShowDropdown] = useState(false)
   const [reducedProjects, setReducedProjects] = useState([])
 
-  useEffect(() => {
-    console.log({ items })
-  }, [])
-
   return (
     <div className="filter-container">
       <button
