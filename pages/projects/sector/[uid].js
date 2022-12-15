@@ -6,6 +6,7 @@ import { createClient } from "../../../prismicio"
 import { PrismicRichText } from "@prismicio/react"
 import { FilteredProject } from "../../../components/FilteredProject"
 import SelectDropdown from "../../../components/SelectDropdown"
+import { AdditionalProject } from "../../../components/AdditionalProject"
 
 // Fetch sector content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -84,7 +85,7 @@ export default function Sectors(props) {
             </h2>
           </ScrollAnimate>
         </div>
-        <div className="flex items-center col-start-1 md:col-start-4 col-span-8 gap-4">
+        <div className="flex items-center col-start-1 md:col-start-5 col-span-8 gap-4">
           <SelectDropdown
             items={dropdownItems}
             defaultText={page?.data?.name[0]?.text}
@@ -106,7 +107,11 @@ export default function Sectors(props) {
                   <FilteredProject
                     title={project?.data?.name[0]?.text}
                     specialty={project?.data?.specialty?.data?.name[0]?.text}
-                    image={project?.data?.hero_image?.url}
+                    image={
+                      project?.data?.hero_image?.url === undefined
+                        ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                        : project?.data?.hero_image?.url
+                    }
                     url={project?.url}
                   />
                 </ScrollAnimate>
@@ -115,6 +120,15 @@ export default function Sectors(props) {
           </div>
         )
       })}
+      <div className="additiona-project-container">
+        <AdditionalProject />
+        <AdditionalProject />
+        <AdditionalProject />
+        <AdditionalProject />
+        <AdditionalProject />
+        <AdditionalProject />
+        <AdditionalProject />
+      </div>
     </div>
   )
 }

@@ -94,7 +94,11 @@ export default function Sectors(props) {
               <FilteredProject
                 title={project?.data?.name[0]?.text}
                 specialty={project?.data?.specialty?.data?.name[0]?.text}
-                image={project?.data?.hero_image?.url}
+                image={
+                  project?.data?.hero_image?.url === undefined
+                    ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                    : project?.data?.hero_image?.url
+                }
                 url={project?.url}
               />
             </ScrollAnimate>

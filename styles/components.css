@@ -159,3 +159,130 @@ header.mobile-menu-active .mobile-overlay {
   opacity: 1;
   transform: translateY(0px);
 }
+
+/* Additional Projects */
+.additiona-project-container {
+  margin-top: 100px;
+}
+
+.additional-project:hover {
+  cursor: pointer;
+}
+
+.additional-project:hover .name {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.additional-project-outer {
+  height: 60px;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  transition: height 500ms ease;
+}
+
+.additional-project-outer.open {
+  height: 267px;
+}
+
+.additional-project {
+  background: var(--white);
+  padding-top: 18px;
+  margin-bottom: 20px;
+}
+
+.additional-project p {
+  color: var(--mediumGrey);
+}
+
+.additional-project p.name {
+  font-weight: 500;
+}
+
+.additiona-project-container .icon {
+  color: var(--mediumGrey);
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+.swipable-carousel {
+  cursor: grab;
+}
+
+.swipable-carousel:active {
+  cursor: grabbing;
+}
+
+.modal-carousel {
+  position: absolute;
+  bottom: 0;
+}
+
+.modal-container {
+  position: fixed;
+  width: 100%;
+  height: 90vh;
+  background: black;
+  z-index: 500;
+  bottom: 0;
+  transform: translateY(90vh);
+  transition: transform 750ms ease;
+}
+
+.modal-container.active {
+  transform: translateY(0vh);
+}
+
+.modal-container .swiper-slide {
+  width: auto;
+}
+
+.modal-container h4 {
+  font-family: "founders";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  text-decoration: underline;
+  padding: 40px 20px;
+}
+
+.modal-header span {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  padding-right: 70px;
+}
+
+.modal-header span:hover {
+  cursor: pointer;
+}
+
+.modal-carousel:hover {
+  cursor: grab;
+}
+
+.modal-carousel:active {
+  cursor: grabbing;
+}
+
+.modal-header span:before,
+.modal-header span:after {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--white);
+  display: block;
+  top: 10px;
+}
+
+.modal-header span:before {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+.modal-header span:after {
+  position: absolute;
+  transform: rotate(-45deg);
+}
