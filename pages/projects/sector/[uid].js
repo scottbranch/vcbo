@@ -55,7 +55,6 @@ export default function Sectors(props) {
   const pageData = page?.data
 
   useEffect(() => {
-    console.log({ additionalProjects })
     if (process.browser) {
       document.body.classList.add("sector")
       document.body.classList.add("dark-mode")
@@ -157,6 +156,12 @@ export default function Sectors(props) {
         )
       })}
       <div className="additional-project-container">
+        <div className="additional-project-header grid grid-cols-4 gap-6">
+          <p>Project Name</p>
+          <p>Location</p>
+          <p>Project Size</p>
+          <p>Client</p>
+        </div>
         {additionalProjects?.map((item) => {
           return (
             <AdditionalProject

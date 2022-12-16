@@ -1,10 +1,14 @@
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 export const Header = (props) => {
   const {} = props
 
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const router = useRouter()
+  const { pid } = router.query
 
   return (
     <header
@@ -48,22 +52,33 @@ export const Header = (props) => {
         </Link>
         <Link
           href="/projects"
-          className="hidden md:block col-start-5 col-span-1"
+          className={`${
+            router.pathname.startsWith("/projects") ? "active" : ""
+          } hidden md:block col-start-5 col-span-1`}
         >
           Projects
         </Link>
         <Link
           href="/services"
-          className="hidden md:block col-start-6 col-span-1"
+          className={`hidden md:block col-start-6 col-span-1 ${
+            router.pathname.startsWith("/services") ? "active" : ""
+          }`}
         >
           Services
         </Link>
-        <Link href="/about" className="hidden md:block col-start-7 col-span-1">
+        <Link
+          href="/about"
+          className={`hidden md:block col-start-7 col-span-1 ${
+            router.pathname.startsWith("/about") ? "active" : ""
+          }`}
+        >
           About
         </Link>
         <Link
           href="/etc/articles"
-          className="hidden md:block col-start-8 col-span-1"
+          className={`hidden md:block col-start-8 col-span-1 ${
+            router.pathname.startsWith("/etc") ? "active" : ""
+          }`}
         >
           Etc.
         </Link>

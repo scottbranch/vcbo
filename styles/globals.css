@@ -108,6 +108,16 @@ a:not(.button-row):not(header a):not(footer a) {
 
 /* HEADER STUFF */
 
+header a.active {
+  color: var(--black);
+  text-decoration: underline;
+}
+
+.dark-mode header a.active {
+  color: var(--white);
+  text-decoration: underline;
+}
+
 header svg.logo path {
   fill: var(--black);
   transition: fill 500ms ease-out;
@@ -442,6 +452,30 @@ a {
   width: 320px;
 }
 
+.filter-select .filter-select span {
+  color: var(--black);
+}
+
+.filter-select {
+  border-bottom: 1px solid var(--black);
+}
+
+.filter-select svg path {
+  fill: var(--black);
+}
+
+.dark-mode .filter-select .dark-mode .filter-select span {
+  color: var(--lightGrey);
+}
+
+.dark-mode .filter-select svg path {
+  fill: var(--white);
+}
+
+.dark-mode .filter-select {
+  border-bottom: 1px solid var(--white);
+}
+
 .projects-page .filter-select {
   display: flex;
   align-items: center;
@@ -449,8 +483,6 @@ a {
   font-family: "founders";
   width: 100%;
   background: transparent;
-  border-bottom: 1px solid var(--white);
-  color: var(--lightGrey);
   text-transform: uppercase;
   font-style: normal;
   font-weight: 500;
