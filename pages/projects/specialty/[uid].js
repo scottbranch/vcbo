@@ -6,6 +6,7 @@ import { createClient } from "../../../prismicio"
 import { PrismicRichText } from "@prismicio/react"
 import { FilteredProject } from "../../../components/FilteredProject"
 import SelectDropdown from "../../../components/SelectDropdown"
+import { AdditionalProject } from "../../../components/AdditionalProject"
 
 // Fetch specialty content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -19,11 +20,16 @@ export async function getStaticProps({ params, previewData }) {
     fetchLinks: ["specialty.name", "sector.name"],
   })
 
+  const additionalProjects = await client.getAllByType("additional_project", {
+    fetchLinks: ["sector.name", "specialty.name"],
+  })
+
   return {
     props: {
       page,
       projects,
       dropdownItems,
+      additionalProjects,
     },
   }
 }
@@ -41,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export default function Sectors(props) {
-  const { page, projects, dropdownItems } = props
+  const { page, projects, dropdownItems, additionalProjects } = props
 
   const [projectResults, setProjectResults] = useState(projects.results)
 
@@ -51,6 +57,7 @@ export default function Sectors(props) {
     console.log({ page })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
+    document.body.classList.add("sector")
 
     const filteredProjects = projectResults.filter(
       (project) => project.data.specialty.uid === page.uid
@@ -58,7 +65,31 @@ export default function Sectors(props) {
 
     setProjectResults(filteredProjects)
 
-    console.log({ projectResults })
+    let scrollpos = window.scrollY
+    let additionalProjectsContainer = document.querySelector(
+      ".additional-project-container"
+    )
+    let pageWrapper = document.querySelector(".sector")
+
+    const add_class_on_scroll = () => pageWrapper.classList.remove("dark-mode")
+    const remove_class_on_scroll = () => pageWrapper.classList.add("dark-mode")
+
+    window.addEventListener("scroll", function () {
+      scrollpos = window.scrollY
+      if (document.body.classList.contains("sector")) {
+        if (
+          additionalProjectsContainer.getBoundingClientRect().y -
+            additionalProjectsContainer.offsetHeight * 4 <
+          0
+        ) {
+          add_class_on_scroll()
+        } else {
+          remove_class_on_scroll()
+        }
+      } else {
+        add_class_on_scroll()
+      }
+    })
   }, [])
 
   return (
@@ -102,6 +133,19 @@ export default function Sectors(props) {
                 url={project?.url}
               />
             </ScrollAnimate>
+          )
+        })}
+      </div>
+      <div className="additional-project-container">
+        {additionalProjects.map((item) => {
+          return (
+            <AdditionalProject
+              name={item?.data?.name[0]?.text}
+              location={item?.data?.location[0]?.text}
+              size={`${item?.data?.sq_ft[0]?.text} sq ft`}
+              client={item?.data?.client[0]?.text}
+              images={item?.data?.images}
+            />
           )
         })}
       </div>

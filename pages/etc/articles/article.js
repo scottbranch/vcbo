@@ -7,6 +7,7 @@ export default function Article() {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
       document.body.classList.remove("projects-page")
+      document.body.classList.remove("sector")
     }
   })
 

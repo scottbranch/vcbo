@@ -6,6 +6,112 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Additional Project documents */
+interface AdditionalProjectDocumentData {
+    /**
+     * Sector field in *Additional Project*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.sector
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    sector: prismicT.RelationField<"sector">;
+    /**
+     * Specialty field in *Additional Project*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.specialty
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    specialty: prismicT.RelationField<"specialty">;
+    /**
+     * Name field in *Additional Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.name
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Location field in *Additional Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.location
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    location: prismicT.RichTextField;
+    /**
+     * Sq Ft field in *Additional Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.sq_ft
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    sq_ft: prismicT.RichTextField;
+    /**
+     * Client field in *Additional Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.client
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    client: prismicT.RichTextField;
+    /**
+     * Images field in *Additional Project*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.images[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    images: prismicT.GroupField<Simplify<AdditionalProjectDocumentDataImagesItem>>;
+}
+/**
+ * Item in Additional Project → Images
+ *
+ */
+export interface AdditionalProjectDocumentDataImagesItem {
+    /**
+     * Image field in *Additional Project → Images*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: additional_project.images[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Additional Project document from Prismic
+ *
+ * - **API ID**: `additional_project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AdditionalProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AdditionalProjectDocumentData>, "additional_project", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -381,7 +487,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
+export type AllDocumentTypes = AdditionalProjectDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -465,6 +571,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

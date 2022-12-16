@@ -40,6 +40,7 @@ export default function Project(props) {
     console.log({ page })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
+    document.body.classList.remove("sector")
   })
 
   const settings = {
@@ -79,14 +80,14 @@ export default function Project(props) {
             </h3>
           </ScrollAnimate>
           <div className="max-w-lg mt-12">
-            <ScrollAnimate>
+            <ScrollAnimate className="project-text-blurb">
               <PrismicRichText field={pageData?.text_blurb[0]?.paragraph} />
             </ScrollAnimate>
           </div>
         </div>
       </div>
       <div className="grid grid-cols-4 mt-32 gap-x-8">
-        <div className="col-start-1 col-span-1">
+        <div className="col-start-1 col-span-1 detail-item">
           <ScrollAnimate>
             <p className="small-subhead">
               {page?.tags.map((tag, index, arr) => {
@@ -102,17 +103,17 @@ export default function Project(props) {
             </p>
           </ScrollAnimate>
         </div>
-        <div className="col-start-2 col-span-1">
+        <div className="col-start-2 col-span-1 detail-item">
           <ScrollAnimate>
             <p className="small-subhead">{pageData?.sq_ft[0]?.text} SQFT</p>
           </ScrollAnimate>
         </div>
-        <div className="col-start-3 col-span-1">
+        <div className="col-start-3 col-span-1 detail-item">
           <ScrollAnimate>
             <p className="small-subhead">{pageData?.client[0]?.text}</p>
           </ScrollAnimate>
         </div>
-        <div className="col-start-4 col-span-1">
+        <div className="col-start-4 col-span-1 detail-item">
           <ScrollAnimate>
             <p className="small-subhead">
               {pageData?.project_location[0]?.text}

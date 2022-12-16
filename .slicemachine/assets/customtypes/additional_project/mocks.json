@@ -1,0 +1,76 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "additional_project",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "sector": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "sector",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    },
+    "specialty": {
+      "id": "mock_document_id",
+      "link_type": "Document",
+      "type": "specialty",
+      "tags": [],
+      "lang": "en-us",
+      "slug": null,
+      "first_publication_date": "1970-01-01T00:00:01+0000",
+      "last_publication_date": "1970-01-01T01:00:00+0000"
+    },
+    "name": [
+      {
+        "type": "paragraph",
+        "text": "Aliqua aliqua adipisicing id. Ullamco esse anim sit ullamco in labore et commodo velit anim sit ad. Sunt aute occaecat ex velit esse veniam deserunt sunt dolore tempor Lorem sint eu sunt.",
+        "spans": []
+      }
+    ],
+    "location": [
+      {
+        "type": "paragraph",
+        "text": "Quis fugiat cupidatat cillum. Laboris incididunt exercitation culpa enim ea. Nostrud est adipisicing nisi sunt reprehenderit minim sint ex veniam amet ex.",
+        "spans": []
+      }
+    ],
+    "sq_ft": [
+      {
+        "type": "paragraph",
+        "text": "Exercitation exercitation sunt consectetur cillum ad irure ipsum minim sit amet magna nisi. Voluptate amet fugiat proident et ad. Adipisicing exercitation non sit nostrud velit ad qui minim fugiat tempor adipisicing enim enim aute.",
+        "spans": []
+      }
+    ],
+    "client": [
+      {
+        "type": "paragraph",
+        "text": "Ex aute adipisicing amet fugiat exercitation laboris tempor ex esse velit et officia est minim. Aute anim elit adipisicing Lorem sint labore enim voluptate ullamco dolore. Eu cupidatat consequat ut est dolor.",
+        "spans": []
+      }
+    ],
+    "images": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+        }
+      }
+    ]
+  }
+}

@@ -20,11 +20,16 @@ export async function getStaticProps({ params, previewData }) {
     fetchLinks: ["specialty.name"],
   })
 
+  const additionalProjects = await client.getAllByType("additional_project", {
+    fetchLinks: ["sector.name", "specialty.name"],
+  })
+
   return {
     props: {
       page,
       projects,
       dropdownItems,
+      additionalProjects,
     },
   }
 }
@@ -42,7 +47,7 @@ export async function getStaticPaths() {
 }
 
 export default function Sectors(props) {
-  const { page, projects, dropdownItems } = props
+  const { page, projects, dropdownItems, additionalProjects } = props
 
   const [projectResults, setProjectResults] = useState(projects.results)
   const [reducedProjects, setReducedProjects] = useState([])
@@ -50,9 +55,40 @@ export default function Sectors(props) {
   const pageData = page.data
 
   useEffect(() => {
-    console.log({ page })
-    document.body.classList.add("dark-mode")
-    document.body.classList.add("projects-page")
+    console.log({ additionalProjects })
+    if (process.browser) {
+      document.body.classList.add("sector")
+      document.body.classList.add("dark-mode")
+      // document.body.classList.remove("sector")
+
+      let scrollpos = window.scrollY
+      let additionalProjectsContainer = document.querySelector(
+        ".additional-project-container"
+      )
+      let pageWrapper = document.querySelector(".sector")
+
+      const add_class_on_scroll = () =>
+        pageWrapper.classList.remove("dark-mode")
+      const remove_class_on_scroll = () =>
+        pageWrapper.classList.add("dark-mode")
+
+      window.addEventListener("scroll", function () {
+        scrollpos = window.scrollY
+        if (document.body.classList.contains("sector")) {
+          if (
+            additionalProjectsContainer.getBoundingClientRect().y -
+              additionalProjectsContainer.offsetHeight * 4 <
+            0
+          ) {
+            add_class_on_scroll()
+          } else {
+            remove_class_on_scroll()
+          }
+        } else {
+          add_class_on_scroll()
+        }
+      })
+    }
 
     const filteredProjects = projectResults.filter(
       (project) => project.data.sector.uid === page.uid
@@ -70,6 +106,8 @@ export default function Sectors(props) {
       }, {})
     )
     setReducedProjects(reducedProjects)
+
+    console.log({ reducedProjects })
   }, [])
 
   return (
@@ -96,12 +134,14 @@ export default function Sectors(props) {
         <h3 className="mt-20 mb-20">{page?.data?.name[0]?.text}</h3>
       </ScrollAnimate>
       {reducedProjects.map((array) => {
+        console.log({ array })
         return (
           <div className="grid grid-cols-4 mt-10 gap-x-8">
-            <ScrollAnimate className="col-span-4 mb-2">
+            <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
               <h4>{array[0]?.data?.specialty?.data?.name[0]?.text}</h4>
+              <a href={array[0]?.data?.sector?.url}>View all</a>
             </ScrollAnimate>
-            {array.map((project) => {
+            {array.slice(0, 4).map((project, index) => {
               return (
                 <ScrollAnimate className="col-span-1">
                   <FilteredProject
@@ -120,14 +160,18 @@ export default function Sectors(props) {
           </div>
         )
       })}
-      <div className="additiona-project-container">
-        <AdditionalProject />
-        <AdditionalProject />
-        <AdditionalProject />
-        <AdditionalProject />
-        <AdditionalProject />
-        <AdditionalProject />
-        <AdditionalProject />
+      <div className="additional-project-container">
+        {additionalProjects.map((item) => {
+          return (
+            <AdditionalProject
+              name={item?.data?.name[0]?.text}
+              location={item?.data?.location[0]?.text}
+              size={`${item?.data?.sq_ft[0]?.text} sq ft`}
+              client={item?.data?.client[0]?.text}
+              images={item?.data?.images}
+            />
+          )
+        })}
       </div>
     </div>
   )

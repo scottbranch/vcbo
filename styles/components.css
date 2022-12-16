@@ -161,8 +161,8 @@ header.mobile-menu-active .mobile-overlay {
 }
 
 /* Additional Projects */
-.additiona-project-container {
-  margin-top: 100px;
+.additional-project-container {
+  margin-top: 150px;
 }
 
 .additional-project:hover {
@@ -176,7 +176,6 @@ header.mobile-menu-active .mobile-overlay {
 
 .additional-project-outer {
   height: 60px;
-  background: var(--white);
   position: relative;
   overflow: hidden;
   transition: height 500ms ease;
@@ -187,7 +186,6 @@ header.mobile-menu-active .mobile-overlay {
 }
 
 .additional-project {
-  background: var(--white);
   padding-top: 18px;
   margin-bottom: 20px;
 }
@@ -200,7 +198,7 @@ header.mobile-menu-active .mobile-overlay {
   font-weight: 500;
 }
 
-.additiona-project-container .icon {
+.additional-project-container .icon {
   color: var(--mediumGrey);
   position: absolute;
   right: 20px;
@@ -227,6 +225,7 @@ header.mobile-menu-active .mobile-overlay {
   background: black;
   z-index: 500;
   bottom: 0;
+  left: 0;
   transform: translateY(90vh);
   transition: transform 750ms ease;
 }
@@ -239,6 +238,23 @@ header.mobile-menu-active .mobile-overlay {
   width: auto;
 }
 
+.modal-container .swiper {
+  overflow: visible;
+}
+
+.modal-container .swiper-pagination {
+  top: -60px;
+  bottom: auto !important;
+}
+
+.modal-container .swiper-pagination-bullet {
+  background: var(--lightGrey);
+}
+
+.modal-container .swiper-pagination-bullet-active {
+  background: var(--white);
+}
+
 .modal-container h4 {
   font-family: "founders";
   font-weight: 500;
@@ -246,6 +262,7 @@ header.mobile-menu-active .mobile-overlay {
   line-height: 26px;
   text-decoration: underline;
   padding: 40px 20px;
+  color: var(--white);
 }
 
 .modal-header span {
@@ -253,6 +270,7 @@ header.mobile-menu-active .mobile-overlay {
   height: 20px;
   position: relative;
   padding-right: 70px;
+  z-index: 100;
 }
 
 .modal-header span:hover {

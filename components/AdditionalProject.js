@@ -3,11 +3,13 @@ import { Button } from "./Button"
 import Link from "next/link"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { FreeMode } from "swiper"
+import { FreeMode, Pagination, Scrollbar } from "swiper"
 import "swiper/css"
 import "swiper/css/free-mode"
+import "swiper/css/pagination"
 
 export const AdditionalProject = (props) => {
+  const { name, location, size, client, images } = props
   const [open, setOpen] = useState(false)
   const [modal, setModal] = useState("close")
 
@@ -41,10 +43,10 @@ export const AdditionalProject = (props) => {
           className="additional-project grid grid-cols-4 gap-6"
           onClick={toggleDrawer}
         >
-          <p className="name">Project Name</p>
-          <p>Location</p>
-          <p>100,000 SqFt</p>
-          <p>Name of Client</p>
+          <p className="name">{name}</p>
+          <p>{location}</p>
+          <p>{size}</p>
+          <p>{client}</p>
         </div>
         <span className="icon">{open ? "-" : "+"}</span>
         <Swiper
@@ -52,51 +54,15 @@ export const AdditionalProject = (props) => {
           slidesPerView={4}
           spaceBetween={20}
           freeMode={true}
+          scrollbar={{ draggable: true }}
           modules={FreeMode}
           onClick={() => triggerModal("open")}
         >
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="370"
-              height="306"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="370"
-              height="306"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="370"
-              height="306"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="370"
-              height="306"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="340"
-              height="306"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-              width="370"
-              height="306"
-            />
-          </SwiperSlide>
+          {images.map((item) => (
+            <SwiperSlide>
+              <img src={item.image.url} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       {modal === "open" ? (
@@ -107,7 +73,7 @@ export const AdditionalProject = (props) => {
           }`}
         >
           <div className="modal-header flex justify-between items-center">
-            <h4>Elementary</h4>
+            <h4>{name}</h4>
             <span onClick={() => triggerModal("close")}></span>
           </div>
           <Swiper
@@ -115,50 +81,15 @@ export const AdditionalProject = (props) => {
             slidesPerView="auto"
             spaceBetween={20}
             freeMode={true}
-            modules={FreeMode}
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            modules={[FreeMode, Pagination]}
           >
-            <SwiperSlide onClick={() => triggerModal("close")}>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src="https://images.prismic.io/vcbo/85356442-a41c-40c5-bc18-ff82f685e513_Utah-State-Capitol-Image-08.jpg?auto=compress,format"
-                width="1080"
-                height="740"
-              />
-            </SwiperSlide>
+            {images.map((item) => (
+              <SwiperSlide onClick={() => triggerModal("close")}>
+                <img src={item.image.url} width="1080" height="740" />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       ) : (

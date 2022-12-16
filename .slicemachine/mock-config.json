@@ -7,6 +7,12 @@
             "patternType": "HEADING",
             "blocks": 1
           }
+        },
+        "paragraph": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
         }
       },
       "headline": {
@@ -59,7 +65,15 @@
       }
     },
     "specialty": {},
-    "projects_page": {}
+    "projects_page": {},
+    "additional_project": {
+      "name": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices": {
     "Specialties": {
