@@ -49,9 +49,9 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  const [projectResults, setProjectResults] = useState(projects.results)
+  const [projectResults, setProjectResults] = useState(projects?.results)
 
-  const pageData = page.data
+  const pageData = page?.data
 
   useEffect(() => {
     console.log({ page })
@@ -100,7 +100,7 @@ export default function Sectors(props) {
             <h2>
               Projects
               <sup>
-                <small>{projectResults.length}</small>
+                <small>{projectResults?.length}</small>
               </sup>
             </h2>
           </ScrollAnimate>
@@ -115,11 +115,13 @@ export default function Sectors(props) {
       <ScrollAnimate>
         <h3 className="mt-20 mb-20">
           {page?.data?.name[0]?.text},{" "}
-          {projectResults[0]?.data?.sector?.data?.name[0]?.text}
+          {projectResults?.length > 0
+            ? projectResults[0]?.data?.sector?.data?.name[0]?.text
+            : ""}
         </h3>
       </ScrollAnimate>
       <div className="grid grid-cols-2 gap-4">
-        {projectResults.map((project) => {
+        {projectResults?.map((project) => {
           return (
             <ScrollAnimate>
               <FilteredProject
@@ -137,7 +139,7 @@ export default function Sectors(props) {
         })}
       </div>
       <div className="additional-project-container">
-        {additionalProjects.map((item) => {
+        {additionalProjects?.map((item) => {
           return (
             <AdditionalProject
               name={item?.data?.name[0]?.text}

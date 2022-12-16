@@ -49,10 +49,10 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  const [projectResults, setProjectResults] = useState(projects.results)
+  const [projectResults, setProjectResults] = useState(projects?.results)
   const [reducedProjects, setReducedProjects] = useState([])
 
-  const pageData = page.data
+  const pageData = page?.data
 
   useEffect(() => {
     console.log({ additionalProjects })
@@ -94,8 +94,6 @@ export default function Sectors(props) {
       (project) => project.data.sector.uid === page.uid
     )
 
-    setProjectResults(filteredProjects)
-
     console.log({ projectResults })
 
     let reducedProjects = Object.values(
@@ -106,8 +104,6 @@ export default function Sectors(props) {
       }, {})
     )
     setReducedProjects(reducedProjects)
-
-    console.log({ reducedProjects })
   }, [])
 
   return (
@@ -118,7 +114,7 @@ export default function Sectors(props) {
             <h2>
               Projects
               <sup>
-                <small>{projectResults.length}</small>
+                <small>{projectResults?.length}</small>
               </sup>
             </h2>
           </ScrollAnimate>
@@ -133,15 +129,15 @@ export default function Sectors(props) {
       <ScrollAnimate>
         <h3 className="mt-20 mb-20">{page?.data?.name[0]?.text}</h3>
       </ScrollAnimate>
-      {reducedProjects.map((array) => {
+      {reducedProjects?.map((array) => {
         console.log({ array })
         return (
           <div className="grid grid-cols-4 mt-10 gap-x-8">
             <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
               <h4>{array[0]?.data?.specialty?.data?.name[0]?.text}</h4>
-              <a href={array[0]?.data?.sector?.url}>View all</a>
+              <a href={array[0]?.data?.specialty?.url}>View all</a>
             </ScrollAnimate>
-            {array.slice(0, 4).map((project, index) => {
+            {array.slice(0, 4)?.map((project, index) => {
               return (
                 <ScrollAnimate className="col-span-1">
                   <FilteredProject
@@ -161,7 +157,7 @@ export default function Sectors(props) {
         )
       })}
       <div className="additional-project-container">
-        {additionalProjects.map((item) => {
+        {additionalProjects?.map((item) => {
           return (
             <AdditionalProject
               name={item?.data?.name[0]?.text}

@@ -58,7 +58,7 @@ export const AdditionalProject = (props) => {
           modules={FreeMode}
           onClick={() => triggerModal("open")}
         >
-          {images.map((item) => (
+          {images?.map((item) => (
             <SwiperSlide>
               <img src={item.image.url} />
             </SwiperSlide>
@@ -85,7 +85,7 @@ export const AdditionalProject = (props) => {
             scrollbar={{ draggable: true }}
             modules={[FreeMode, Pagination]}
           >
-            {images.map((item) => (
+            {images?.map((item) => (
               <SwiperSlide onClick={() => triggerModal("close")}>
                 <img src={item.image.url} width="1080" height="740" />
               </SwiperSlide>

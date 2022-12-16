@@ -34,7 +34,7 @@ export async function getStaticPaths() {
 export default function Project(props) {
   const { page } = props
 
-  const pageData = page.data
+  const pageData = page?.data
 
   useEffect(() => {
     console.log({ page })
@@ -67,7 +67,7 @@ export default function Project(props) {
           <ScrollAnimate>
             <img
               className="block w-full mt-24"
-              src={pageData?.hero_image.url}
+              src={pageData?.hero_image?.url}
             />
           </ScrollAnimate>
         </div>
@@ -90,7 +90,7 @@ export default function Project(props) {
         <div className="col-start-1 col-span-1 detail-item">
           <ScrollAnimate>
             <p className="small-subhead">
-              {page?.tags.map((tag, index, arr) => {
+              {page?.tags?.map((tag, index, arr) => {
                 const returnComma = arr.length - 1 === index ? "" : ","
                 return (
                   <>
@@ -122,7 +122,7 @@ export default function Project(props) {
         </div>
         <div className="col-start-2 col-span-3 mt-32">
           <ScrollAnimate>
-            <img className="w-full" src={pageData?.content_image_1.url} />
+            <img className="w-full" src={pageData?.content_image_1?.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-3 col-span-2 mt-4">
@@ -136,7 +136,7 @@ export default function Project(props) {
         </div>
         <div className="col-start-1 col-span-4 mt-40">
           <ScrollAnimate>
-            <img className="w-full" src={pageData?.hero_image_2.url} />
+            <img className="w-full" src={pageData?.hero_image_2?.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-3 mt-40">
@@ -148,12 +148,12 @@ export default function Project(props) {
         </div>
         <div className="col-start-3 col-span-2 mt-40">
           <ScrollAnimate>
-            <img className="w-full" src={pageData?.content_image_2.url} />
+            <img className="w-full" src={pageData?.content_image_2?.url} />
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-2 mt-8">
           <ScrollAnimate>
-            <img className="w-full mb-8" src={pageData?.content_image_3.url} />
+            <img className="w-full mb-8" src={pageData?.content_image_3?.url} />
           </ScrollAnimate>
           <ScrollAnimate className="concluding-statement">
             <PrismicRichText field={pageData?.concluding_statement} />
