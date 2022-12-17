@@ -1,3 +1,6 @@
+.button-row.dark {
+  color: var(--white);
+}
 .button-row {
   font-family: "founders";
   font-weight: 500;

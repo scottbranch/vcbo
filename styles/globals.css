@@ -153,7 +153,17 @@ header a.active {
   text-decoration: underline;
 }
 
+header a:hover {
+  color: var(--black);
+  text-decoration: underline;
+}
+
 .dark-mode header a.active {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+header a:hover {
   color: var(--white);
   text-decoration: underline;
 }
@@ -446,6 +456,27 @@ a {
 /* Services Page Ends */
 
 /* Projects Page Begins */
+.breadcrumb svg {
+  position: relative;
+  top: 5px;
+}
+
+.projects-page .breadcrumb .breadcrumb-sector {
+  color: var(--mediumGrey);
+}
+
+.projects-page .breadcrumb .breadcrumb-sector:hover {
+  color: var(--white);
+}
+
+.breadcrumb p {
+  color: var(--white);
+}
+
+.breadcrumb span {
+  margin: 0 10px;
+}
+
 .projects-page {
   transition: background-color 500ms ease-out;
 }
@@ -725,4 +756,21 @@ a {
 
 .concluding-statement a {
   text-decoration: underline;
+}
+
+.pagination a.prev svg {
+  transform: rotate(180deg);
+}
+
+.pagination .button-row > div {
+  width: 90%;
+}
+
+.pagination .button-row > div > span.first,
+.pagination .button-row > div > span.last {
+  width: 100%;
+}
+
+.pagination p {
+  color: var(--lightGrey);
 }

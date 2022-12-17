@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import ScrollAnimate from "../../components/ScrollAnimate"
 import { Button } from "../../components/Button"
 import * as prismicH from "@prismicio/helpers"
@@ -7,15 +7,21 @@ import { PrismicRichText } from "@prismicio/react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { BackArrow } from "../../components/BackArrow"
 
 // Fetch project content from prismic
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
-  const page = await client.getByUID("project", params.uid)
+  const page = await client.getByUID("project", params.uid, {
+    fetchLinks: ["sector.name"],
+  })
+  const projects = await client.getAllByType("project", {
+    fetchLinks: ["sector.name"],
+  })
 
   return {
-    props: { page },
+    props: { page, projects },
   }
 }
 
@@ -32,7 +38,11 @@ export async function getStaticPaths() {
 }
 
 export default function Project(props) {
-  const { page } = props
+  const { page, projects } = props
+  const [filteredProjects, setFilteredProjects] = useState()
+  const [projectIndex, setProjectIndex] = useState()
+  const [previousProject, setPreviousProject] = useState()
+  const [nextProject, setNextProject] = useState()
 
   const pageData = page?.data
 
@@ -42,7 +52,20 @@ export default function Project(props) {
       document.body.classList.add("projects-page")
       document.body.classList.remove("sector")
     }
-  }, [])
+
+    const currentSector = pageData?.sector?.data?.name[0]?.text
+    const filteredProjects = projects.filter(
+      (project) => project?.data?.sector?.data?.name[0]?.text === currentSector
+    )
+
+    setFilteredProjects(filteredProjects)
+
+    setProjectIndex(
+      filteredProjects?.findIndex((project) => project.uid === page?.uid)
+    )
+    setPreviousProject(filteredProjects[projectIndex - 1])
+    setNextProject(filteredProjects[projectIndex + 1])
+  }, [projectIndex, nextProject, previousProject])
 
   const settings = {
     className: "project-carousel",
@@ -58,10 +81,18 @@ export default function Project(props) {
 
   return (
     <div className="container mx-auto projects-page">
-      <div className="grid grid-cols-4 mt-40 gap-x-8">
-        <div className="col-start-1 col-span-3">
+      <div className="grid grid-cols-4 mt-20 gap-x-8">
+        <div className="breadcrumb flex col-span-4">
+          <BackArrow className="mr-2" />
+          <a href={pageData?.sector?.url} className="breadcrumb-sector">
+            {pageData?.sector?.data?.name[0]?.text}
+            <span>|</span>
+          </a>
+          <p>{pageData?.name[0]?.text}</p>
+        </div>
+        <div className="col-start-1 col-span-3 mt-20">
           <ScrollAnimate>
-            <h1>{pageData?.headline[0]?.text}</h1>
+            <h1>{pageData?.headline[0]?.text} Test Title</h1>
           </ScrollAnimate>
         </div>
         <div className="col-start-1 col-span-4">
@@ -159,6 +190,28 @@ export default function Project(props) {
           <ScrollAnimate className="concluding-statement">
             <PrismicRichText field={pageData?.concluding_statement} />
           </ScrollAnimate>
+        </div>
+        <div className="col-span-2"></div>
+        <div className="col-span-1 col-start-4 pagination grid-cols-2 grid mt-40">
+          <p className="col-span-2">Projects:</p>
+          <p className="col-span-2 large mb-5">
+            {pageData?.sector?.data?.name[0]?.text}
+          </p>
+          {previousProject !== undefined ? (
+            <Button
+              link={previousProject?.url}
+              text="prev"
+              theme="dark"
+              className="prev"
+            />
+          ) : (
+            ""
+          )}
+          {nextProject !== undefined ? (
+            <Button link={nextProject?.url} text="next" theme="dark" />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
