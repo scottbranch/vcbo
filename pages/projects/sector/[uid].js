@@ -51,6 +51,9 @@ export default function Sectors(props) {
 
   const [projectResults, setProjectResults] = useState(projects?.results)
   const [reducedProjects, setReducedProjects] = useState([])
+  const [filteredProjects, setFilteredProjects] = useState([])
+  const [specialtyData, setSpecialtyData] = useState()
+  const [sliceValue, setSliceValue] = useState()
 
   const pageData = page?.data
 
@@ -93,7 +96,7 @@ export default function Sectors(props) {
       (project) => project.data.sector.uid === page.uid
     )
 
-    console.log({ projectResults })
+    setFilteredProjects(filteredProjects)
 
     let reducedProjects = Object.values(
       filteredProjects.reduce((acc, current) => {
@@ -103,6 +106,10 @@ export default function Sectors(props) {
       }, {})
     )
     setReducedProjects(reducedProjects)
+
+    setSpecialtyData(reducedProjects[0][0]?.data?.specialty?.data)
+
+    setSliceValue(specialtyData !== undefined ? "0,4" : "0")
   }, [])
 
   return (
@@ -113,7 +120,7 @@ export default function Sectors(props) {
             <h2>
               Projects
               <sup>
-                <small>{projectResults?.length}</small>
+                <small>{filteredProjects?.length}</small>
               </sup>
             </h2>
           </ScrollAnimate>
@@ -129,17 +136,26 @@ export default function Sectors(props) {
         <h3 className="mt-20 mb-20">{page?.data?.name[0]?.text}</h3>
       </ScrollAnimate>
       {reducedProjects?.map((array) => {
-        console.log({ array })
         return (
-          <div className="grid grid-cols-4 mt-10 gap-x-8">
-            <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
-              <h4>{array[0]?.data?.specialty?.data?.name[0]?.text}</h4>
-              <a href={array[0]?.data?.specialty?.url}>View all</a>
-            </ScrollAnimate>
-            {array.slice(0, 4)?.map((project, index) => {
+          <div
+            className={`grid grid-cols-${
+              specialtyData !== undefined ? "4" : "2"
+            } mt-10 gap-x-8`}
+          >
+            {specialtyData !== undefined ? (
+              <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
+                <h4>{array[0]?.data?.specialty?.data?.name[0]?.text}</h4>
+                <a href={array[0]?.data?.specialty?.url}>View all</a>
+              </ScrollAnimate>
+            ) : (
+              ""
+            )}
+
+            {array.slice(sliceValue)?.map((project, index) => {
               return (
                 <ScrollAnimate className="col-span-1">
                   <FilteredProject
+                    className={`${specialtyData !== undefined ? "" : "mb-5"}`}
                     title={project?.data?.name[0]?.text}
                     specialty={project?.data?.specialty?.data?.name[0]?.text}
                     image={
