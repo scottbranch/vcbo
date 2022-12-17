@@ -2,8 +2,6 @@ import ScrollAnimate from "../../components/ScrollAnimate"
 import { Button } from "../../components/Button"
 import { useEffect, useState } from "react"
 import { Project } from "../../components/Project"
-import { DownArrow } from "../../components/DownArrow"
-import Link from "next/link"
 import { createClient } from "../../prismicio"
 import SelectDropdown from "../../components/SelectDropdown"
 
@@ -30,8 +28,11 @@ export default function Projects(props) {
   const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
-    document.body.classList.add("dark-mode")
-    document.body.classList.add("projects-page")
+    if (process.browser) {
+      document.body.classList.add("dark-mode")
+      document.body.classList.add("projects-page")
+      document.body.classList.remove("sector")
+    }
   }, [])
   return (
     <div className="container mx-auto projects-page">
@@ -71,25 +72,27 @@ export default function Projects(props) {
           const projectSector = project.project
 
           const sectorInfo = sectors.find(
-            (item) => item.uid === projectSector.data.sector.uid
+            (item) => item.uid === projectSector?.data?.sector?.uid
           )
 
-          return (
-            <ScrollAnimate>
-              <Project
-                theme={theme}
-                image={
-                  project?.project?.data?.hero_image?.url === undefined
-                    ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
-                    : project?.project?.data?.hero_image?.url
-                }
-                sector={sectorInfo?.data?.name[0]?.text}
-                blurb={sectorInfo?.data?.description[0]?.text}
-                sectorLink={project?.project?.data?.sector?.url}
-                projectLink={project?.project?.data?.sector?.url}
-              />
-            </ScrollAnimate>
-          )
+          if (project?.project?.data !== undefined) {
+            return (
+              <ScrollAnimate>
+                <Project
+                  theme={theme}
+                  image={
+                    project?.project?.data?.hero_image?.url === undefined
+                      ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                      : project?.project?.data?.hero_image?.url
+                  }
+                  sector={sectorInfo?.data?.name[0]?.text}
+                  blurb={sectorInfo?.data?.description[0]?.text}
+                  sectorLink={project?.project?.data?.sector?.url}
+                  projectLink={project?.project?.data?.sector?.url}
+                />
+              </ScrollAnimate>
+            )
+          }
         })}
       </div>
     </div>

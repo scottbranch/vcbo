@@ -37,11 +37,12 @@ export default function Project(props) {
   const pageData = page?.data
 
   useEffect(() => {
-    console.log({ page })
-    document.body.classList.add("dark-mode")
-    document.body.classList.add("projects-page")
-    document.body.classList.remove("sector")
-  })
+    if (process.browser) {
+      document.body.classList.add("dark-mode")
+      document.body.classList.add("projects-page")
+      document.body.classList.remove("sector")
+    }
+  }, [])
 
   const settings = {
     className: "project-carousel",

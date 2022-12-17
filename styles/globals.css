@@ -65,7 +65,8 @@
 
 .homepage.dark-mode,
 .sector.dark-mode,
-.projects-page.dark-mode {
+.projects-page.dark-mode,
+.projects-page {
   background-color: var(--black);
   transition: background-color 500ms ease-out;
 }
@@ -405,6 +406,33 @@ a {
   margin-bottom: 15px;
 }
 
+/* theres a bug with dark mode so had to do this manually idk why FML */
+.projects-page h1,
+.projects-page h2,
+.projects-page h3,
+.projects-page h4,
+.projects-page h5,
+.projects-page h6,
+.projects-page p,
+.projects-page button,
+.projects-page a:not(.button-row):not(header a) {
+  color: var(--white);
+  transition: color 500ms ease-out;
+}
+
+.projects-page svg.logo path {
+  fill: var(--white);
+  transition: color 500ms ease-out;
+}
+
+.projects-page .filter-select {
+  border-bottom: 1px solid var(--white);
+}
+
+.projects-page .filter-select svg path {
+  fill: var(--white);
+}
+
 /* .projects-page h1,
 .projects-page h2,
 .projects-page h3,
@@ -439,10 +467,16 @@ a {
 }
 
 @media screen and (min-width: 769px) {
-  .projects-page sup {
+  .projects-page sup,
+  .sector-page sup {
     font-size: 20px;
     top: -2em;
   }
+}
+
+.projects-page header a.active {
+  color: var(--white);
+  text-decoration: underline;
 }
 
 .filter-container {
@@ -476,7 +510,8 @@ a {
   border-bottom: 1px solid var(--white);
 }
 
-.projects-page .filter-select {
+.projects-page .filter-select,
+.sector-page .filter-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -571,6 +606,15 @@ a {
 }
 
 /* Projects Page Ends */
+
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  margin-bottom: 20px;
+}
 
 .article .body-large {
   font-weight: 500;

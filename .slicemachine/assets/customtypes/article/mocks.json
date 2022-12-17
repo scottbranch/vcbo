@@ -1,0 +1,38 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "article",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Stream",
+        "spans": []
+      }
+    ],
+    "hero_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.prismic.com"
+    },
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Laborum voluptate irure magna eiusmod nisi amet anim. Ex cillum nostrud labore deserunt eu ex officia enim labore deserunt do consectetur incididunt velit officia. Cupidatat mollit laboris dolor tempor pariatur sunt eu labore magna in nulla aute mollit ad esse.",
+        "spans": []
+      }
+    ]
+  }
+}

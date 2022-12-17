@@ -112,6 +112,52 @@ export interface AdditionalProjectDocumentDataImagesItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type AdditionalProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AdditionalProjectDocumentData>, "additional_project", Lang>;
+/** Content for Article documents */
+interface ArticleDocumentData {
+    /**
+     * Title field in *Article*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Hero Image field in *Article*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.hero_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    hero_image: prismicT.ImageField<never>;
+    /**
+     * Content field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.content
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    content: prismicT.RichTextField;
+}
+/**
+ * Article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArticleDocumentData>, "article", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -487,7 +533,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AdditionalProjectDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
+export type AllDocumentTypes = AdditionalProjectDocument | ArticleDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -571,6 +617,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

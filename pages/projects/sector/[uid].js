@@ -106,7 +106,7 @@ export default function Sectors(props) {
   }, [])
 
   return (
-    <div className="container mx-auto projects-page">
+    <div className="container mx-auto sector-page">
       <div className="grid grid-cols-4 mt-40 gap-x-8">
         <div className="col-start-1 col-span-4 md:col-span-2">
           <ScrollAnimate>

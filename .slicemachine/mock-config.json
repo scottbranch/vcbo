@@ -73,6 +73,23 @@
           "blocks": 1
         }
       }
+    },
+    "article": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "content": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "hero_image": {
+        "content": "https://images.prismic.com"
+      }
     }
   },
   "slices": {
