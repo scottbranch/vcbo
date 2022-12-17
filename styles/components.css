@@ -145,7 +145,12 @@ header a {
 header .mobile-overlay {
   opacity: 0;
   visibility: hidden;
-  transition: 400ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  header .mobile-overlay {
+    transition: 400ms ease;
+  }
 }
 
 header.mobile-menu-active .mobile-overlay {
