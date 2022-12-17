@@ -57,6 +57,45 @@
   --red: #c82814;
 }
 
+.line-container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100vh;
+}
+
+.dark-mode .line-container div {
+  background-color: var(--mediumGrey);
+}
+
+.line-container div {
+  width: 1px;
+  height: 100%;
+  background-color: var(--lightGrey);
+  position: absolute;
+  transform: scaleY(0);
+  transition: transform 1s ease;
+  transform-origin: top;
+}
+
+.line-container.active div {
+  transform: scaleY(1);
+  transition-delay: 1s;
+}
+
+.line-container div:nth-of-type(1) {
+  left: 25%;
+}
+
+.line-container div:nth-of-type(2) {
+  left: 50%;
+}
+
+.line-container div:nth-of-type(3) {
+  left: 75%;
+}
+
 .homepage,
 .sector {
   background-color: var(--white);
@@ -218,7 +257,7 @@ button.overlay-close {
 }
 
 .label-container > div {
-  width: 24%;
+  width: 25%;
   text-align: left;
 }
 
@@ -227,7 +266,7 @@ button.overlay-close {
 }
 
 .slider-outer {
-  max-width: 1450px;
+  max-width: 1540px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -246,6 +285,16 @@ button.overlay-close {
   width: 20px;
   height: 100%;
   background: #f0eeee;
+  right: 5px;
+  position: relative;
+}
+
+.pillar-container div:nth-of-type(2) {
+  right: 10px;
+}
+
+.pillar-container div:nth-of-type(3) {
+  right: 15px;
 }
 
 .dark-mode .pillar-container div {
@@ -253,7 +302,6 @@ button.overlay-close {
 }
 
 .homepage-carousel {
-  max-width: 1450px;
   width: 100%;
   margin: 0 auto;
 }
@@ -400,6 +448,25 @@ a {
 /* Projects Page Begins */
 .projects-page {
   transition: background-color 500ms ease-out;
+}
+
+.project-text-blurb ul {
+  color: var(--white);
+  list-style: disc;
+  margin-bottom: 20px;
+}
+
+.project-text-blurb li {
+  margin-left: 30px;
+}
+
+.project-text-blurb h1,
+.project-text-blurb h2,
+.project-text-blurb h3,
+.project-text-blurb h4,
+.project-text-blurb h5,
+.project-text-blurb h6 {
+  margin-bottom: 10px;
 }
 
 .projects-page .project-text-blurb p {

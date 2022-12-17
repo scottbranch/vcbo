@@ -12,7 +12,9 @@ export const Header = (props) => {
 
   return (
     <header
-      className={`container mx-auto ${menuOpen ? "mobile-menu-active" : ""}`}
+      className={`container mx-auto relative z-10 ${
+        menuOpen ? "mobile-menu-active" : ""
+      }`}
     >
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
         <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
