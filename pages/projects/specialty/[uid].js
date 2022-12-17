@@ -7,6 +7,7 @@ import { PrismicRichText } from "@prismicio/react"
 import { FilteredProject } from "../../../components/FilteredProject"
 import SelectDropdown from "../../../components/SelectDropdown"
 import { AdditionalProject } from "../../../components/AdditionalProject"
+import { Lines } from "../../../components/Lines"
 
 // Fetch specialty content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -50,11 +51,11 @@ export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
   const [projectResults, setProjectResults] = useState(projects?.results)
+  const [loaded, setLoaded] = useState(false)
 
   const pageData = page?.data
 
   useEffect(() => {
-    console.log({ page })
     document.body.classList.add("dark-mode")
     document.body.classList.add("projects-page")
     document.body.classList.add("sector")
@@ -90,67 +91,72 @@ export default function Sectors(props) {
         add_class_on_scroll()
       }
     })
+
+    setLoaded(true)
   }, [])
 
   return (
-    <div className="container mx-auto projects-page">
-      <div className="grid grid-cols-2 mt-40 gap-x-8">
-        <div className="col-start-1 col-span-4 md:col-span-2">
-          <ScrollAnimate>
-            <h2>
-              Projects
-              <sup>
-                <small>{projectResults?.length}</small>
-              </sup>
-            </h2>
-          </ScrollAnimate>
-        </div>
-        <div className="flex items-center col-start-1 md:col-start-4 col-span-8 gap-4">
-          <SelectDropdown
-            items={dropdownItems}
-            defaultText={page?.data?.name[0]?.text}
-          />
-        </div>
-      </div>
-      <ScrollAnimate>
-        <h3 className="mt-20 mb-20">
-          {page?.data?.name[0]?.text},{" "}
-          {projectResults?.length > 0
-            ? projectResults[0]?.data?.sector?.data?.name[0]?.text
-            : ""}
-        </h3>
-      </ScrollAnimate>
-      <div className="grid grid-cols-2 gap-4">
-        {projectResults?.map((project) => {
-          return (
+    <>
+      <Lines loaded={loaded} />
+      <div className="container mx-auto projects-page">
+        <div className="grid grid-cols-2 mt-40 gap-x-8">
+          <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate>
-              <FilteredProject
-                title={project?.data?.name[0]?.text}
-                specialty={project?.data?.specialty?.data?.name[0]?.text}
-                image={
-                  project?.data?.hero_image?.url === undefined
-                    ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
-                    : project?.data?.hero_image?.url
-                }
-                url={project?.url}
-              />
+              <h2>
+                Projects
+                <sup>
+                  <small>{projectResults?.length}</small>
+                </sup>
+              </h2>
             </ScrollAnimate>
-          )
-        })}
-      </div>
-      <div className="additional-project-container">
-        {additionalProjects?.map((item) => {
-          return (
-            <AdditionalProject
-              name={item?.data?.name[0]?.text}
-              location={item?.data?.location[0]?.text}
-              size={`${item?.data?.sq_ft[0]?.text} sq ft`}
-              client={item?.data?.client[0]?.text}
-              images={item?.data?.images}
+          </div>
+          <div className="flex items-center col-start-1 md:col-start-4 col-span-8 gap-4">
+            <SelectDropdown
+              items={dropdownItems}
+              defaultText={page?.data?.name[0]?.text}
             />
-          )
-        })}
+          </div>
+        </div>
+        <ScrollAnimate>
+          <h3 className="mt-20 mb-20">
+            {page?.data?.name[0]?.text},{" "}
+            {projectResults?.length > 0
+              ? projectResults[0]?.data?.sector?.data?.name[0]?.text
+              : ""}
+          </h3>
+        </ScrollAnimate>
+        <div className="grid grid-cols-2 gap-4">
+          {projectResults?.map((project) => {
+            return (
+              <ScrollAnimate>
+                <FilteredProject
+                  title={project?.data?.name[0]?.text}
+                  specialty={project?.data?.specialty?.data?.name[0]?.text}
+                  image={
+                    project?.data?.hero_image?.url === undefined
+                      ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                      : project?.data?.hero_image?.url
+                  }
+                  url={project?.url}
+                />
+              </ScrollAnimate>
+            )
+          })}
+        </div>
+        <div className="additional-project-container">
+          {additionalProjects?.map((item) => {
+            return (
+              <AdditionalProject
+                name={item?.data?.name[0]?.text}
+                location={item?.data?.location[0]?.text}
+                size={`${item?.data?.sq_ft[0]?.text} sq ft`}
+                client={item?.data?.client[0]?.text}
+                images={item?.data?.images}
+              />
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

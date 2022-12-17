@@ -1,9 +1,10 @@
-const Lines = () => {
+export const Lines = (props) => {
+  const { loaded } = props
   return (
-    <div className="lines grid-cols-4">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div className={`line-container container z-0 ${loaded ? "active" : ""}`}>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { Button } from "../components/Button"
 import ScrollAnimate from "../components/ScrollAnimate"
 import { useState, useEffect } from "react"
 import { createClient } from "../prismicio"
+import { Lines } from "../components/Lines"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -66,16 +67,12 @@ export default function Home({ page }) {
 
   return (
     <>
-      <div className={`line-container container z-0 ${loaded ? "active" : ""}`}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <Lines loaded={loaded} />
       <div className="container mx-auto z-10 relative">
         <div className="grid grid-cols-14 md:grid-cols-8">
           <div className="col-span-6">
             <ScrollAnimate>
-              <h1 className="ml-2 md:ml-14 md:mb-10 md:mt-40 mt-20">
+              <h1 className="ml-2 md:ml-5 md:mb-10 md:mt-40 mt-20">
                 IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
               </h1>
             </ScrollAnimate>

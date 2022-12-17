@@ -1,7 +1,8 @@
 import ScrollAnimate from "../../../components/ScrollAnimate"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { createClient } from "../../../prismicio"
 import { Article } from "../../../components/Article"
+import { Lines } from "../../../components/Lines"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -15,6 +16,8 @@ export async function getStaticProps({ previewData }) {
 export default function Articles(props) {
   const { articles } = props
 
+  const [loaded, setLoaded] = useState(false)
+
   useEffect(() => {
     console.log({ articles })
     if (process.browser) {
@@ -23,15 +26,19 @@ export default function Articles(props) {
       document.body.classList.remove("projects-page")
       document.body.classList.remove("sector")
     }
-  })
+
+    setLoaded(true)
+  }, [])
 
   return (
-    <div className="container mx-auto mt-40 articles">
-      <div className="grid grid-cols-4">
-        <ScrollAnimate>
-          <h2>ETC.</h2>
-        </ScrollAnimate>
-        {/* <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
+    <>
+      <Lines loaded={loaded} />
+      <div className="container mx-auto mt-40 articles">
+        <div className="grid grid-cols-4">
+          <ScrollAnimate>
+            <h2>ETC.</h2>
+          </ScrollAnimate>
+          {/* <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
           <h4>
             Culture <sup>5</sup>
           </h4>
@@ -57,23 +64,24 @@ export default function Articles(props) {
             Another Tag <sup>20</sup>
           </h4>
         </ScrollAnimate> */}
-      </div>
-      <div className="masonry sm:masonry-sm md:masonry-md mt-40">
-        {articles?.map((article) => {
-          const date = new Date(article?.first_publication_date)
+        </div>
+        <div className="masonry sm:masonry-sm md:masonry-md mt-40">
+          {articles?.map((article) => {
+            const date = new Date(article?.first_publication_date)
 
-          return (
-            <ScrollAnimate className="break-inside mb-16">
-              <Article
-                image={article?.data?.hero_image?.url}
-                title={article?.data?.title[0]?.text}
-                date={`${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`}
-                link={`/etc/articles/${article?.uid}`}
-              />
-            </ScrollAnimate>
-          )
-        })}
+            return (
+              <ScrollAnimate className="break-inside mb-16">
+                <Article
+                  image={article?.data?.hero_image?.url}
+                  title={article?.data?.title[0]?.text}
+                  date={`${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`}
+                  link={`/etc/articles/${article?.uid}`}
+                />
+              </ScrollAnimate>
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

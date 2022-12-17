@@ -105,7 +105,7 @@
 .homepage.dark-mode,
 .sector.dark-mode,
 .projects-page.dark-mode,
-.projects-page {
+.single-project {
   background-color: var(--black);
   transition: background-color 500ms ease-out;
 }
@@ -147,6 +147,10 @@ a:not(.button-row):not(header a):not(footer a) {
 }
 
 /* HEADER STUFF */
+
+header a {
+  transition: 250ms ease;
+}
 
 header a.active {
   color: var(--black);
@@ -418,6 +422,7 @@ a {
   right: 0;
   white-space: nowrap;
   z-index: 1;
+  line-height: 66px;
 }
 
 .services-page .hero-section p {
@@ -573,6 +578,11 @@ a {
 }
 
 .projects-page header a.active {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.projects-page header a:hover {
   color: var(--white);
   text-decoration: underline;
 }
