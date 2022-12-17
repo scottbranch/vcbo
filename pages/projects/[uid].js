@@ -193,10 +193,16 @@ export default function Project(props) {
         </div>
         <div className="col-span-2"></div>
         <div className="col-span-1 col-start-4 pagination grid-cols-2 grid mt-40">
-          <p className="col-span-2">Projects:</p>
-          <p className="col-span-2 large mb-5">
-            {pageData?.sector?.data?.name[0]?.text}
-          </p>
+          {nextProject === undefined && previousProject === undefined ? (
+            ""
+          ) : (
+            <>
+              <p className="col-span-2">Projects:</p>
+              <p className="col-span-2 large mb-5">
+                {pageData?.sector?.data?.name[0]?.text}
+              </p>
+            </>
+          )}
           {previousProject !== undefined ? (
             <Button
               link={previousProject?.url}

@@ -76,13 +76,79 @@ span.last > span {
 }
 
 /* dark button */
-.button-row.dark > div > span.last {
+.button-row.dark > div > span.last,
+.dark-mode .button-row.back-to-top > div > span.last,
+.projects-page .button-row.back-to-top > div > span.last {
   background: #0a0707;
 }
 
-.button-row.dark > div > span.first {
+.button-row.dark > div > span.first,
+.dark-mode .button-row.back-to-top > div > span.first,
+.projects-page .button-row.back-to-top > div > span.first {
   background: #f0eeee;
   color: #0a0707;
+}
+
+.dark-mode .button-row.back-to-top > div > span.last svg path:nth-of-type(1),
+.projects-page
+  .button-row.back-to-top
+  > div
+  > span.last
+  svg
+  path:nth-of-type(1) {
+  stroke: var(--white);
+}
+
+.dark-mode .button-row.back-to-top > div > span.last svg path:nth-of-type(2),
+.projects-page
+  .button-row.back-to-top
+  > div
+  > span.last
+  svg
+  path:nth-of-type(2) {
+  fill: var(--white);
+}
+
+.dark-mode .button-row.back-to-top > div > span.first svg path:nth-of-type(1),
+.projects-page
+  .button-row.back-to-top
+  > div
+  > span.first
+  svg
+  path:nth-of-type(1) {
+  stroke: var(--black);
+}
+
+.dark-mode .button-row.back-to-top > div > span.first svg path:nth-of-type(2),
+.projects-page
+  .button-row.back-to-top
+  > div
+  > span.first
+  svg
+  path:nth-of-type(2) {
+  fill: var(--black);
+}
+
+.dark-mode .back-to-top,
+.projects-page .back-to-top {
+  color: var(--white);
+}
+
+.back-to-top {
+  max-width: 130px;
+}
+
+.back-to-top > div > span.first,
+.back-to-top > div > span.last {
+  width: 100%;
+}
+
+.back-to-top svg {
+  transform: rotate(-90deg);
+}
+
+.back-to-top:hover {
+  cursor: pointer;
 }
 
 /* Footer Begins */

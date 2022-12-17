@@ -1,11 +1,12 @@
 import { Arrow } from "./Arrow"
 
 export const Button = (props) => {
-  const { className, link, text, theme } = props
+  const { className, link, text, theme, onClick } = props
   return (
     <a
       href={link}
       className={`button-row ${theme === "dark" ? "dark" : ""} ${className}`}
+      onClick={onClick}
     >
       <div>
         <span className="first">
