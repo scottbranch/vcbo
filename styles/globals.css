@@ -414,6 +414,31 @@ a {
 }
 
 /* Services Page Begins */
+.services-page img {
+  transition: 450ms ease;
+}
+
+.services-page .hovered img {
+  filter: blur(5px);
+}
+
+.services-page .architecture .architecture img {
+  filter: blur(0px);
+}
+.services-page .design .design img {
+  filter: blur(0px);
+}
+.services-page .planning .planning img {
+  filter: blur(0px);
+}
+.services-page .sustainability .sustainability img {
+  filter: blur(0px);
+}
+
+.menu-panel:hover {
+  cursor: pointer;
+}
+
 .services-page .hero-section h1 {
   writing-mode: vertical-rl;
   transform: rotate(180deg);

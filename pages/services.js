@@ -5,6 +5,8 @@ import { Lines } from "../components/Lines"
 
 export default function Services() {
   const [loaded, setLoaded] = useState(false)
+  const [activeClass, setActiveClass] = useState("")
+
   useEffect(() => {
     if (process.browser) {
       document.body.classList.remove("homepage")
@@ -15,14 +17,34 @@ export default function Services() {
     setLoaded(true)
   }, [])
 
+  const showColumn = (name) => {
+    setActiveClass(`${name} hovered`)
+  }
+
+  const hideColumn = (name) => {
+    setActiveClass("")
+  }
+
+  const handleClickScroll = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto services-page">
-        <div className="grid grid-cols-4 mt-40 hero-section">
+        <div className={`grid grid-cols-4 mt-40 hero-section ${activeClass}`}>
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
-              <a className="menu-panel" href="">
+              <a
+                className="menu-panel architecture"
+                onMouseEnter={() => showColumn("architecture")}
+                onMouseLeave={() => hideColumn()}
+                onClick={() => handleClickScroll("architecture")}
+              >
                 <div className="inner-menu">
                   <img
                     className="pt-48 block"
@@ -36,8 +58,13 @@ export default function Services() {
           </div>
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
-              <a className="menu-panel" href="">
-                <div className="inner-menu">
+              <a
+                className="menu-panel"
+                onMouseEnter={() => showColumn("design")}
+                onMouseLeave={() => hideColumn()}
+                onClick={() => handleClickScroll("design")}
+              >
+                <div className="inner-menu design">
                   <img
                     className="block mx-auto"
                     src="/services/Interiors.jpg"
@@ -48,9 +75,14 @@ export default function Services() {
               </a>
             </ScrollAnimate>
           </div>
-          <div className="col-span-1 relative item-wrap">
+          <div className="col-span-1 relative item-wrap planning">
             <ScrollAnimate>
-              <a className="menu-panel" href="">
+              <a
+                className="menu-panel"
+                onMouseEnter={() => showColumn("planning")}
+                onMouseLeave={() => hideColumn()}
+                onClick={() => handleClickScroll("planning")}
+              >
                 <div className="inner-menu justify-end">
                   <img className="block" src="/services/Planning.jpg" />
                   <h1 className="absolute">Planning</h1>
@@ -61,7 +93,12 @@ export default function Services() {
           </div>
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
-              <a className="menu-panel" href="">
+              <a
+                className="menu-panel sustainability"
+                onMouseEnter={() => showColumn("sustainability")}
+                onMouseLeave={() => hideColumn()}
+                onClick={() => handleClickScroll("sustainability")}
+              >
                 <div className="inner-menu justify-center pt-20">
                   <img
                     className="block mx-auto"
@@ -74,7 +111,7 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8">
+        <div className="grid grid-cols-4 mt-60 gap-x-8" id="architecture">
           <div className="grid grid-cols-2 col-span-2 gap-x-8">
             <ScrollAnimate>
               <h3 className="col-start-1 col-span-2">
@@ -117,7 +154,7 @@ export default function Services() {
             />
           </ScrollAnimate>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8">
+        <div className="grid grid-cols-4 mt-60 gap-x-8" id="design">
           <div className="col-start-1 col-span-1">
             <ScrollAnimate>
               <h3>Design and Interiors for People.</h3>
@@ -159,7 +196,7 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8">
+        <div className="grid grid-cols-4 mt-60 gap-x-8" id="planning">
           <div className="col-start-1 col-span-2">
             <ScrollAnimate>
               <img src="/services/4.jpg" />
@@ -209,7 +246,7 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8">
+        <div className="grid grid-cols-4 mt-60 gap-x-8" id="sustainability">
           <div className="col-start-1 col-span-1">
             <ScrollAnimate>
               <img src="/services/5.jpg" />
