@@ -1,6 +1,7 @@
 import ScrollAnimate from "../components/ScrollAnimate"
 import { useEffect, useState } from "react"
 import { Lines } from "../components/Lines"
+import { HeadshotWrapper } from "../components/HeadshotWrapper"
 
 export default function About() {
   const [loaded, setLoaded] = useState(false)
@@ -133,50 +134,7 @@ export default function About() {
               <h3>Leadership</h3>
             </ScrollAnimate>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 col-span-8">
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <div className="headshot">
-                <img src="about-headshot.png" />
-                <p className="font-medium mt-4">Niels Valentiner, AIA</p>
-                <p>Principal</p>
-              </div>
-            </ScrollAnimate>
-          </div>
+          <HeadshotWrapper />
         </div>
       </div>
     </>

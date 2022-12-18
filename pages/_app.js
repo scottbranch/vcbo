@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
       <PrismicPreview repositoryName={repositoryName}>
-        <div className="page-wrapper">
+        <div className="page-wrapper relative">
           <Header />
           <Component {...pageProps} />
           <Footer />

@@ -51,8 +51,9 @@ export default function Project(props) {
   useEffect(() => {
     if (process.browser) {
       document.body.classList.add("dark-mode")
-      document.body.classList.add("projects-page")
+      document.body.classList.add("single-project")
       document.body.classList.remove("sector")
+      document.body.classList.remove("homepage")
     }
 
     const currentSector = pageData?.sector?.data?.name[0]?.text
@@ -86,7 +87,7 @@ export default function Project(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto projects-page single-project">
+      <div className="container mx-auto projects-page relative">
         <div className="grid grid-cols-4 mt-20 gap-x-8">
           <div className="breadcrumb flex col-span-4 relative">
             <BackArrow className="mr-2" />

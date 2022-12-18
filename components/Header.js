@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
@@ -6,18 +6,40 @@ export const Header = (props) => {
   const {} = props
 
   const [menuOpen, setMenuOpen] = useState(false)
+  const [scrollDirection, setScrollDirection] = useState()
 
   const router = useRouter()
   const { pid } = router.query
 
+  useEffect(() => {
+    if (process.browser) {
+      var lastScrollTop = 0
+      // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+      window.addEventListener(
+        "scroll",
+        function () {
+          // or window.addEventListener("scroll"....
+          var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+          if (st > lastScrollTop) {
+            setScrollDirection("down")
+          } else {
+            setScrollDirection("up")
+          }
+          lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
+        },
+        false
+      )
+    }
+  }, [])
+
   return (
     <header
-      className={`container mx-auto relative z-10 ${
+      className={`container mx-auto z-50 ${
         menuOpen ? "mobile-menu-active" : ""
-      }`}
+      } ${scrollDirection === "down" ? "scroll-up" : ""}`}
     >
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
-        <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
+        <a href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
           <svg
             className="logo"
             width="160"
@@ -51,39 +73,39 @@ export const Header = (props) => {
               fill="#0A0707"
             />
           </svg>
-        </Link>
-        <Link
+        </a>
+        <a
           href="/projects"
           className={`${
             router.pathname.startsWith("/projects") ? "active" : ""
           } hidden md:block col-start-5 col-span-1`}
         >
           Projects
-        </Link>
-        <Link
+        </a>
+        <a
           href="/services"
           className={`hidden md:block col-start-6 col-span-1 ${
             router.pathname.startsWith("/services") ? "active" : ""
           }`}
         >
           Services
-        </Link>
-        <Link
+        </a>
+        <a
           href="/about"
           className={`hidden md:block col-start-7 col-span-1 ${
             router.pathname.startsWith("/about") ? "active" : ""
           }`}
         >
           About
-        </Link>
-        <Link
+        </a>
+        <a
           href="/etc/articles"
           className={`hidden md:block col-start-8 col-span-1 ${
             router.pathname.startsWith("/etc") ? "active" : ""
           }`}
         >
           Etc.
-        </Link>
+        </a>
 
         <button
           className="md:hidden block col-start-7 col-span-2"
@@ -93,7 +115,7 @@ export const Header = (props) => {
         </button>
         <div className={`mobile-overlay flex flex-col justify-between`}>
           <div className="grid grid-cols-4 overlay-header">
-            <Link href="/" className="col-start-1 col-span-3 mt-8">
+            <a href="/" className="col-start-1 col-span-3 mt-8">
               <svg
                 className="overlay-logo"
                 fill="none"
@@ -128,7 +150,7 @@ export const Header = (props) => {
                   fill="#0A0707"
                 />
               </svg>
-            </Link>
+            </a>
             <button
               className="overlay-close md:hidden block col-start-4 col-span-1 flex mt-10 justify-center"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -138,18 +160,18 @@ export const Header = (props) => {
           </div>
           <div className="grid grid-cols-4 overlay-nav-links">
             <ul className="mobile-list col-span-3 ml-5">
-              <Link href="/projects" className="block">
+              <a href="/projects" className="block">
                 Projects
-              </Link>
-              <Link href="/services" className="block">
+              </a>
+              <a href="/services" className="block">
                 Services
-              </Link>
-              <Link href="/about" className="block">
+              </a>
+              <a href="/about" className="block">
                 About
-              </Link>
-              <Link href="/etc/articles" className="block">
+              </a>
+              <a href="/etc/articles" className="block">
                 Etc.
-              </Link>
+              </a>
             </ul>
           </div>
           <div className="container mx-auto pb-10 overlay-footer ml-5">

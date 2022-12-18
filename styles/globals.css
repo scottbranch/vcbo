@@ -148,6 +148,17 @@ a:not(.button-row):not(header a):not(footer a) {
 
 /* HEADER STUFF */
 
+header {
+  position: sticky;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 500ms ease;
+}
+
+header.scroll-up {
+  transform: translate3d(0, -105%, 0);
+}
+
 header a {
   transition: 250ms ease;
 }
@@ -174,7 +185,6 @@ header a:hover {
 
 header svg.logo path {
   fill: var(--black);
-  transition: fill 500ms ease-out;
 }
 
 header button {

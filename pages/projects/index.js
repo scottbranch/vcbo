@@ -31,9 +31,11 @@ export default function Projects(props) {
 
   useEffect(() => {
     if (process.browser) {
+      console.log("projects page")
       document.body.classList.add("dark-mode")
       document.body.classList.add("projects-page")
       document.body.classList.remove("sector")
+      document.body.classList.remove("homepage")
     }
 
     setLoaded(true)
@@ -41,7 +43,7 @@ export default function Projects(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto projects-page">
+      <div className="container mx-auto z-10 relative">
         <div className="grid grid-cols-4 mt-40 gap-x-8 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate>

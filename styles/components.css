@@ -175,6 +175,15 @@ footer .small-subhead {
 footer p,
 footer a {
   color: var(--mediumGrey);
+  transition: color 250ms ease;
+}
+
+footer a:hover {
+  color: var(--black);
+}
+
+.dark-mode footer a:hover {
+  color: var(--lightGrey) !important;
 }
 
 .lower-footer a {
@@ -388,4 +397,38 @@ header.mobile-menu-active .mobile-overlay {
 .modal-header span:after {
   position: absolute;
   transform: rotate(-45deg);
+}
+
+.headshot {
+  overflow: hidden;
+}
+
+.headshot:hover {
+  cursor: pointer;
+}
+
+.headshot-active .headshot {
+  opacity: 0.6;
+  transition: opacity 750ms ease;
+}
+
+.headshot-top-content {
+  margin-bottom: 20px;
+}
+
+.headshot .headshot-content p {
+  margin-bottom: 10px;
+}
+
+.headshot-content {
+  max-height: 0;
+  transition: max-height 750ms ease;
+}
+
+.headshot.open-headshot .headshot-content {
+  max-height: 1000px;
+}
+
+.headshot.open-headshot {
+  opacity: 1;
 }
