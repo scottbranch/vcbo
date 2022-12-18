@@ -33,7 +33,7 @@ export default function Articles(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto mt-40 articles">
+      <div className="container mx-auto mt-10 md:mt-40 articles">
         <div className="grid grid-cols-4">
           <ScrollAnimate>
             <h2>ETC.</h2>
@@ -65,7 +65,7 @@ export default function Articles(props) {
           </h4>
         </ScrollAnimate> */}
         </div>
-        <div className="masonry sm:masonry-sm md:masonry-md mt-40">
+        <div className="masonry sm:masonry-sm md:masonry-md mt-10 md:mt-40">
           {articles?.map((article) => {
             const date = new Date(article?.first_publication_date)
 

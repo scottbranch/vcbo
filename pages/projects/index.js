@@ -44,9 +44,9 @@ export default function Projects(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto z-10 relative">
-        <div className="grid grid-cols-4 mt-40 gap-x-8 relative">
+        <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
-            <ScrollAnimate>
+            <ScrollAnimate className="mb-20 md:mb-0">
               <h2>
                 Projects
                 <sup>
@@ -74,7 +74,7 @@ export default function Projects(props) {
         <div
           className={`grid mx-5 md:mx-0 ${
             theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
-          } mt-40 gap-x-4 gap-y-16`}
+          } mt-20 md:mt-40 gap-x-4 gap-y-16`}
         >
           {projects?.data?.slices[0]?.items?.map((project, index) => {
             const projectSector = project.project

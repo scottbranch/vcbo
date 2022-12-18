@@ -57,8 +57,8 @@ export default function Sectors(props) {
 
   useEffect(() => {
     document.body.classList.add("dark-mode")
-    document.body.classList.add("projects-page")
     document.body.classList.add("sector")
+    document.body.classList.remove("projects-page")
 
     const filteredProjects = projectResults.filter(
       (project) => project.data.specialty.uid === page.uid
@@ -99,9 +99,9 @@ export default function Sectors(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto projects-page">
-        <div className="grid grid-cols-2 mt-40 gap-x-8">
+        <div className="grid grid-cols-2 mt-10 md:mt-40 gap-x-8">
           <div className="col-start-1 col-span-4 md:col-span-2">
-            <ScrollAnimate>
+            <ScrollAnimate className="mb-10 md:mb-0">
               <h2>
                 Projects
                 <sup>
@@ -118,14 +118,14 @@ export default function Sectors(props) {
           </div>
         </div>
         <ScrollAnimate>
-          <h3 className="mt-20 mb-20">
+          <h3 className="mt-10 mb-5 md:mt-20 md:mb-20">
             {page?.data?.name[0]?.text},{" "}
             {projectResults?.length > 0
               ? projectResults[0]?.data?.sector?.data?.name[0]?.text
               : ""}
           </h3>
         </ScrollAnimate>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projectResults?.map((project) => {
             return (
               <ScrollAnimate>

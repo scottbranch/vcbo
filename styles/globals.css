@@ -381,6 +381,16 @@ h1 {
   line-height: 30px;
 }
 
+h2 {
+  font-size: 84px;
+  line-height: 76px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
 h4 {
   font-family: "founders";
   font-weight: 400;

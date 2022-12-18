@@ -88,7 +88,7 @@ export default function Project(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto projects-page relative">
-        <div className="grid grid-cols-4 mt-20 gap-x-8">
+        <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8">
           <div className="breadcrumb flex col-span-4 relative">
             <BackArrow className="mr-2" />
             <a href={pageData?.sector?.url} className="breadcrumb-sector">
@@ -97,7 +97,7 @@ export default function Project(props) {
             </a>
             <p>{pageData?.name[0]?.text}</p>
           </div>
-          <div className="col-start-1 col-span-3 mt-20">
+          <div className="col-start-1 col-span-3 mt-10 md:mt-20">
             <ScrollAnimate>
               <h1>{pageData?.headline[0]?.text} Test Title</h1>
             </ScrollAnimate>
@@ -105,14 +105,14 @@ export default function Project(props) {
           <div className="col-start-1 col-span-4">
             <ScrollAnimate>
               <img
-                className="block w-full mt-24"
+                className="block w-full mt-10 md:mt-24"
                 src={pageData?.hero_image?.url}
               />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-24 gap-x-8">
-          <div className="col-start-3 col-span-2">
+          <div className="col-start-2 md:col-start-3 col-span-3 md:col-span-2">
             <ScrollAnimate>
               <h3 className="max-w-md">
                 {pageData?.text_blurb[0]?.heading[0]?.text}
@@ -164,7 +164,7 @@ export default function Project(props) {
               <img className="w-full" src={pageData?.content_image_1?.url} />
             </ScrollAnimate>
           </div>
-          <div className="col-start-3 col-span-2 mt-4">
+          <div className="md:col-start-3 col-span-4 md:col-span-2 mt-4">
             <ScrollAnimate>
               <Slider {...settings}>
                 {pageData?.image_carousel?.map((item) => {
@@ -202,7 +202,7 @@ export default function Project(props) {
             </ScrollAnimate>
           </div>
           <div className="col-span-2"></div>
-          <div className="col-span-1 col-start-4 pagination grid-cols-2 grid mt-40">
+          <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40">
             {nextProject === undefined && previousProject === undefined ? (
               ""
             ) : (

@@ -120,9 +120,9 @@ export default function Sectors(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto sector-page">
-        <div className="grid grid-cols-4 mt-40 gap-x-8">
+        <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8">
           <div className="col-start-1 col-span-4 md:col-span-2">
-            <ScrollAnimate>
+            <ScrollAnimate className="mb-10 md:mb-0">
               <h2>
                 Projects
                 <sup>
@@ -139,14 +139,18 @@ export default function Sectors(props) {
           </div>
         </div>
         <ScrollAnimate>
-          <h3 className="mt-20 mb-20">{page?.data?.name[0]?.text}</h3>
+          <h3 className="mt-10 mb-0 md:mt-20 md:mb-20">
+            {page?.data?.name[0]?.text}
+          </h3>
         </ScrollAnimate>
         {reducedProjects?.map((array) => {
           return (
             <div
-              className={`grid grid-cols-${
-                specialtyData !== undefined ? "4" : "2"
-              } mt-10 gap-x-8`}
+              className={`grid ${
+                specialtyData !== undefined
+                  ? "grid-cols-2 md:grid-cols-4"
+                  : "grid-cols-1 md:grid-cols-2"
+              } mt-5 md:mt-10 gap-x-8`}
             >
               {specialtyData !== undefined ? (
                 <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
