@@ -72,7 +72,7 @@ export default function Home({ page }) {
         <div className="grid grid-cols-14 md:grid-cols-8">
           <div className="col-span-6">
             <ScrollAnimate>
-              <h1 className="ml-2 md:ml-5 md:mb-10 md:mt-40 mt-20">
+              <h1 className="ml-2 md:ml-5 mb-10 md:mt-40 mt-20">
                 IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
               </h1>
             </ScrollAnimate>

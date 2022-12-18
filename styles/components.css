@@ -231,6 +231,10 @@ header .mobile-overlay {
   }
 }
 
+.mobile-menu-active {
+  height: 100vh;
+}
+
 header.mobile-menu-active .mobile-overlay {
   opacity: 1;
   visibility: visible;
