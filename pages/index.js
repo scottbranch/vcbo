@@ -10,15 +10,17 @@ import { Lines } from "../components/Lines"
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
-  const page = await client.getSingle("homepage")
+  const homepage = await client.getSingle("homepage")
 
   return {
-    props: { page }, // Will be passed to the page component as props
+    props: { homepage }, // Will be passed to the page component as props
   }
 }
 
-export default function Home({ page }) {
+export default function Home(props) {
   const [loaded, setLoaded] = useState(false)
+
+  const { homepage } = props
 
   const settings = {
     className: "homepage-carousel",
@@ -63,6 +65,8 @@ export default function Home({ page }) {
     }
 
     setLoaded(true)
+
+    console.log({ homepage })
   }, [])
 
   return (
@@ -73,7 +77,7 @@ export default function Home({ page }) {
           <div className="col-span-6">
             <ScrollAnimate>
               <h1 className="ml-2 md:ml-5 mb-10 md:mt-40 mt-20">
-                IMPRESSIVE STRUCTURES. BEAUTIFUL OUTCOMES.
+                {homepage?.data?.heading[0]?.text}
               </h1>
             </ScrollAnimate>
           </div>
@@ -86,18 +90,13 @@ export default function Home({ page }) {
               <div></div>
             </div>
             <Slider {...settings}>
-              <div className="img-container">
-                <img src="/carousel/carousel1.jpg" />
-              </div>
-              <div className="img-container">
-                <img src="/carousel/carousel2.jpg" />
-              </div>
-              <div className="img-container">
-                <img src="/carousel/carousel3.jpg" />
-              </div>
-              <div className="img-container">
-                <img src="/carousel/carousel4.jpg" />
-              </div>
+              {homepage?.data?.carousel.map((item) => {
+                return (
+                  <div className="img-container">
+                    <img src={item?.image?.url} />
+                  </div>
+                )
+              })}
             </Slider>
             <div className="label-container">
               <div>
@@ -118,100 +117,100 @@ export default function Home({ page }) {
         <div className="grid grid-cols-4 mt-40">
           <div className="col-span-2">
             <ScrollAnimate>
-              <h3>VCBO Architecture creates spaces for people to thrive.</h3>
+              <h3>{homepage?.data?.text_blurb_1[0]?.title[0]?.text}</h3>
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-10">
           <div className="md:col-start-3 md:col-span-1 col-start-2 col-span-3 md:ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
-              <p>
-                Since 1973, we have been shaping built environments to support
-                human connection, balancing skill and precision with an
-                unmatched passion for architecture, design, planning, and
-                sustainability.
-              </p>
+              <p>{homepage?.data?.text_blurb_1[0]?.paragraph[0]?.text}</p>
             </ScrollAnimate>
             <ScrollAnimate>
-              <Button link="/" text="enter epic spaces" />
+              <Button
+                link={homepage?.data?.text_blurb_1[0]?.link?.url}
+                text={homepage?.data?.text_blurb_1[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-40">
           <div className="col-start-3 col-span-1 md:col-start-2 md:col-span-1">
             <ScrollAnimate>
-              <img src="/Feat1.jpg" />
+              <img src={homepage?.data?.text_blurb_2[0]?.small_image?.url} />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-4">
           <div className="col-span-2 md:col-span-1">
             <ScrollAnimate>
-              <h4>
-                Environments That Evoke Possibility—Featured Project Name Here
-              </h4>
+              <h4>{homepage?.data?.text_blurb_2[0]?.title[0]?.text}</h4>
             </ScrollAnimate>
           </div>
           <div className="col-start-3 col-span-2 md:col-start-2 md:col-span-3">
-            <img className="w-full" src="/Feat2.jpg" />
+            <img
+              className="w-full"
+              src={homepage?.data?.text_blurb_2[0]?.large_image?.url}
+            />
           </div>
         </div>
         <div className="grid grid-cols-4 mt-8">
           <div className="col-span-3 md:col-span-2 col-start-2">
             <ScrollAnimate className="mb-5 md:mb-20">
-              <p>
-                Small teaser blurb. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Morbi et bibendum libero. Donec ultricies
-                turpis lobortis sapien laoreet, in rutrum mauris pharetra. In
-                posuere faucibus est quis tempus.
-              </p>
+              <p>{homepage?.data?.text_blurb_2[0]?.paragraph[0]?.text}</p>
             </ScrollAnimate>
             <ScrollAnimate>
-              <Button link="/" text="view project" />
+              <Button
+                link={homepage?.data?.text_blurb_2[0]?.link?.url}
+                text={homepage?.data?.text_blurb_2[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>
         <div className="mt-40">
           <ScrollAnimate>
-            <img className="col-span-4 w-full" src="/FullImage.jpg" />
+            <img
+              className="col-span-4 w-full"
+              src={homepage?.data?.text_blurb_3[0]?.full_width_image?.url}
+            />
           </ScrollAnimate>
         </div>
         <div className="grid grid-cols-4 mt-16">
           <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2 md:ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
-              <h4>
-                We’re curiosity-driven. So we create places for curiosity to
-                thrive.
-              </h4>
+              <h4>{homepage?.data?.text_blurb_3[0]?.title[0]?.text}</h4>
             </ScrollAnimate>
             <ScrollAnimate>
-              <Button link="/" text="discover the vcbo story" />
+              <Button
+                link={homepage?.data?.text_blurb_3[0]?.link?.url}
+                text={homepage?.data?.text_blurb_3[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-40">
           <div className="col-start-1 col-span-2">
             <ScrollAnimate>
-              <h4>
-                Headline for Article. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Morbi et libero.
-              </h4>
+              <h4>{homepage?.data?.text_blurb_4[0]?.title[0]?.text}</h4>
             </ScrollAnimate>
             <ScrollAnimate className="mb-5 md:mb-20">
               <p className="mt-10 md:mt-80">
-                Small teaser blurb. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Morbi et bibendum libero. Donec ultricies
-                turpis lobortis sapien laoreet, in rutrum mauris pharetra. In
-                posuere faucibus est quis tempus.
+                {homepage?.data?.text_blurb_4[0]?.paragraph[0]?.text}
               </p>
             </ScrollAnimate>
             <ScrollAnimate>
-              <Button link="/" text="read the full article" />
+              <Button
+                link={homepage?.data?.text_blurb_4[0]?.link?.url}
+                text={homepage?.data?.text_blurb_4[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
           <div className="col-start-3 col-span-2">
             <ScrollAnimate>
-              <img className="w-full" src="/ArticleImage.jpg" />
+              <img
+                className="w-full"
+                src={homepage?.data?.text_blurb_4[0]?.image?.url}
+              />
             </ScrollAnimate>
           </div>
         </div>
