@@ -566,6 +566,10 @@ a {
   transition: background-color 500ms ease-out;
 }
 
+.project-text {
+  max-width: 295px;
+}
+
 .project-text-blurb ul {
   color: var(--white);
   list-style: disc;
