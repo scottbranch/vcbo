@@ -131,7 +131,7 @@ export default function Sectors(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="flex items-center col-start-1 md:col-start-5 col-span-8 gap-4">
+          <div className="grid md:flex items-center col-start-1 md:col-start-5 col-span-4 md:col-span-8 gap-4">
             <SelectDropdown
               items={dropdownItems}
               defaultText={page?.data?.name[0]?.text}
@@ -148,7 +148,7 @@ export default function Sectors(props) {
             <div
               className={`grid ${
                 specialtyData !== undefined
-                  ? "grid-cols-2 md:grid-cols-4"
+                  ? "grid grid-cols-4 mt-5 md:mt-10 gap-x-8"
                   : "grid-cols-1 md:grid-cols-2"
               } mt-5 md:mt-10 gap-x-8`}
             >
@@ -163,7 +163,7 @@ export default function Sectors(props) {
 
               {array.slice(sliceValue)?.map((project, index) => {
                 return (
-                  <ScrollAnimate className="col-span-1">
+                  <ScrollAnimate className="col-span-4 md:col-span-1">
                     <FilteredProject
                       className={`${specialtyData !== undefined ? "" : "mb-5"}`}
                       title={project?.data?.name[0]?.text}

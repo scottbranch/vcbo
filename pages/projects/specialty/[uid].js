@@ -110,7 +110,7 @@ export default function Sectors(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="flex items-center col-start-1 md:col-start-4 col-span-8 gap-4">
+          <div className="md:flex grid items-center col-start-1 md:col-start-4 col-span-2 gap-4">
             <SelectDropdown
               items={dropdownItems}
               defaultText={page?.data?.name[0]?.text}
