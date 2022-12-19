@@ -120,7 +120,7 @@ export default function Sectors(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto sector-page px-4 md:px-0">
-        <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8">
+        <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8 md:gap-0">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-10 md:mb-0">
               <h2>
@@ -131,7 +131,7 @@ export default function Sectors(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="grid md:flex items-center col-start-1 md:col-start-5 col-span-4 md:col-span-8 gap-4">
+          <div className="grid items-center col-start-1 md:col-start-4 col-span-4 md:col-span-1">
             <SelectDropdown
               items={dropdownItems}
               defaultText={page?.data?.name[0]?.text}
