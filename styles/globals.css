@@ -779,7 +779,7 @@ sup {
   border-top: 1px solid var(--mediumGrey);
   width: 100%;
   display: block;
-  padding: 7px 0 2px 25px;
+  padding: 7px 0 2px 15px;
   color: var(--lightGrey) !important;
   background: var(--darkestGrey);
 }
@@ -802,7 +802,7 @@ sup {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding-left: 55px;
+  padding-left: 25px;
 }
 
 /* Filtered sector stuff */
