@@ -44,9 +44,9 @@ export default function Article(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto mt-40 article">
+      <div className="container mx-auto mt-20 md:mt-40 article px-4 md:px-0 relative z-10">
         <div className="grid grid-cols-4">
-          <div className="col-span-2 flex content-end flex-wrap">
+          <div className="col-span-4 md:col-span-2 flex content-end flex-wrap">
             <div className="w-full">
               <ScrollAnimate>
                 <h1>{article?.data?.title[0]?.text}</h1>
@@ -58,14 +58,14 @@ export default function Article(props) {
               </ScrollAnimate>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-4 md:col-span-2">
             <ScrollAnimate>
               <img src={article?.data?.hero_image?.url} />
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-40">
-          <div className="col-start-2 col-span-2 article-body">
+        <div className="grid grid-cols-4 mt-10 md:mt-40">
+          <div className="col-start-1 md:col-start-2 col-span-4 md:col-span-2 article-body">
             <PrismicRichText field={article?.data?.content} />
           </div>
         </div>

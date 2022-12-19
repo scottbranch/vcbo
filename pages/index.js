@@ -68,7 +68,7 @@ export default function Home({ page }) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto z-10 relative">
+      <div className="container mx-auto z-10 relative px-4 md:px-0">
         <div className="grid grid-cols-14 md:grid-cols-8">
           <div className="col-span-6">
             <ScrollAnimate>

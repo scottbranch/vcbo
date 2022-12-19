@@ -43,7 +43,7 @@ export default function Projects(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto z-10 relative">
+      <div className="container mx-auto z-10 relative px-4 md:px-0">
         <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-20 md:mb-0">
@@ -55,16 +55,24 @@ export default function Projects(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="flex items-center col-start-1 md:col-start-3 col-span-8 gap-4">
-            <SelectDropdown items={sectors} defaultText="Project Types..." />
+          <div className="grid col-span-4 grid-cols-4 md:flex items-center col-start-1 md:col-start-3 md:col-span-8 md:gap-4">
+            <SelectDropdown
+              className="col-span-2"
+              items={sectors}
+              defaultText="Project Types..."
+            />
             <button
-              className={`filter-button ${theme === "grid" ? "active" : ""}`}
+              className={`filter-button col-span-1 ${
+                theme === "grid" ? "active" : ""
+              }`}
               onClick={() => setTheme("grid")}
             >
               Grid
             </button>
             <button
-              className={`filter-button ${theme === "list" ? "active" : ""}`}
+              className={`filter-button  col-span-1 ${
+                theme === "list" ? "active" : ""
+              }`}
               onClick={() => setTheme("list")}
             >
               List
@@ -72,7 +80,7 @@ export default function Projects(props) {
           </div>
         </div>
         <div
-          className={`grid mx-5 md:mx-0 ${
+          className={`grid ${
             theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
           } mt-20 md:mt-40 gap-x-4 gap-y-16`}
         >

@@ -87,7 +87,7 @@ export default function Project(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto projects-page relative">
+      <div className="container mx-auto projects-page relative px-4 md:px-0">
         <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8">
           <div className="breadcrumb flex col-span-4 relative">
             <BackArrow className="mr-2" />

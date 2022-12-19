@@ -98,7 +98,7 @@ export default function Sectors(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto projects-page">
+      <div className="container mx-auto projects-page px-4 md:px-0">
         <div className="grid grid-cols-2 mt-10 md:mt-40 gap-x-8">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-10 md:mb-0">
