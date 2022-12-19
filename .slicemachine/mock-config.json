@@ -90,6 +90,64 @@
       "hero_image": {
         "content": "https://images.prismic.com"
       }
+    },
+    "about_page": {
+      "title_text": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "text_blurb_1": {
+        "title": {
+          "config": {
+            "patternType": "HEADING",
+            "blocks": 1
+          }
+        },
+        "paragraph": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      },
+      "text_blurb_2": {
+        "title": {
+          "config": {
+            "patternType": "HEADING",
+            "blocks": 1
+          }
+        }
+      },
+      "text_blurb_3": {
+        "title": {
+          "config": {
+            "patternType": "HEADING",
+            "blocks": 1
+          }
+        }
+      },
+      "leadership": {
+        "title": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        },
+        "name": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        },
+        "paragraph": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
     }
   },
   "slices": {

@@ -1,0 +1,128 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "about_page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title_text": [
+      {
+        "type": "heading3",
+        "text": "Layers",
+        "spans": []
+      }
+    ],
+    "featured_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613"
+    },
+    "text_blurb_1": [
+      {
+        "title": [
+          {
+            "type": "heading6",
+            "text": "Machinery",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Irure laboris veniam ea proident incididunt duis labore qui et ad aute nostrud. Ad ex sit sit esse. Adipisicing Lorem cillum fugiat laborum in officia amet do nisi ipsum magna aute non consectetur incididunt.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "text_blurb_2": [
+      {
+        "title": [
+          {
+            "type": "heading6",
+            "text": "Anyway",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Proident id ea cupidatat est quis ad do incididunt est adipisicing.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "featured_image_2": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+    },
+    "text_blurb_3": [
+      {
+        "title": [
+          {
+            "type": "heading6",
+            "text": "Depth",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Irure reprehenderit ut ullamco ipsum ea.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "leadership": [
+      {
+        "headshot": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51"
+        },
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Magna consectetur occaecat est veniam et sit aute aliqua et aliqua tempor qui excepteur ad cillum. Aliquip duis dolore labore non. Anim pariatur cupidatat culpa ea veniam do irure eu qui sint sunt ipsum.",
+            "spans": []
+          }
+        ],
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Sit reprehenderit quis officia quis qui qui officia sint aliquip ipsum ad proident et Lorem. Amet anim ut adipisicing. Eiusmod est qui amet tempor Lorem ex tempor cillum exercitation.",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Et non aliquip qui mollit consectetur ea est labore laborum consectetur incididunt nisi labore et sint. Qui esse voluptate cillum qui eiusmod eiusmod voluptate cupidatat enim magna laboris. Culpa duis irure id id do minim ullamco ullamco exercitation.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

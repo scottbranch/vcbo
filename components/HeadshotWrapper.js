@@ -2,7 +2,9 @@ import { useState } from "react"
 import { Headshot } from "./Headshot"
 import ScrollAnimate from "./ScrollAnimate"
 
-export const HeadshotWrapper = () => {
+export const HeadshotWrapper = (props) => {
+  const { headshots } = props
+
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState(false)
 
@@ -10,8 +12,6 @@ export const HeadshotWrapper = () => {
     setActive(true)
     setOpen(index)
   }
-
-  const headshots = [1, 2, 3, 4, 5, 6, 7]
 
   return (
     <div
@@ -23,6 +23,10 @@ export const HeadshotWrapper = () => {
         return (
           <ScrollAnimate>
             <Headshot
+              image={item?.headshot?.url}
+              name={item?.name[0]?.text}
+              title={item?.title[0]?.text}
+              paragraph={item?.paragraph}
               active={open === index}
               className={`headshot ${open === index ? "open-headshot" : ""}`}
               onClick={() => toggleClick(index)}

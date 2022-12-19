@@ -6,6 +6,220 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for About Page documents */
+interface AboutPageDocumentData {
+    /**
+     * Title Text field in *About Page*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.title_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title_text: prismicT.TitleField;
+    /**
+     * Featured Image field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.featured_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featured_image: prismicT.ImageField<never>;
+    /**
+     * Text Blurb 1 field in *About Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_1[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    text_blurb_1: prismicT.GroupField<Simplify<AboutPageDocumentDataTextBlurb1Item>>;
+    /**
+     * Text Blurb 2 field in *About Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_2[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    text_blurb_2: prismicT.GroupField<Simplify<AboutPageDocumentDataTextBlurb2Item>>;
+    /**
+     * Featured Image 2 field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.featured_image_2
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featured_image_2: prismicT.ImageField<never>;
+    /**
+     * Text Blurb 3 field in *About Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_3[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    text_blurb_3: prismicT.GroupField<Simplify<AboutPageDocumentDataTextBlurb3Item>>;
+    /**
+     * Leadership field in *About Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.leadership[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    leadership: prismicT.GroupField<Simplify<AboutPageDocumentDataLeadershipItem>>;
+}
+/**
+ * Item in About Page → Text Blurb 1
+ *
+ */
+export interface AboutPageDocumentDataTextBlurb1Item {
+    /**
+     * Title field in *About Page → Text Blurb 1*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_1[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Paragraph field in *About Page → Text Blurb 1*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_1[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
+}
+/**
+ * Item in About Page → Text Blurb 2
+ *
+ */
+export interface AboutPageDocumentDataTextBlurb2Item {
+    /**
+     * Title field in *About Page → Text Blurb 2*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_2[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Paragraph field in *About Page → Text Blurb 2*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_2[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
+}
+/**
+ * Item in About Page → Text Blurb 3
+ *
+ */
+export interface AboutPageDocumentDataTextBlurb3Item {
+    /**
+     * Title field in *About Page → Text Blurb 3*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_3[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Paragraph field in *About Page → Text Blurb 3*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.text_blurb_3[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
+}
+/**
+ * Item in About Page → Leadership
+ *
+ */
+export interface AboutPageDocumentDataLeadershipItem {
+    /**
+     * Headshot field in *About Page → Leadership*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.leadership[].headshot
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    headshot: prismicT.ImageField<never>;
+    /**
+     * Name field in *About Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.leadership[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Title field in *About Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.leadership[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Paragraph field in *About Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.leadership[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
+}
+/**
+ * About Page document from Prismic
+ *
+ * - **API ID**: `about_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<AboutPageDocumentData>, "about_page", Lang>;
 /** Content for Additional Project documents */
 interface AdditionalProjectDocumentData {
     /**
@@ -533,7 +747,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AdditionalProjectDocument | ArticleDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -617,6 +831,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, HomepageDocumentData, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

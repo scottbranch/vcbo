@@ -2,8 +2,21 @@ import ScrollAnimate from "../components/ScrollAnimate"
 import { useEffect, useState } from "react"
 import { Lines } from "../components/Lines"
 import { HeadshotWrapper } from "../components/HeadshotWrapper"
+import { createClient } from "../prismicio"
+import { PrismicRichText } from "@prismicio/react"
 
-export default function About() {
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const about = await client.getByUID("about_page", "about")
+
+  return {
+    props: { about }, // Will be passed to the sectors component as props
+  }
+}
+
+export default function About(props) {
+  const { about } = props
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     if (process.browser) {
@@ -13,7 +26,9 @@ export default function About() {
       document.body.classList.remove("sector")
     }
     setLoaded(true)
-  })
+
+    console.log({ about })
+  }, [])
 
   return (
     <>
@@ -23,47 +38,23 @@ export default function About() {
           <div className="col-span-12 md:col-span-6">
             <ScrollAnimate>
               <h3 className="md:ml-4 mb-10 mt-40">
-                For 50 years now, VCBO Architecture has delivered iconic
-                architecture with a focus on impeccable design, innovative
-                thinking, and unparalleled client service. Today, we actively
-                contribute to the built environment through the design of
-                diverse projects across the country and around the globe.
+                {about?.data?.title_text[0]?.text}
               </h3>
             </ScrollAnimate>
           </div>
           <div className="col-span-8 md:col-span-5 md:col-start-4">
             <ScrollAnimate>
-              <img src="about-hero.png" />
+              <img src={about?.data?.featured_image?.url} />
             </ScrollAnimate>
           </div>
           <div className="col-span-8 md:col-span-4 md:col-start-5 mt-14 md:mt-28">
             <ScrollAnimate>
-              <p className="large mb-5">History &amp; Culture</p>
-              <p className="mb-4">
-                Located in Salt Lake City and St. George Utah, our office
-                buildings are symbols of our deep connection to our community,
-                the Western United States, and creative thinking. Our Salt Lake
-                City office building originally served as a stable of strong and
-                reliable workhorses. Now, it houses an assembly of diverse
-                talent, drawn from near and far to work together to influence
-                and shape our communities for good.
+              <p className="large mb-5">
+                {about?.data?.text_blurb_1[0]?.title[0]?.text}
               </p>
-              <p className="mb-4">
-                The big yellow-gold lettering on our walls signifies our
-                willingness to be bold, stand out, and make a statement. Our
-                buildings back this claim with full force. But above all, our
-                people— and commitment to people— make working with VCBO a
-                standout experience. We strive to cultivate a culture where
-                passion and curiosity can thrive.
-              </p>
-
-              <p>
-                Through physical structures, we evoke our passion for bridging
-                timeless significance with progressive learning, classical
-                thought with contemporary, and elegance with restraint, all
-                while displaying our distinct ability to innovate and
-                problem-solve.
-              </p>
+              <PrismicRichText
+                field={about?.data?.text_blurb_1[0]?.paragraph}
+              />
             </ScrollAnimate>
           </div>
           <div className="col-span-8 mx-auto">
@@ -77,55 +68,27 @@ export default function About() {
           </div>
           <div className="col-span-8 md:col-span-4 mt-14 md:mt-28">
             <ScrollAnimate>
-              <p className="large mb-5">Social Responsibility</p>
-              <p className="mb-4">
-                VCBO cares deeply about social responsibility, and we are
-                honored to partner with CHOICE Humanitarian to make a global
-                difference. Whether it’s donations or expeditions, our team is
-                dedicated to helping both local and international rural
-                communities chart a path from poverty to peace and prosperity.
+              <p className="large mb-5">
+                {about?.data?.text_blurb_2[0]?.title[0]?.text}
               </p>
-              <p className="mb-4">
-                From celebrating Earth Day by beautifying local gardens, to
-                participating in Boys & Girls Club events, you’ll frequently see
-                VCBO out volunteering in the local community.
-              </p>
+              <PrismicRichText
+                field={about?.data?.text_blurb_2[0]?.paragraph}
+              />
             </ScrollAnimate>
           </div>
           <div className="col-start-3 col-span-6 md:col-start-3 mt-8 md:mt-20 md:col-span-4">
             <ScrollAnimate>
-              <img src="about-image.png" />
+              <img src={about?.data?.featured_image_2?.url} />
             </ScrollAnimate>
           </div>
           <div className="col-span-8 md:col-start-3 md:col-span-4 mt-14 md:mt-28">
             <ScrollAnimate>
-              <p className="large mb-5">Commitment to Sustainability</p>
-              <p className="mb-4">
-                VCBO is dedicated to best environmental practices. We bring a
-                strong understanding of sustainable resources, guidelines, and
-                rating systems to each project, as well as a wealth of
-                experience in finding ecological solutions.
+              <p className="large mb-5">
+                {about?.data?.text_blurb_3[0]?.title[0]?.text}
               </p>
-              <p className="mb-4">
-                Beyond our dedication to driving down energy use, energy costs,
-                and the associated environmental impacts, we also understand the
-                long-term value of architecture. We know our buildings have the
-                potential to dramatically influence the people who live in them,
-                work in them, and experience them, as well as the communities
-                they serve. Because of this, we sit down with each client to
-                determine the right sustainable strategies for each individual
-                project.
-              </p>
-              <p className="mb-4">
-                VCBO has recently signed the AIA 2030 Commitment, a
-                collaborative effort pushing the building industry toward carbon
-                neutrality through improvements in the design process, the
-                integration of efficient and holistic systems, and ongoing
-                monitoring and performance verification. By signing this
-                commitment, we acknowledge our role in shaping the future of the
-                built environment and seek to continuously strive for
-                improvement while supporting environmental stewardship.
-              </p>
+              <PrismicRichText
+                field={about?.data?.text_blurb_3[0]?.paragraph}
+              />
             </ScrollAnimate>
           </div>
           <div className="col-span-6 md:col-span-2"></div>
@@ -134,7 +97,7 @@ export default function About() {
               <h3>Leadership</h3>
             </ScrollAnimate>
           </div>
-          <HeadshotWrapper />
+          <HeadshotWrapper headshots={about?.data?.leadership} />
         </div>
       </div>
     </>
