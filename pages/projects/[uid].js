@@ -99,7 +99,7 @@ export default function Project(props) {
           </div>
           <div className="col-start-1 col-span-3 mt-10 md:mt-20">
             <ScrollAnimate>
-              <h1>{pageData?.headline[0]?.text} Test Title</h1>
+              <h1>{pageData?.headline[0]?.text}</h1>
             </ScrollAnimate>
           </div>
           <div className="col-start-1 col-span-4">

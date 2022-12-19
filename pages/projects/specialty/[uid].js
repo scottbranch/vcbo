@@ -14,7 +14,7 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
   const page = await client.getByUID("specialty", params.uid)
-  const projects = await client.getByType("project", {
+  const projects = await client.getAllByType("project", {
     fetchLinks: ["sector.name", "specialty.name"],
   })
   const dropdownItems = await client.getAllByType("sector", {
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  const [projectResults, setProjectResults] = useState(projects?.results)
+  const [projectResults, setProjectResults] = useState(projects)
   const [loaded, setLoaded] = useState(false)
 
   const pageData = page?.data
@@ -99,7 +99,7 @@ export default function Sectors(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto projects-page px-4 md:px-0">
-        <div className="grid grid-cols-2 mt-10 md:mt-40 gap-x-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 mt-10 md:mt-40 gap-x-8 md:gap-0">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-10 md:mb-0">
               <h2>
@@ -110,7 +110,7 @@ export default function Sectors(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="md:flex grid items-center col-start-1 md:col-start-4 col-span-2 gap-4">
+          <div className="grid items-center col-start-1 md:col-start-4 col-span-2 md:col-span-1 gap-4">
             <SelectDropdown
               items={dropdownItems}
               defaultText={page?.data?.name[0]?.text}
