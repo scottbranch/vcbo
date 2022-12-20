@@ -92,10 +92,14 @@ export default function Project(props) {
         <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8">
           <div className="breadcrumb flex col-span-4 relative">
             <BackArrow className="mr-2" />
-            <Link href={pageData?.sector?.url} className="breadcrumb-sector">
-              {pageData?.sector?.data?.name[0]?.text}
-              <span>|</span>
-            </Link>
+            {pageData?.sector?.url !== undefined ? (
+              <Link href={pageData?.sector?.url} className="breadcrumb-sector">
+                {pageData?.sector?.data?.name[0]?.text}
+                <span>|</span>
+              </Link>
+            ) : (
+              ""
+            )}
             <p>{pageData?.name[0]?.text}</p>
           </div>
           <div className="col-start-1 col-span-3 mt-10 md:mt-20">
