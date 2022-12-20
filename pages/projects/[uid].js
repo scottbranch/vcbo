@@ -125,7 +125,7 @@ export default function Project(props) {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-32 gap-x-8">
+        <div className="grid grid-cols-4 mt-32 ">
           <div className="col-start-1 col-span-1 detail-item">
             <ScrollAnimate>
               <p className="small-subhead">
