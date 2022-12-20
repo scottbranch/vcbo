@@ -125,10 +125,11 @@ export default function Project(props) {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-32 ">
+        <div className="grid grid-cols-4 mt-32">
           <div className="col-start-1 col-span-1 detail-item">
             <ScrollAnimate>
-              <p className="small-subhead">
+              <p className="small-subhead mb-4">Services</p>
+              <p className="small-content">
                 {page?.tags?.map((tag, index, arr) => {
                   const returnComma = arr.length - 1 === index ? "" : ","
                   return (
@@ -144,17 +145,20 @@ export default function Project(props) {
           </div>
           <div className="col-start-2 col-span-1 detail-item">
             <ScrollAnimate>
-              <p className="small-subhead">{pageData?.sq_ft[0]?.text} SQFT</p>
+              <p className="small-subhead mb-4">Project Size</p>
+              <p className="small-content">{pageData?.sq_ft[0]?.text} SqFt</p>
             </ScrollAnimate>
           </div>
           <div className="col-start-3 col-span-1 detail-item">
             <ScrollAnimate>
-              <p className="small-subhead">{pageData?.client[0]?.text}</p>
+              <p className="small-subhead mb-4">Client</p>
+              <p className="small-content">{pageData?.client[0]?.text}</p>
             </ScrollAnimate>
           </div>
           <div className="col-start-4 col-span-1 detail-item">
             <ScrollAnimate>
-              <p className="small-subhead">
+              <p className="small-subhead mb-4">Location</p>
+              <p className="small-content">
                 {pageData?.project_location[0]?.text}
               </p>
             </ScrollAnimate>

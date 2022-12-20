@@ -442,6 +442,12 @@ a {
   text-transform: uppercase;
 }
 
+.small-content {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
 p.large {
   font-size: 30px;
   line-height: 36px;
