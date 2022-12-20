@@ -356,6 +356,14 @@ button.overlay-close {
   margin: 0 auto;
 }
 
+.homepage-full-image {
+  width: 100vw;
+  position: relative;
+  transform: translateX(-50%);
+  left: 50%;
+  max-width: 100vw;
+}
+
 .img-container {
   max-height: 620px;
   background-size: cover;

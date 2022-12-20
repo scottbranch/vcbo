@@ -7,7 +7,7 @@ export const Project = (props) => {
   return (
     <div className="project-col col-span-2 md:col-span-1">
       <Link
-        href={projectLink}
+        href={projectLink !== undefined ? projectLink : ""}
         className={`project-wrapper${theme === "list" ? "-list" : ""}`}
       >
         <img

@@ -111,7 +111,7 @@ export default function Sectors(props) {
         <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8 md:gap-0">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-10 md:mb-0">
-              <h2>
+              <h2 className="uppercase">
                 Projects
                 <sup>
                   <small>{filteredProjects?.length}</small>

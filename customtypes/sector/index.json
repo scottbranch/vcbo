@@ -12,6 +12,13 @@
           "placeholder": ""
         }
       },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Order",
+          "placeholder": ""
+        }
+      },
       "name": {
         "type": "StructuredText",
         "config": {

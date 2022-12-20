@@ -27,9 +27,10 @@ export default function Projects(props) {
 
   const [loaded, setLoaded] = useState(false)
   const [theme, setTheme] = useState("grid")
-  const [showDropdown, setShowDropdown] = useState(false)
+  const [sortedSectors, setSortedSectors] = useState()
 
   useEffect(() => {
+    console.log({ sectors })
     if (process.browser) {
       document.body.classList.add("dark-mode")
       document.body.classList.add("projects-page")
@@ -40,6 +41,12 @@ export default function Projects(props) {
     }
 
     setLoaded(true)
+
+    setSortedSectors(
+      sectors.sort((a, b) => {
+        return a.data.order - b.data.order
+      })
+    )
   }, [])
   return (
     <>
@@ -48,7 +55,7 @@ export default function Projects(props) {
         <div className="grid grid-cols-4 mt-10 md:mt-40 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-20 md:mb-0">
-              <h2>
+              <h2 className="uppercase">
                 Projects
                 <sup>
                   <small>{projects?.data?.slices[0]?.items?.length}</small>
@@ -59,7 +66,7 @@ export default function Projects(props) {
           <div className="grid col-span-4 md:col-span-2 grid-cols-4 items-center col-start-1 md:col-start-3 gap-4">
             <SelectDropdown
               className="col-span-2"
-              items={sectors}
+              items={sortedSectors}
               defaultText="Project Types..."
             />
             <button
@@ -93,6 +100,7 @@ export default function Projects(props) {
             )
 
             if (project?.project?.data !== undefined) {
+              console.log(project?.project)
               return (
                 <ScrollAnimate>
                   <Project

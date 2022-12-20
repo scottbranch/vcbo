@@ -960,6 +960,17 @@ export type ProjectsPageDocument<Lang extends string = string> = prismicT.Prismi
 /** Content for Sector documents */
 interface SectorDocumentData {
     /**
+     * Order field in *Sector*
+     *
+     * - **Field Type**: Number
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.order
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/number
+     *
+     */
+    order: prismicT.NumberField;
+    /**
      * Name field in *Sector*
      *
      * - **Field Type**: Rich Text

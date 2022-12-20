@@ -33,6 +33,7 @@ export default function Home(props) {
     speed: 1700,
     slidesToShow: 1,
     slidesToScroll: 1,
+    rtl: true,
   }
 
   const addDarkMode = () => {
@@ -56,8 +57,6 @@ export default function Home(props) {
     document.body.classList.remove("single-project")
 
     setLoaded(true)
-
-    console.log({ homepage })
   }, [])
 
   return (
@@ -151,7 +150,7 @@ export default function Home(props) {
           </div>
         </div>
         <div className="grid grid-cols-4 mt-8">
-          <div className="col-span-3 md:col-span-2 col-start-2">
+          <div className="col-span-3 md:col-span-2 col-start-2 md:col-start-2 md:ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
               <p>{homepage?.data?.text_blurb_2[0]?.paragraph[0]?.text}</p>
             </ScrollAnimate>
@@ -166,7 +165,7 @@ export default function Home(props) {
         <div className="mt-40">
           <ScrollAnimate>
             <img
-              className="col-span-4 w-full"
+              className="col-span-4 w-full homepage-full-image"
               src={homepage?.data?.text_blurb_3[0]?.full_width_image?.url}
             />
           </ScrollAnimate>
@@ -184,7 +183,7 @@ export default function Home(props) {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-40">
+        <div className="grid grid-cols-4 mt-40 md:mb-60">
           <div className="col-start-1 col-span-2">
             <ScrollAnimate>
               <h4>{homepage?.data?.text_blurb_4[0]?.title[0]?.text}</h4>

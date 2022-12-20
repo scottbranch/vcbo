@@ -8,7 +8,6 @@ export default function SelectDropdown(props) {
   const { items, defaultText, className } = props
 
   const [showDropdown, setShowDropdown] = useState(false)
-  const [reducedProjects, setReducedProjects] = useState([])
 
   return (
     <div className={`filter-container mr-2 md:mr-0 ${className}`}>
