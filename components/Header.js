@@ -32,6 +32,11 @@ export const Header = (props) => {
     }
   }, [])
 
+  const hideMobileMenu = () => {
+    if (process.browser) {
+    }
+  }
+
   return (
     <header
       className={`container mx-auto z-50 ${
@@ -113,9 +118,16 @@ export const Header = (props) => {
         >
           Menu +
         </button>
-        <div className={`mobile-overlay flex flex-col justify-between`}>
+        <div
+          className={`mobile-overlay flex flex-col justify-between`}
+          id="mobile-overlay"
+        >
           <div className="grid grid-cols-4 overlay-header">
-            <Link href="/" className="col-start-1 col-span-3 mt-8">
+            <Link
+              href="/"
+              className="col-start-1 col-span-3 mt-8"
+              onClick={() => setMenuOpen(false)}
+            >
               <svg
                 className="overlay-logo"
                 fill="none"
@@ -160,16 +172,32 @@ export const Header = (props) => {
           </div>
           <div className="grid grid-cols-4 overlay-nav-links">
             <ul className="mobile-list col-span-3 ml-5">
-              <Link href="/projects" className="block">
+              <Link
+                href="/projects"
+                className="block"
+                onClick={() => setMenuOpen(false)}
+              >
                 Projects
               </Link>
-              <Link href="/services" className="block">
+              <Link
+                href="/services"
+                className="block"
+                onClick={() => setMenuOpen(false)}
+              >
                 Services
               </Link>
-              <Link href="/about" className="block">
+              <Link
+                href="/about"
+                className="block"
+                onClick={() => setMenuOpen(false)}
+              >
                 About
               </Link>
-              <Link href="/etc/articles" className="block">
+              <Link
+                href="/etc/articles"
+                className="block"
+                onClick={() => setMenuOpen(false)}
+              >
                 Etc.
               </Link>
             </ul>
