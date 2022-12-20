@@ -10,7 +10,11 @@ export default function SelectDropdown(props) {
   const [showDropdown, setShowDropdown] = useState(false)
 
   return (
-    <div className={`filter-container mr-2 md:mr-0 ${className}`}>
+    <div
+      className={`filter-container mr-2 md:mr-0 md:ml-4 ${className} ${
+        showDropdown ? "arrow-up" : ""
+      }`}
+    >
       <button
         className="filter-select"
         onClick={() => setShowDropdown(!showDropdown)}

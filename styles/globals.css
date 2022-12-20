@@ -356,7 +356,8 @@ button.overlay-close {
   margin: 0 auto;
 }
 
-.homepage-full-image {
+.homepage-full-image,
+.project-full-image {
   width: 100vw;
   position: relative;
   transform: translateX(-50%);
@@ -451,9 +452,16 @@ a {
 }
 
 .small-content {
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 15px;
+  line-height: 20px;
   font-weight: 400;
+}
+
+@media screen and (min-width: 769px) {
+  .small-content {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 p.large {
@@ -681,6 +689,12 @@ a {
   }
 }
 
+.project-wrapper-list .button-row > div,
+.project-wrapper-list .button-row > div > span.first,
+.project-wrapper-list .button-row > div > span.last {
+  width: 100%;
+}
+
 .project-wrapper-list:hover .list-image {
   opacity: 1;
 }
@@ -699,7 +713,6 @@ sup {
   .projects-page sup,
   .sector-page sup {
     font-size: 20px;
-    top: -2em;
   }
 }
 
@@ -718,6 +731,14 @@ sup {
   align-items: center;
   position: relative;
   /* width: 320px; */
+}
+
+.filter-container svg {
+  transition: transform 500ms ease;
+}
+
+.filter-container.arrow-up svg {
+  transform: rotate(180deg);
 }
 
 .filter-select .filter-select span {
@@ -794,12 +815,21 @@ sup {
 .filter-dropdown .sector {
   font-family: "founders";
   font-weight: 500;
-  border-top: 1px solid var(--mediumGrey);
   width: 100%;
   display: block;
-  padding: 7px 0 2px 15px;
+  padding: 14px 0 7px 15px;
   color: var(--lightGrey) !important;
   background: var(--darkestGrey);
+  border-bottom: 1px solid var(--mediumGrey);
+}
+
+.filter-dropdown li a {
+  transition: 150ms ease;
+}
+
+.filter-dropdown li a.sector:hover {
+  color: var(--white) !important;
+  background: #545152;
 }
 
 .filter-dropdown li a {
@@ -807,20 +837,30 @@ sup {
   transition: 150ms ease;
 }
 
+.filter-dropdown li {
+  transition: 150ms ease;
+}
+
+.filter-dropdown .specialties li:hover {
+  color: var(--white) !important;
+  background: #545152;
+}
+
 .filter-dropdown li a:hover {
   color: var(--white) !important;
 }
 
 .filter-dropdown .specialties li {
-  border-top: 1px solid var(--mediumGrey);
-  padding: 6px 0 3px;
+  overflow: hidden;
 }
 
 .filter-dropdown .specialties li a {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding-left: 25px;
+  margin-left: 35px;
+  border-bottom: 1px solid var(--mediumGrey);
+  padding: 13px 0 8px;
 }
 
 /* Filtered sector stuff */
@@ -916,4 +956,8 @@ sup {
 
 .pagination p {
   color: var(--lightGrey);
+}
+
+.swiper-slide {
+  max-height: 245px;
 }

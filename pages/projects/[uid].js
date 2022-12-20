@@ -148,19 +148,19 @@ export default function Project(props) {
               </p>
             </ScrollAnimate>
           </div>
-          <div className="col-start-2 col-span-1 detail-item">
+          <div className="col-start-2 col-span-1 detail-item ml-4">
             <ScrollAnimate>
               <p className="small-subhead mb-4">Project Size</p>
               <p className="small-content">{pageData?.sq_ft[0]?.text} SqFt</p>
             </ScrollAnimate>
           </div>
-          <div className="col-start-3 col-span-1 detail-item">
+          <div className="col-start-3 col-span-1 detail-item ml-4">
             <ScrollAnimate>
               <p className="small-subhead mb-4">Client</p>
               <p className="small-content">{pageData?.client[0]?.text}</p>
             </ScrollAnimate>
           </div>
-          <div className="col-start-4 col-span-1 detail-item">
+          <div className="col-start-4 col-span-1 detail-item ml-4">
             <ScrollAnimate>
               <p className="small-subhead mb-4">Location</p>
               <p className="small-content">
@@ -184,16 +184,23 @@ export default function Project(props) {
           </div>
           <div className="col-start-1 col-span-4 mt-40">
             <ScrollAnimate>
-              <img className="w-full" src={pageData?.hero_image_2?.url} />
+              <img
+                className="w-full  project-full-image"
+                src={pageData?.hero_image_2?.url}
+              />
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 col-span-3 mt-40">
-            <ScrollAnimate>
-              <h4 className="quote-text">
-                <PrismicRichText field={pageData?.quote[0]?.quote_text} />
-              </h4>
-            </ScrollAnimate>
-          </div>
+          {pageData?.quote[0]?.quote_text.length === 0 ? (
+            ""
+          ) : (
+            <div className="col-start-1 col-span-3 mt-40">
+              <ScrollAnimate>
+                <h4 className="quote-text">
+                  <PrismicRichText field={pageData?.quote[0]?.quote_text} />
+                </h4>
+              </ScrollAnimate>
+            </div>
+          )}
           <div className="col-start-3 col-span-2 mt-40">
             <ScrollAnimate>
               <img className="w-full" src={pageData?.content_image_2?.url} />
@@ -211,7 +218,7 @@ export default function Project(props) {
             </ScrollAnimate>
           </div>
           <div className="col-span-2"></div>
-          <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40">
+          <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40 ml-4">
             {nextProject === undefined && previousProject === undefined ? (
               ""
             ) : (

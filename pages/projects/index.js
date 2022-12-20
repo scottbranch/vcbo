@@ -9,6 +9,8 @@ import { Lines } from "../../components/Lines"
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
+  const allProjects = await client.getAllByType("project")
+
   const sectors = await client.getAllByType("sector", {
     fetchLinks: ["specialty.name", "sector.name", "sector.description"],
   })
@@ -18,19 +20,19 @@ export async function getStaticProps({ previewData }) {
   })
 
   return {
-    props: { sectors, projects }, // Will be passed to the sectors component as props
+    props: { sectors, projects, allProjects }, // Will be passed to the sectors component as props
   }
 }
 
 export default function Projects(props) {
-  const { sectors, projects } = props
+  const { sectors, projects, allProjects } = props
 
   const [loaded, setLoaded] = useState(false)
   const [theme, setTheme] = useState("grid")
   const [sortedSectors, setSortedSectors] = useState()
 
   useEffect(() => {
-    console.log({ sectors })
+    console.log({ allProjects })
     if (process.browser) {
       document.body.classList.add("dark-mode")
       document.body.classList.add("projects-page")
@@ -58,7 +60,7 @@ export default function Projects(props) {
               <h2 className="uppercase">
                 Projects
                 <sup>
-                  <small>{projects?.data?.slices[0]?.items?.length}</small>
+                  <small>{allProjects?.length}</small>
                 </sup>
               </h2>
             </ScrollAnimate>
@@ -100,7 +102,6 @@ export default function Projects(props) {
             )
 
             if (project?.project?.data !== undefined) {
-              console.log(project?.project)
               return (
                 <ScrollAnimate>
                   <Project

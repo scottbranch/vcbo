@@ -14,7 +14,7 @@ export const Project = (props) => {
           className={`w-full ${theme === "list" ? "hidden" : ""}`}
           src={image}
         />
-        <div className="grid md:flex grid-cols-4 justify-between my-5 items-center md:items-start">
+        <div className="grid grid-cols-4 justify-between my-5 items-center md:items-start">
           <h4>{sector}</h4>
           <img
             className={`hidden md:block list-image w-full ${
@@ -25,19 +25,23 @@ export const Project = (props) => {
           <div
             className={`${
               theme === "list"
-                ? "grid col-span-2 col-start-3 md:flex w-auto md:w-6/12 "
-                : "project-text col-span-2 col-start-3"
+                ? "grid col-span-2 col-start-3 md:grid-cols-2"
+                : "project-text col-span-2 col-start-3  md:ml-4"
             }`}
           >
             <p
               className={`${
-                theme === "list" ? "mb-4 md:mb-0 mr-0 md:mr-20" : ""
+                theme === "list"
+                  ? "mb-4 md:mb-0 mr-0 md:col-span-1 md:ml-4"
+                  : ""
               }`}
             >
               {blurb}
             </p>
             <Button
-              className={`${theme === "grid" ? "mt-10" : ""}`}
+              className={`${
+                theme === "grid" ? "mt-10" : "md:col-span-1  md:ml-4"
+              }`}
               theme="dark"
               link={sectorLink}
               text={`All ${sector} Projects`}
