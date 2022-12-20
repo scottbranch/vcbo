@@ -1,6 +1,19 @@
 import ScrollAnimate from "../../components/ScrollAnimate"
+import { useEffect } from "react"
 
 export default function Careers() {
+  useEffect(() => {
+    if (process.browser) {
+      document.body.classList.remove("homepage")
+      document.body.classList.remove("dark-mode")
+      document.body.classList.remove("projects-page")
+      document.body.classList.remove("single-project")
+      document.body.classList.remove("sector")
+    }
+
+    setLoaded(true)
+  }, [])
+
   return (
     <div className="container mx-auto mt-40 px-4 md:px-0">
       <div className="grid grid-cols-4">

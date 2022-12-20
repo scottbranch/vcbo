@@ -23,11 +23,10 @@ export default function About(props) {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
       document.body.classList.remove("projects-page")
+      document.body.classList.remove("single-project")
       document.body.classList.remove("sector")
     }
     setLoaded(true)
-
-    console.log({ about })
   }, [])
 
   return (

@@ -22,30 +22,30 @@ export default function SelectDropdown(props) {
       <div className={`filter-dropdown ${showDropdown ? "open" : ""}`}>
         <ul>
           <li>
-            <a className="sector" href="/projects">
+            <Link className="sector" href="/projects">
               All Projects
-            </a>
+            </Link>
           </li>
           {items?.map((item) => {
             return (
               <li>
-                <a
+                <Link
                   className="sector"
                   href={item?.url}
                   onClick={() => setShowDropdown(false)}
                 >
                   {item?.data?.name[0]?.text}
-                </a>
+                </Link>
                 {item?.data?.slices[0]?.items?.length > 0 ? (
                   <ul className="specialties">
                     {item?.data?.slices[0].items.map((item) => (
                       <li>
-                        <a
+                        <Link
                           href={item?.specialty?.url}
                           onClick={() => setShowDropdown(false)}
                         >
                           {item?.specialty?.data?.name[0]?.text}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

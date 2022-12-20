@@ -8,6 +8,7 @@ import { FilteredProject } from "../../../components/FilteredProject"
 import SelectDropdown from "../../../components/SelectDropdown"
 import { AdditionalProject } from "../../../components/AdditionalProject"
 import { Lines } from "../../../components/Lines"
+import ScrollTrigger from "react-scroll-trigger"
 
 // Fetch specialty content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -55,10 +56,27 @@ export default function Sectors(props) {
 
   const pageData = page?.data
 
+  const addDarkMode = () => {
+    if (process.browser) {
+      document.body.classList.add("dark-mode")
+    }
+  }
+
+  const removeDarkMode = () => {
+    if (process.browser) {
+      document.body.classList.remove("dark-mode")
+    }
+  }
+
   useEffect(() => {
-    document.body.classList.add("dark-mode")
-    document.body.classList.add("sector")
-    document.body.classList.remove("projects-page")
+    if (process.browser) {
+      document.body.classList.add("sector")
+      document.body.classList.add("dark-mode")
+
+      document.body.classList.remove("homepage")
+      document.body.classList.remove("projects-page")
+      document.body.classList.remove("single-project")
+    }
 
     const filteredProjects = projectResults.filter(
       (project) => project.data.specialty.uid === page.uid
@@ -143,6 +161,16 @@ export default function Sectors(props) {
             )
           })}
         </div>
+        <ScrollTrigger
+          onEnter={() => removeDarkMode()}
+          onExit={() => addDarkMode()}
+          style={{
+            width: "100%",
+            height: "0",
+            position: "sticky",
+            top: "0",
+          }}
+        />
         <div className="additional-project-container">
           {additionalProjects?.map((item) => {
             return (

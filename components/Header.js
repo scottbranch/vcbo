@@ -39,7 +39,7 @@ export const Header = (props) => {
       } ${scrollDirection === "down" ? "scroll-up" : ""}`}
     >
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
-        <a href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
+        <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
           <svg
             className="logo"
             width="160"
@@ -73,39 +73,39 @@ export const Header = (props) => {
               fill="#0A0707"
             />
           </svg>
-        </a>
-        <a
+        </Link>
+        <Link
           href="/projects"
           className={`${
             router.pathname.startsWith("/projects") ? "active" : ""
           } hidden md:block col-start-5 col-span-1`}
         >
           Projects
-        </a>
-        <a
+        </Link>
+        <Link
           href="/services"
           className={`hidden md:block col-start-6 col-span-1 ${
             router.pathname.startsWith("/services") ? "active" : ""
           }`}
         >
           Services
-        </a>
-        <a
+        </Link>
+        <Link
           href="/about"
           className={`hidden md:block col-start-7 col-span-1 ${
             router.pathname.startsWith("/about") ? "active" : ""
           }`}
         >
           About
-        </a>
-        <a
+        </Link>
+        <Link
           href="/etc/articles"
           className={`hidden md:block col-start-8 col-span-1 ${
             router.pathname.startsWith("/etc") ? "active" : ""
           }`}
         >
           Etc.
-        </a>
+        </Link>
 
         <button
           className="md:hidden block col-start-7 col-span-2"
@@ -115,7 +115,7 @@ export const Header = (props) => {
         </button>
         <div className={`mobile-overlay flex flex-col justify-between`}>
           <div className="grid grid-cols-4 overlay-header">
-            <a href="/" className="col-start-1 col-span-3 mt-8">
+            <Link href="/" className="col-start-1 col-span-3 mt-8">
               <svg
                 className="overlay-logo"
                 fill="none"
@@ -150,7 +150,7 @@ export const Header = (props) => {
                   fill="#0A0707"
                 />
               </svg>
-            </a>
+            </Link>
             <button
               className="overlay-close md:hidden block col-start-4 col-span-1 flex mt-10 justify-center"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -160,18 +160,18 @@ export const Header = (props) => {
           </div>
           <div className="grid grid-cols-4 overlay-nav-links">
             <ul className="mobile-list col-span-3 ml-5">
-              <a href="/projects" className="block">
+              <Link href="/projects" className="block">
                 Projects
-              </a>
-              <a href="/services" className="block">
+              </Link>
+              <Link href="/services" className="block">
                 Services
-              </a>
-              <a href="/about" className="block">
+              </Link>
+              <Link href="/about" className="block">
                 About
-              </a>
-              <a href="/etc/articles" className="block">
+              </Link>
+              <Link href="/etc/articles" className="block">
                 Etc.
-              </a>
+              </Link>
             </ul>
           </div>
           <div className="container mx-auto pb-10 overlay-footer ml-5">
@@ -184,18 +184,18 @@ export const Header = (props) => {
             </div>
             <div className="grid grid-cols-4 lower-footer md:flex md:flex-row-reverse md:justify-between">
               <div className="flex social-links">
-                <a href="#" className="mr-5">
+                <Link href="#" className="mr-5">
                   Instagram
-                </a>
-                <a href="#" className="mr-5">
+                </Link>
+                <Link href="#" className="mr-5">
                   Twitter
-                </a>
-                <a href="#" className="mr-5">
+                </Link>
+                <Link href="#" className="mr-5">
                   Facebook
-                </a>
-                <a href="#" className="mr-5">
+                </Link>
+                <Link href="#" className="mr-5">
                   LinkedIn
-                </a>
+                </Link>
               </div>
               <div className="mt-7 md:mt-0 col-start-1 col-span-2 copyright">
                 <p>© {new Date().getFullYear()} VCBO Architecture</p>

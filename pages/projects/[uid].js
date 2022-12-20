@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { BackArrow } from "../../components/BackArrow"
 import { Lines } from "../../components/Lines"
+import Link from "next/link"
 
 // Fetch project content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -91,10 +92,10 @@ export default function Project(props) {
         <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8">
           <div className="breadcrumb flex col-span-4 relative">
             <BackArrow className="mr-2" />
-            <a href={pageData?.sector?.url} className="breadcrumb-sector">
+            <Link href={pageData?.sector?.url} className="breadcrumb-sector">
               {pageData?.sector?.data?.name[0]?.text}
               <span>|</span>
-            </a>
+            </Link>
             <p>{pageData?.name[0]?.text}</p>
           </div>
           <div className="col-start-1 col-span-3 mt-10 md:mt-20">

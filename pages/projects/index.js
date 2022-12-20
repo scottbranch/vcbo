@@ -31,11 +31,12 @@ export default function Projects(props) {
 
   useEffect(() => {
     if (process.browser) {
-      console.log("projects page")
       document.body.classList.add("dark-mode")
       document.body.classList.add("projects-page")
+
       document.body.classList.remove("sector")
       document.body.classList.remove("homepage")
+      document.body.classList.remove("single-project")
     }
 
     setLoaded(true)

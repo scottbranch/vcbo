@@ -6,6 +6,7 @@ import ScrollAnimate from "../components/ScrollAnimate"
 import { useState, useEffect } from "react"
 import { createClient } from "../prismicio"
 import { Lines } from "../components/Lines"
+import ScrollTrigger from "react-scroll-trigger"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -34,35 +35,25 @@ export default function Home(props) {
     slidesToScroll: 1,
   }
 
-  useEffect(() => {
+  const addDarkMode = () => {
     if (process.browser) {
-      document.body.classList.add("homepage")
       document.body.classList.add("dark-mode")
-      document.body.classList.remove("projects-page")
-      document.body.classList.remove("sector")
-
-      let scrollpos = window.scrollY
-      let slider = document.querySelector(".slider-outer")
-      let pageWrapper = document.querySelector(".homepage")
-
-      const add_class_on_scroll = () =>
-        pageWrapper.classList.remove("dark-mode")
-      const remove_class_on_scroll = () =>
-        pageWrapper.classList.add("dark-mode")
-
-      window.addEventListener("scroll", function () {
-        scrollpos = window.scrollY
-        if (document.body.classList.contains("homepage")) {
-          if (slider.getBoundingClientRect().y + slider.offsetHeight < 0) {
-            add_class_on_scroll()
-          } else {
-            remove_class_on_scroll()
-          }
-        } else {
-          add_class_on_scroll()
-        }
-      })
     }
+  }
+
+  const removeDarkMode = () => {
+    if (process.browser) {
+      document.body.classList.remove("dark-mode")
+    }
+  }
+
+  useEffect(() => {
+    document.body.classList.add("homepage")
+    document.body.classList.add("dark-mode")
+
+    document.body.classList.remove("sector")
+    document.body.classList.remove("projects-page")
+    document.body.classList.remove("single-project")
 
     setLoaded(true)
 
@@ -141,6 +132,11 @@ export default function Home(props) {
             </ScrollAnimate>
           </div>
         </div>
+        <ScrollTrigger
+          onEnter={() => removeDarkMode()}
+          onExit={() => addDarkMode()}
+          style={{ width: "100%", height: "0", position: "sticky", top: "0" }}
+        />
         <div className="grid grid-cols-4 mt-4">
           <div className="col-span-2 md:col-span-1">
             <ScrollAnimate>

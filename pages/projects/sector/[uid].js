@@ -8,6 +8,7 @@ import { FilteredProject } from "../../../components/FilteredProject"
 import SelectDropdown from "../../../components/SelectDropdown"
 import { AdditionalProject } from "../../../components/AdditionalProject"
 import { Lines } from "../../../components/Lines"
+import ScrollTrigger from "react-scroll-trigger"
 
 // Fetch sector content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -50,8 +51,6 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  console.log({ projects })
-
   const [projectResults, setProjectResults] = useState(projects)
   const [reducedProjects, setReducedProjects] = useState([])
   const [filteredProjects, setFilteredProjects] = useState([])
@@ -61,46 +60,31 @@ export default function Sectors(props) {
 
   const pageData = page?.data
 
+  const addDarkMode = () => {
+    if (process.browser) {
+      document.body.classList.add("dark-mode")
+    }
+  }
+
+  const removeDarkMode = () => {
+    if (process.browser) {
+      document.body.classList.remove("dark-mode")
+    }
+  }
+
   useEffect(() => {
     if (process.browser) {
       document.body.classList.add("sector")
       document.body.classList.add("dark-mode")
-      // document.body.classList.remove("sector")
 
-      let scrollpos = window.scrollY
-      let additionalProjectsContainer = document.querySelector(
-        ".additional-project-container"
-      )
-      let pageWrapper = document.querySelector(".sector")
-
-      const add_class_on_scroll = () =>
-        pageWrapper.classList.remove("dark-mode")
-      const remove_class_on_scroll = () =>
-        pageWrapper.classList.add("dark-mode")
-
-      window.addEventListener("scroll", function () {
-        scrollpos = window.scrollY
-        if (document.body.classList.contains("sector")) {
-          if (
-            additionalProjectsContainer.getBoundingClientRect().y -
-              additionalProjectsContainer.offsetHeight * 4 <
-            0
-          ) {
-            add_class_on_scroll()
-          } else {
-            remove_class_on_scroll()
-          }
-        } else {
-          add_class_on_scroll()
-        }
-      })
+      document.body.classList.remove("homepage")
+      document.body.classList.remove("projects-page")
+      document.body.classList.remove("single-project")
     }
 
     const filteredProjects = projectResults.filter(
       (project) => project.data.sector.uid === page.uid
     )
-
-    console.log({ filteredProjects })
 
     setFilteredProjects(filteredProjects)
 
@@ -192,6 +176,16 @@ export default function Sectors(props) {
             <p>Project Size</p>
             <p>Client</p>
           </div>
+          <ScrollTrigger
+            onEnter={() => removeDarkMode()}
+            onExit={() => addDarkMode()}
+            style={{
+              width: "100%",
+              height: "0",
+              position: "sticky",
+              top: "0",
+            }}
+          />
           {additionalProjects?.map((item) => {
             return (
               <AdditionalProject

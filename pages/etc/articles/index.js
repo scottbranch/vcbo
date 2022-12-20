@@ -19,11 +19,11 @@ export default function Articles(props) {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    console.log({ articles })
     if (process.browser) {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
       document.body.classList.remove("projects-page")
+      document.body.classList.remove("single-project")
       document.body.classList.remove("sector")
     }
 

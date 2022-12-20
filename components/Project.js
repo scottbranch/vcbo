@@ -1,11 +1,12 @@
 import { Button } from "./Button"
 import Image from "next/image"
+import Link from "next/link"
 
 export const Project = (props) => {
   const { theme, image, sector, blurb, sectorLink, projectLink } = props
   return (
     <div className="project-col col-span-2 md:col-span-1">
-      <a
+      <Link
         href={projectLink}
         className={`project-wrapper${theme === "list" ? "-list" : ""}`}
       >
@@ -43,7 +44,7 @@ export const Project = (props) => {
             />
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }
