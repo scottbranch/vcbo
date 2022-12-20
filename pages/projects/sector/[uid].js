@@ -14,7 +14,7 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
   const page = await client.getByUID("sector", params.uid)
-  const projects = await client.getByType("project", {
+  const projects = await client.getAllByType("project", {
     fetchLinks: ["sector.name", "specialty.name"],
   })
   const dropdownItems = await client.getAllByType("sector", {
@@ -50,7 +50,9 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  const [projectResults, setProjectResults] = useState(projects?.results)
+  console.log({ projects })
+
+  const [projectResults, setProjectResults] = useState(projects)
   const [reducedProjects, setReducedProjects] = useState([])
   const [filteredProjects, setFilteredProjects] = useState([])
   const [specialtyData, setSpecialtyData] = useState()
@@ -97,6 +99,8 @@ export default function Sectors(props) {
     const filteredProjects = projectResults.filter(
       (project) => project.data.sector.uid === page.uid
     )
+
+    console.log({ filteredProjects })
 
     setFilteredProjects(filteredProjects)
 
