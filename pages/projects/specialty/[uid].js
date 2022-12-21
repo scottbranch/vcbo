@@ -135,29 +135,28 @@ export default function Sectors(props) {
             )
           })}
         </div>
-        <ScrollTrigger
-          onEnter={() => removeDarkMode()}
-          onExit={() => addDarkMode()}
-          style={{
-            width: "100%",
-            height: "0",
-            position: "sticky",
-            top: "0",
-          }}
-        />
-        <div className="additional-project-container">
-          {additionalProjects?.map((item) => {
-            return (
-              <AdditionalProject
-                name={item?.data?.name[0]?.text}
-                location={item?.data?.location[0]?.text}
-                size={`${item?.data?.sq_ft[0]?.text} sq ft`}
-                client={item?.data?.client[0]?.text}
-                images={item?.data?.images}
-              />
-            )
-          })}
-        </div>
+        {additionalProjects?.length === 0 ? (
+          ""
+        ) : (
+          <ScrollTrigger
+            onEnter={() => removeDarkMode()}
+            onExit={() => addDarkMode()}
+          >
+            <div className="additional-project-container">
+              {additionalProjects?.map((item) => {
+                return (
+                  <AdditionalProject
+                    name={item?.data?.name[0]?.text}
+                    location={item?.data?.location[0]?.text}
+                    size={`${item?.data?.sq_ft[0]?.text} sq ft`}
+                    client={item?.data?.client[0]?.text}
+                    images={item?.data?.images}
+                  />
+                )
+              })}
+            </div>
+          </ScrollTrigger>
+        )}
       </div>
     </>
   )
