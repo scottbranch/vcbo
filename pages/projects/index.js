@@ -91,7 +91,7 @@ export default function Projects(props) {
         <div
           className={`grid ${
             theme === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"
-          } mt-20 md:mt-40 gap-x-4 gap-y-16`}
+          } mt-20 md:mt-40 gap-y-16`}
         >
           {projects?.data?.slices[0]?.items?.map((project, index) => {
             const projectSector = project.project
@@ -102,7 +102,7 @@ export default function Projects(props) {
 
             if (project?.project?.data !== undefined) {
               return (
-                <ScrollAnimate>
+                <ScrollAnimate className="mr-4">
                   <Project
                     theme={theme}
                     image={

@@ -1,6 +1,7 @@
 .button-row.dark {
   color: var(--white);
 }
+
 .button-row {
   font-family: "founders";
   font-weight: 500;
@@ -78,6 +79,16 @@ span.last > span {
 .white-arrow {
   border-radius: 50%;
   box-shadow: 0px 0px 5px 3px #7d7a7a;
+}
+
+@media screen and (max-width: 768px) {
+  .button-row > div {
+    max-width: 200px;
+  }
+  .button-row > div > span.first,
+  .button-row > div > span.last {
+    width: 100%;
+  }
 }
 
 /* dark button */
@@ -198,6 +209,12 @@ footer a:hover {
 @media screen and (min-width: 769px) {
   footer .footer-copyright {
     transform: translateY(-100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer .small-subhead {
+    font-size: 12px;
   }
 }
 

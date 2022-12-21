@@ -112,7 +112,7 @@ export default function Home(props) {
           </div>
         </div>
         <div className="grid grid-cols-4 mt-10">
-          <div className="md:col-start-3 md:col-span-1 col-start-2 col-span-3 md:ml-4">
+          <div className="md:col-start-3 md:col-span-1 col-start-2 col-span-3 ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
               <p>{homepage?.data?.text_blurb_1[0]?.paragraph[0]?.text}</p>
             </ScrollAnimate>
@@ -150,7 +150,7 @@ export default function Home(props) {
           </div>
         </div>
         <div className="grid grid-cols-4 mt-8">
-          <div className="col-span-3 md:col-span-2 col-start-2 md:col-start-2 md:ml-4">
+          <div className="col-span-3 md:col-span-2 col-start-2 md:col-start-2 ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
               <p>{homepage?.data?.text_blurb_2[0]?.paragraph[0]?.text}</p>
             </ScrollAnimate>
@@ -171,7 +171,7 @@ export default function Home(props) {
           </ScrollAnimate>
         </div>
         <div className="grid grid-cols-4 mt-16">
-          <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2 md:ml-4">
+          <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2 ml-4">
             <ScrollAnimate className="mb-5 md:mb-20">
               <h4>{homepage?.data?.text_blurb_3[0]?.title[0]?.text}</h4>
             </ScrollAnimate>
