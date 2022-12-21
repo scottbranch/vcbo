@@ -11,7 +11,7 @@ export default function SelectDropdown(props) {
 
   return (
     <div
-      className={`filter-container mr-2 md:mr-0 md:ml-4 ${className} ${
+      className={`filter-container mr-2 md:mr-2 md:ml-4 ${className} ${
         showDropdown ? "arrow-up" : ""
       }`}
     >

@@ -64,28 +64,31 @@ export default function Projects(props) {
               </h2>
             </ScrollAnimate>
           </div>
-          <div className="grid col-span-4 md:col-span-2 grid-cols-4 items-center col-start-1 md:col-start-3 gap-4">
+          <div className="grid col-span-4 md:col-span-2 grid-cols-4 items-center col-start-1 md:col-start-3">
             <SelectDropdown
               className="col-span-2"
               items={sortedSectors}
               defaultText="Project Types..."
             />
-            <button
-              className={`filter-button col-span-1 ${
-                theme === "grid" ? "active" : ""
-              }`}
-              onClick={() => setTheme("grid")}
-            >
-              Grid
-            </button>
-            <button
-              className={`filter-button  col-span-1 ${
-                theme === "list" ? "active" : ""
-              }`}
-              onClick={() => setTheme("list")}
-            >
-              List
-            </button>
+            <div className={`grid grid-cols-2 col-span-2 mx-4 relative`}>
+              <div
+                className={`active-highlight absolute ${
+                  theme === "grid" ? "" : "list"
+                }`}
+              ></div>
+              <button
+                className={`filter-button ${theme === "grid" ? "active" : ""}`}
+                onClick={() => setTheme("grid")}
+              >
+                Grid
+              </button>
+              <button
+                className={`filter-button ${theme === "list" ? "active" : ""}`}
+                onClick={() => setTheme("list")}
+              >
+                List
+              </button>
+            </div>
           </div>
         </div>
         <div
