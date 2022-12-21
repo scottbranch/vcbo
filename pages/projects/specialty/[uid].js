@@ -117,10 +117,10 @@ export default function Sectors(props) {
               : ""}
           </h3>
         </ScrollAnimate>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2">
           {projectResults?.map((project) => {
             return (
-              <ScrollAnimate>
+              <ScrollAnimate className="mr-4">
                 <FilteredProject
                   title={project?.data?.name[0]?.text}
                   specialty={project?.data?.specialty?.data?.name[0]?.text}

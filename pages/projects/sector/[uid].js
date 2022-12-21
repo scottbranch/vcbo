@@ -136,9 +136,9 @@ export default function Sectors(props) {
             <div
               className={`grid ${
                 specialtyData !== undefined
-                  ? "grid grid-cols-4 mt-5 md:mt-10 gap-x-8"
+                  ? "grid grid-cols-4 mt-5 md:mt-10"
                   : "grid-cols-1 md:grid-cols-2"
-              } mt-5 md:mt-10 gap-x-8`}
+              } mt-5 md:mt-10`}
             >
               {specialtyData !== undefined ? (
                 <ScrollAnimate className="col-span-4 mb-2  flex justify-between">
@@ -151,7 +151,7 @@ export default function Sectors(props) {
 
               {array.slice(sliceValue)?.map((project, index) => {
                 return (
-                  <ScrollAnimate className="col-span-2 md:col-span-1">
+                  <ScrollAnimate className="col-span-2 md:col-span-1 mr-4">
                     <FilteredProject
                       className={`${specialtyData !== undefined ? "" : "mb-5"}`}
                       title={project?.data?.name[0]?.text}
