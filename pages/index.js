@@ -37,12 +37,14 @@ export default function Home(props) {
   }
 
   const addDarkMode = () => {
+    console.log("add")
     if (process.browser) {
       document.body.classList.add("dark-mode")
     }
   }
 
   const removeDarkMode = () => {
+    console.log("remove")
     if (process.browser) {
       document.body.classList.remove("dark-mode")
     }
@@ -134,81 +136,82 @@ export default function Home(props) {
         <ScrollTrigger
           onEnter={() => removeDarkMode()}
           onExit={() => addDarkMode()}
-          style={{ width: "100%", height: "0", position: "sticky", top: "0" }}
-        />
-        <div className="grid grid-cols-4 mt-4">
-          <div className="col-span-2 md:col-span-1">
-            <ScrollAnimate>
-              <h4>{homepage?.data?.text_blurb_2[0]?.title[0]?.text}</h4>
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-3 col-span-2 md:col-start-2 md:col-span-3">
-            <img
-              className="w-full"
-              src={homepage?.data?.text_blurb_2[0]?.large_image?.url}
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-4 mt-8">
-          <div className="col-span-3 md:col-span-2 col-start-2 md:col-start-2 ml-4">
-            <ScrollAnimate className="mb-5 md:mb-20">
-              <p>{homepage?.data?.text_blurb_2[0]?.paragraph[0]?.text}</p>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <Button
-                link={homepage?.data?.text_blurb_2[0]?.link?.url}
-                text={homepage?.data?.text_blurb_2[0]?.link_text[0]?.text}
-              />
-            </ScrollAnimate>
-          </div>
-        </div>
-        <div className="mt-40">
-          <ScrollAnimate>
-            <img
-              className="col-span-4 w-full homepage-full-image"
-              src={homepage?.data?.text_blurb_3[0]?.full_width_image?.url}
-            />
-          </ScrollAnimate>
-        </div>
-        <div className="grid grid-cols-4 mt-16">
-          <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2 ml-4">
-            <ScrollAnimate className="mb-5 md:mb-20">
-              <h4>{homepage?.data?.text_blurb_3[0]?.title[0]?.text}</h4>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <Button
-                link={homepage?.data?.text_blurb_3[0]?.link?.url}
-                text={homepage?.data?.text_blurb_3[0]?.link_text[0]?.text}
-              />
-            </ScrollAnimate>
-          </div>
-        </div>
-        <div className="grid grid-cols-4 mt-40 md:mb-60">
-          <div className="col-start-1 col-span-2">
-            <ScrollAnimate>
-              <h4>{homepage?.data?.text_blurb_4[0]?.title[0]?.text}</h4>
-            </ScrollAnimate>
-            <ScrollAnimate className="mb-5 md:mb-20">
-              <p className="mt-10 md:mt-80">
-                {homepage?.data?.text_blurb_4[0]?.paragraph[0]?.text}
-              </p>
-            </ScrollAnimate>
-            <ScrollAnimate>
-              <Button
-                link={homepage?.data?.text_blurb_4[0]?.link?.url}
-                text={homepage?.data?.text_blurb_4[0]?.link_text[0]?.text}
-              />
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-3 col-span-2">
-            <ScrollAnimate>
+          className="pb-60 "
+        >
+          <div className="grid grid-cols-4 mt-4">
+            <div className="col-span-2 md:col-span-1">
+              <ScrollAnimate>
+                <h4>{homepage?.data?.text_blurb_2[0]?.title[0]?.text}</h4>
+              </ScrollAnimate>
+            </div>
+            <div className="col-start-3 col-span-2 md:col-start-2 md:col-span-3">
               <img
                 className="w-full"
-                src={homepage?.data?.text_blurb_4[0]?.image?.url}
+                src={homepage?.data?.text_blurb_2[0]?.large_image?.url}
+              />
+            </div>
+          </div>
+          <div className="grid grid-cols-4 mt-8">
+            <div className="col-span-3 md:col-span-2 col-start-2 md:col-start-2 ml-4">
+              <ScrollAnimate className="mb-5 md:mb-20">
+                <p>{homepage?.data?.text_blurb_2[0]?.paragraph[0]?.text}</p>
+              </ScrollAnimate>
+              <ScrollAnimate>
+                <Button
+                  link={homepage?.data?.text_blurb_2[0]?.link?.url}
+                  text={homepage?.data?.text_blurb_2[0]?.link_text[0]?.text}
+                />
+              </ScrollAnimate>
+            </div>
+          </div>
+          <div className="mt-40">
+            <ScrollAnimate>
+              <img
+                className="col-span-4 w-full homepage-full-image"
+                src={homepage?.data?.text_blurb_3[0]?.full_width_image?.url}
               />
             </ScrollAnimate>
           </div>
-        </div>
+          <div className="grid grid-cols-4 mt-16">
+            <div className="col-start-2 col-span-3 md:col-start-3 md:col-span-2 ml-4">
+              <ScrollAnimate className="mb-5 md:mb-20">
+                <h4>{homepage?.data?.text_blurb_3[0]?.title[0]?.text}</h4>
+              </ScrollAnimate>
+              <ScrollAnimate>
+                <Button
+                  link={homepage?.data?.text_blurb_3[0]?.link?.url}
+                  text={homepage?.data?.text_blurb_3[0]?.link_text[0]?.text}
+                />
+              </ScrollAnimate>
+            </div>
+          </div>
+          <div className="grid grid-cols-4 mt-40">
+            <div className="col-start-1 col-span-2">
+              <ScrollAnimate>
+                <h4>{homepage?.data?.text_blurb_4[0]?.title[0]?.text}</h4>
+              </ScrollAnimate>
+              <ScrollAnimate className="mb-5 md:mb-20">
+                <p className="mt-10 md:mt-80">
+                  {homepage?.data?.text_blurb_4[0]?.paragraph[0]?.text}
+                </p>
+              </ScrollAnimate>
+              <ScrollAnimate>
+                <Button
+                  link={homepage?.data?.text_blurb_4[0]?.link?.url}
+                  text={homepage?.data?.text_blurb_4[0]?.link_text[0]?.text}
+                />
+              </ScrollAnimate>
+            </div>
+            <div className="col-start-3 col-span-2">
+              <ScrollAnimate>
+                <img
+                  className="w-full"
+                  src={homepage?.data?.text_blurb_4[0]?.image?.url}
+                />
+              </ScrollAnimate>
+            </div>
+          </div>
+        </ScrollTrigger>
       </div>
     </>
   )

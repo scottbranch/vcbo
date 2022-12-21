@@ -37,7 +37,7 @@ export default function Services() {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto services-page px-4 md:px-0">
+      <div className="container mx-auto services-page px-4 md:px-0 mb-60">
         <div
           className={`grid grid-cols-4 mt-20 md:mt-40 hero-section ${activeClass}`}
         >

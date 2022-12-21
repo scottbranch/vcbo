@@ -52,7 +52,7 @@ export default function Projects(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto z-10 relative px-4 md:px-0">
+      <div className="container mx-auto z-10 relative px-4 md:px-0 mb-60">
         <div className="grid grid-cols-4 mt-10 md:mt-40 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-20 md:mb-0">

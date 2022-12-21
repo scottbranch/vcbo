@@ -3,7 +3,7 @@ import { BackToTop } from "./BackToTop"
 export const Footer = (props) => {
   const {} = props
   return (
-    <div className="container mx-auto grid mt-40">
+    <div className="container mx-auto grid">
       <BackToTop className="ml-4" />
       <footer className="relative mt-28 md:mt-40 pb-10 px-4 md:px-0">
         <div className="flex flex-col md:grid grid-cols-4">

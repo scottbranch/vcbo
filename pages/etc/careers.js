@@ -15,7 +15,7 @@ export default function Careers() {
   }, [])
 
   return (
-    <div className="container mx-auto mt-40 px-4 md:px-0">
+    <div className="container mx-auto mt-40 px-4 md:px-0 mb-60">
       <div className="grid grid-cols-4">
         <div className="col-span-4 md:col-span-2 flex content-end flex-wrap">
           <ScrollAnimate>

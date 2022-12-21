@@ -47,7 +47,7 @@ export default function Article(props) {
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto mt-20 md:mt-40 article px-4 md:px-0 relative z-10">
+      <div className="container mx-auto mt-20 md:mt-40 article px-4 md:px-0 relative z-10 mb-60">
         <div className="breadcrumb flex col-span-4 relative">
           <BackArrow className="mr-2" />
           <Link href="/etc/articles">Back</Link>
