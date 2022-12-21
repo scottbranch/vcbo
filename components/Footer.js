@@ -4,7 +4,7 @@ export const Footer = (props) => {
   const {} = props
   return (
     <div className="container mx-auto grid mt-40">
-      <BackToTop />
+      <BackToTop className="ml-4" />
       <footer className="relative mt-28 md:mt-40 pb-10 px-4 md:px-0">
         <div className="flex flex-col md:grid grid-cols-4">
           <div className="grid grid-cols-4 mb-20 md:grid-cols-1 md:col-span-2 md:mr-20 md:max-w-sm">

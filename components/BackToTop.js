@@ -1,7 +1,7 @@
 import { Button } from "./Button"
 
 export const BackToTop = (props) => {
-  const { theme } = props
+  const { theme, className } = props
 
   const scrollToTop = () => {
     if (process.browser) {
@@ -12,7 +12,7 @@ export const BackToTop = (props) => {
   return (
     <Button
       onClick={() => scrollToTop()}
-      className="back-to-top"
+      className={`back-to-top ${className}`}
       text="Top"
       theme={theme}
     />

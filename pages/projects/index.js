@@ -32,7 +32,6 @@ export default function Projects(props) {
   const [sortedSectors, setSortedSectors] = useState()
 
   useEffect(() => {
-    console.log({ allProjects })
     if (process.browser) {
       document.body.classList.add("dark-mode")
       document.body.classList.add("projects-page")

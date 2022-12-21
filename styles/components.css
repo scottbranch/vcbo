@@ -5,9 +5,14 @@
   font-family: "founders";
   font-weight: 500;
   display: inline-flex;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 14px;
   text-transform: uppercase;
+}
+@media screen and (min-width: 769px) {
+  .button-row {
+    font-size: 15px;
+  }
 }
 .button-row > div {
   position: relative;

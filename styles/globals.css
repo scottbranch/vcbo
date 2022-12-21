@@ -5,15 +5,15 @@
 @layer utilities {
   @variants responsive {
     .masonry {
-      column-gap: 1.5em;
+      column-gap: 0;
       column-count: 2;
     }
     .masonry-sm {
-      column-gap: 1.5em;
+      column-gap: 0;
       column-count: 3;
     }
     .masonry-md {
-      column-gap: 1.5em;
+      column-gap: 0;
       column-count: 4;
     }
     .break-inside {
@@ -565,7 +565,13 @@ a {
 /* Projects Page Begins */
 .breadcrumb svg {
   position: relative;
-  top: 5px;
+  top: 2px;
+}
+
+@media screen and (min-width: 769px) {
+  .breadcrumb svg {
+    top: 5px;
+  }
 }
 
 .projects-page .breadcrumb .breadcrumb-sector {
@@ -889,6 +895,54 @@ sup {
 .article-body h5,
 .article-body h6 {
   margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.article-body h3 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.article-body p {
+  margin-bottom: 20px;
+}
+
+.article-body ul {
+  margin: 20px 0 30px;
+}
+
+.article-body ul li {
+  list-style: disc;
+  margin-left: 30px;
+}
+
+.article-hero {
+  height: auto;
+}
+
+.article .breadcrumb a {
+  color: var(--mediumGrey);
+}
+
+@media screen and (min-width: 769px) {
+  .article-hero {
+    height: 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .article-body ul {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.article-hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .article-body h2 {

@@ -46,7 +46,7 @@ export default function About(props) {
               <img src={about?.data?.featured_image?.url} />
             </ScrollAnimate>
           </div>
-          <div className="col-span-8 md:col-span-4 md:col-start-5 mt-14 md:mt-28">
+          <div className="col-span-8 md:col-span-4 md:col-start-5 mt-14 md:mt-28 ml-4">
             <ScrollAnimate>
               <p className="large mb-5">
                 {about?.data?.text_blurb_1[0]?.title[0]?.text}
@@ -80,7 +80,7 @@ export default function About(props) {
               <img src={about?.data?.featured_image_2?.url} />
             </ScrollAnimate>
           </div>
-          <div className="col-span-8 md:col-start-3 md:col-span-4 mt-14 md:mt-28">
+          <div className="col-span-8 md:col-start-3 md:col-span-4 mt-14 md:mt-28 ml-4">
             <ScrollAnimate>
               <p className="large mb-5">
                 {about?.data?.text_blurb_3[0]?.title[0]?.text}

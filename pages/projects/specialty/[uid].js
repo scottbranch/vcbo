@@ -51,7 +51,7 @@ export async function getStaticPaths() {
 export default function Sectors(props) {
   const { page, projects, dropdownItems, additionalProjects } = props
 
-  const [projectResults, setProjectResults] = useState(projects)
+  const [projectResults, setProjectResults] = useState()
   const [loaded, setLoaded] = useState(false)
 
   const pageData = page?.data
@@ -78,40 +78,14 @@ export default function Sectors(props) {
       document.body.classList.remove("single-project")
     }
 
-    const filteredProjects = projectResults.filter(
+    const filteredProjects = projects.filter(
       (project) => project.data.specialty.uid === page.uid
     )
 
     setProjectResults(filteredProjects)
 
-    let scrollpos = window.scrollY
-    let additionalProjectsContainer = document.querySelector(
-      ".additional-project-container"
-    )
-    let pageWrapper = document.querySelector(".sector")
-
-    const add_class_on_scroll = () => pageWrapper.classList.remove("dark-mode")
-    const remove_class_on_scroll = () => pageWrapper.classList.add("dark-mode")
-
-    window.addEventListener("scroll", function () {
-      scrollpos = window.scrollY
-      if (document.body.classList.contains("sector")) {
-        if (
-          additionalProjectsContainer.getBoundingClientRect().y -
-            additionalProjectsContainer.offsetHeight * 4 <
-          0
-        ) {
-          add_class_on_scroll()
-        } else {
-          remove_class_on_scroll()
-        }
-      } else {
-        add_class_on_scroll()
-      }
-    })
-
     setLoaded(true)
-  }, [])
+  }, [projects])
 
   return (
     <>
@@ -143,7 +117,7 @@ export default function Sectors(props) {
               : ""}
           </h3>
         </ScrollAnimate>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {projectResults?.map((project) => {
             return (
               <ScrollAnimate>

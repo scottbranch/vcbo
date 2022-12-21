@@ -102,7 +102,7 @@ export default function Sectors(props) {
     setSliceValue(specialtyData !== undefined ? "0,4" : "0")
 
     setLoaded(true)
-  }, [])
+  }, [page])
 
   return (
     <>
@@ -151,7 +151,7 @@ export default function Sectors(props) {
 
               {array.slice(sliceValue)?.map((project, index) => {
                 return (
-                  <ScrollAnimate className="col-span-4 md:col-span-1">
+                  <ScrollAnimate className="col-span-2 md:col-span-1">
                     <FilteredProject
                       className={`${specialtyData !== undefined ? "" : "mb-5"}`}
                       title={project?.data?.name[0]?.text}
@@ -169,35 +169,39 @@ export default function Sectors(props) {
             </div>
           )
         })}
-        <div className="additional-project-container">
-          <div className="additional-project-header grid grid-cols-4 gap-6">
-            <p>Project Name</p>
-            <p>Location</p>
-            <p>Project Size</p>
-            <p>Client</p>
+        {additionalProjects?.length === 0 ? (
+          ""
+        ) : (
+          <div className="additional-project-container">
+            <div className="additional-project-header grid grid-cols-4 gap-6">
+              <p>Project Name</p>
+              <p>Location</p>
+              <p>Project Size</p>
+              <p>Client</p>
+            </div>
+            <ScrollTrigger
+              onEnter={() => removeDarkMode()}
+              onExit={() => addDarkMode()}
+              style={{
+                width: "100%",
+                height: "0",
+                position: "sticky",
+                top: "0",
+              }}
+            />
+            {additionalProjects?.map((item) => {
+              return (
+                <AdditionalProject
+                  name={item?.data?.name[0]?.text}
+                  location={item?.data?.location[0]?.text}
+                  size={`${item?.data?.sq_ft[0]?.text} sq ft`}
+                  client={item?.data?.client[0]?.text}
+                  images={item?.data?.images}
+                />
+              )
+            })}
           </div>
-          <ScrollTrigger
-            onEnter={() => removeDarkMode()}
-            onExit={() => addDarkMode()}
-            style={{
-              width: "100%",
-              height: "0",
-              position: "sticky",
-              top: "0",
-            }}
-          />
-          {additionalProjects?.map((item) => {
-            return (
-              <AdditionalProject
-                name={item?.data?.name[0]?.text}
-                location={item?.data?.location[0]?.text}
-                size={`${item?.data?.sq_ft[0]?.text} sq ft`}
-                client={item?.data?.client[0]?.text}
-                images={item?.data?.images}
-              />
-            )
-          })}
-        </div>
+        )}
       </div>
     </>
   )

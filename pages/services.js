@@ -115,8 +115,8 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8" id="architecture">
-          <div className="grid grid-cols-2 col-span-4 md:col-span-2 gap-x-8">
+        <div className="grid grid-cols-4 mt-60" id="architecture">
+          <div className="grid grid-cols-2 col-span-4 md:col-span-2">
             <ScrollAnimate>
               <h3 className="col-start-1 col-span-2 mb-10 md:mb-0">
                 Architecture with Feeling
@@ -125,7 +125,7 @@ export default function Services() {
             <ScrollAnimate className="block md:hidden col-start-1 col-span-4 w-full">
               <img className="w-full" src="/services/1.jpg" />
             </ScrollAnimate>
-            <div className="col-start-1 col-span-1 flex items-baseline justify-between mt-20 md:mt-40">
+            <div className="col-start-1 col-span-1 flex items-baseline justify-between mt-20 md:mt-40 mr-4">
               <ScrollAnimate>
                 <p className="col-start-1 col-span-1 small-subhead">
                   ARCHITECTURE
@@ -135,7 +135,7 @@ export default function Services() {
                 <p>01</p>
               </ScrollAnimate>
             </div>
-            <div className="col-start-1 col-span-2 md:col-span-1 md:col-start-2 mt-20 md:mt-40">
+            <div className="col-start-1 col-span-2 md:col-span-1 md:col-start-2 mt-20 md:mt-40 ml-4 mr-4">
               <ScrollAnimate>
                 <p>
                   Architecture is what we do— it’s in our name. As a
@@ -150,7 +150,7 @@ export default function Services() {
                   approaches to envelop clients’ multifaceted needs and create
                   elegant options and solutions.
                 </p>
-                <Button link="/" text="projects" />
+                <Button link="/projects" text="projects" />
               </ScrollAnimate>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function Services() {
             />
           </ScrollAnimate>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8" id="design">
+        <div className="grid grid-cols-4 mt-60" id="design">
           <div className="col-start-1 col-span-2 md:col-span-1">
             <ScrollAnimate>
               <h3>Design and Interiors for People.</h3>
@@ -173,13 +173,13 @@ export default function Services() {
               <img className="mt-8" src="/services/3.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between">
+          <div className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
             <ScrollAnimate>
               <p className="small-subhead">INTERIOR DESIGN</p>
               <p>02</p>
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-4 col-span-2 md:col-span-1">
+          <div className="col-start-1 md:col-start-4 col-span-2 md:col-span-1  ml-4 mr-4">
             <ScrollAnimate>
               <p>
                 VCBO’s Interiors team is an inspired group of professionals
@@ -203,13 +203,13 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8" id="planning">
+        <div className="grid grid-cols-4 mt-60" id="planning">
           <div className="hidden md:block col-start-1 col-span-2">
             <ScrollAnimate>
               <img src="/services/4.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-1 flex items-baseline justify-between">
+          <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
             <ScrollAnimate>
               <p className="small-subhead">PLANNING</p>
               <p>03</p>
@@ -220,7 +220,7 @@ export default function Services() {
               <img src="/services/4.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0">
+          <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0 ml-4 mr-4">
             <ScrollAnimate>
               <p>
                 Whether it’s facility planning, urban planning, or master
@@ -258,20 +258,20 @@ export default function Services() {
             </ScrollAnimate>
           </div>
         </div>
-        <div className="grid grid-cols-4 mt-60 gap-x-8" id="sustainability">
+        <div className="grid grid-cols-4 mt-60" id="sustainability">
           <div className="col-start-1 col-span-2 md:col-span-1">
             <ScrollAnimate>
               <img src="/services/5.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-3 md:col-start-2 col-span-2 md:col-span-1 flex flex-row flex-wrap">
+          <div className="col-start-3 md:col-start-2 col-span-2 md:col-span-1 flex flex-row flex-wrap ml-4 mr-4">
             <ScrollAnimate>
               <h3>For People, Places, and the Planet to Thrive.</h3>
             </ScrollAnimate>
             <div className="hidden md:block flex items-end justify-between w-full">
               <div>
                 <ScrollAnimate>
-                  <p className="small-subhead">PLANNING</p>
+                  <p className="small-subhead">SUSTAINABILITY</p>
                 </ScrollAnimate>
               </div>
               <div>
@@ -285,7 +285,7 @@ export default function Services() {
             <div className="block md:hidden col-span-2 mt-10 mb-5">
               <div>
                 <ScrollAnimate>
-                  <p className="small-subhead">PLANNING</p>
+                  <p className="small-subhead">SUSTAINABILITY</p>
                 </ScrollAnimate>
               </div>
               <div>
@@ -294,7 +294,7 @@ export default function Services() {
                 </ScrollAnimate>
               </div>
             </div>
-            <ScrollAnimate>
+            <ScrollAnimate className=" ml-4 mr-4">
               <p>
                 Sustainable architecture is not reserved for futuristic,
                 cutting-edge projects— it’s a pillar of the longterm health of

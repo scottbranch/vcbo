@@ -70,7 +70,7 @@ export default function Articles(props) {
             const date = new Date(article?.first_publication_date)
 
             return (
-              <ScrollAnimate className="break-inside mb-16">
+              <ScrollAnimate className="break-inside mb-16 mr-4">
                 <Article
                   image={article?.data?.hero_image?.url}
                   title={article?.data?.title[0]?.text}

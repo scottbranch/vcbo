@@ -6,8 +6,8 @@ export const Article = (props) => {
   return (
     <Link href={link}>
       <img className="mb-4" src={image} />
-      <p className="font-medium">{title}</p>
-      <p>{date}</p>
+      <p className="font-medium ml-4">{title}</p>
+      <p className="ml-4">{date}</p>
     </Link>
   )
 }

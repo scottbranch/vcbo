@@ -14,7 +14,7 @@ export const Project = (props) => {
           className={`w-full ${theme === "list" ? "hidden" : ""}`}
           src={image}
         />
-        <div className="grid grid-cols-4 justify-between my-5 items-center md:items-start">
+        <div className="grid grid-cols-4 justify-between my-5 items-start">
           <h4>{sector}</h4>
           <img
             className={`hidden md:block list-image w-full ${
@@ -25,8 +25,8 @@ export const Project = (props) => {
           <div
             className={`${
               theme === "list"
-                ? "grid col-span-2 col-start-3 md:grid-cols-2"
-                : "project-text col-span-2 col-start-3  md:ml-4"
+                ? "grid col-span-2 col-start-3 md:grid-cols-2 ml-4"
+                : "project-text col-span-2 col-start-3 ml-4"
             }`}
           >
             <p
