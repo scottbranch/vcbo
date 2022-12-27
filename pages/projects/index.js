@@ -65,11 +65,6 @@ export default function Projects(props) {
             </ScrollAnimate>
           </div>
           <div className="grid col-span-4 md:col-span-2 grid-cols-4 items-center col-start-1 md:col-start-3">
-            <SelectDropdown
-              className="col-span-2"
-              items={sortedSectors}
-              defaultText="Project Types..."
-            />
             <div className={`grid grid-cols-2 col-span-2 mx-4 relative`}>
               <div
                 className={`active-highlight absolute ${
@@ -89,6 +84,11 @@ export default function Projects(props) {
                 List
               </button>
             </div>
+            <SelectDropdown
+              className="col-span-2"
+              items={sortedSectors}
+              defaultText="Project Types..."
+            />
           </div>
         </div>
         <div

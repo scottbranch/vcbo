@@ -46,6 +46,7 @@ export default function Project(props) {
   const [previousProject, setPreviousProject] = useState()
   const [nextProject, setNextProject] = useState()
   const [loaded, setLoaded] = useState(false)
+  const [sliderIndex, setSliderIndex] = useState(1)
 
   const pageData = page?.data
 
@@ -83,6 +84,9 @@ export default function Project(props) {
     speed: 1700,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: (newIndex, slider) => {
+      setSliderIndex(newIndex + 1)
+    },
   }
 
   return (
@@ -173,6 +177,12 @@ export default function Project(props) {
               <img className="w-full" src={pageData?.content_image_1?.url} />
             </ScrollAnimate>
           </div>
+          <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex justify-items-end">
+            <div className="w-full text-right mr-5">
+              <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
+              {`${pageData?.image_carousel?.length}`}
+            </div>
+          </p>
           <div className="md:col-start-3 col-span-4 md:col-span-2 mt-4">
             <ScrollAnimate>
               <Slider {...settings}>

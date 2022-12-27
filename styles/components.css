@@ -10,6 +10,11 @@
   line-height: 14px;
   text-transform: uppercase;
 }
+.button-row .first .white-arrow,
+.button-row .last svg {
+  margin-left: 3px;
+}
+
 @media screen and (min-width: 769px) {
   .button-row {
     font-size: 15px;
@@ -89,6 +94,10 @@ span.last > span {
   .button-row > div > span.last {
     width: 100%;
   }
+}
+
+.homepage-first-button > div > span.last {
+  background: transparent;
 }
 
 /* dark button */
@@ -443,6 +452,10 @@ header.mobile-menu-active .mobile-overlay {
 
 .headshot:hover {
   cursor: pointer;
+}
+
+.headshot:hover .leader-title {
+  text-decoration: underline;
 }
 
 .headshot-active .headshot {

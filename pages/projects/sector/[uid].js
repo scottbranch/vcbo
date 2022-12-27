@@ -9,6 +9,8 @@ import SelectDropdown from "../../../components/SelectDropdown"
 import { AdditionalProject } from "../../../components/AdditionalProject"
 import { Lines } from "../../../components/Lines"
 import ScrollTrigger from "react-scroll-trigger"
+import { BackArrow } from "../../../components/BackArrow"
+import Link from "next/link"
 
 // Fetch sector content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -108,7 +110,11 @@ export default function Sectors(props) {
     <>
       <Lines loaded={loaded} />
       <div className="container mx-auto sector-page px-4 md:px-0 mb-60">
-        <div className="grid grid-cols-4 mt-10 md:mt-40 gap-x-8 md:gap-0">
+        <div className="breadcrumb flex col-span-4 relative mb-10 md:mt-20 mt-10">
+          <BackArrow className="mr-2" />
+          <Link href="/projects">Back</Link>
+        </div>
+        <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8 md:gap-0">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-10 md:mb-0">
               <h2 className="uppercase">

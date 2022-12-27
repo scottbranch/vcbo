@@ -20,6 +20,7 @@ export async function getStaticProps({ previewData }) {
 
 export default function Home(props) {
   const [loaded, setLoaded] = useState(false)
+  const [firstButtonTheme, setFirstButtonTheme] = useState("dark")
 
   const { homepage } = props
 
@@ -37,17 +38,17 @@ export default function Home(props) {
   }
 
   const addDarkMode = () => {
-    console.log("add")
     if (process.browser) {
       document.body.classList.add("dark-mode")
     }
+    setFirstButtonTheme("dark")
   }
 
   const removeDarkMode = () => {
-    console.log("remove")
     if (process.browser) {
       document.body.classList.remove("dark-mode")
     }
+    setFirstButtonTheme("light")
   }
 
   useEffect(() => {
@@ -120,6 +121,8 @@ export default function Home(props) {
             </ScrollAnimate>
             <ScrollAnimate>
               <Button
+                className="homepage-first-button"
+                theme={firstButtonTheme}
                 link={homepage?.data?.text_blurb_1[0]?.link?.url}
                 text={homepage?.data?.text_blurb_1[0]?.link_text[0]?.text}
               />

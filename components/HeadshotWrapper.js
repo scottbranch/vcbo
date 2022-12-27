@@ -9,8 +9,13 @@ export const HeadshotWrapper = (props) => {
   const [active, setActive] = useState(false)
 
   const toggleClick = (index) => {
-    setActive(true)
-    setOpen(index)
+    if (index === open) {
+      setActive(false)
+      setOpen(null)
+    } else {
+      setActive(true)
+      setOpen(index)
+    }
   }
 
   return (

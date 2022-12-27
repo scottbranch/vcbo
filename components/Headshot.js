@@ -9,7 +9,7 @@ export const Headshot = (props) => {
       <img src={image} className="w-full" />
       <div className="headshot-top-content flex justify-between items-center ml-4">
         <span>
-          <p className="font-medium mt-4">{name}</p>
+          <p className="leader-title font-medium mt-4">{name}</p>
           <p>{title}</p>
         </span>
         <p>{active ? "-" : "+"}</p>

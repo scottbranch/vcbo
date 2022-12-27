@@ -11,7 +11,7 @@ export const Project = (props) => {
         className={`project-wrapper${theme === "list" ? "-list" : ""}`}
       >
         <img
-          className={`w-full ${theme === "list" ? "hidden" : ""}`}
+          className={`grid-image w-full ${theme === "list" ? "hidden" : ""}`}
           src={image}
         />
         <div className="grid grid-cols-4 justify-between my-5 items-start">
