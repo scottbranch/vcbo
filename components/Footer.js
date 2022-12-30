@@ -50,28 +50,28 @@ export const Footer = (props) => {
               target="_blank"
               className="ml-1 md:ml-4"
             >
-              Instagram
+              <span>Instagram</span>
             </a>
             <a
               href="https://twitter.com/VCBOArchitects"
               target="_blank"
               className="ml-1 md:ml-4"
             >
-              Twitter
+              <span>Twitter</span>
             </a>
             <a
               href="https://www.facebook.com/VCBOArchitecture "
               target="_blank"
               className="ml-1 md:ml-4"
             >
-              Facebook
+              <span>Facebook</span>
             </a>
             <a
               href="https://www.linkedin.com/company/vcbo/ "
               target="_blank"
               className="ml-1 md:ml-4"
             >
-              LinkedIn
+              <span>LinkedIn</span>
             </a>
           </div>
           <div className="mt-7 md:mt-0 col-start-1 col-span-2 footer-copyright">

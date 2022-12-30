@@ -85,7 +85,7 @@ export const Header = (props) => {
             router.pathname.startsWith("/projects") ? "active" : ""
           } hidden md:block col-start-5 col-span-1`}
         >
-          Projects
+          <span>Projects</span>
         </Link>
         <Link
           href="/services"
@@ -93,7 +93,7 @@ export const Header = (props) => {
             router.pathname.startsWith("/services") ? "active" : ""
           }`}
         >
-          Services
+          <span>Services</span>
         </Link>
         <Link
           href="/about"
@@ -101,7 +101,7 @@ export const Header = (props) => {
             router.pathname.startsWith("/about") ? "active" : ""
           }`}
         >
-          About
+          <span>About</span>
         </Link>
         <Link
           href="/etc/articles"
@@ -109,7 +109,7 @@ export const Header = (props) => {
             router.pathname.startsWith("/etc") ? "active" : ""
           }`}
         >
-          Etc.
+          <span>Etc.</span>
         </Link>
 
         <button

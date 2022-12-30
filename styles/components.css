@@ -215,6 +215,33 @@ footer a:hover {
   text-transform: uppercase;
 }
 
+.lower-footer a span {
+  position: relative;
+  display: inline-block;
+}
+
+.lower-footer a span:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.lower-footer a:hover span:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.dark-mode .lower-footer a:hover span:after {
+  background-color: var(--white);
+}
+
 @media screen and (min-width: 769px) {
   footer .footer-copyright {
     transform: translateY(-100%);
@@ -235,6 +262,34 @@ header a {
   font-weight: 500;
   font-size: 24px;
   line-height: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+header a span:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+header a:hover span:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.dark-mode header a span:after {
+  background-color: var(--white);
+}
+
+header a span {
+  position: relative;
 }
 
 .overlay-header,
@@ -306,7 +361,6 @@ header.mobile-menu-active .mobile-overlay {
 
 .additional-project:hover .name {
   color: var(--black);
-  text-decoration: underline;
 }
 
 .additional-project-outer {

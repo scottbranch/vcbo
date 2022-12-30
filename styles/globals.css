@@ -235,22 +235,30 @@ header a {
 
 header a.active {
   color: var(--black);
-  text-decoration: underline;
 }
 
 header a:hover {
   color: var(--black);
-  text-decoration: underline;
+}
+
+header a.active span:after {
+  transform: scaleX(1);
+}
+
+header a span:after {
+  background-color: var(--black);
+}
+
+.dark-mode header a span:after {
+  background-color: var(--white);
 }
 
 .dark-mode header a.active {
   color: var(--white);
-  text-decoration: underline;
 }
 
 .dark-mode header a:hover {
   color: var(--white);
-  text-decoration: underline;
 }
 
 header svg.logo path {
@@ -793,12 +801,10 @@ sup {
 
 .projects-page header a.active {
   color: var(--white);
-  text-decoration: underline;
 }
 
 .projects-page header a:hover {
   color: var(--white);
-  text-decoration: underline;
 }
 
 .filter-container {
