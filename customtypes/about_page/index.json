@@ -55,6 +55,38 @@
           }
         }
       },
+      "grid_image_1": {
+        "type": "Image",
+        "config": {
+          "label": "Grid Image 1",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "grid_image_2": {
+        "type": "Image",
+        "config": {
+          "label": "Grid Image 2",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "grid_image_3": {
+        "type": "Image",
+        "config": {
+          "label": "Grid Image 3",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "grid_image_4": {
+        "type": "Image",
+        "config": {
+          "label": "Grid Image 4",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "text_blurb_2": {
         "type": "Group",
         "config": {

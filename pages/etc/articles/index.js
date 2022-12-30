@@ -17,6 +17,8 @@ export default function Articles(props) {
   const { articles } = props
 
   const [loaded, setLoaded] = useState(false)
+  const [tags, setTags] = useState([])
+  const [articleTags, setArticleTags] = useState([])
 
   useEffect(() => {
     if (process.browser) {
@@ -28,49 +30,77 @@ export default function Articles(props) {
     }
 
     setLoaded(true)
+
+    const emptyTags = []
+
+    articles.map((item) => {
+      emptyTags.push(item.tags[0])
+    })
+
+    const filteredTags = emptyTags.filter(
+      (value, index) => emptyTags.indexOf(value) === index
+    )
+
+    setArticleTags(emptyTags)
+    setTags(filteredTags)
   }, [])
+
+  const filterItem = (item) => {
+    if (process.browser) {
+      const filterClass = document.querySelectorAll(`.${item}`)
+      const articles = document.querySelectorAll(".article-preview-outer")
+
+      articles.forEach((article) => {
+        if (!article.classList.contains(item)) {
+          article.classList.remove("show")
+          article.classList.add("hide")
+        }
+      })
+
+      filterClass.forEach((article) => {
+        article.classList.add("show")
+        article.classList.remove("hide")
+      })
+    }
+  }
+
+  const countTags = (tag) => {
+    let counter = 0
+    for (const article of articleTags) {
+      if (article == tag) {
+        counter++
+      }
+    }
+
+    return counter
+  }
 
   return (
     <>
       <Lines loaded={loaded} />
-      <div className="container mx-auto mt-10 md:mt-40 articles px-4 md:px-0">
+      <div className="container mx-auto mt-10 md:mt-40 articles px-4 md:px-0 mb-40">
         <div className="grid grid-cols-4">
           <ScrollAnimate>
             <h2>ETC.</h2>
           </ScrollAnimate>
-          {/* <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
-          <h4>
-            Culture <sup>5</sup>
-          </h4>
-          <h4>
-            Careers <sup>10</sup>
-          </h4>
-          <h4>
-            Corporate Resposibilit <sup>12</sup>
-          </h4>
-          <h4>
-            Another Tag <sup>5</sup>
-          </h4>
-          <h4>
-            Sustainability <sup>3</sup>
-          </h4>
-          <h4>
-            Awards <sup>2</sup>
-          </h4>
-          <h4>
-            Another Tag <sup>8</sup>
-          </h4>
-          <h4>
-            Another Tag <sup>20</sup>
-          </h4>
-        </ScrollAnimate> */}
+          {console.log(tags)}
+          <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
+            {tags?.map((item) => (
+              <h4 className="tagname" onClick={() => filterItem(item)}>
+                {item && item}
+                <sup>{item && countTags(item)}</sup>
+              </h4>
+            ))}
+          </ScrollAnimate>
         </div>
         <div className="masonry sm:masonry-sm md:masonry-md mt-10 md:mt-40">
           {articles?.map((article) => {
             const date = new Date(article?.first_publication_date)
 
             return (
-              <ScrollAnimate className="break-inside mb-16 mr-4">
+              <ScrollAnimate
+                className={`break-inside mb-16 mr-4 article-preview-outer ${article.tags}`}
+              >
                 <Article
                   image={article?.data?.hero_image?.url}
                   title={article?.data?.title[0]?.text}

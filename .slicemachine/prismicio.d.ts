@@ -42,6 +42,50 @@ interface AboutPageDocumentData {
      */
     text_blurb_1: prismicT.GroupField<Simplify<AboutPageDocumentDataTextBlurb1Item>>;
     /**
+     * Grid Image 1 field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_1
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    grid_image_1: prismicT.ImageField<never>;
+    /**
+     * Grid Image 2 field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_2
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    grid_image_2: prismicT.ImageField<never>;
+    /**
+     * Grid Image 3 field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_3
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    grid_image_3: prismicT.ImageField<never>;
+    /**
+     * Grid Image 4 field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_4
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    grid_image_4: prismicT.ImageField<never>;
+    /**
      * Text Blurb 2 field in *About Page*
      *
      * - **Field Type**: Group

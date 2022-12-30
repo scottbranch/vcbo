@@ -114,7 +114,7 @@ export default function Project(props) {
           <div className="col-start-1 col-span-4">
             <ScrollAnimate>
               <img
-                className="block w-full mt-10 md:mt-24"
+                className="block w-full mt-10 md:mt-24 project-full-image"
                 src={pageData?.hero_image?.url}
               />
             </ScrollAnimate>
@@ -228,7 +228,7 @@ export default function Project(props) {
             </ScrollAnimate>
           </div>
           <div className="col-span-2"></div>
-          <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40 ml-4">
+          <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40  ml-2 md:ml-4">
             {nextProject === undefined && previousProject === undefined ? (
               ""
             ) : (

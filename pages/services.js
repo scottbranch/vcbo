@@ -39,7 +39,7 @@ export default function Services() {
       <Lines loaded={loaded} />
       <div className="container mx-auto services-page px-4 md:px-0 mb-60">
         <div
-          className={`grid grid-cols-4 mt-20 md:mt-40 hero-section ${activeClass}`}
+          className={`grid grid-cols-4 mt-10 md:mt-40 hero-section ${activeClass}`}
         >
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
@@ -51,14 +51,20 @@ export default function Services() {
               >
                 <div className="inner-menu">
                   <img
-                    className="pt-10 md:pt-48 block"
+                    className="pt-32 md:pt-48 block"
                     src="/services/Architecture.jpg"
                   />
-                  <h1 className="absolute">Architecture</h1>
-                  <p>01</p>
+                  <h1 className="hidden md:block absolute architecture">
+                    Architecture
+                  </h1>
+                  <p className="hidden md:block">01</p>
                 </div>
               </a>
             </ScrollAnimate>
+            <h1 className="block md:hidden absolute architecture">
+              Architecture
+            </h1>
+            <p className="block md:hidden">01</p>
           </div>
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
@@ -73,11 +79,15 @@ export default function Services() {
                     className="block mx-auto"
                     src="/services/Interiors.jpg"
                   />
-                  <h1 className="absolute">Interior Design</h1>
-                  <p>02</p>
+                  <h1 className="hidden md:block absolute design">
+                    Interior Design
+                  </h1>
+                  <p className="hidden md:block">02</p>
                 </div>
               </a>
             </ScrollAnimate>
+            <h1 className="block md:hidden absolute design">Interior Design</h1>
+            <p className="block md:hidden">02</p>
           </div>
           <div className="col-span-1 relative item-wrap planning">
             <ScrollAnimate>
@@ -87,13 +97,20 @@ export default function Services() {
                 onMouseLeave={() => hideColumn()}
                 onClick={() => handleClickScroll("planning")}
               >
-                <div className="inner-menu justify-end pt-10 md:pt-0">
-                  <img className="block" src="/services/Planning.jpg" />
-                  <h1 className="absolute">Planning</h1>
-                  <p>03</p>
+                <div className="inner-menu justify-end pt-10 md:pt-0 pr-10 md:pr-0">
+                  <img
+                    className="planning-image block"
+                    src="/services/Planning.jpg"
+                  />
+                  <h1 className="hidden md:block absolute planning">
+                    Planning
+                  </h1>
+                  <p className="hidden md:block">03</p>
                 </div>
               </a>
             </ScrollAnimate>
+            <h1 className="block md:hidden absolute planning">Planning</h1>
+            <p className="block md:hidden">03</p>
           </div>
           <div className="col-span-1 relative item-wrap">
             <ScrollAnimate>
@@ -105,14 +122,20 @@ export default function Services() {
               >
                 <div className="inner-menu justify-center">
                   <img
-                    className="block mx-auto"
+                    className="block mx-auto sustainability-image"
                     src="/services/Sustainability.jpg"
                   />
-                  <h1 className="absolute">Sustainability</h1>
-                  <p>04</p>
+                  <h1 className="hidden md:block absolute sustainability">
+                    Sustainability
+                  </h1>
+                  <p className="hidden md:block ">04</p>
                 </div>
               </a>
             </ScrollAnimate>
+            <h1 className="block md:hidden absolute sustainability">
+              Sustainability
+            </h1>
+            <p className="block md:hidden ">04</p>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-60" id="architecture">
@@ -135,7 +158,7 @@ export default function Services() {
                 <p>01</p>
               </ScrollAnimate>
             </div>
-            <div className="col-start-1 col-span-2 md:col-span-1 md:col-start-2 mt-20 md:mt-40 ml-4 mr-4">
+            <div className="col-start-2 col-span-2 md:col-span-1 md:col-start-2 mt-20 md:mt-40 ml-4 mr-4">
               <ScrollAnimate>
                 <p>
                   Architecture is what we do— it’s in our name. As a
@@ -173,12 +196,10 @@ export default function Services() {
               <img className="mt-8" src="/services/3.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
-            <ScrollAnimate>
-              <p className="small-subhead">INTERIOR DESIGN</p>
-              <p>02</p>
-            </ScrollAnimate>
-          </div>
+          <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
+            <p className="small-subhead">INTERIOR DESIGN</p>
+            <p>02</p>
+          </ScrollAnimate>
           <div className="col-start-1 md:col-start-4 col-span-2 md:col-span-1  ml-4 mr-4">
             <ScrollAnimate>
               <p>
@@ -209,12 +230,10 @@ export default function Services() {
               <img src="/services/4.jpg" />
             </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
-            <ScrollAnimate>
-              <p className="small-subhead">PLANNING</p>
-              <p>03</p>
-            </ScrollAnimate>
-          </div>
+          <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
+            <p className="small-subhead">PLANNING</p>
+            <p>03</p>
+          </ScrollAnimate>
           <div className="block md:hidden col-start-1 col-span-4">
             <ScrollAnimate>
               <img src="/services/4.jpg" />
@@ -268,20 +287,12 @@ export default function Services() {
             <ScrollAnimate>
               <h3>For People, Places, and the Planet to Thrive.</h3>
             </ScrollAnimate>
-            <div className="hidden md:block flex items-end justify-between w-full">
-              <div>
-                <ScrollAnimate>
-                  <p className="small-subhead">SUSTAINABILITY</p>
-                </ScrollAnimate>
-              </div>
-              <div>
-                <ScrollAnimate>
-                  <p>04</p>
-                </ScrollAnimate>
-              </div>
-            </div>
+            <ScrollAnimate className="hidden md:flex col-start-1 items-center justify-between col-span-1 ml-4 mr-4 w-full">
+              <p className="small-subhead">SUSTAINABILITY</p>
+              <p>04</p>
+            </ScrollAnimate>
           </div>
-          <div className="col-start-1 md:col-start-3 col-span-4 grid-cols-4 md:col-span-1">
+          <div className="grid col-start-1 md:col-start-3 col-span-4 grid-cols-4 md:col-span-1">
             <div className="block md:hidden col-span-2 mt-10 mb-5">
               <div>
                 <ScrollAnimate>
@@ -294,7 +305,7 @@ export default function Services() {
                 </ScrollAnimate>
               </div>
             </div>
-            <ScrollAnimate className=" ml-4 mr-4">
+            <ScrollAnimate className="mt-10 ml-4 mr-4 col-span-2">
               <p>
                 Sustainable architecture is not reserved for futuristic,
                 cutting-edge projects— it’s a pillar of the longterm health of

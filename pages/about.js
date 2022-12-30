@@ -56,15 +56,24 @@ export default function About(props) {
               />
             </ScrollAnimate>
           </div>
-          <div className="col-span-8 mx-auto">
-            <ScrollAnimate>
-              <img className="md:block hidden" src="about-grid.png" />
-              <img
-                className="md:hidden w-full mt-14"
-                src="about-grid-mobile.png"
-              />
-            </ScrollAnimate>
-          </div>
+          <ScrollAnimate className="grid col-span-8 mx-auto grid-cols-8 mt-20 md:mt-0">
+            <img
+              className="col-span-4 md:col-span-2 col-start-1 w-11/12 mx-auto"
+              src={about?.data?.grid_image_1?.url}
+            />
+            <img
+              className="col-span-4 md:col-span-2 col-start-5 md:col-start-3 mt-10 md:mt-96 pt-20 w-11/12 md:mx-auto"
+              src={about?.data?.grid_image_2?.url}
+            />
+            <img
+              className="col-span-4 md:col-span-2 col-start-1 md:col-start-5 mt-40 md:mt-56 w-11/12 mx-auto"
+              src={about?.data?.grid_image_3?.url}
+            />
+            <img
+              className="col-span-4 md:col-span-2 col-start-5 md:col-start-7 mt-4 md:mt-56 w-11/12"
+              src={about?.data?.grid_image_4?.url}
+            />
+          </ScrollAnimate>
           <div className="col-span-8 md:col-span-4 mt-14 md:mt-28">
             <ScrollAnimate>
               <p className="large mb-5">

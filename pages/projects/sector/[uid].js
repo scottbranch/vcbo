@@ -137,7 +137,7 @@ export default function Sectors(props) {
             {page?.data?.name[0]?.text}
           </h3>
         </ScrollAnimate>
-        {reducedProjects?.map((array) => {
+        {reducedProjects?.reverse().map((array) => {
           return (
             <div
               className={`grid ${
