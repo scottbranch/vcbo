@@ -229,6 +229,21 @@ header {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .logo,
+  .mobile-menu-button {
+    transform: translate3d(0, 0, 0);
+    transition: 500ms ease !important;
+  }
+
+  .logo.scroll-up {
+    transform: translate3d(0, -80px, 0);
+  }
+  .mobile-menu-button.scroll-up {
+    transform: translate3d(0, -70px, 0);
+  }
+}
+
 header a {
   transition: color 250ms ease;
 }

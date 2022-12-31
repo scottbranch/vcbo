@@ -46,7 +46,7 @@ export const Header = (props) => {
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
         <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
           <svg
-            className="logo"
+            className={`logo ${scrollDirection === "down" ? "scroll-up" : ""}`}
             width="160"
             height="47"
             viewBox="0 0 160 47"
@@ -113,7 +113,9 @@ export const Header = (props) => {
         </Link>
 
         <button
-          className="md:hidden block col-start-7 col-span-2"
+          className={`mobile-menu-button md:hidden block col-start-7 col-span-2 ${
+            scrollDirection === "down" ? "scroll-up" : ""
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           Menu +
