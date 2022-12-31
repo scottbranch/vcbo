@@ -1,7 +1,8 @@
 import ScrollAnimate from "../../components/ScrollAnimate"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 export default function Careers() {
+  const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     if (process.browser) {
       document.body.classList.remove("homepage")
