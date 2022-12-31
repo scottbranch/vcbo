@@ -225,7 +225,7 @@ header {
 
 @media screen and (min-width: 769px) {
   header.scroll-up {
-    transform: translate3d(0, -105%, 0);
+    transform: translate3d(0, -110%, 0);
   }
 }
 
