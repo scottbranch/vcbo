@@ -545,6 +545,12 @@ a {
 }
 
 /* Services Page Begins */
+@media screen and (max-width: 768px) {
+  .services-page .button-row > div {
+    max-width: 150px;
+  }
+}
+
 .services-page img {
   transition: filter 450ms ease;
 }
