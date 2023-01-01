@@ -21,6 +21,16 @@ const routes = [
     path: "/about",
   },
   {
+    type: "services_page",
+    uid: "services",
+    path: "/services",
+  },
+  {
+    type: "careers_page",
+    uid: "careers",
+    path: "/etc/careers",
+  },
+  {
     type: "project",
     path: "/projects/:uid",
   },

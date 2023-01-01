@@ -1,0 +1,67 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "careers_page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "featured_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+    },
+    "architectural_team": [
+      {
+        "position": [
+          {
+            "type": "paragraph",
+            "text": "Non non amet non. Aliquip quis eu commodo ea eu mollit ut laboris in ullamco ad sint excepteur amet.",
+            "spans": []
+          }
+        ],
+        "location": [
+          {
+            "type": "paragraph",
+            "text": "Qui laborum id tempor velit ex id. Commodo nisi laborum deserunt consequat incididunt aliquip.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "interior_design_team": [
+      {
+        "position": [
+          {
+            "type": "paragraph",
+            "text": "Ad exercitation proident pariatur ullamco tempor. Do proident nisi Lorem nostrud elit do ullamco laboris ullamco do elit. Nulla et duis velit cupidatat consequat id tempor deserunt quis ea reprehenderit ut quis excepteur dolor.",
+            "spans": []
+          }
+        ],
+        "location": [
+          {
+            "type": "paragraph",
+            "text": "Velit incididunt et consequat non reprehenderit laborum occaecat officia. Veniam aute cupidatat officia sunt et cupidatat nulla dolore velit proident.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "benefits": [
+      {
+        "type": "paragraph",
+        "text": "Enim quis do tempor magna eu. Nisi tempor laboris proident veniam ipsum ut id mollit officia veniam et aliquip dolore ullamco consectetur.",
+        "spans": []
+      }
+    ]
+  }
+}

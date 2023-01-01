@@ -1,7 +1,20 @@
 import ScrollAnimate from "../../components/ScrollAnimate"
 import { useState, useEffect } from "react"
+import { createClient } from "../../prismicio"
+import { PrismicRichText } from "@prismicio/react"
 
-export default function Careers() {
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const careers = await client.getByUID("careers_page", "careers")
+
+  return {
+    props: { careers }, // Will be passed to the sectors component as props
+  }
+}
+
+export default function Careers(props) {
+  const { careers } = props
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     if (process.browser) {
@@ -13,6 +26,8 @@ export default function Careers() {
     }
 
     setLoaded(true)
+
+    console.log({ careers })
   }, [])
 
   return (
@@ -27,7 +42,7 @@ export default function Careers() {
           </ScrollAnimate>
         </div>
         <ScrollAnimate className="col-span-4 md:col-span-2 mt-12 md:mt-0">
-          <img src="/etc/Rectangle.jpg" />
+          <img src={careers?.data?.featured_image?.url} />
         </ScrollAnimate>
       </div>
       <div className="grid grid-cols-4 mt-24 md:mt-60">
@@ -40,17 +55,15 @@ export default function Careers() {
         </ScrollAnimate>
         <ScrollAnimate className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
-          <p className="mt-6">Architect II</p>
-          <p className="mt-6">Architect II</p>
-          <p className="mt-6">BIM Technician</p>
-          <p className="mt-6">Specification Writer</p>
+          {careers?.data?.architectural_team?.map((item) => (
+            <p className="mt-6">{item?.position[0]?.text}</p>
+          ))}
         </ScrollAnimate>
         <ScrollAnimate className="col-span-1">
           <p className="small-subhead">LOCATION</p>
-          <p className="mt-6">Salt Lake City, UT</p>
-          <p className="mt-6">Salt Lake City, UT</p>
-          <p className="mt-6">Salt Lake City, UT</p>
-          <p className="mt-6">Salt Lake City, UT</p>
+          {careers?.data?.architectural_team?.map((item) => (
+            <p className="mt-6">{item?.location[0]?.text}</p>
+          ))}
         </ScrollAnimate>
       </div>
       <ScrollAnimate className="grid grid-cols-4 mt-24 md:mt-60">
@@ -63,13 +76,15 @@ export default function Careers() {
         </div>
         <div className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
-          <p className="mt-6">Interior Designer II</p>
-          <p className="mt-6">Interior Designer Intern</p>
+          {careers?.data?.interior_design_team?.map((item) => (
+            <p className="mt-6">{item?.position[0]?.text}</p>
+          ))}
         </div>
         <div className="col-span-1">
           <p className="small-subhead">LOCATION</p>
-          <p className="mt-6">Salt Lake City, UT</p>
-          <p className="mt-6">Salt Lake City, UT</p>
+          {careers?.data?.interior_design_team?.map((item) => (
+            <p className="mt-6">{item?.location[0]?.text}</p>
+          ))}
         </div>
       </ScrollAnimate>
       <ScrollAnimate className="grid grid-cols-4 mt-24 mb-24 md:mt-60 md:mb-60">
@@ -77,16 +92,7 @@ export default function Careers() {
           <h4>Benefits</h4>
         </div>
         <div className="col-span-4 md:col-span-2">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-            ultricies lacus sed turpis tincidunt. Quisque sagittis purus sit
-            amet volutpat consequat mauris nunc. Amet justo donec enim diam
-            vulputate. Ac turpis egestas integer eget aliquet nibh praesent
-            tristique magna. Pellentesque nec nam aliquam sem et. Condimentum
-            mattis pellentesque id nibh tortor id aliquet lectus proin. Purus
-            semper eget duis at tellus at urna.
-          </p>
+          <PrismicRichText field={careers?.data?.benefits} />
         </div>
       </ScrollAnimate>
     </div>

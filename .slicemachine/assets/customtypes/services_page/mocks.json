@@ -1,0 +1,204 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "services_page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "architecture": [
+      {
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Current",
+            "spans": []
+          }
+        ],
+        "sub_heading": [
+          {
+            "type": "heading6",
+            "text": "Bottle",
+            "spans": []
+          }
+        ],
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Irure culpa culpa sint ipsum fugiat aliquip minim ea amet. Non occaecat reprehenderit eu.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
+        },
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "link_text": [
+          {
+            "type": "paragraph",
+            "text": "Nisi duis veniam fugiat dolore velit reprehenderit exercitation est occaecat pariatur qui nostrud aliquip consequat. Excepteur pariatur qui pariatur nostrud nulla.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "design": [
+      {
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Remarkable",
+            "spans": []
+          }
+        ],
+        "sub_heading": [
+          {
+            "type": "heading6",
+            "text": "Outline",
+            "spans": []
+          }
+        ],
+        "image_1": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+        },
+        "image_2": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117"
+        },
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Culpa excepteur occaecat duis ea reprehenderit laboris ex minim aliquip magna. Dolor ea dolor deserunt anim et. Cillum occaecat exercitation ipsum proident ullamco occaecat amet quis eu labore eu aute dolore.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "link_text": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua aute dolor voluptate ex commodo. Sit veniam id magna eiusmod ullamco enim.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "planning": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
+        },
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Surrounded",
+            "spans": []
+          }
+        ],
+        "sub_heading": [
+          {
+            "type": "heading6",
+            "text": "Supply",
+            "spans": []
+          }
+        ],
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Amet exercitation sunt in. Ex ad do labore ullamco deserunt enim. Velit elit deserunt enim elit.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "link_text": [
+          {
+            "type": "paragraph",
+            "text": "Ea reprehenderit culpa eu mollit deserunt magna sunt reprehenderit magna sunt laborum. Irure culpa irure nulla in tempor.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "sustainability": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+        },
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Expect",
+            "spans": []
+          }
+        ],
+        "sub_heading": [
+          {
+            "type": "heading6",
+            "text": "Honor",
+            "spans": []
+          }
+        ],
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Magna aliquip veniam officia non deserunt. Ad non aliquip et esse fugiat et dolore aliqua sunt laboris cillum elit.",
+            "spans": []
+          }
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        },
+        "link_text": [
+          {
+            "type": "paragraph",
+            "text": "Magna id sit commodo culpa reprehenderit nulla occaecat consequat adipisicing anim officia adipisicing veniam.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

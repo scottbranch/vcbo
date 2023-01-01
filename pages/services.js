@@ -2,8 +2,21 @@ import ScrollAnimate from "../components/ScrollAnimate"
 import { Button } from "../components/Button"
 import { useEffect, useState } from "react"
 import { Lines } from "../components/Lines"
+import { createClient } from "../prismicio"
+import { PrismicRichText } from "@prismicio/react"
 
-export default function Services() {
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const services = await client.getByUID("services_page", "services")
+
+  return {
+    props: { services }, // Will be passed to the sectors component as props
+  }
+}
+
+export default function Services(props) {
+  const { services } = props
   const [loaded, setLoaded] = useState(false)
   const [activeClass, setActiveClass] = useState("")
 
@@ -17,6 +30,8 @@ export default function Services() {
     }
 
     setLoaded(true)
+
+    console.log({ services })
   }, [])
 
   const showColumn = (name) => {
@@ -142,16 +157,19 @@ export default function Services() {
           <div className="grid grid-cols-2 col-span-4 md:col-span-2">
             <ScrollAnimate>
               <h3 className="col-start-1 col-span-2 mb-10 md:mb-0">
-                Architecture with Feeling
+                {services?.data?.architecture[0]?.heading[0]?.text}
               </h3>
             </ScrollAnimate>
             <ScrollAnimate className="block md:hidden col-start-1 col-span-4 w-full">
-              <img className="w-full" src="/services/1.jpg" />
+              <img
+                className="w-full"
+                src={services?.data?.architecture[0]?.image?.url}
+              />
             </ScrollAnimate>
             <div className="col-start-1 col-span-1 flex items-baseline justify-between mt-20 md:mt-40 mr-4">
               <ScrollAnimate>
                 <p className="col-start-1 col-span-1 small-subhead">
-                  ARCHITECTURE
+                  {services?.data?.architecture[0]?.sub_heading[0]?.text}
                 </p>
               </ScrollAnimate>
               <ScrollAnimate>
@@ -160,143 +178,108 @@ export default function Services() {
             </div>
             <div className="col-start-2 col-span-2 md:col-span-1 md:col-start-2 mt-20 md:mt-40 ml-4 mr-4">
               <ScrollAnimate>
-                <p>
-                  Architecture is what we do— it’s in our name. As a
-                  full-service architectural firm, we navigate advanced
-                  technologies, project requirements, budgets, employee
-                  efficiencies, and corporate cultures through creative and
-                  thoughtful architecture.
-                </p>
-                <br />
-                <p>
-                  We employ a collaborative design process with cutting-edge
-                  approaches to envelop clients’ multifaceted needs and create
-                  elegant options and solutions.
-                </p>
-                <Button link="/projects" text="projects" />
+                <PrismicRichText
+                  field={services?.data?.architecture[0]?.text}
+                />
+                <Button
+                  link={services?.data?.architecture[0]?.link?.url}
+                  text={services?.data?.architecture[0]?.link_text[0]?.text}
+                />
               </ScrollAnimate>
             </div>
           </div>
           <ScrollAnimate className="hidden md:block col-start-3 col-span-2 w-full">
             <img
               className="col-start-3 col-span-2 w-full"
-              src="/services/1.jpg"
+              src={services?.data?.architecture[0]?.image?.url}
             />
           </ScrollAnimate>
         </div>
         <div className="grid grid-cols-4 mt-60" id="design">
           <div className="col-start-1 col-span-2 md:col-span-1">
             <ScrollAnimate>
-              <h3>Design and Interiors for People.</h3>
+              <h3>{services?.data?.design[0]?.heading[0]?.text}</h3>
             </ScrollAnimate>
           </div>
           <div className="col-start-3 md:col-start-2 col-span-2 md:col-span-1">
             <ScrollAnimate>
-              <img src="/services/2.jpg" />
-              <img className="mt-8" src="/services/3.jpg" />
+              <img src={services?.data?.design[0]?.image_1?.url} />
+              <img
+                className="mt-8"
+                src={services?.data?.design[0]?.image_2?.url}
+              />
             </ScrollAnimate>
           </div>
           <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
-            <p className="small-subhead">INTERIOR DESIGN</p>
+            <p className="small-subhead">
+              {services?.data?.design[0]?.sub_heading[0]?.text}
+            </p>
             <p>02</p>
           </ScrollAnimate>
           <div className="col-start-1 md:col-start-4 col-span-2 md:col-span-1  ml-4 mr-4">
             <ScrollAnimate>
-              <p>
-                VCBO’s Interiors team is an inspired group of professionals
-                committed to creating spaces where people can thrive as they
-                live, work, learn, and play.
-              </p>
-              <br />
-              <p>
-                Our team offers a wide range of services for new and renovated
-                offices, healthcare spaces, educational environments, religious
-                structures, and beyond.
-              </p>
-              <br />
-              <p>
-                We work diligently with our clients to design sustainable spaces
-                that promote dynamic engagement. In every project, we consider
-                how the spaces we occupy affect our moods, attitudes,
-                productivity, creativity, and health.
-              </p>
-              <Button link="/" text="read more" />
+              <PrismicRichText field={services?.data?.design[0]?.text} />
+              <Button
+                link={services?.data?.design[0]?.link?.url}
+                text={services?.data?.design[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-60" id="planning">
+          {/* <h3 className="col-start-3 col-span-2">
+            {services?.data?.planning[0]?.heading[0]?.text}
+          </h3> */}
           <div className="hidden md:block col-start-1 col-span-2">
             <ScrollAnimate>
-              <img src="/services/4.jpg" />
+              <img src={services?.data?.planning[0]?.image?.url} />
             </ScrollAnimate>
           </div>
           <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
-            <p className="small-subhead">PLANNING</p>
+            <p className="small-subhead">
+              {services?.data?.planning[0]?.sub_heading[0]?.text}
+            </p>
             <p>03</p>
           </ScrollAnimate>
           <div className="block md:hidden col-start-1 col-span-4">
             <ScrollAnimate>
-              <img src="/services/4.jpg" />
+              <img src={services?.data?.planning[0]?.image?.url} />
             </ScrollAnimate>
           </div>
           <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0 ml-4 mr-4">
             <ScrollAnimate>
-              <p>
-                Whether it’s facility planning, urban planning, or master
-                planning, VCBO brings a vast wealth of expertise.
-              </p>
-              <br />
-              <ul className="pl-8">
-                <li>
-                  <p>
-                    Facility planning ensures the maximization of space,
-                    management of operating costs, and overall effectiveness and
-                    impact of a facility.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Urban planning typically applies to a city, town, or region.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    A master plan typically applies to a specific project,
-                    development, campus, or district that will include multiple
-                    facilities and other elements.
-                  </p>
-                </li>
-              </ul>
-              <br />
-              <p>
-                Our specialized teams work collaboratively with clients,
-                committees, and stakeholders to encapsulate and execute the
-                vision of each intricate planning project.
-              </p>
-              <Button link="/" text="learn more" />
+              <PrismicRichText field={services?.data?.planning[0]?.text} />
+              <Button
+                link={services?.data?.planning[0]?.link?.url}
+                text={services?.data?.planning[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-60" id="sustainability">
           <div className="col-start-1 col-span-2 md:col-span-1">
             <ScrollAnimate>
-              <img src="/services/5.jpg" />
+              <img src={services?.data?.sustainability[0]?.image?.url} />
             </ScrollAnimate>
           </div>
           <div className="col-start-3 md:col-start-2 col-span-2 md:col-span-1 flex flex-row flex-wrap ml-4 mr-4">
             <ScrollAnimate>
-              <h3>For People, Places, and the Planet to Thrive.</h3>
+              <h3>{services?.data?.sustainability[0]?.heading[0]?.text}</h3>
             </ScrollAnimate>
             <ScrollAnimate className="hidden md:flex col-start-1 items-center justify-between col-span-1 ml-4 mr-4 w-full">
-              <p className="small-subhead">SUSTAINABILITY</p>
+              <p className="small-subhead">
+                {services?.data?.sustainability[0]?.sub_heading[0]?.text}
+              </p>
               <p>04</p>
             </ScrollAnimate>
           </div>
-          <div className="grid col-start-1 md:col-start-3 col-span-4 grid-cols-4 md:col-span-1">
+          <div className="grid col-start-1 md:col-start-3 col-span-4 grid-cols-4 md:col-span-2">
             <div className="block md:hidden col-span-2 mt-10 mb-5">
               <div>
                 <ScrollAnimate>
-                  <p className="small-subhead">SUSTAINABILITY</p>
+                  <p className="small-subhead">
+                    {services?.data?.sustainability[0]?.sub_heading[0]?.text}
+                  </p>
                 </ScrollAnimate>
               </div>
               <div>
@@ -306,25 +289,13 @@ export default function Services() {
               </div>
             </div>
             <ScrollAnimate className="mt-10 ml-4 mr-4 col-span-2">
-              <p>
-                Sustainable architecture is not reserved for futuristic,
-                cutting-edge projects— it’s a pillar of the longterm health of
-                our everyday communities. Resilient design and execution are
-                important to us, and sustainability has become a driving force
-                of VCBO’s innovations and practices.
-              </p>
-              <br />
-              <p>
-                We embrace design strategies that alleviate potentially harmful
-                effects, seek ways to ever improve efficiency, and work with the
-                native environment always in mind.
-              </p>
-              <br />
-              <p>
-                We take pride in collaborating with clients on ecological
-                design.
-              </p>
-              <Button link="/" text="featured project" />
+              <PrismicRichText
+                field={services?.data?.sustainability[0]?.text}
+              />
+              <Button
+                link={services?.data?.sustainability[0]?.link?.url}
+                text={services?.data?.sustainability[0]?.link_text[0]?.text}
+              />
             </ScrollAnimate>
           </div>
         </div>

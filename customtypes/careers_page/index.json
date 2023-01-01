@@ -1,0 +1,86 @@
+{
+  "id": "careers_page",
+  "label": "Careers Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "id",
+          "placeholder": ""
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "architectural_team": {
+        "type": "Group",
+        "config": {
+          "label": "Architectural Team",
+          "fields": {
+            "position": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Position",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Location",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "interior_design_team": {
+        "type": "Group",
+        "config": {
+          "label": "Interior Design Team",
+          "fields": {
+            "position": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Position",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "location": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Location",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "benefits": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Benefits",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
