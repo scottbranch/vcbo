@@ -43,7 +43,7 @@ export default function Articles(props) {
 
     setArticleTags(emptyTags)
     setTags(filteredTags)
-  }, [])
+  }, [tags])
 
   const filterItem = (item) => {
     if (process.browser) {
@@ -84,9 +84,14 @@ export default function Articles(props) {
             <h2>ETC.</h2>
           </ScrollAnimate>
           {console.log(tags)}
-          <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags">
+          <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags mt-20 md:mt-0">
             {tags?.map((item) => (
-              <h4 className="tagname" onClick={() => filterItem(item)}>
+              <h4
+                className={`tagname relative ${
+                  item === undefined ? "hidden" : ""
+                }`}
+                onClick={() => filterItem(item)}
+              >
                 {item && item}
                 <sup>{item && countTags(item)}</sup>
               </h4>

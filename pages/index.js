@@ -142,7 +142,7 @@ export default function Home(props) {
           className="pb-60 "
         >
           <div className="grid grid-cols-4 mt-4">
-            <div className="col-span-2 md:col-span-1">
+            <div className="col-span-2 md:col-span-1 mr-4">
               <ScrollAnimate>
                 <h4>{homepage?.data?.text_blurb_2[0]?.title[0]?.text}</h4>
               </ScrollAnimate>

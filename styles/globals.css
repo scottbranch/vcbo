@@ -102,13 +102,13 @@
 }
 
 .dark-mode .line-container div {
-  background-color: var(--mediumGrey);
+  background-color: var(--darkGrey);
 }
 
 .line-container div {
   width: 1px;
   height: 100%;
-  background-color: var(--lightGrey);
+  background-color: var(--lightestGrey);
   position: absolute;
   transform: scaleY(0);
   transition: transform 1s ease;
@@ -1069,6 +1069,11 @@ h4.tagname:hover {
 }
 
 @media screen and (max-width: 768px) {
+  .tagname sup {
+    top: -0.5rem;
+    left: 0.2rem;
+  }
+
   .article-body ul {
     font-weight: 400;
     font-size: 14px;
@@ -1104,6 +1109,12 @@ h4.tagname:hover {
 
 .articles .tags h4 {
   margin: 16px 36px;
+}
+
+@media screen and (max-width: 768px) {
+  .articles .tags h4 {
+    margin: 5px 36px;
+  }
 }
 
 .slick-dots li button:before {

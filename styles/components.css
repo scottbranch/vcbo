@@ -527,6 +527,7 @@ header.mobile-menu-active .mobile-overlay {
 
 .headshot-content {
   max-height: 0;
+  overflow: hidden;
   transition: max-height 750ms ease;
 }
 
