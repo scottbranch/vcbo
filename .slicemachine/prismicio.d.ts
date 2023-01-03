@@ -525,6 +525,178 @@ export interface CareersPageDocumentDataInteriorDesignTeamItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type CareersPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CareersPageDocumentData>, "careers_page", Lang>;
+/** Content for Footer documents */
+interface FooterDocumentData {
+    /**
+     * Heading field in *Footer*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.heading
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heading: prismicT.TitleField;
+    /**
+     * Inquiries field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.inquiries[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    inquiries: prismicT.GroupField<Simplify<FooterDocumentDataInquiriesItem>>;
+    /**
+     * SLC HQ field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.slc_hq[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    slc_hq: prismicT.GroupField<Simplify<FooterDocumentDataSlcHqItem>>;
+    /**
+     * Careers field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.careers[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    careers: prismicT.GroupField<Simplify<FooterDocumentDataCareersItem>>;
+    /**
+     * STG field in *Footer*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.stg[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    stg: prismicT.GroupField<Simplify<FooterDocumentDataStgItem>>;
+}
+/**
+ * Item in Footer → Inquiries
+ *
+ */
+export interface FooterDocumentDataInquiriesItem {
+    /**
+     * Email field in *Footer → Inquiries*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.inquiries[].email
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    email: prismicT.RichTextField;
+    /**
+     * Phone field in *Footer → Inquiries*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.inquiries[].phone
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    phone: prismicT.RichTextField;
+}
+/**
+ * Item in Footer → SLC HQ
+ *
+ */
+export interface FooterDocumentDataSlcHqItem {
+    /**
+     * Street field in *Footer → SLC HQ*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.slc_hq[].street
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    street: prismicT.RichTextField;
+    /**
+     * City field in *Footer → SLC HQ*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.slc_hq[].city
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    city: prismicT.RichTextField;
+}
+/**
+ * Item in Footer → Careers
+ *
+ */
+export interface FooterDocumentDataCareersItem {
+    /**
+     * Text field in *Footer → Careers*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.careers[].text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+    /**
+     * Link field in *Footer → Careers*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.careers[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    link: prismicT.RichTextField;
+}
+/**
+ * Item in Footer → STG
+ *
+ */
+export interface FooterDocumentDataStgItem {
+    /**
+     * Street field in *Footer → STG*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.stg[].street
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    street: prismicT.RichTextField;
+    /**
+     * City field in *Footer → STG*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer.stg[].city
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    city: prismicT.RichTextField;
+}
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<FooterDocumentData>, "footer", Lang>;
 /** Content for Homepage documents */
 interface HomepageDocumentData {
     /**
@@ -1527,7 +1699,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | FooterDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -1785,6 +1957,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

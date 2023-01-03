@@ -67,7 +67,7 @@ export default function Services(props) {
                 <div className="inner-menu">
                   <img
                     className="pt-32 md:pt-48 block"
-                    src="/services/Architecture.jpg"
+                    src={services?.data?.architecture[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute architecture">
                     Architecture
@@ -91,8 +91,8 @@ export default function Services(props) {
               >
                 <div className="inner-menu design">
                   <img
-                    className="block mx-auto"
-                    src="/services/Interiors.jpg"
+                    className="block mx-auto design-image"
+                    src={services?.data?.design[0]?.image_1?.url}
                   />
                   <h1 className="hidden md:block absolute design">
                     Interior Design
@@ -112,10 +112,10 @@ export default function Services(props) {
                 onMouseLeave={() => hideColumn()}
                 onClick={() => handleClickScroll("planning")}
               >
-                <div className="inner-menu justify-end pt-10 md:pt-0 pr-10 md:pr-0">
+                <div className="inner-menu justify-end pt-10 md:pt-0 pr-4 md:pr-20">
                   <img
                     className="planning-image block"
-                    src="/services/Planning.jpg"
+                    src={services?.data?.planning[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute planning">
                     Planning
@@ -138,7 +138,7 @@ export default function Services(props) {
                 <div className="inner-menu justify-center">
                   <img
                     className="block mx-auto sustainability-image"
-                    src="/services/Sustainability.jpg"
+                    src={services?.data?.sustainability[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute sustainability">
                     Sustainability

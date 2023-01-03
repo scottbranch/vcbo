@@ -1,0 +1,94 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "footer",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "heading": [
+      {
+        "type": "heading3",
+        "text": "Truth",
+        "spans": []
+      }
+    ],
+    "inquiries": [
+      {
+        "email": [
+          {
+            "type": "paragraph",
+            "text": "Ut labore elit consectetur reprehenderit irure anim magna non esse ullamco elit aliqua cupidatat exercitation aliquip. Sint occaecat pariatur cupidatat non.",
+            "spans": []
+          }
+        ],
+        "phone": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate adipisicing ea sunt elit mollit anim reprehenderit anim cillum. Pariatur fugiat deserunt duis deserunt quis aliqua labore tempor. Elit aliqua eiusmod do dolore mollit ipsum eu qui tempor est irure ea ea id.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "slc_hq": [
+      {
+        "street": [
+          {
+            "type": "paragraph",
+            "text": "Laboris anim amet aliqua esse dolor nulla laboris qui labore aute velit eiusmod. Do magna pariatur incididunt nulla ad qui quis officia.",
+            "spans": []
+          }
+        ],
+        "city": [
+          {
+            "type": "paragraph",
+            "text": "Dolore mollit Lorem ad proident dolore tempor elit commodo Lorem.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "careers": [
+      {
+        "text": [
+          {
+            "type": "paragraph",
+            "text": "Amet consequat tempor est adipisicing. Cillum ut elit amet esse incididunt do elit laborum velit. Consectetur excepteur irure esse ea pariatur labore do occaecat sint.",
+            "spans": []
+          }
+        ],
+        "link": [
+          {
+            "type": "paragraph",
+            "text": "Eiusmod minim ullamco elit excepteur. Ullamco tempor dolor eiusmod.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "stg": [
+      {
+        "street": [
+          {
+            "type": "paragraph",
+            "text": "Ullamco eu elit culpa velit laboris. Nostrud reprehenderit commodo sint magna veniam enim occaecat reprehenderit amet.",
+            "spans": []
+          }
+        ],
+        "city": [
+          {
+            "type": "paragraph",
+            "text": "In id in Lorem ex id. Commodo duis ea culpa non magna eiusmod ullamco.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

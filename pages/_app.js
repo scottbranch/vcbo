@@ -6,6 +6,8 @@ import { Footer } from "../components/Footer"
 import { PrismicProvider } from "@prismicio/react"
 import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "../prismicio"
+import { createClient } from "../prismicio"
+import { PrismicRichText } from "@prismicio/react"
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -14,7 +16,7 @@ export default function MyApp({ Component, pageProps }) {
         <div className="page-wrapper relative">
           <Header />
           <Component {...pageProps} />
-          <Footer />
+          <Footer {...pageProps} />
         </div>
       </PrismicPreview>
     </PrismicProvider>

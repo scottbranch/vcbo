@@ -1,9 +1,23 @@
 import { BackToTop } from "./BackToTop"
+import { createClient } from "../prismicio"
+import { PrismicRichText } from "@prismicio/react"
+
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData })
+
+  const footer = await client.getSingle("footer")
+
+  return {
+    props: { footer }, // Will be passed to the sectors component as props
+  }
+}
 
 export const Footer = (props) => {
-  const {} = props
+  const { footer, pageProps } = props
+
+  console.log({ footer })
   return (
-    <div className="container mx-auto grid">
+    <div className="container mx-auto grid" pageProps={pageProps}>
       <BackToTop className="ml-4" />
       <footer className="relative mt-28 md:mt-40 pb-10 px-4 md:px-0">
         <div className="flex flex-col md:grid grid-cols-4">

@@ -628,12 +628,16 @@ a {
     left: 7px;
   }
 
+  .design-image {
+    transform: translateY(50%);
+  }
+
   .planning-image {
     transform: translateY(90%);
   }
 
   .sustainability-image {
-    transform: translateY(80%);
+    transform: translateY(45%);
   }
 }
 

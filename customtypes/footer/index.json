@@ -1,0 +1,130 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "id",
+          "placeholder": ""
+        }
+      },
+      "heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "heading3"
+        }
+      },
+      "inquiries": {
+        "type": "Group",
+        "config": {
+          "label": "Inquiries",
+          "fields": {
+            "email": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Email",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "phone": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Phone",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "slc_hq": {
+        "type": "Group",
+        "config": {
+          "label": "SLC HQ",
+          "fields": {
+            "street": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Street",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "city": {
+              "type": "StructuredText",
+              "config": {
+                "label": "City",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "careers": {
+        "type": "Group",
+        "config": {
+          "label": "Careers",
+          "fields": {
+            "text": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Text",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "link": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "hyperlink"
+              }
+            }
+          }
+        }
+      },
+      "stg": {
+        "type": "Group",
+        "config": {
+          "label": "STG",
+          "fields": {
+            "street": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Street",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "city": {
+              "type": "StructuredText",
+              "config": {
+                "label": "City",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
