@@ -24,8 +24,16 @@
 
 .single-project .slick-dots {
   transform: translateX(-96%);
-  bottom: 0;
+  bottom: -25px;
   margin-left: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .single-project .slick-dots {
+    transform: translateX(0%);
+    left: 0;
+    text-align: left;
+  }
 }
 
 .single-project .slick-dots li {

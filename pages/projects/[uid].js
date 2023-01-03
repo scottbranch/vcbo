@@ -191,6 +191,12 @@ export default function Project(props) {
                 })}
               </Slider>
             </ScrollAnimate>
+            <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex justify-items-end">
+              <div className="w-full text-right mr-5 mt-2">
+                <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
+                {`${pageData?.image_carousel?.length}`}
+              </div>
+            </p>
           </div>
           <div className="col-start-1 col-span-4 mt-40">
             <ScrollAnimate>
