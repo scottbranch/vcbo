@@ -26,12 +26,10 @@ export default function Careers(props) {
     }
 
     setLoaded(true)
-
-    console.log({ careers })
   }, [])
 
   return (
-    <div className="container mx-auto mt-40 px-4 md:px-0 mb-60">
+    <div className="container mx-auto mt-40 px-4 md:px-0 mb-60 careers-page">
       <div className="grid grid-cols-4">
         <div className="col-span-4 md:col-span-2 flex content-end flex-wrap">
           <ScrollAnimate>
@@ -56,7 +54,11 @@ export default function Careers(props) {
         <ScrollAnimate className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
           {careers?.data?.architectural_team?.map((item) => (
-            <p className="mt-6">{item?.position[0]?.text}</p>
+            <p className="mt-6">
+              <a href={item?.link?.url} target={item?.link?.target}>
+                {item?.position[0]?.text}
+              </a>
+            </p>
           ))}
         </ScrollAnimate>
         <ScrollAnimate className="col-span-1">
@@ -77,7 +79,11 @@ export default function Careers(props) {
         <div className="col-span-2 md:col-span-1">
           <p className="small-subhead">POSITION</p>
           {careers?.data?.interior_design_team?.map((item) => (
-            <p className="mt-6">{item?.position[0]?.text}</p>
+            <p className="mt-6">
+              <a href={item?.link?.url} target={item?.link?.target}>
+                {item?.position[0]?.text}
+              </a>
+            </p>
           ))}
         </div>
         <div className="col-span-1">

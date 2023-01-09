@@ -18,24 +18,28 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72"
+      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
     },
     "architectural_team": [
       {
         "position": [
           {
             "type": "paragraph",
-            "text": "Non non amet non. Aliquip quis eu commodo ea eu mollit ut laboris in ullamco ad sint excepteur amet.",
+            "text": "Proident aliqua qui laborum laboris excepteur voluptate deserunt irure pariatur anim anim anim cillum laborum elit. Dolor ad eu voluptate dolore laborum eiusmod id in. Voluptate ipsum sint esse dolore ipsum consectetur ullamco sunt aliquip irure est ad amet.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Qui laborum id tempor velit ex id. Commodo nisi laborum deserunt consequat incididunt aliquip.",
+            "text": "Sint non quis minim pariatur nostrud amet ea id fugiat ullamco consequat.",
             "spans": []
           }
-        ]
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       }
     ],
     "interior_design_team": [
@@ -43,23 +47,27 @@
         "position": [
           {
             "type": "paragraph",
-            "text": "Ad exercitation proident pariatur ullamco tempor. Do proident nisi Lorem nostrud elit do ullamco laboris ullamco do elit. Nulla et duis velit cupidatat consequat id tempor deserunt quis ea reprehenderit ut quis excepteur dolor.",
+            "text": "Est laborum nisi minim fugiat mollit veniam amet nostrud ad irure laborum esse. Consectetur qui ex ut sunt. Qui anim id laborum eu ea officia ea eiusmod aute enim eiusmod sint culpa sunt elit.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Velit incididunt et consequat non reprehenderit laborum occaecat officia. Veniam aute cupidatat officia sunt et cupidatat nulla dolore velit proident.",
+            "text": "Do sint consectetur minim esse Lorem enim laboris do voluptate sint voluptate. Adipisicing aliquip laborum ex dolor.",
             "spans": []
           }
-        ]
+        ],
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
       }
     ],
     "benefits": [
       {
         "type": "paragraph",
-        "text": "Enim quis do tempor magna eu. Nisi tempor laboris proident veniam ipsum ut id mollit officia veniam et aliquip dolore ullamco consectetur.",
+        "text": "Ipsum duis ut consequat sint proident dolor laborum ullamco excepteur eu qui. Mollit veniam Lorem aliquip magna id nisi duis cupidatat qui velit voluptate.",
         "spans": []
       }
     ]

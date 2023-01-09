@@ -1175,3 +1175,25 @@ h4.tagname:hover {
 .swiper-slide {
   max-height: 245px;
 }
+
+.careers-page a {
+  position: relative;
+}
+
+.careers-page a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--black);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s;
+}
+
+.careers-page a:hover:after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}

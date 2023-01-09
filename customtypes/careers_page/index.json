@@ -42,6 +42,15 @@
                 "allowTargetBlank": false,
                 "single": "paragraph"
               }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
             }
           }
         }
@@ -67,6 +76,15 @@
                 "placeholder": "",
                 "allowTargetBlank": false,
                 "single": "paragraph"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
               }
             }
           }

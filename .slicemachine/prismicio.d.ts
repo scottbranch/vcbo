@@ -488,6 +488,16 @@ export interface CareersPageDocumentDataArchitecturalTeamItem {
      *
      */
     location: prismicT.RichTextField;
+    /**
+     * Link field in *Careers Page → Architectural Team*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.architectural_team[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
 }
 /**
  * Item in Careers Page → Interior Design Team
@@ -514,6 +524,16 @@ export interface CareersPageDocumentDataInteriorDesignTeamItem {
      *
      */
     location: prismicT.RichTextField;
+    /**
+     * Link field in *Careers Page → Interior Design Team*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.interior_design_team[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
 }
 /**
  * Careers Page document from Prismic

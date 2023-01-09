@@ -15,7 +15,6 @@ export async function getStaticProps({ previewData }) {
 export const Footer = (props) => {
   const { footer, pageProps } = props
 
-  console.log({ footer })
   return (
     <div className="container mx-auto grid" pageProps={pageProps}>
       <BackToTop className="ml-4" />
