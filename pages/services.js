@@ -30,8 +30,6 @@ export default function Services(props) {
     }
 
     setLoaded(true)
-
-    console.log({ services })
   }, [])
 
   const showColumn = (name) => {

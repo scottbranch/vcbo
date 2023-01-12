@@ -83,7 +83,6 @@ export default function Articles(props) {
           <ScrollAnimate>
             <h2>ETC.</h2>
           </ScrollAnimate>
-          {console.log(tags)}
           <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags mt-20 md:mt-0">
             {tags?.map((item) => (
               <h4
