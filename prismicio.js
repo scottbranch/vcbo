@@ -48,10 +48,6 @@ const routes = [
     path: "/projects/specialty/:uid",
   },
   {
-    type: "specialty",
-    path: "/projects/specialty/:uid",
-  },
-  {
     type: "article",
     path: "/etc/articles/:uid",
   },

@@ -43,7 +43,7 @@ export default function Articles(props) {
 
     setArticleTags(emptyTags)
     setTags(filteredTags)
-  }, [tags])
+  }, [])
 
   const filterItem = (item) => {
     if (process.browser) {
