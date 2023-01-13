@@ -235,6 +235,17 @@ header {
   header.scroll-up {
     transform: translate3d(0, -110%, 0);
   }
+  header.show-bg {
+    background: rgba(240, 238, 238, 0.9);
+    backdrop-filter: blur(2px);
+  }
+  .dark-mode header.show-bg {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+  }
+  header.hide-bg {
+    background: none;
+  }
 }
 
 @media screen and (max-width: 768px) {

@@ -7,6 +7,7 @@ export const Header = (props) => {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrollDirection, setScrollDirection] = useState()
+  const [scrollPosition, setInitialScrollPosition] = useState()
 
   const router = useRouter()
   const { pid } = router.query
@@ -15,11 +16,16 @@ export const Header = (props) => {
     if (process.browser) {
       var lastScrollTop = 0
       // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+      setInitialScrollPosition(
+        window.pageYOffset || document.documentElement.scrollTop
+      )
+      console.log({ scrollPosition })
       window.addEventListener(
         "scroll",
         function () {
           // or window.addEventListener("scroll"....
-          var st = window.pageYOffset || document.documentElement.scrollTop // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+          var st = window.pageYOffset || document.documentElement.scrollTop
+          setInitialScrollPosition(st)
           if (st > lastScrollTop) {
             setScrollDirection("down")
           } else {
@@ -39,9 +45,13 @@ export const Header = (props) => {
 
   return (
     <header
-      className={`container mx-auto z-50 ${
+      className={`container mx-auto z-50 pb-5 ${
         menuOpen ? "mobile-menu-active" : ""
-      } ${scrollDirection === "down" ? "scroll-up" : ""}`}
+      } ${scrollDirection === "down" ? "scroll-up" : "scroll-down"} ${
+        scrollPosition === undefined || scrollPosition === 0
+          ? "remove-bg"
+          : "show-bg"
+      }`}
     >
       <div className="grid grid-cols-8 pt-10 items-center md:items-end">
         <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
