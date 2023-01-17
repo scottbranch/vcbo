@@ -321,10 +321,21 @@ header .mobile-overlay {
   header .mobile-overlay {
     transition: 400ms ease;
   }
+  .mobile-menu-active .mobile-inner {
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .remove-bg .mobile-inner {
+    background: rgba(240, 238, 238, 0);
+    backdrop-filter: none;
+  }
+  .dark-mode .remove-bg .mobile-inner {
+    background: rgba(240, 238, 238, 0);
+  }
 }
 
 .mobile-menu-active {
   height: 100vh;
+  background-color: var(--black);
 }
 
 header.mobile-menu-active .mobile-overlay {
@@ -537,4 +548,5 @@ header.mobile-menu-active .mobile-overlay {
 
 .headshot.open-headshot {
   opacity: 1;
+  padding-bottom: 40px;
 }

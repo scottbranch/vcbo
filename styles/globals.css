@@ -249,6 +249,24 @@ header {
 }
 
 @media screen and (max-width: 768px) {
+  .mobile-inner {
+    transition: transform 450ms ease;
+  }
+  header .mobile-inner {
+    backdrop-filter: blur(2px);
+  }
+  header .mobile-inner {
+    background: rgba(240, 238, 238, 0.9);
+  }
+  .dark-mode header .mobile-inner {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  header.scroll-up .mobile-inner {
+    transform: translate3d(0, -110%, 0);
+  }
+}
+
+@media screen and (max-width: 768px) {
   .logo,
   .mobile-menu-button {
     transform: translate3d(0, 0, 0);

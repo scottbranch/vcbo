@@ -54,7 +54,7 @@ export const Header = (props) => {
       }`}
     >
       <div className="container mx-auto ">
-        <div className="grid grid-cols-8 pt-10 items-center md:items-end">
+        <div className="mobile-inner grid grid-cols-8 pt-10 items-center md:items-end">
           <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
             <svg
               className={`logo ${
