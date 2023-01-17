@@ -177,7 +177,7 @@ export default function Project(props) {
               <img className="w-full" src={pageData?.content_image_1?.url} />
             </ScrollAnimate>
           </div>
-          <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex justify-items-end">
+          <p className="hidden md:flex carousel-count small-subhead col-start-2 col-span-1 items-end justify-items-end">
             <div className="w-full text-right mr-5">
               <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
               {`${pageData?.image_carousel?.length}`}
@@ -191,7 +191,7 @@ export default function Project(props) {
                 })}
               </Slider>
             </ScrollAnimate>
-            <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex justify-items-end">
+            <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex md:hidden justify-items-end">
               <div className="w-full text-right mr-5 mt-2">
                 <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
                 {`${pageData?.image_carousel?.length}`}

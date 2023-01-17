@@ -24,7 +24,7 @@
 
 .single-project .slick-dots {
   transform: translateX(-96%);
-  bottom: -25px;
+  bottom: 0;
   margin-left: 1.25rem;
 }
 
