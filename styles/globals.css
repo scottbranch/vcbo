@@ -1226,3 +1226,32 @@ h4.tagname:hover {
   transform-origin: bottom left;
   transform: scaleX(1);
 }
+
+.benefits-body h1,
+.benefits-body h2,
+.benefits-body h3,
+.benefits-body h4,
+.benefits-body h5,
+.benefits-body h6 {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.benefits-body h3 {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+.benefits-body p {
+  margin-bottom: 20px;
+}
+
+.benefits-body ul {
+  margin: 20px 0 30px;
+}
+
+.benefits-body ul li {
+  list-style: disc;
+  margin-left: 30px;
+}

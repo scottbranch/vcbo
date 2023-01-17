@@ -97,7 +97,7 @@ export default function Careers(props) {
         <div className="col-span-4 md:col-span-1 mb-4 md:mb-0">
           <h4>Benefits</h4>
         </div>
-        <div className="col-span-4 md:col-span-2">
+        <div className="col-span-4 md:col-span-2 benefits-body">
           <PrismicRichText field={careers?.data?.benefits} />
         </div>
       </ScrollAnimate>
