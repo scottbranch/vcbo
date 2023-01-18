@@ -33,6 +33,7 @@
     transform: translateX(0%);
     left: 0;
     text-align: left;
+    bottom: -25px;
   }
 }
 
