@@ -56,7 +56,7 @@ export default function Projects(props) {
         <div className="grid grid-cols-4 mt-10 md:mt-40 relative">
           <div className="col-start-1 col-span-4 md:col-span-2">
             <ScrollAnimate className="mb-20 md:mb-0">
-              <h2 className="uppercase">
+              <h2 className="uppercase projects-header">
                 Projects
                 <sup>
                   <small>{allProjects?.length}</small>

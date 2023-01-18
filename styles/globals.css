@@ -167,6 +167,11 @@
   transition: background-color 500ms ease-out;
 }
 
+.projects-header,
+.project-name {
+  font-family: "founders";
+}
+
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
@@ -1255,4 +1260,8 @@ h4.tagname:hover {
 .benefits-body ul li {
   list-style: disc;
   margin-left: 30px;
+}
+
+.about-header {
+  font-family: "founders";
 }

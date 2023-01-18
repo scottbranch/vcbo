@@ -64,7 +64,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu">
                   <img
-                    className="pt-32 md:pt-48 block"
+                    className="pt-32 md:pt-48 block md:pr-16"
                     src={services?.data?.architecture[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute architecture">
@@ -89,7 +89,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu design">
                   <img
-                    className="block mx-auto design-image"
+                    className="block mx-auto design-image md:pr-16"
                     src={services?.data?.design[0]?.image_1?.url}
                   />
                   <h1 className="hidden md:block absolute design">
@@ -135,7 +135,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu justify-center">
                   <img
-                    className="block mx-auto sustainability-image"
+                    className="block mx-auto sustainability-image md:pr-20"
                     src={services?.data?.sustainability[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute sustainability">
@@ -281,7 +281,7 @@ export default function Services(props) {
             </ScrollAnimate>
           </div>
           <div className="grid col-start-1 md:col-start-3 col-span-4 grid-cols-4 md:col-span-2">
-            <div className="block md:hidden col-span-2 mt-10 mb-5">
+            <div className="block md:hidden col-span-2 mt-10 md:mt-0 mb-5">
               <div>
                 <ScrollAnimate>
                   <p className="small-subhead">

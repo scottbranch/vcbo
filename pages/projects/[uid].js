@@ -123,11 +123,11 @@ export default function Project(props) {
         <div className="grid grid-cols-4 mt-24 gap-x-8">
           <div className="col-start-2 md:col-start-3 col-span-3 md:col-span-2">
             <ScrollAnimate>
-              <h3 className="max-w-md">
+              <h3 className="max-w-md project-name">
                 {pageData?.text_blurb[0]?.heading[0]?.text}
               </h3>
             </ScrollAnimate>
-            <div className="max-w-lg mt-12">
+            <div className="mt-12">
               <ScrollAnimate className="project-text-blurb">
                 <PrismicRichText field={pageData?.text_blurb[0]?.paragraph} />
               </ScrollAnimate>

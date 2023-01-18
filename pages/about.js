@@ -36,12 +36,12 @@ export default function About(props) {
         <div className="grid grid-cols-8">
           <div className="col-span-12 md:col-span-6">
             <ScrollAnimate>
-              <h3 className="md:ml-4 mb-10 mt-40">
+              <h3 className="md:ml-4 mb-10 mt-40 about-header">
                 {about?.data?.title_text[0]?.text}
               </h3>
             </ScrollAnimate>
           </div>
-          <div className="col-span-8 md:col-span-5 md:col-start-4">
+          <div className="col-span-8 md:col-span-7 md:col-start-3">
             <ScrollAnimate>
               <img src={about?.data?.featured_image?.url} />
             </ScrollAnimate>
