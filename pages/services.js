@@ -231,9 +231,11 @@ export default function Services(props) {
             </ScrollAnimate>
           </div>
           <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-2">
-            <h3 className="hidden md:block col-span-2 mx-4 mb-14">
-              {services?.data?.planning[0]?.heading[0]?.text}
-            </h3>
+            <ScrollAnimate>
+              <h3 className="hidden md:block col-span-2 mx-4 mb-14">
+                {services?.data?.planning[0]?.heading[0]?.text}
+              </h3>
+            </ScrollAnimate>
             <div className="grid grid-cols-4 md:flex">
               <ScrollAnimate className="col-start-1 md:col-start-3 col-span-3 md:col-span-1 flex items-baseline justify-between ml-4 mr-4 w-2/4 mb-5">
                 <p className="small-subhead">
