@@ -225,33 +225,40 @@ export default function Services(props) {
           </div>
         </div>
         <div className="grid grid-cols-4 mt-60" id="planning">
-          {/* <h3 className="col-start-3 col-span-2">
-            {services?.data?.planning[0]?.heading[0]?.text}
-          </h3> */}
           <div className="hidden md:block col-start-1 col-span-2">
             <ScrollAnimate>
               <img src={services?.data?.planning[0]?.image?.url} />
             </ScrollAnimate>
           </div>
-          <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
-            <p className="small-subhead">
-              {services?.data?.planning[0]?.sub_heading[0]?.text}
-            </p>
-            <p>03</p>
-          </ScrollAnimate>
-          <div className="block md:hidden col-start-1 col-span-4">
-            <ScrollAnimate>
-              <img src={services?.data?.planning[0]?.image?.url} />
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0 ml-4 mr-4">
-            <ScrollAnimate>
-              <PrismicRichText field={services?.data?.planning[0]?.text} />
-              <Button
-                link={services?.data?.planning[0]?.link?.url}
-                text={services?.data?.planning[0]?.link_text[0]?.text}
-              />
-            </ScrollAnimate>
+          <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-2">
+            <h3 className="hidden md:block col-span-2 mx-4 mb-14">
+              {services?.data?.planning[0]?.heading[0]?.text}
+            </h3>
+            <div className="grid grid-cols-4 md:flex">
+              <ScrollAnimate className="col-start-1 md:col-start-3 col-span-3 md:col-span-1 flex items-baseline justify-between ml-4 mr-4 w-2/4 mb-5">
+                <p className="small-subhead">
+                  {services?.data?.planning[0]?.sub_heading[0]?.text}
+                </p>
+                <p>03</p>
+              </ScrollAnimate>
+              <div className="block md:hidden col-start-1 col-span-4">
+                <ScrollAnimate>
+                  <img src={services?.data?.planning[0]?.image?.url} />
+                </ScrollAnimate>
+              </div>
+              <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0 ml-4 mr-4 md:w-2/4">
+                <ScrollAnimate>
+                  <h3 className="block md:hidden col-span-3 mb-8">
+                    {services?.data?.planning[0]?.heading[0]?.text}
+                  </h3>
+                  <PrismicRichText field={services?.data?.planning[0]?.text} />
+                  <Button
+                    link={services?.data?.planning[0]?.link?.url}
+                    text={services?.data?.planning[0]?.link_text[0]?.text}
+                  />
+                </ScrollAnimate>
+              </div>
+            </div>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-60" id="sustainability">

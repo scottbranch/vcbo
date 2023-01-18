@@ -11,6 +11,20 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
+    "headline": [
+      {
+        "type": "heading1",
+        "text": "Golden",
+        "spans": []
+      }
+    ],
+    "subheader": [
+      {
+        "type": "heading3",
+        "text": "Specific",
+        "spans": []
+      }
+    ],
     "featured_image": {
       "dimensions": {
         "width": 900,
@@ -18,27 +32,27 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482"
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
     },
     "architectural_team": [
       {
         "position": [
           {
             "type": "paragraph",
-            "text": "Proident aliqua qui laborum laboris excepteur voluptate deserunt irure pariatur anim anim anim cillum laborum elit. Dolor ad eu voluptate dolore laborum eiusmod id in. Voluptate ipsum sint esse dolore ipsum consectetur ullamco sunt aliquip irure est ad amet.",
+            "text": "Aliqua adipisicing occaecat aute adipisicing ad veniam sit dolore. Culpa exercitation veniam sunt velit deserunt mollit nostrud sit occaecat adipisicing voluptate nisi.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Sint non quis minim pariatur nostrud amet ea id fugiat ullamco consequat.",
+            "text": "Consectetur reprehenderit voluptate enim ullamco Lorem nisi eu sit excepteur enim ex laborum ad velit do. Excepteur ex ea fugiat amet proident sint cillum dolor laboris ullamco sint eiusmod.",
             "spans": []
           }
         ],
         "link": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://twitter.com"
         }
       }
     ],
@@ -47,27 +61,27 @@
         "position": [
           {
             "type": "paragraph",
-            "text": "Est laborum nisi minim fugiat mollit veniam amet nostrud ad irure laborum esse. Consectetur qui ex ut sunt. Qui anim id laborum eu ea officia ea eiusmod aute enim eiusmod sint culpa sunt elit.",
+            "text": "Consequat voluptate proident dolor consequat enim exercitation exercitation veniam pariatur duis eu et ea enim.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Do sint consectetur minim esse Lorem enim laboris do voluptate sint voluptate. Adipisicing aliquip laborum ex dolor.",
+            "text": "Minim anim anim aute sint exercitation eiusmod est. Ut amet eu velit veniam magna proident aliqua ex laboris velit esse esse fugiat aute dolor.",
             "spans": []
           }
         ],
         "link": {
           "link_type": "Web",
-          "url": "https://slicemachine.dev"
+          "url": "http://google.com"
         }
       }
     ],
     "benefits": [
       {
         "type": "paragraph",
-        "text": "Ipsum duis ut consequat sint proident dolor laborum ullamco excepteur eu qui. Mollit veniam Lorem aliquip magna id nisi duis cupidatat qui velit voluptate.",
+        "text": "Nostrud excepteur proident pariatur nulla cillum.",
         "spans": []
       }
     ]

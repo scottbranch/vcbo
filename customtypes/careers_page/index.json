@@ -12,6 +12,24 @@
           "placeholder": ""
         }
       },
+      "headline": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Headline",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
+      "subheader": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subheader",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "single": "heading3"
+        }
+      },
       "featured_image": {
         "type": "Image",
         "config": {

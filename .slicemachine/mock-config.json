@@ -351,6 +351,18 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "headline": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "subheader": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
       }
     },
     "footer": {

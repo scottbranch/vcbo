@@ -419,6 +419,28 @@ export type ArticleDocument<Lang extends string = string> = prismicT.PrismicDocu
 /** Content for Careers Page documents */
 interface CareersPageDocumentData {
     /**
+     * Headline field in *Careers Page*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.headline
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    headline: prismicT.TitleField;
+    /**
+     * Subheader field in *Careers Page*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.subheader
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    subheader: prismicT.TitleField;
+    /**
      * Featured Image field in *Careers Page*
      *
      * - **Field Type**: Image

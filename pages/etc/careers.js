@@ -33,10 +33,10 @@ export default function Careers(props) {
       <div className="grid grid-cols-4">
         <div className="col-span-4 md:col-span-2 flex content-end flex-wrap">
           <ScrollAnimate>
-            <h1 className="w-full">Join the VCBO Family</h1>
+            <h1 className="w-full">{careers?.data?.headline[0]?.text}</h1>
           </ScrollAnimate>
           <ScrollAnimate className="mt-12 md:mt-16">
-            <h4 className="w-full">See Open Positions</h4>
+            <h4 className="w-full">{careers?.data?.subheader[0]?.text}</h4>
           </ScrollAnimate>
         </div>
         <ScrollAnimate className="col-span-4 md:col-span-2 mt-12 md:mt-0">
