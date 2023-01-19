@@ -42,6 +42,7 @@ export default function Articles(props) {
     )
 
     setArticleTags(emptyTags)
+
     setTags(filteredTags)
   }, [])
 
@@ -64,6 +65,14 @@ export default function Articles(props) {
     }
   }
 
+  const resetFilter = () => {
+    const articles = document.querySelectorAll(".article-preview-outer")
+
+    articles.forEach((article) => {
+      article.classList.remove("hide")
+    })
+  }
+
   const countTags = (tag) => {
     let counter = 0
     for (const article of articleTags) {
@@ -81,7 +90,9 @@ export default function Articles(props) {
       <div className="container mx-auto mt-10 md:mt-40 articles px-4 md:px-0 mb-40">
         <div className="grid grid-cols-4">
           <ScrollAnimate>
-            <h2>ETC.</h2>
+            <h2 onClick={() => resetFilter()} className="etc-title">
+              ETC.
+            </h2>
           </ScrollAnimate>
           <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags mt-20 md:mt-0">
             {tags?.map((item) => (

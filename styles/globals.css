@@ -973,6 +973,10 @@ sup {
   visibility: visible;
 }
 
+.sector .sector-name {
+  font-family: "founders";
+}
+
 .filter-dropdown .sector {
   font-family: "founders";
   font-weight: 500;
@@ -1037,16 +1041,25 @@ sup {
   font-family: "Founders";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 16px;
   color: var(--lightGrey);
 }
 
 .filtered-project .project-specialty {
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 14px;
+  line-height: 16px;
   color: var(--lightGrey);
+}
+
+@media screen and (min-width: 769px) {
+  .filtered-project .project-name,
+  .filtered-project .project-specialty {
+    font-size: 20px;
+    line-height: 26px;
+  }
 }
 
 /* Projects Page Ends */
@@ -1264,4 +1277,8 @@ h4.tagname:hover {
 
 .about-header {
   font-family: "founders";
+}
+
+.etc-title:hover {
+  cursor: pointer;
 }

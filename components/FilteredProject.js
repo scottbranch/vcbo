@@ -8,8 +8,8 @@ export const FilteredProject = (props) => {
       <Link href={url} className="project-wrapper">
         <img className="w-full" mb-4 src={image} />
         <div className="flex justify-between my-5 ml-4">
-          <div className="w-80">
-            <p className="project-name">{title}</p>
+          <div>
+            <p className="mb-2 md:mb-0 project-name">{title}</p>
             <p className="project-specialty">{specialty}</p>
           </div>
         </div>

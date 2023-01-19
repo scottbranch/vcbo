@@ -58,6 +58,7 @@ export default function Sectors(props) {
   const [filteredProjects, setFilteredProjects] = useState([])
   const [specialtyData, setSpecialtyData] = useState()
   const [sliceValue, setSliceValue] = useState()
+  const [sortedSectors, setSortedSectors] = useState()
   const [loaded, setLoaded] = useState(false)
 
   const pageData = page?.data
@@ -103,6 +104,30 @@ export default function Sectors(props) {
 
     setSliceValue(specialtyData !== undefined ? "0,4" : "0")
 
+    if (page?.data?.name[0]?.text === "K-12") {
+      const sortedArray = []
+
+      reducedProjects.map((item) => {
+        item[0].data.specialty.uid === "elementary"
+          ? sortedArray.splice(0, 0, item)
+          : item[0].data.specialty.uid === "middle-junior"
+          ? sortedArray.splice(1, 0, item)
+          : item[0].data.specialty.uid === "high"
+          ? sortedArray.splice(2, 0, item)
+          : item[0].data.specialty.uid === "specialty"
+          ? sortedArray.splice(2, 0, item)
+          : null
+      })
+
+      setReducedProjects(sortedArray)
+    }
+
+    setSortedSectors(
+      dropdownItems.sort((a, b) => {
+        return a.data.order - b.data.order
+      })
+    )
+
     setLoaded(true)
   }, [page])
 
@@ -127,17 +152,18 @@ export default function Sectors(props) {
           </div>
           <div className="grid items-center col-start-1 md:col-start-4 col-span-4 md:col-span-1">
             <SelectDropdown
-              items={dropdownItems}
+              items={sortedSectors}
               defaultText={page?.data?.name[0]?.text}
             />
           </div>
         </div>
         <ScrollAnimate>
-          <h3 className="mt-10 mb-0 md:mt-20 md:mb-20">
+          <h3 className="mt-10 mb-0 md:mt-20 md:mb-20 sector-name">
             {page?.data?.name[0]?.text}
           </h3>
         </ScrollAnimate>
-        {reducedProjects?.reverse().map((array) => {
+        {console.log(reducedProjects)}
+        {reducedProjects?.map((array) => {
           return (
             <div
               className={`grid ${
