@@ -384,6 +384,17 @@ interface ArticleDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Published Date field in *Article*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.published_date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    published_date: prismicT.DateField;
+    /**
      * Hero Image field in *Article*
      *
      * - **Field Type**: Image

@@ -1122,6 +1122,10 @@ h4.tagname:hover {
   text-decoration: underline;
 }
 
+h4.tagname.active {
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 769px) {
   .article-hero {
     height: 700px;
@@ -1273,9 +1277,14 @@ h4.tagname:hover {
 .benefits-body ul li {
   list-style: disc;
   margin-left: 30px;
+  font-family: "founders";
 }
 
 .about-header {
+  font-family: "founders";
+}
+
+.etc-title {
   font-family: "founders";
 }
 

@@ -34,6 +34,7 @@ export default function Article(props) {
   const date = new Date(article?.first_publication_date)
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
+    console.log(article)
     if (process.browser) {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
@@ -61,7 +62,7 @@ export default function Article(props) {
             </div>
             <div className="mt-16 mb-10 md:mb-10">
               <ScrollAnimate>
-                <h4>{`${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`}</h4>
+                <h4>{article?.data?.published_date}</h4>
               </ScrollAnimate>
             </div>
           </div>

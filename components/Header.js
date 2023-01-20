@@ -55,7 +55,10 @@ export const Header = (props) => {
     >
       <div className="container mx-auto ">
         <div className="mobile-inner grid grid-cols-8 pt-10 items-center md:items-end">
-          <Link href="/" className="col-start-1 col-span-4 ml-4 md:ml-0">
+          <Link
+            href="/"
+            className="col-start-1 col-span-4 ml-4 md:ml-0 md:mb-2"
+          >
             <svg
               className={`logo ${
                 scrollDirection === "down" ? "scroll-up" : ""
@@ -96,13 +99,13 @@ export const Header = (props) => {
             href="/projects"
             className={`${
               router.pathname.startsWith("/projects") ? "active" : ""
-            } hidden md:block col-start-5 col-span-1`}
+            } hidden md:block col-start-5 col-span-1 md:mb-2`}
           >
             <span>Projects</span>
           </Link>
           <Link
             href="/services"
-            className={`hidden md:block col-start-6 col-span-1 ${
+            className={`hidden md:block col-start-6 col-span-1 md:mb-2 ${
               router.pathname.startsWith("/services") ? "active" : ""
             }`}
           >
@@ -110,7 +113,7 @@ export const Header = (props) => {
           </Link>
           <Link
             href="/about"
-            className={`hidden md:block col-start-7 col-span-1 ${
+            className={`hidden md:block col-start-7 col-span-1 md:mb-2 ${
               router.pathname.startsWith("/about") ? "active" : ""
             }`}
           >
@@ -118,7 +121,7 @@ export const Header = (props) => {
           </Link>
           <Link
             href="/etc/articles"
-            className={`hidden md:block col-start-8 col-span-1 ${
+            className={`hidden md:block col-start-8 col-span-1 md:mb-2 ${
               router.pathname.startsWith("/etc") ? "active" : ""
             }`}
           >

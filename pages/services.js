@@ -70,7 +70,7 @@ export default function Services(props) {
                   <h1 className="hidden md:block absolute architecture">
                     Architecture
                   </h1>
-                  <p className="hidden md:block">01</p>
+                  <p className="hidden md:block md:ml-4">01</p>
                 </div>
               </a>
             </ScrollAnimate>
@@ -95,7 +95,7 @@ export default function Services(props) {
                   <h1 className="hidden md:block absolute design">
                     Interior Design
                   </h1>
-                  <p className="hidden md:block">02</p>
+                  <p className="hidden md:block md:ml-4">02</p>
                 </div>
               </a>
             </ScrollAnimate>
@@ -110,7 +110,7 @@ export default function Services(props) {
                 onMouseLeave={() => hideColumn()}
                 onClick={() => handleClickScroll("planning")}
               >
-                <div className="inner-menu justify-end pt-10 md:pt-0 pr-4 md:pr-20">
+                <div className="inner-menu justify-center pt-10 md:pt-0 pr-4 md:pr-20">
                   <img
                     className="planning-image block"
                     src={services?.data?.planning[0]?.image?.url}
@@ -118,7 +118,7 @@ export default function Services(props) {
                   <h1 className="hidden md:block absolute planning">
                     Planning
                   </h1>
-                  <p className="hidden md:block">03</p>
+                  <p className="hidden md:block md:ml-4">03</p>
                 </div>
               </a>
             </ScrollAnimate>
@@ -141,7 +141,7 @@ export default function Services(props) {
                   <h1 className="hidden md:block absolute sustainability">
                     Sustainability
                   </h1>
-                  <p className="hidden md:block ">04</p>
+                  <p className="hidden md:block md:ml-4">04</p>
                 </div>
               </a>
             </ScrollAnimate>

@@ -21,6 +21,13 @@
           "single": "heading1"
         }
       },
+      "published_date": {
+        "type": "Date",
+        "config": {
+          "label": "Published Date",
+          "placeholder": ""
+        }
+      },
       "hero_image": {
         "type": "Image",
         "config": {

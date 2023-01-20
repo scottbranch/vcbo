@@ -14,10 +14,11 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Stream",
+        "text": "Wrapped",
         "spans": []
       }
     ],
+    "published_date": "2017-10-24",
     "hero_image": {
       "dimensions": {
         "width": 900,
@@ -30,7 +31,7 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "Laborum voluptate irure magna eiusmod nisi amet anim. Ex cillum nostrud labore deserunt eu ex officia enim labore deserunt do consectetur incididunt velit officia. Cupidatat mollit laboris dolor tempor pariatur sunt eu labore magna in nulla aute mollit ad esse.",
+        "text": "Exercitation laborum aliqua dolor nostrud elit aliquip incididunt.",
         "spans": []
       }
     ]

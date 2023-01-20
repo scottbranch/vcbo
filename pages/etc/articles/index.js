@@ -31,24 +31,27 @@ export default function Articles(props) {
 
     setLoaded(true)
 
-    const emptyTags = []
-
-    articles.map((item) => {
-      emptyTags.push(item.tags[0])
+    const temporaryTags = articles.map((item) => {
+      return item.tags.map((tag) => tag)
     })
+
+    const emptyTags = temporaryTags.flat(1)
 
     const filteredTags = emptyTags.filter(
       (value, index) => emptyTags.indexOf(value) === index
     )
+
+    console.log({ filteredTags })
 
     setArticleTags(emptyTags)
 
     setTags(filteredTags)
   }, [])
 
-  const filterItem = (item) => {
+  const filterItem = (item, e) => {
     if (process.browser) {
       const filterClass = document.querySelectorAll(`.${item}`)
+      const tagNames = document.querySelectorAll(".tagname")
       const articles = document.querySelectorAll(".article-preview-outer")
 
       articles.forEach((article) => {
@@ -62,14 +65,25 @@ export default function Articles(props) {
         article.classList.add("show")
         article.classList.remove("hide")
       })
+
+      tagNames.forEach((tag) => {
+        tag.classList.remove("active")
+      })
+
+      e.currentTarget.classList.add("active")
     }
   }
 
   const resetFilter = () => {
     const articles = document.querySelectorAll(".article-preview-outer")
+    const tagNames = document.querySelectorAll(".tagname")
 
     articles.forEach((article) => {
       article.classList.remove("hide")
+    })
+
+    tagNames.forEach((tag) => {
+      tag.classList.remove("active")
     })
   }
 
@@ -100,7 +114,7 @@ export default function Articles(props) {
                 className={`tagname relative ${
                   item === undefined ? "hidden" : ""
                 }`}
-                onClick={() => filterItem(item)}
+                onClick={(e) => filterItem(item, e)}
               >
                 {item && item}
                 <sup>{item && countTags(item)}</sup>
@@ -114,7 +128,9 @@ export default function Articles(props) {
 
             return (
               <ScrollAnimate
-                className={`break-inside mb-16 mr-4 article-preview-outer ${article.tags}`}
+                className={`break-inside mb-16 mr-4 article-preview-outer ${article.tags.map(
+                  (item) => ` ${item} `
+                )}`}
               >
                 <Article
                   image={article?.data?.hero_image?.url}
