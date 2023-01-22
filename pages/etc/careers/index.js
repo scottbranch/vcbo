@@ -1,6 +1,6 @@
-import ScrollAnimate from "../../components/ScrollAnimate"
+import ScrollAnimate from "../../../components/ScrollAnimate"
 import { useState, useEffect } from "react"
-import { createClient } from "../../prismicio"
+import { createClient } from "../../../prismicio"
 import { PrismicRichText } from "@prismicio/react"
 
 export async function getStaticProps({ previewData }) {

@@ -1,0 +1,43 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "position",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Flight",
+        "spans": []
+      }
+    ],
+    "team": [
+      {
+        "type": "heading2",
+        "text": "Stretch",
+        "spans": []
+      }
+    ],
+    "location": [
+      {
+        "type": "heading2",
+        "text": "First",
+        "spans": []
+      }
+    ],
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Dolor irure minim id eu esse. Dolor nostrud magna velit excepteur do esse velit esse commodo amet eiusmod excepteur Lorem nisi ullamco. Minim id magna est ipsum culpa velit.",
+        "spans": []
+      }
+    ]
+  }
+}

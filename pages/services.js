@@ -64,7 +64,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu">
                   <img
-                    className="pt-32 md:pt-48 block md:pr-16"
+                    className="pt-32 md:pt-48 block md:pr-16 md:pl-4"
                     src={services?.data?.architecture[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute architecture">
@@ -89,7 +89,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu design">
                   <img
-                    className="block mx-auto design-image md:pr-16"
+                    className="block mx-auto design-image md:pr-16 md:pl-4"
                     src={services?.data?.design[0]?.image_1?.url}
                   />
                   <h1 className="hidden md:block absolute design">
@@ -112,7 +112,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu justify-center pt-10 md:pt-0 pr-4 md:pr-20">
                   <img
-                    className="planning-image block"
+                    className="planning-image block md:pl-4 md:mb-20"
                     src={services?.data?.planning[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute planning">
@@ -135,7 +135,7 @@ export default function Services(props) {
               >
                 <div className="inner-menu justify-center">
                   <img
-                    className="block mx-auto sustainability-image md:pr-20"
+                    className="block mx-auto sustainability-image md:pr-20 md:pl-4"
                     src={services?.data?.sustainability[0]?.image?.url}
                   />
                   <h1 className="hidden md:block absolute sustainability">

@@ -1059,6 +1059,63 @@ export interface HomepageDocumentDataTextBlurb4Item {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
+/** Content for Position documents */
+interface PositionDocumentData {
+    /**
+     * Title field in *Position*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Team field in *Position*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.team
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    team: prismicT.TitleField;
+    /**
+     * Location field in *Position*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.location
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    location: prismicT.TitleField;
+    /**
+     * Description field in *Position*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Position document from Prismic
+ *
+ * - **API ID**: `position`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PositionDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PositionDocumentData>, "position", Lang>;
 /** Content for Project documents */
 interface ProjectDocumentData {
     /**
@@ -1752,7 +1809,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | FooterDocument | HomepageDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -2010,6 +2067,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

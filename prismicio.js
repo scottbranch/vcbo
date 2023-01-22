@@ -26,11 +26,6 @@ const routes = [
     path: "/services",
   },
   {
-    type: "careers_page",
-    uid: "careers",
-    path: "/etc/careers",
-  },
-  {
     type: "project",
     path: "/projects/:uid",
   },
@@ -50,6 +45,15 @@ const routes = [
   {
     type: "article",
     path: "/etc/articles/:uid",
+  },
+  {
+    type: "careers_page",
+    uid: "careers",
+    path: "/etc/careers",
+  },
+  {
+    type: "position",
+    path: "/etc/careers/:uid",
   },
 ]
 

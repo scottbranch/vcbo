@@ -159,12 +159,15 @@ span.last > span {
   color: var(--white);
 }
 
-.back-to-top {
+.back-to-top,
+.apply-button {
   max-width: 130px;
 }
 
 .back-to-top > div > span.first,
-.back-to-top > div > span.last {
+.back-to-top > div > span.last,
+.apply-button > div > span.first,
+.apply-button > div > span.last {
   width: 100%;
 }
 
