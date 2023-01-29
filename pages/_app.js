@@ -6,13 +6,21 @@ import { Footer } from "../components/Footer"
 import { PrismicProvider } from "@prismicio/react"
 import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "../prismicio"
-import { createClient } from "../prismicio"
-import { PrismicRichText } from "@prismicio/react"
+import Head from "next/head"
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <PrismicProvider internalLinkComponent={(props) => <Link {...props} />}>
       <PrismicPreview repositoryName={repositoryName}>
+        <Head>
+          <title>
+            VCBO | Architecture, Interiors, Planning, and Sustainability
+          </title>
+          <meta
+            name="description"
+            content="VCBO | Architecture, Interiors, Planning, and Sustainability"
+          />
+        </Head>
         <div className="page-wrapper relative">
           <Header />
           <Component {...pageProps} />
