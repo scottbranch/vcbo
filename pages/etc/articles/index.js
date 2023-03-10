@@ -3,18 +3,20 @@ import { useEffect, useState } from "react"
 import { createClient } from "../../../prismicio"
 import { Article } from "../../../components/Article"
 import { Lines } from "../../../components/Lines"
+import Head from "next/head"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
   const articles = await client.getAllByType("article")
+  const etcPage = await client.getByUID("etc_page", "etc-page")
 
   return {
-    props: { articles },
+    props: { articles, etcPage },
   }
 }
 
 export default function Articles(props) {
-  const { articles } = props
+  const { articles, etcPage } = props
 
   const [loaded, setLoaded] = useState(false)
   const [tags, setTags] = useState([])
@@ -40,8 +42,6 @@ export default function Articles(props) {
     const filteredTags = emptyTags.filter(
       (value, index) => emptyTags.indexOf(value) === index
     )
-
-    console.log({ filteredTags })
 
     setArticleTags(emptyTags)
 
@@ -100,6 +100,26 @@ export default function Articles(props) {
 
   return (
     <>
+      <Head>
+        <title>{etcPage?.data?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={etcPage?.data?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={etcPage?.data?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={etcPage?.data?.social_meta_description[0]?.text}
+        />
+        <meta
+          property="og:image"
+          content={etcPage?.data?.social_meta_image?.url}
+        />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto mt-10 md:mt-40 articles px-4 md:px-0 mb-40">
         <div className="grid grid-cols-4">

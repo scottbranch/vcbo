@@ -5,6 +5,7 @@ import { Project } from "../../components/Project"
 import { createClient } from "../../prismicio"
 import SelectDropdown from "../../components/SelectDropdown"
 import { Lines } from "../../components/Lines"
+import Head from "next/head"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -48,9 +49,31 @@ export default function Projects(props) {
         return a.data.order - b.data.order
       })
     )
+
+    console.log({ props })
   }, [])
   return (
     <>
+      <Head>
+        <title>{projects?.data?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={projects?.data?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={projects?.data?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={projects?.data?.social_meta_description[0]?.text}
+        />
+        <meta
+          property="og:image"
+          content={projects?.data?.social_meta_image?.url}
+        />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto z-10 relative px-4 md:px-0 mb-60">
         <div className="grid grid-cols-4 mt-10 md:mt-40 relative">

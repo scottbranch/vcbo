@@ -129,6 +129,61 @@ interface AboutPageDocumentData {
      *
      */
     leadership: prismicT.GroupField<Simplify<AboutPageDocumentDataLeadershipItem>>;
+    /**
+     * Meta Title field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *About Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Item in About Page → Text Blurb 1
@@ -416,6 +471,61 @@ interface ArticleDocumentData {
      *
      */
     content: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Article*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Article document from Prismic
@@ -495,6 +605,61 @@ interface CareersPageDocumentData {
      *
      */
     benefits: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Careers Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Careers Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Careers Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Careers Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Careers Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: careers_page.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Careers Page → Architectural Team
@@ -578,6 +743,74 @@ export interface CareersPageDocumentDataInteriorDesignTeamItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type CareersPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CareersPageDocumentData>, "careers_page", Lang>;
+/** Content for Etc Page documents */
+interface EtcPageDocumentData {
+    /**
+     * Meta Title field in *Etc Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: etc_page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Etc Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: etc_page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Etc Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: etc_page.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Etc Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: etc_page.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Etc Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: etc_page.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
+}
+/**
+ * Etc Page document from Prismic
+ *
+ * - **API ID**: `etc_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EtcPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<EtcPageDocumentData>, "etc_page", Lang>;
 /** Content for Footer documents */
 interface FooterDocumentData {
     /**
@@ -818,6 +1051,61 @@ interface HomepageDocumentData {
      *
      */
     text_blurb_4: prismicT.GroupField<Simplify<HomepageDocumentDataTextBlurb4Item>>;
+    /**
+     * Meta Title field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Homepage*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Homepage*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: homepage.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Homepage → Carousel
@@ -1105,6 +1393,61 @@ interface PositionDocumentData {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Position*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Position*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Position*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Position*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Position*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: position.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Position document from Prismic
@@ -1294,6 +1637,61 @@ interface ProjectDocumentData {
      *
      */
     concluding_statement: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Project → Text Blurb
@@ -1376,6 +1774,61 @@ interface ProjectsPageDocumentData {
      *
      */
     slices: prismicT.SliceZone<ProjectsPageDocumentDataSlicesSlice>;
+    /**
+     * Meta Title field in *Projects Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Projects Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Projects Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Projects Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Projects Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects_page.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Slice for *Projects Page → Slice Zone*
@@ -1438,6 +1891,61 @@ interface SectorDocumentData {
      *
      */
     slices: prismicT.SliceZone<SectorDocumentDataSlicesSlice>;
+    /**
+     * Meta Title field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Sector*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Sector*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: sector.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Slice for *Sector → Slice Zone*
@@ -1500,6 +2008,61 @@ interface ServicesPageDocumentData {
      *
      */
     sustainability: prismicT.GroupField<Simplify<ServicesPageDocumentDataSustainabilityItem>>;
+    /**
+     * Meta Title field in *Services Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Services Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Services Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Services Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Services Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Item in Services Page → Architecture
@@ -1798,6 +2361,61 @@ interface SpecialtyDocumentData {
      *
      */
     name: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Specialty*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_title: prismicT.RichTextField;
+    /**
+     * Meta Description field in *Specialty*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Title field in *Specialty*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.social_meta_title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_title: prismicT.RichTextField;
+    /**
+     * Social Meta Description field in *Specialty*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.social_meta_description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    social_meta_description: prismicT.RichTextField;
+    /**
+     * Social Meta Image field in *Specialty*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: specialty.social_meta_image
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    social_meta_image: prismicT.ImageField<never>;
 }
 /**
  * Specialty document from Prismic
@@ -1809,7 +2427,7 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -2067,6 +2685,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, EtcPageDocumentData, EtcPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
     }
 }

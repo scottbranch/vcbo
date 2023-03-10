@@ -7,6 +7,7 @@ import { useState, useEffect } from "react"
 import { createClient } from "../prismicio"
 import { Lines } from "../components/Lines"
 import ScrollTrigger from "react-scroll-trigger"
+import Head from "next/head"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -60,10 +61,32 @@ export default function Home(props) {
     document.body.classList.remove("single-project")
 
     setLoaded(true)
+
+    console.log({ homepage })
   }, [])
 
   return (
     <>
+      <Head>
+        <title>{homepage?.data?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={homepage?.data?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={homepage?.data?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={homepage?.data?.social_meta_description[0]?.text}
+        />
+        <meta
+          property="og:image"
+          content={homepage?.data?.social_meta_image?.url}
+        />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto z-10 relative px-4 md:px-0">
         <div className="grid grid-cols-14 md:grid-cols-8">

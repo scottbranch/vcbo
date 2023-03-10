@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css"
 import { BackArrow } from "../../components/BackArrow"
 import { Lines } from "../../components/Lines"
 import Link from "next/link"
+import Head from "next/head"
 
 // Fetch project content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -72,6 +73,8 @@ export default function Project(props) {
     setNextProject(filteredProjects[projectIndex + 1])
 
     setLoaded(true)
+
+    console.log({ pageData })
   }, [projectIndex, nextProject, previousProject])
 
   const settings = {
@@ -91,6 +94,23 @@ export default function Project(props) {
 
   return (
     <>
+      <Head>
+        <title>{pageData?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={pageData?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={pageData?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={pageData?.social_meta_description[0]?.text}
+        />
+        <meta property="og:image" content={pageData?.social_meta_image?.url} />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto projects-page relative px-4 md:px-0 mb-60">
         <div className="grid grid-cols-4 mt-10 md:mt-20 gap-x-8">

@@ -454,7 +454,8 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "etc_page": {}
   },
   "slices": {
     "Specialties": {

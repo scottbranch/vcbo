@@ -6,6 +6,7 @@ import { PrismicRichText } from "@prismicio/react"
 import Link from "next/link"
 import { Lines } from "../../../components/Lines"
 import { BackArrow } from "../../../components/BackArrow"
+import Head from "next/head"
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
@@ -47,6 +48,26 @@ export default function Article(props) {
 
   return (
     <>
+      <Head>
+        <title>{article?.data?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={article?.data?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={article?.data?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={article?.data?.social_meta_description[0]?.text}
+        />
+        <meta
+          property="og:image"
+          content={article?.data?.social_meta_image?.url}
+        />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto mt-20 md:mt-40 article px-4 md:px-0 relative z-10 mb-60">
         <div className="breadcrumb flex col-span-4 relative">

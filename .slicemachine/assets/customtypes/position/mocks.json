@@ -14,30 +14,67 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Flight",
+        "text": "Smell",
         "spans": []
       }
     ],
     "team": [
       {
         "type": "heading2",
-        "text": "Stretch",
+        "text": "However",
         "spans": []
       }
     ],
     "location": [
       {
         "type": "heading2",
-        "text": "First",
+        "text": "Impossible",
         "spans": []
       }
     ],
     "description": [
       {
         "type": "paragraph",
-        "text": "Dolor irure minim id eu esse. Dolor nostrud magna velit excepteur do esse velit esse commodo amet eiusmod excepteur Lorem nisi ullamco. Minim id magna est ipsum culpa velit.",
+        "text": "Nisi ea proident occaecat. Commodo magna incididunt sint ut commodo adipisicing reprehenderit mollit officia sunt adipisicing.",
         "spans": []
       }
-    ]
+    ],
+    "meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Commodo Lorem irure sunt.",
+        "spans": []
+      }
+    ],
+    "meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Et reprehenderit dolor consequat cupidatat proident voluptate irure velit laborum. Voluptate ea reprehenderit mollit ex irure.",
+        "spans": []
+      }
+    ],
+    "social_meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Id proident eiusmod labore pariatur anim ad Lorem eiusmod consequat et esse cupidatat ipsum in. Minim ex pariatur laborum esse Lorem ipsum fugiat sit excepteur tempor laboris. Ad ullamco qui amet ipsum labore officia aliquip dolore.",
+        "spans": []
+      }
+    ],
+    "social_meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Anim veniam pariatur anim adipisicing ex magna cillum ullamco deserunt nostrud ipsum. Lorem deserunt magna ipsum dolor ipsum tempor mollit.",
+        "spans": []
+      }
+    ],
+    "social_meta_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+    }
   }
 }

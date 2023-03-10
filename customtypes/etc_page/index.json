@@ -1,51 +1,15 @@
 {
-  "id": "sector",
-  "label": "Sector",
-  "repeatable": true,
+  "id": "etc_page",
+  "label": "Etc Page",
+  "repeatable": false,
   "status": true,
   "json": {
     "Main": {
       "uid": {
         "type": "UID",
         "config": {
-          "label": "url",
+          "label": "id",
           "placeholder": ""
-        }
-      },
-      "order": {
-        "type": "Number",
-        "config": {
-          "label": "Order",
-          "placeholder": ""
-        }
-      },
-      "name": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Name",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "description": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Description",
-          "placeholder": "",
-          "allowTargetBlank": false,
-          "single": "paragraph"
-        }
-      },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "specialties": {
-              "type": "SharedSlice"
-            }
-          }
         }
       }
     },

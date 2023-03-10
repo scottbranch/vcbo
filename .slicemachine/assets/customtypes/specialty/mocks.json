@@ -14,9 +14,46 @@
     "name": [
       {
         "type": "paragraph",
-        "text": "Culpa qui et ut consequat. Irure ut pariatur anim elit id reprehenderit quis. Enim do sint adipisicing commodo voluptate enim sunt enim voluptate nisi ipsum in reprehenderit Lorem ullamco.",
+        "text": "Tempor amet aliquip eiusmod amet mollit aliqua exercitation ullamco irure. Fugiat et aute do incididunt laboris excepteur.",
         "spans": []
       }
-    ]
+    ],
+    "meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Reprehenderit veniam Lorem ad magna duis enim ipsum cupidatat officia quis voluptate.",
+        "spans": []
+      }
+    ],
+    "meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Officia et elit tempor. Dolor dolore tempor elit minim laboris nisi eiusmod laboris Lorem ad dolore ad nulla velit consectetur.",
+        "spans": []
+      }
+    ],
+    "social_meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Sint deserunt cupidatat tempor consectetur fugiat. Consequat laboris cillum et do aliquip mollit sint laborum qui id. Ex amet in cillum consectetur eu cillum ipsum deserunt quis anim do nostrud.",
+        "spans": []
+      }
+    ],
+    "social_meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Adipisicing Lorem mollit adipisicing ex dolor veniam laboris ex culpa exercitation est sit sit anim. Aliqua laborum ullamco adipisicing laborum quis eu do amet laboris irure irure id labore magna. Ad elit voluptate Lorem excepteur.",
+        "spans": []
+      }
+    ],
+    "social_meta_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+    }
   }
 }

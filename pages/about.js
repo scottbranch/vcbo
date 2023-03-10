@@ -4,6 +4,7 @@ import { Lines } from "../components/Lines"
 import { HeadshotWrapper } from "../components/HeadshotWrapper"
 import { createClient } from "../prismicio"
 import { PrismicRichText } from "@prismicio/react"
+import Head from "next/head"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -27,10 +28,32 @@ export default function About(props) {
       document.body.classList.remove("sector")
     }
     setLoaded(true)
+
+    console.log({ about })
   }, [])
 
   return (
     <>
+      <Head>
+        <title>{about?.data?.meta_title[0]?.text}</title>
+        <meta
+          name="description"
+          content={about?.data?.meta_description[0]?.text}
+          key="desc"
+        />
+        <meta
+          property="og:title"
+          content={about?.data?.social_meta_title[0]?.text}
+        />
+        <meta
+          property="og:description"
+          content={about?.data?.social_meta_description[0]?.text}
+        />
+        <meta
+          property="og:image"
+          content={about?.data?.social_meta_image?.url}
+        />
+      </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto px-4 md:px-0 mb-60">
         <div className="grid grid-cols-8">

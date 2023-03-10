@@ -1,7 +1,7 @@
 {
   "id": "mock-doc-id",
   "url": null,
-  "type": "projects_page",
+  "type": "etc_page",
   "href": null,
   "tags": [],
   "first_publication_date": "1970-01-01T00:00:01+0000",
@@ -11,32 +11,31 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "slices": [],
     "meta_title": [
       {
         "type": "paragraph",
-        "text": "Aute aliquip velit id magna laborum. Eiusmod mollit mollit laborum sint magna ex exercitation anim velit duis eiusmod minim ex reprehenderit. Nulla ullamco reprehenderit esse veniam sint duis ipsum amet excepteur aliquip aliqua.",
+        "text": "Anim velit culpa minim do dolore Lorem laborum sunt laborum dolor mollit exercitation. Officia Lorem ex non ea do cupidatat incididunt Lorem deserunt id anim exercitation dolore fugiat esse. Id Lorem eiusmod do laboris aute.",
         "spans": []
       }
     ],
     "meta_description": [
       {
         "type": "paragraph",
-        "text": "Veniam anim irure enim reprehenderit anim veniam.",
+        "text": "Commodo mollit eiusmod elit Lorem excepteur excepteur fugiat anim aliquip minim. Officia nostrud exercitation aute excepteur Lorem nulla. Amet voluptate officia laborum ipsum.",
         "spans": []
       }
     ],
     "social_meta_title": [
       {
         "type": "paragraph",
-        "text": "Esse ea aliquip adipisicing consequat ea aliquip et culpa in est officia do ad. Laboris eu reprehenderit anim laboris id eu do pariatur deserunt nostrud.",
+        "text": "Cillum anim sunt id duis proident ullamco occaecat laboris in exercitation exercitation velit aliquip sit.",
         "spans": []
       }
     ],
     "social_meta_description": [
       {
         "type": "paragraph",
-        "text": "Sint ut deserunt officia esse culpa enim irure. Qui nostrud occaecat dolore enim mollit amet adipisicing. Voluptate mollit nulla nostrud laborum duis est dolore irure eiusmod.",
+        "text": "Cupidatat deserunt anim aute in deserunt ipsum velit dolor.",
         "spans": []
       }
     ],
@@ -47,7 +46,7 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89"
+      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
     }
   }
 }

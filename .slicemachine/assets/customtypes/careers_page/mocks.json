@@ -14,14 +14,14 @@
     "headline": [
       {
         "type": "heading1",
-        "text": "Golden",
+        "text": "Through",
         "spans": []
       }
     ],
     "subheader": [
       {
         "type": "heading3",
-        "text": "Specific",
+        "text": "Printed",
         "spans": []
       }
     ],
@@ -32,27 +32,27 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e"
     },
     "architectural_team": [
       {
         "position": [
           {
             "type": "paragraph",
-            "text": "Aliqua adipisicing occaecat aute adipisicing ad veniam sit dolore. Culpa exercitation veniam sunt velit deserunt mollit nostrud sit occaecat adipisicing voluptate nisi.",
+            "text": "Ullamco eiusmod non fugiat duis anim. Aliqua laborum ut dolore est. Proident occaecat pariatur proident velit veniam.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Consectetur reprehenderit voluptate enim ullamco Lorem nisi eu sit excepteur enim ex laborum ad velit do. Excepteur ex ea fugiat amet proident sint cillum dolor laboris ullamco sint eiusmod.",
+            "text": "Magna culpa fugiat aliquip id.",
             "spans": []
           }
         ],
         "link": {
           "link_type": "Web",
-          "url": "http://twitter.com"
+          "url": "https://prismic.io"
         }
       }
     ],
@@ -61,14 +61,14 @@
         "position": [
           {
             "type": "paragraph",
-            "text": "Consequat voluptate proident dolor consequat enim exercitation exercitation veniam pariatur duis eu et ea enim.",
+            "text": "Reprehenderit irure est veniam cillum consequat labore laboris eu sit officia ad officia.",
             "spans": []
           }
         ],
         "location": [
           {
             "type": "paragraph",
-            "text": "Minim anim anim aute sint exercitation eiusmod est. Ut amet eu velit veniam magna proident aliqua ex laboris velit esse esse fugiat aute dolor.",
+            "text": "Ullamco cillum et id qui pariatur Lorem in et enim ullamco in do ipsum aliquip.",
             "spans": []
           }
         ],
@@ -81,9 +81,46 @@
     "benefits": [
       {
         "type": "paragraph",
-        "text": "Nostrud excepteur proident pariatur nulla cillum.",
+        "text": "Magna et qui ipsum commodo aliqua est dolore duis deserunt eu. Officia sint sint ea sit proident id officia aute.",
         "spans": []
       }
-    ]
+    ],
+    "meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Veniam ullamco nisi proident ad ullamco ullamco officia mollit consectetur eu magna proident ut. Ipsum in ex pariatur sunt proident nulla ullamco veniam ullamco ullamco incididunt occaecat laboris incididunt. Dolor Lorem deserunt minim sunt.",
+        "spans": []
+      }
+    ],
+    "meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Qui adipisicing proident non reprehenderit id ex est consequat nisi proident Lorem.",
+        "spans": []
+      }
+    ],
+    "social_meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Occaecat enim incididunt magna elit consectetur occaecat deserunt duis excepteur id dolor in quis commodo ad.",
+        "spans": []
+      }
+    ],
+    "social_meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Id tempor aliqua dolor aliqua non ullamco quis elit est magna.",
+        "spans": []
+      }
+    ],
+    "social_meta_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+    }
   }
 }

@@ -14,11 +14,11 @@
     "title": [
       {
         "type": "heading1",
-        "text": "Wrapped",
+        "text": "Character",
         "spans": []
       }
     ],
-    "published_date": "2017-10-24",
+    "published_date": "2021-05-09",
     "hero_image": {
       "dimensions": {
         "width": 900,
@@ -31,9 +31,46 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "Exercitation laborum aliqua dolor nostrud elit aliquip incididunt.",
+        "text": "Pariatur esse culpa aliquip ut quis sint reprehenderit. Esse velit dolore deserunt anim do ad.",
         "spans": []
       }
-    ]
+    ],
+    "meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Adipisicing ad exercitation sint sit nulla ex commodo dolor.",
+        "spans": []
+      }
+    ],
+    "meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Dolore sit ut ad deserunt consequat sint sunt magna in. Et voluptate dolore sunt eiusmod duis reprehenderit in reprehenderit consequat esse cillum occaecat.",
+        "spans": []
+      }
+    ],
+    "social_meta_title": [
+      {
+        "type": "paragraph",
+        "text": "Fugiat dolor cillum eiusmod.",
+        "spans": []
+      }
+    ],
+    "social_meta_description": [
+      {
+        "type": "paragraph",
+        "text": "Est sit sint ut cillum ut amet cillum commodo in. Pariatur ullamco dolore magna ut in. Ut dolor labore aliquip aute cillum labore culpa elit ea.",
+        "spans": []
+      }
+    ],
+    "social_meta_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f"
+    }
   }
 }
