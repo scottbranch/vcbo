@@ -10,9 +10,10 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
   const about = await client.getByUID("about_page", "about")
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { about }, // Will be passed to the sectors component as props
+    props: { about, footer }, // Will be passed to the sectors component as props
   }
 }
 
@@ -28,8 +29,6 @@ export default function About(props) {
       document.body.classList.remove("sector")
     }
     setLoaded(true)
-
-    console.log({ about })
   }, [])
 
   return (

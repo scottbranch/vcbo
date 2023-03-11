@@ -24,7 +24,7 @@ export default function MyApp({ Component, pageProps }) {
         <div className="page-wrapper relative">
           <Header />
           <Component {...pageProps} />
-          <Footer {...pageProps} />
+          <Footer data={pageProps?.footer?.data} />
         </div>
       </PrismicPreview>
     </PrismicProvider>

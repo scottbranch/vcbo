@@ -13,9 +13,10 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
   const position = await client.getByUID("position", params.uid)
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { position }, // Will be passed to the sectors component as props
+    props: { position, footer }, // Will be passed to the sectors component as props
   }
 }
 

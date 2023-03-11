@@ -13,9 +13,10 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
   const homepage = await client.getSingle("homepage")
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { homepage }, // Will be passed to the page component as props
+    props: { homepage, footer }, // Will be passed to the page component as props
   }
 }
 
@@ -23,7 +24,7 @@ export default function Home(props) {
   const [loaded, setLoaded] = useState(false)
   const [firstButtonTheme, setFirstButtonTheme] = useState("dark")
 
-  const { homepage } = props
+  const { homepage, footer } = props
 
   const settings = {
     className: "homepage-carousel",
@@ -62,7 +63,7 @@ export default function Home(props) {
 
     setLoaded(true)
 
-    console.log({ homepage })
+    console.log({ footer })
   }, [])
 
   return (

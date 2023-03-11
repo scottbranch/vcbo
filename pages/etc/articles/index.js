@@ -9,9 +9,10 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
   const articles = await client.getAllByType("article")
   const etcPage = await client.getByUID("etc_page", "etc-page")
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { articles, etcPage },
+    props: { articles, etcPage, footer },
   }
 }
 
@@ -46,6 +47,8 @@ export default function Articles(props) {
     setArticleTags(emptyTags)
 
     setTags(filteredTags)
+
+    console.log(articles)
   }, [])
 
   const filterItem = (item, e) => {
@@ -144,7 +147,7 @@ export default function Articles(props) {
         </div>
         <div className="masonry sm:masonry-sm md:masonry-md mt-10 md:mt-40">
           {articles?.map((article) => {
-            const date = new Date(article?.first_publication_date)
+            const date = new Date(article?.data?.published_date)
 
             return (
               <ScrollAnimate

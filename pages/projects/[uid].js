@@ -22,9 +22,10 @@ export async function getStaticProps({ params, previewData }) {
   const projects = await client.getAllByType("project", {
     fetchLinks: ["sector.name"],
   })
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { page, projects },
+    props: { page, projects, footer },
   }
 }
 

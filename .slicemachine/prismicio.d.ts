@@ -439,6 +439,17 @@ interface ArticleDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Author field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.author
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    author: prismicT.RichTextField;
+    /**
      * Published Date field in *Article*
      *
      * - **Field Type**: Date

@@ -24,6 +24,7 @@ export async function getStaticProps({ params, previewData }) {
   const dropdownItems = await client.getAllByType("sector", {
     fetchLinks: ["specialty.name", "sector.name"],
   })
+  const footer = await client.getSingle("footer")
 
   const additionalProjects = await client.getAllByType("additional_project", {
     fetchLinks: ["sector.name", "specialty.name"],
@@ -35,6 +36,7 @@ export async function getStaticProps({ params, previewData }) {
       projects,
       dropdownItems,
       additionalProjects,
+      footer,
     },
   }
 }

@@ -11,6 +11,7 @@ export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
 
   const allProjects = await client.getAllByType("project")
+  const footer = await client.getSingle("footer")
 
   const sectors = await client.getAllByType("sector", {
     fetchLinks: ["specialty.name", "sector.name", "sector.description"],
@@ -21,7 +22,7 @@ export async function getStaticProps({ previewData }) {
   })
 
   return {
-    props: { sectors, projects, allProjects }, // Will be passed to the sectors component as props
+    props: { sectors, projects, allProjects, footer }, // Will be passed to the sectors component as props
   }
 }
 

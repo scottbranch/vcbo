@@ -12,9 +12,10 @@ export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
   const article = await client.getByUID("article", params.uid)
+  const footer = await client.getSingle("footer")
 
   return {
-    props: { article }, // Will be passed to the sectors component as props
+    props: { article, footer }, // Will be passed to the sectors component as props
   }
 }
 
@@ -83,7 +84,11 @@ export default function Article(props) {
             </div>
             <div className="mt-16 mb-10 md:mb-10">
               <ScrollAnimate>
-                <h4>{article?.data?.published_date}</h4>
+                <h4>
+                  {`${article?.data?.author.length > 0 ? "By | " : ""}`}{" "}
+                  {article?.data?.author[0]?.text}{" "}
+                  {article?.data?.published_date}
+                </h4>
               </ScrollAnimate>
             </div>
           </div>
