@@ -158,7 +158,8 @@ export default function Articles(props) {
                 <Article
                   image={article?.data?.hero_image?.url}
                   title={article?.data?.title[0]?.text}
-                  date={`${date.getMonth()}-${date.getDate()}-${date.getFullYear()}`}
+                  date={article?.data?.published_date}
+                  author={article?.data?.author[0]?.text}
                   link={`/etc/articles/${article?.uid}`}
                 />
               </ScrollAnimate>
