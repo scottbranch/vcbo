@@ -85,8 +85,11 @@ export default function Article(props) {
             <div className="mt-16 mb-10 md:mb-10">
               <ScrollAnimate>
                 <h4>
-                  {`${article?.data?.author.length > 0 ? "By | " : ""}`}{" "}
-                  {article?.data?.author[0]?.text}{" "}
+                  {`${
+                    article?.data?.author.length > 0
+                      ? `By ${article?.data?.author[0]?.text} | `
+                      : ""
+                  }`}{" "}
                   {article?.data?.published_date}
                 </h4>
               </ScrollAnimate>
