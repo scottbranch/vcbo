@@ -31,6 +31,17 @@ interface AboutPageDocumentData {
      */
     featured_image: prismicT.ImageField<never>;
     /**
+     * Featured Image Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.featured_image_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    featured_image_caption: prismicT.RichTextField;
+    /**
      * Text Blurb 1 field in *About Page*
      *
      * - **Field Type**: Group
@@ -53,6 +64,17 @@ interface AboutPageDocumentData {
      */
     grid_image_1: prismicT.ImageField<never>;
     /**
+     * Grid Image 1 Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_1_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    grid_image_1_caption: prismicT.RichTextField;
+    /**
      * Grid Image 2 field in *About Page*
      *
      * - **Field Type**: Image
@@ -63,6 +85,17 @@ interface AboutPageDocumentData {
      *
      */
     grid_image_2: prismicT.ImageField<never>;
+    /**
+     * Grid Image 2 Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_2_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    grid_image_2_caption: prismicT.RichTextField;
     /**
      * Grid Image 3 field in *About Page*
      *
@@ -75,6 +108,17 @@ interface AboutPageDocumentData {
      */
     grid_image_3: prismicT.ImageField<never>;
     /**
+     * Grid Image 3 Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_3_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    grid_image_3_caption: prismicT.RichTextField;
+    /**
      * Grid Image 4 field in *About Page*
      *
      * - **Field Type**: Image
@@ -85,6 +129,17 @@ interface AboutPageDocumentData {
      *
      */
     grid_image_4: prismicT.ImageField<never>;
+    /**
+     * Grid Image 4 Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.grid_image_4_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    grid_image_4_caption: prismicT.RichTextField;
     /**
      * Text Blurb 2 field in *About Page*
      *
@@ -107,6 +162,17 @@ interface AboutPageDocumentData {
      *
      */
     featured_image_2: prismicT.ImageField<never>;
+    /**
+     * Featured Image 2 Caption field in *About Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_page.featured_image_2_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    featured_image_2_caption: prismicT.RichTextField;
     /**
      * Text Blurb 3 field in *About Page*
      *
@@ -471,6 +537,17 @@ interface ArticleDocumentData {
      *
      */
     hero_image: prismicT.ImageField<never>;
+    /**
+     * Hero Image Caption field in *Article*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.hero_image_caption
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    hero_image_caption: prismicT.RichTextField;
     /**
      * Content field in *Article*
      *
@@ -2121,6 +2198,16 @@ export interface ServicesPageDocumentDataArchitectureItem {
      */
     image: prismicT.ImageField<never>;
     /**
+     * Image Caption field in *Services Page → Architecture*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.architecture[].image_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    image_caption: prismicT.RichTextField;
+    /**
      * Link field in *Services Page → Architecture*
      *
      * - **Field Type**: Link
@@ -2187,6 +2274,16 @@ export interface ServicesPageDocumentDataDesignItem {
      */
     image_2: prismicT.ImageField<never>;
     /**
+     * Image Caption field in *Services Page → Design*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.design[].image_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    image_caption: prismicT.RichTextField;
+    /**
      * Text field in *Services Page → Design*
      *
      * - **Field Type**: Rich Text
@@ -2232,6 +2329,16 @@ export interface ServicesPageDocumentDataPlanningItem {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Image Caption field in *Services Page → Planning*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.planning[].image_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    image_caption: prismicT.RichTextField;
     /**
      * Heading field in *Services Page → Planning*
      *
@@ -2298,6 +2405,16 @@ export interface ServicesPageDocumentDataSustainabilityItem {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Image Caption field in *Services Page → Sustainability*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: services_page.sustainability[].image_caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    image_caption: prismicT.RichTextField;
     /**
      * Heading field in *Services Page → Sustainability*
      *

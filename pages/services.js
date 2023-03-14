@@ -187,6 +187,9 @@ export default function Services(props) {
                 className="w-full"
                 src={services?.data?.architecture[0]?.image?.url}
               />
+              <p className="image-caption">
+                {services?.data?.architecture[0]?.image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
             <div className="col-start-1 col-span-1 flex items-baseline justify-between mt-20 md:mt-40 mr-4">
               <ScrollAnimate>
@@ -215,6 +218,9 @@ export default function Services(props) {
               className="col-start-3 col-span-2 w-full"
               src={services?.data?.architecture[0]?.image?.url}
             />
+            <p className="image-caption">
+              {services?.data?.architecture[0]?.image_caption[0]?.text}
+            </p>
           </ScrollAnimate>
         </div>
         <div className="grid grid-cols-4 mt-60" id="design">
@@ -230,6 +236,9 @@ export default function Services(props) {
                 className="mt-8"
                 src={services?.data?.design[0]?.image_2?.url}
               />
+              <p className="image-caption">
+                {services?.data?.design[0]?.image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
           <ScrollAnimate className="col-start-1 md:col-start-3 col-span-2 md:col-span-1 flex items-baseline justify-between ml-4 mr-4">
@@ -252,6 +261,9 @@ export default function Services(props) {
           <div className="hidden md:block col-start-1 col-span-2">
             <ScrollAnimate>
               <img src={services?.data?.planning[0]?.image?.url} />
+              <p className="image-caption">
+                {services?.data?.planning[0]?.image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
           <div className="col-start-1 md:col-start-3 col-span-4 md:col-span-2">
@@ -270,6 +282,9 @@ export default function Services(props) {
               <div className="block md:hidden col-start-1 col-span-4">
                 <ScrollAnimate>
                   <img src={services?.data?.planning[0]?.image?.url} />
+                  <p className="image-caption">
+                    {services?.data?.planning[0]?.image_caption[0]?.text}
+                  </p>
                 </ScrollAnimate>
               </div>
               <div className="col-start-2 md:col-start-4 col-span-3 md:col-span-1 mt-10 md:mt-0 ml-4 mr-4 md:w-2/4">
@@ -291,6 +306,9 @@ export default function Services(props) {
           <div className="col-start-1 col-span-2 md:col-span-1">
             <ScrollAnimate>
               <img src={services?.data?.sustainability[0]?.image?.url} />
+              <p className="image-caption">
+                {services?.data?.sustainability[0]?.image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
           <div className="col-start-3 md:col-start-2 col-span-2 md:col-span-1 flex flex-row flex-wrap ml-4 mr-4">

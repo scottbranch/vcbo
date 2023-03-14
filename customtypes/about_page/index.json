@@ -29,6 +29,15 @@
           "thumbnails": []
         }
       },
+      "featured_image_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Featured Image Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "text_blurb_1": {
         "type": "Group",
         "config": {
@@ -63,12 +72,30 @@
           "thumbnails": []
         }
       },
+      "grid_image_1_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Grid Image 1 Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "grid_image_2": {
         "type": "Image",
         "config": {
           "label": "Grid Image 2",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "grid_image_2_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Grid Image 2 Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "grid_image_3": {
@@ -79,12 +106,30 @@
           "thumbnails": []
         }
       },
+      "grid_image_3_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Grid Image 3 Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
       "grid_image_4": {
         "type": "Image",
         "config": {
           "label": "Grid Image 4",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "grid_image_4_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Grid Image 4 Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "text_blurb_2": {
@@ -119,6 +164,15 @@
           "label": "Featured Image 2",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "featured_image_2_caption": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Featured Image 2 Caption",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "text_blurb_3": {

@@ -98,6 +98,9 @@ export default function Article(props) {
           <div className="col-span-4 md:col-span-2">
             <ScrollAnimate className="article-hero">
               <img src={article?.data?.hero_image?.url} />
+              <p className="image-caption">
+                {article?.data?.hero_image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
         </div>

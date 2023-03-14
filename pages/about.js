@@ -66,6 +66,9 @@ export default function About(props) {
           <div className="col-span-8 md:col-span-7 md:col-start-3">
             <ScrollAnimate>
               <img src={about?.data?.featured_image?.url} />
+              <p className="image-caption">
+                {about?.data?.featured_image_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
           <div className="col-span-8 md:col-span-4 md:col-start-5 mt-14 md:mt-28 ml-4">
@@ -79,22 +82,30 @@ export default function About(props) {
             </ScrollAnimate>
           </div>
           <ScrollAnimate className="grid col-span-8 mx-auto grid-cols-8 mt-20 md:mt-0">
-            <img
-              className="col-span-4 md:col-span-2 col-start-1 w-11/12 mx-auto"
-              src={about?.data?.grid_image_1?.url}
-            />
-            <img
-              className="col-span-4 md:col-span-2 col-start-5 md:col-start-3 mt-10 md:mt-96 pt-20 w-11/12 md:mx-auto"
-              src={about?.data?.grid_image_2?.url}
-            />
-            <img
-              className="col-span-4 md:col-span-2 col-start-1 md:col-start-5 mt-40 md:mt-56 w-11/12 mx-auto"
-              src={about?.data?.grid_image_3?.url}
-            />
-            <img
-              className="col-span-4 md:col-span-2 col-start-5 md:col-start-7 mt-4 md:mt-56 w-11/12"
-              src={about?.data?.grid_image_4?.url}
-            />
+            <div className="col-span-4 md:col-span-2 col-start-1 w-11/12 mx-auto">
+              <img src={about?.data?.grid_image_1?.url} />
+              <p className="image-caption">
+                {about?.data?.grid_image_1_caption[0]?.text}
+              </p>
+            </div>
+            <div className="col-span-4 md:col-span-2 col-start-5 md:col-start-3 mt-10 md:mt-96 pt-20 w-11/12 md:mx-auto">
+              <img src={about?.data?.grid_image_2?.url} />
+              <p className="image-caption">
+                {about?.data?.grid_image_2_caption[0]?.text}
+              </p>
+            </div>
+            <div className="col-span-4 md:col-span-2 col-start-1 md:col-start-5 mt-40 md:mt-56 w-11/12 mx-auto">
+              <img src={about?.data?.grid_image_3?.url} />
+              <p className="image-caption">
+                {about?.data?.grid_image_3_caption[0]?.text}
+              </p>
+            </div>
+            <div className="col-span-4 md:col-span-2 col-start-5 md:col-start-7 mt-4 md:mt-56 w-11/12">
+              <img src={about?.data?.grid_image_4?.url} />
+              <p className="image-caption">
+                {about?.data?.grid_image_4_caption[0]?.text}
+              </p>
+            </div>
           </ScrollAnimate>
           <div className="col-span-8 md:col-span-4 mt-14 md:mt-28">
             <ScrollAnimate>
@@ -109,6 +120,9 @@ export default function About(props) {
           <div className="col-start-3 col-span-6 md:col-start-3 mt-8 md:mt-20 md:col-span-4">
             <ScrollAnimate>
               <img src={about?.data?.featured_image_2?.url} />
+              <p className="image-caption">
+                {about?.data?.featured_image_2_caption[0]?.text}
+              </p>
             </ScrollAnimate>
           </div>
           <div className="col-span-8 md:col-start-3 md:col-span-4 mt-14 md:mt-28 ml-4">
