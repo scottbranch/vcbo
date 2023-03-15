@@ -1362,3 +1362,22 @@ h4.tagname.active {
   margin-top: 10px;
   font-weight: 500;
 }
+
+.search-filter {
+  background: transparent;
+  color: var(--black);
+  border-bottom: 2px solid #b9b6b6;
+  padding: 5px 0;
+  width: 90%;
+  margin-top: 40px;
+  outline: none;
+  font-family: "founders";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.search-filter::placeholder {
+  color: #b9b6b6;
+}

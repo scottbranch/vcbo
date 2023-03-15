@@ -4,6 +4,7 @@ import { createClient } from "../../../prismicio"
 import { Article } from "../../../components/Article"
 import { Lines } from "../../../components/Lines"
 import Head from "next/head"
+import FilterResults from "react-filter-search"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -27,6 +28,8 @@ export default function Articles(props) {
   const [loaded, setLoaded] = useState(false)
   const [tags, setTags] = useState([])
   const [articleTags, setArticleTags] = useState([])
+  const [data, setData] = useState([])
+  const [value, setValue] = useState("")
 
   useEffect(() => {
     if (process.browser) {
@@ -109,6 +112,11 @@ export default function Articles(props) {
     return counter
   }
 
+  const handleSearch = (event) => {
+    const { value } = event.target
+    setValue(value)
+  }
+
   return (
     <>
       <Head>
@@ -138,6 +146,13 @@ export default function Articles(props) {
             <h2 onClick={() => resetFilter()} className="etc-title">
               ETC.
             </h2>
+            <input
+              className="search-filter cols-2 md:cols-4"
+              placeholder="SEARCH"
+              type="text"
+              value={value}
+              onChange={handleSearch}
+            ></input>
           </ScrollAnimate>
           <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags mt-20 md:mt-0">
             {tags?.map((item) => (
@@ -154,25 +169,29 @@ export default function Articles(props) {
           </ScrollAnimate>
         </div>
         <div className="masonry sm:masonry-sm md:masonry-md mt-10 md:mt-40">
-          {articles?.map((article) => {
-            const date = new Date(article?.data?.published_date)
-
-            return (
-              <ScrollAnimate
-                className={`break-inside mb-16 mr-4 article-preview-outer ${article.tags.map(
-                  (item) => ` ${item} `
-                )}`}
-              >
-                <Article
-                  image={article?.data?.hero_image?.url}
-                  title={article?.data?.title[0]?.text}
-                  date={article?.data?.published_date}
-                  author={article?.data?.author[0]?.text}
-                  link={`/etc/articles/${article?.uid}`}
-                />
-              </ScrollAnimate>
-            )
-          })}
+          <FilterResults
+            value={value}
+            data={articles}
+            renderResults={(results) => (
+              <>
+                {results.map((el) => (
+                  <ScrollAnimate
+                    className={`break-inside mb-16 mr-4 article-preview-outer ${el.tags.map(
+                      (item) => ` ${item} `
+                    )}`}
+                  >
+                    <Article
+                      image={el?.data?.hero_image?.url}
+                      title={el?.data?.title[0]?.text}
+                      date={el?.data?.published_date}
+                      author={el?.data?.author[0]?.text}
+                      link={`/etc/articles/${el?.uid}`}
+                    />
+                  </ScrollAnimate>
+                ))}
+              </>
+            )}
+          />
         </div>
       </div>
     </>
