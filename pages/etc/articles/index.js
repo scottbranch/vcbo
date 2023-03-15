@@ -7,7 +7,12 @@ import Head from "next/head"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
-  const articles = await client.getAllByType("article")
+  const articles = await client.getAllByType("article", {
+    orderings: {
+      field: "document.data.published_date",
+      direction: "desc",
+    },
+  })
   const etcPage = await client.getByUID("etc_page", "etc-page")
   const footer = await client.getSingle("footer")
 
@@ -48,7 +53,10 @@ export default function Articles(props) {
 
     setTags(filteredTags)
 
-    console.log(articles)
+    // articles.map((item) => {
+    //   console.log(item.data.published_date)
+    // })
+    // console.log(articles)
   }, [])
 
   const filterItem = (item, e) => {
