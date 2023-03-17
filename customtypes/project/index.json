@@ -160,6 +160,58 @@
           }
         }
       },
+      "awards": {
+        "type": "Group",
+        "config": {
+          "label": "Awards",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Link Text",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
+      "publications": {
+        "type": "Group",
+        "config": {
+          "label": "Publications",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            },
+            "link_text": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Link Text",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      },
       "content_image_2": {
         "type": "Image",
         "config": {

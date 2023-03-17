@@ -230,11 +230,54 @@ export default function Project(props) {
           {pageData?.quote[0]?.quote_text.length === 0 ? (
             ""
           ) : (
-            <div className="col-start-1 col-span-3 mt-40">
+            <div className="col-start-1 col-span-3 mt-40 md:pl-64">
               <ScrollAnimate>
                 <h4 className="quote-text">
                   <PrismicRichText field={pageData?.quote[0]?.quote_text} />
                 </h4>
+              </ScrollAnimate>
+            </div>
+          )}
+          {pageData?.awards.length === 0 ? (
+            ""
+          ) : (
+            <div className="awards-container col-start-1 col-span-2 mt-32 md:pl-64">
+              <ScrollAnimate>
+                <h3>Awards</h3>
+                <ul>
+                  {pageData?.awards.map((award) => {
+                    return (
+                      <li class="mb-1">
+                        <a href={award?.link?.url} target={award?.link?.target}>
+                          <h4>{award?.link_text[0]?.text}</h4>
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </ScrollAnimate>
+            </div>
+          )}
+          {pageData?.publications.length === 0 ? (
+            ""
+          ) : (
+            <div className="awards-container col-start-3 col-span-2 mt-32 pl-5">
+              <ScrollAnimate>
+                <h3>Publications</h3>
+                <ul>
+                  {pageData?.publications.map((publication) => {
+                    return (
+                      <li class="mb-1">
+                        <a
+                          href={publication?.link?.url}
+                          target={publication?.link?.target}
+                        >
+                          <h4>{publication?.link_text[0]?.text}</h4>
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
               </ScrollAnimate>
             </div>
           )}

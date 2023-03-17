@@ -46,6 +46,22 @@
           "patternType": "PARAGRAPH",
           "blocks": 1
         }
+      },
+      "awards": {
+        "link_text": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      },
+      "publications": {
+        "link_text": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
       }
     },
     "homepage": {
