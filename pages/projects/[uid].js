@@ -235,6 +235,9 @@ export default function Project(props) {
                 <h4 className="quote-text">
                   <PrismicRichText field={pageData?.quote[0]?.quote_text} />
                 </h4>
+                <h4 className="mt-6 font-medium">
+                  —{pageData?.quote[0]?.source[0]?.text}
+                </h4>
               </ScrollAnimate>
             </div>
           )}

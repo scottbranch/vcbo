@@ -1860,6 +1860,16 @@ export interface ProjectDocumentDataQuoteItem {
      *
      */
     quote_text: prismicT.RichTextField;
+    /**
+     * Source field in *Project → Quote*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.quote[].source
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    source: prismicT.RichTextField;
 }
 /**
  * Item in Project → Awards
