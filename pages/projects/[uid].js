@@ -243,13 +243,17 @@ export default function Project(props) {
           ) : (
             <div className="awards-container col-start-1 col-span-2 mt-32 md:pl-64">
               <ScrollAnimate>
-                <h3>Awards</h3>
+                <h4>Awards</h4>
                 <ul>
                   {pageData?.awards.map((award) => {
                     return (
                       <li class="mb-1">
-                        <a href={award?.link?.url} target={award?.link?.target}>
-                          <h4>{award?.link_text[0]?.text}</h4>
+                        <a
+                          className="body-large"
+                          href={award?.link?.url}
+                          target={award?.link?.target}
+                        >
+                          {award?.link_text[0]?.text}
                         </a>
                       </li>
                     )
@@ -263,16 +267,17 @@ export default function Project(props) {
           ) : (
             <div className="awards-container col-start-3 col-span-2 mt-32 pl-5">
               <ScrollAnimate>
-                <h3>Publications</h3>
+                <h4>Publications</h4>
                 <ul>
                   {pageData?.publications.map((publication) => {
                     return (
                       <li class="mb-1">
                         <a
+                          className="body-large"
                           href={publication?.link?.url}
                           target={publication?.link?.target}
                         >
-                          <h4>{publication?.link_text[0]?.text}</h4>
+                          {publication?.link_text[0]?.text}
                         </a>
                       </li>
                     )
