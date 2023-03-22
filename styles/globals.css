@@ -755,6 +755,12 @@ a {
   margin-bottom: 20px;
 }
 
+.project-text-blurb ol {
+  color: var(--white);
+  list-style: auto;
+  margin-bottom: 20px;
+}
+
 .project-text-blurb li {
   margin-left: 30px;
 }
@@ -1166,6 +1172,11 @@ sup {
 
 .article-body ul {
   margin: 20px 0 30px;
+}
+
+.article-body ol li {
+  list-style: auto;
+  margin-left: 30px;
 }
 
 .article-body ul li {

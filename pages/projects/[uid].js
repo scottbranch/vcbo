@@ -244,7 +244,7 @@ export default function Project(props) {
           {pageData?.awards.length === 0 ? (
             <div></div>
           ) : (
-            <div className="awards-container col-start-1 col-span-2 mt-32 md:pl-64">
+            <div className="awards-container col-start-2 col-span-1 mt-10 md:mt-32">
               <ScrollAnimate>
                 <h4 className="underline">Awards</h4>
                 <ul>
@@ -268,7 +268,7 @@ export default function Project(props) {
           {pageData?.publications.length === 0 ? (
             <div></div>
           ) : (
-            <div className="awards-container col-start-3 col-span-2 mt-32 pl-5">
+            <div className="awards-container col-start-2 lg:col-start-3 col-span-1 mt-10 md:mt-32">
               <ScrollAnimate>
                 <h4 className="underline">Publications</h4>
                 <ul>
