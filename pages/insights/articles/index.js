@@ -144,7 +144,7 @@ export default function Articles(props) {
         <div className="grid grid-cols-4">
           <ScrollAnimate>
             <h2 onClick={() => resetFilter()} className="etc-title">
-              ETC.
+              INSIGHTS
             </h2>
             <input
               className="search-filter cols-2 md:cols-4"
@@ -185,7 +185,7 @@ export default function Articles(props) {
                       title={el?.data?.title[0]?.text}
                       date={el?.data?.published_date}
                       author={el?.data?.author[0]?.text}
-                      link={`/etc/articles/${el?.uid}`}
+                      link={`/insights/articles/${el?.uid}`}
                     />
                   </ScrollAnimate>
                 ))}

@@ -1382,11 +1382,6 @@ h4.tagname.active {
   color: #b9b6b6;
 }
 
-.awards-container a {
+.awards-container a:hover {
   text-decoration: underline;
-}
-
-.awards-container .body-large {
-  font-size: 30px;
-  line-height: 36px;
 }

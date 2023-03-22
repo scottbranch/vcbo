@@ -6,17 +6,16 @@ import { PrismicRichText } from "@prismicio/react"
 import Link from "next/link"
 import { Lines } from "../../../components/Lines"
 import { BackArrow } from "../../../components/BackArrow"
-import { Button } from "../../../components/Button"
 import Head from "next/head"
 
 export async function getStaticProps({ params, previewData }) {
   const client = createClient({ previewData })
 
-  const position = await client.getByUID("position", params.uid)
+  const article = await client.getByUID("article", params.uid)
   const footer = await client.getSingle("footer")
 
   return {
-    props: { position, footer }, // Will be passed to the sectors component as props
+    props: { article, footer }, // Will be passed to the sectors component as props
   }
 }
 
@@ -24,7 +23,7 @@ export async function getStaticProps({ params, previewData }) {
 export async function getStaticPaths() {
   const client = createClient()
 
-  const pages = await client.getAllByType("position")
+  const pages = await client.getAllByType("article")
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
@@ -33,9 +32,11 @@ export async function getStaticPaths() {
 }
 
 export default function Article(props) {
-  const { position } = props
+  const { article } = props
+  const date = new Date(article?.first_publication_date)
   const [loaded, setLoaded] = useState(false)
   useEffect(() => {
+    console.log(article)
     if (process.browser) {
       document.body.classList.remove("homepage")
       document.body.classList.remove("dark-mode")
@@ -49,54 +50,63 @@ export default function Article(props) {
   return (
     <>
       <Head>
-        <title>{position?.data?.meta_title[0]?.text}</title>
+        <title>{article?.data?.meta_title[0]?.text}</title>
         <meta
           name="description"
-          content={position?.data?.meta_description[0]?.text}
+          content={article?.data?.meta_description[0]?.text}
           key="desc"
         />
         <meta
           property="og:title"
-          content={position?.data?.social_meta_title[0]?.text}
+          content={article?.data?.social_meta_title[0]?.text}
         />
         <meta
           property="og:description"
-          content={position?.data?.social_meta_description[0]?.text}
+          content={article?.data?.social_meta_description[0]?.text}
         />
         <meta
           property="og:image"
-          content={position?.data?.social_meta_image?.url}
+          content={article?.data?.social_meta_image?.url}
         />
       </Head>
       <Lines loaded={loaded} />
       <div className="container mx-auto mt-20 md:mt-40 article px-4 md:px-0 relative z-10 mb-60">
         <div className="breadcrumb flex col-span-4 relative">
           <BackArrow className="mr-2" />
-          <Link href="/etc/careers">Back</Link>
+          <Link href="/insights/articles">Back</Link>
         </div>
         <div className="grid grid-cols-4">
-          <div className="col-span-4 md:col-span-2 flex content-end flex-wrap mt-10 md:mt-20">
+          <div className="col-span-4 md:col-span-2 flex content-end flex-wrap mt-10 md:mt-0">
             <div className="w-full">
               <ScrollAnimate>
-                <h1>{position?.data?.title[0]?.text}</h1>
+                <h1>{article?.data?.title[0]?.text}</h1>
               </ScrollAnimate>
             </div>
             <div className="mt-16 mb-10 md:mb-10">
               <ScrollAnimate>
-                <h4>{position?.data?.team[0]?.text} · </h4>
-                <h4>{position?.data?.location[0]?.text}</h4>
+                <h4>
+                  {`${
+                    article?.data?.author.length > 0
+                      ? `By ${article?.data?.author[0]?.text} | `
+                      : ""
+                  }`}{" "}
+                  {article?.data?.published_date}
+                </h4>
               </ScrollAnimate>
             </div>
+          </div>
+          <div className="col-span-4 md:col-span-2">
+            <ScrollAnimate className="article-hero">
+              <img src={article?.data?.hero_image?.url} />
+              <p className="image-caption">
+                {article?.data?.hero_image_caption[0]?.text}
+              </p>
+            </ScrollAnimate>
           </div>
         </div>
         <div className="grid grid-cols-4 mt-10 md:mt-40">
           <div className="col-start-1 md:col-start-2 col-span-4 md:col-span-2 article-body ml-4 mr-4">
-            <PrismicRichText field={position?.data?.description} />
-            <Button
-              className="mt-4 apply-button"
-              link="mailto:info@vcbo.com"
-              text="Apply"
-            />
+            <PrismicRichText field={article?.data?.content} />
           </div>
         </div>
       </div>

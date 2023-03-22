@@ -31,7 +31,10 @@ export const Footer = (props) => {
                 <p className="small-subhead mb-4">Careers</p>
                 <p>{data?.careers[0]?.text[0]?.text}</p>
                 <p>
-                  <a href="/etc/careers" className="underline">
+                  <a
+                    href={data?.careers[0]?.link[0].spans[0]?.data?.url}
+                    className="underline"
+                  >
                     <p>{data?.careers[0]?.link[0]?.text}</p>
                   </a>
                 </p>

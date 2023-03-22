@@ -120,12 +120,12 @@ export const Header = (props) => {
             <span>About</span>
           </Link>
           <Link
-            href="/etc/articles"
+            href="/insights/articles"
             className={`hidden md:block col-start-8 col-span-1 md:mb-2 ${
-              router.pathname.startsWith("/etc") ? "active" : ""
+              router.pathname.startsWith("/insights") ? "active" : ""
             }`}
           >
-            <span>Etc.</span>
+            <span>Insights</span>
           </Link>
 
           <button
@@ -212,11 +212,11 @@ export const Header = (props) => {
                   About
                 </Link>
                 <Link
-                  href="/etc/articles"
+                  href="/insights/articles"
                   className="block"
                   onClick={() => setMenuOpen(false)}
                 >
-                  Etc.
+                  Insights
                 </Link>
               </ul>
             </div>

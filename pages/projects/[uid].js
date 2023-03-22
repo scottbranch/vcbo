@@ -242,11 +242,11 @@ export default function Project(props) {
             </div>
           )}
           {pageData?.awards.length === 0 ? (
-            ""
+            <div></div>
           ) : (
             <div className="awards-container col-start-1 col-span-2 mt-32 md:pl-64">
               <ScrollAnimate>
-                <h4>Awards</h4>
+                <h4 className="underline">Awards</h4>
                 <ul>
                   {pageData?.awards.map((award) => {
                     return (
@@ -266,11 +266,11 @@ export default function Project(props) {
             </div>
           )}
           {pageData?.publications.length === 0 ? (
-            ""
+            <div></div>
           ) : (
             <div className="awards-container col-start-3 col-span-2 mt-32 pl-5">
               <ScrollAnimate>
-                <h4>Publications</h4>
+                <h4 className="underline">Publications</h4>
                 <ul>
                   {pageData?.publications.map((publication) => {
                     return (

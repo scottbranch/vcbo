@@ -44,16 +44,16 @@ const routes = [
   },
   {
     type: "article",
-    path: "/etc/articles/:uid",
+    path: "/insights/articles/:uid",
   },
   {
     type: "careers_page",
     uid: "careers",
-    path: "/etc/careers",
+    path: "/insights/careers",
   },
   {
     type: "position",
-    path: "/etc/careers/:uid",
+    path: "/insights/careers/:uid",
   },
 ]
 
