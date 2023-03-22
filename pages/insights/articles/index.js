@@ -154,7 +154,7 @@ export default function Articles(props) {
               onChange={handleSearch}
             ></input>
           </ScrollAnimate>
-          <ScrollAnimate className="col-start-2 col-span-3 flex flex-wrap justify-around tags mt-20 md:mt-0">
+          <ScrollAnimate className="col-start-4 xl:col-start-2 col-span-2 xl:col-span-3 flex flex-wrap justify-around tags mt-0">
             {tags?.map((item) => (
               <h4
                 className={`tagname relative ${
