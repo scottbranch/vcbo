@@ -599,6 +599,24 @@ a {
   transition: filter 450ms ease;
 }
 
+.services-page ol li {
+  list-style: auto;
+  margin-left: 30px;
+  font-family: "founders";
+  font-size: 20px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.services-page ul li {
+  list-style: disc;
+  margin-left: 30px;
+  font-family: "founders";
+  font-size: 20px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
 @media screen and (min-width: 769px) {
   .services-page .hovered img {
     filter: blur(5px);
