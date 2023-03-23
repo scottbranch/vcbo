@@ -167,6 +167,18 @@
   transition: background-color 500ms ease-out;
 }
 
+.homepage ol li {
+  list-style: auto;
+  margin-left: 30px;
+  font-family: "founders";
+}
+
+.homepage ul li {
+  list-style: disc;
+  margin-left: 30px;
+  font-family: "founders";
+}
+
 .projects-header,
 .project-name {
   font-family: "founders";
@@ -1434,4 +1446,16 @@ h4.tagname.active {
 .team-button .first,
 .team-button .last {
   max-width: 130px;
+}
+
+.about-page ol li {
+  list-style: auto;
+  margin-left: 30px;
+  font-family: "founders";
+}
+
+.about-page ul li {
+  list-style: disc;
+  margin-left: 30px;
+  font-family: "founders";
 }
