@@ -401,6 +401,137 @@
           "extension": "js"
         },
         "screenshotPaths": {}
+      },
+      "team_segment": {
+        "library": "slices",
+        "id": "team_segment",
+        "name": "TeamSegment",
+        "description": "TeamSegment",
+        "model": {
+          "id": "team_segment",
+          "type": "SharedSlice",
+          "name": "TeamSegment",
+          "description": "TeamSegment",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "TeamSegment",
+              "primary": {
+                "team_segment": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Team Segment",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "headshot": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Headshot",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "name": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "paragraph": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Paragraph",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "headshot": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118"
+                },
+                "name": [
+                  {
+                    "type": "paragraph",
+                    "text": "Excepteur qui exercitation est incididunt esse elit do cillum. Qui sit aliqua dolor velit ipsum proident veniam. Nisi reprehenderit laborum eiusmod occaecat.",
+                    "spans": []
+                  }
+                ],
+                "title": [
+                  {
+                    "type": "paragraph",
+                    "text": "Reprehenderit irure reprehenderit tempor culpa commodo sit minim cupidatat voluptate voluptate Lorem est anim id.",
+                    "spans": []
+                  }
+                ],
+                "paragraph": [
+                  {
+                    "type": "paragraph",
+                    "text": "Laboris labore laboris do minim ea ex occaecat ullamco officia.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "team_segment": [
+                {
+                  "type": "paragraph",
+                  "text": "Pariatur culpa id esse esse reprehenderit excepteur aliquip cupidatat quis ex culpa quis sunt.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "team_segment"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/scott.branch/sites/vcbo/slices/TeamSegment/default/preview.png",
+            "width": 2370,
+            "height": 1638
+          }
+        }
       }
     }
   }

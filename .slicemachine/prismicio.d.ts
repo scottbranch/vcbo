@@ -2639,7 +2639,36 @@ interface SpecialtyDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<SpecialtyDocumentData>, "specialty", Lang>;
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument;
+/** Content for Team Page documents */
+interface TeamPageDocumentData {
+    /**
+     * Slice Zone field in *Team Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<TeamPageDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Team Page → Slice Zone*
+ *
+ */
+type TeamPageDocumentDataSlicesSlice = TeamSegmentSlice;
+/**
+ * Team Page document from Prismic
+ *
+ * - **API ID**: `team_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TeamPageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TeamPageDocumentData>, "team_page", Lang>;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument | TeamPageDocument;
 /**
  * Item in FeaturedProjects → Items
  *
@@ -2892,11 +2921,96 @@ type SpecialtiesSliceVariation = SpecialtiesSliceDefault;
  *
  */
 export type SpecialtiesSlice = prismicT.SharedSlice<"specialties", SpecialtiesSliceVariation>;
+/**
+ * Primary content in TeamSegment → Primary
+ *
+ */
+interface TeamSegmentSliceDefaultPrimary {
+    /**
+     * Team Segment field in *TeamSegment → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_segment.primary.team_segment
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    team_segment: prismicT.RichTextField;
+}
+/**
+ * Item in TeamSegment → Items
+ *
+ */
+export interface TeamSegmentSliceDefaultItem {
+    /**
+     * Headshot field in *TeamSegment → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_segment.items[].headshot
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    headshot: prismicT.ImageField<never>;
+    /**
+     * Name field in *TeamSegment → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_segment.items[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Title field in *TeamSegment → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_segment.items[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Paragraph field in *TeamSegment → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_segment.items[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
+}
+/**
+ * Default variation for TeamSegment Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TeamSegment`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TeamSegmentSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TeamSegmentSliceDefaultPrimary>, Simplify<TeamSegmentSliceDefaultItem>>;
+/**
+ * Slice variation for *TeamSegment*
+ *
+ */
+type TeamSegmentSliceVariation = TeamSegmentSliceDefault;
+/**
+ * TeamSegment Shared Slice
+ *
+ * - **API ID**: `team_segment`
+ * - **Description**: `TeamSegment`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TeamSegmentSlice = prismicT.SharedSlice<"team_segment", TeamSegmentSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, EtcPageDocumentData, EtcPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocumentDataAwardsItem, ProjectDocumentDataPublicationsItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, EtcPageDocumentData, EtcPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocumentDataAwardsItem, ProjectDocumentDataPublicationsItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, TeamPageDocumentData, TeamPageDocumentDataSlicesSlice, TeamPageDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice, TeamSegmentSliceDefaultPrimary, TeamSegmentSliceDefaultItem, TeamSegmentSliceDefault, TeamSegmentSliceVariation, TeamSegmentSlice };
     }
 }

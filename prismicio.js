@@ -21,6 +21,11 @@ const routes = [
     path: "/about",
   },
   {
+    type: "team_page",
+    uid: "team",
+    path: "/about/team",
+  },
+  {
     type: "services_page",
     uid: "services",
     path: "/services",

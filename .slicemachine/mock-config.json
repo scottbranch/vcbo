@@ -471,7 +471,8 @@
         }
       }
     },
-    "etc_page": {}
+    "etc_page": {},
+    "team_page": {}
   },
   "slices": {
     "Specialties": {
@@ -505,6 +506,19 @@
       },
       "doubleImage": {
         "primary": {}
+      }
+    },
+    "TeamSegment": {
+      "default": {
+        "primary": {},
+        "items": {
+          "paragraph": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
       }
     }
   }

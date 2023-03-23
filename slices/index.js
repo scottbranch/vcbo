@@ -3,15 +3,18 @@
 import FeaturedProjects from './FeaturedProjects';
 import Service from './Service';
 import Specialties from './Specialties';
+import TeamSegment from './TeamSegment';
 
 export {
 	FeaturedProjects,
 	Service,
 	Specialties,
+	TeamSegment,
 };
 
 export const components = {
 	featured_projects: FeaturedProjects,
 	service: Service,
 	specialties: Specialties,
+	team_segment: TeamSegment,
 };
