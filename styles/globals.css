@@ -1103,11 +1103,19 @@ sup {
 
 /* Projects Page Ends */
 
-.article-preview img {
+.article-preview .bg-image {
   transition: 450ms ease;
 }
 
-.article-preview:hover img {
+.article-preview .bg-image {
+  width: 100%;
+  height: 190px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+}
+
+.article-preview:hover .bg-image {
   opacity: 0.6;
 }
 

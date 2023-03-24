@@ -30,6 +30,7 @@ export default function Articles(props) {
   const [articleTags, setArticleTags] = useState([])
   const [data, setData] = useState([])
   const [value, setValue] = useState("")
+  const [sortedArticles, setSortedArticles] = useState([])
 
   useEffect(() => {
     if (process.browser) {
@@ -56,10 +57,12 @@ export default function Articles(props) {
 
     setTags(filteredTags)
 
-    // articles.map((item) => {
-    //   console.log(item.data.published_date)
-    // })
-    // console.log(articles)
+    const articlesSorted = articles.sort(
+      (a, b) =>
+        new Date(b.data.published_date) - new Date(a.data.published_date)
+    )
+
+    setSortedArticles(articlesSorted)
   }, [])
 
   const filterItem = (item, e) => {
@@ -168,15 +171,15 @@ export default function Articles(props) {
             ))}
           </ScrollAnimate>
         </div>
-        <div className="masonry sm:masonry-sm md:masonry-md mt-10 md:mt-40">
+        <div className="grid grid-cols-12 mt-10 md:mt-40">
           <FilterResults
             value={value}
-            data={articles}
+            data={sortedArticles}
             renderResults={(results) => (
               <>
                 {results.map((el) => (
                   <ScrollAnimate
-                    className={`break-inside mb-16 mr-4 article-preview-outer ${el.tags.map(
+                    className={`col-span-6 sm:col-span-3 break-inside mb-16 mr-4 article-preview-outer ${el.tags.map(
                       (item) => ` ${item} `
                     )}`}
                   >
