@@ -17,9 +17,7 @@
         "config": {
           "label": "Sector",
           "select": "document",
-          "customtypes": [
-            "sector"
-          ]
+          "customtypes": ["sector"]
         }
       },
       "specialty": {
@@ -27,9 +25,7 @@
         "config": {
           "label": "Specialty",
           "select": "document",
-          "customtypes": [
-            "specialty"
-          ]
+          "customtypes": ["specialty"]
         }
       },
       "name": {
@@ -38,7 +34,8 @@
           "label": "Name",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "labels": ["underline"]
         }
       },
       "client": {
@@ -56,7 +53,8 @@
           "label": "Project Location",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "labels": ["underline"]
         }
       },
       "sq_ft": {
@@ -105,7 +103,8 @@
                 "label": "Paragraph",
                 "placeholder": "",
                 "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                "labels": ["underline"]
               }
             }
           }
@@ -154,7 +153,8 @@
                 "label": "Quote Text",
                 "placeholder": "",
                 "allowTargetBlank": true,
-                "multi": "paragraph,hyperlink,preformatted,strong,em"
+                "multi": "paragraph,hyperlink,preformatted,strong,em",
+                "labels": ["underline"]
               }
             },
             "source": {
@@ -163,7 +163,8 @@
                 "label": "Source",
                 "placeholder": "",
                 "allowTargetBlank": true,
-                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+                "labels": ["underline"]
               }
             }
           }

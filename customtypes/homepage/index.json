@@ -48,7 +48,8 @@
                 "label": "Title",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "single": "heading3"
+                "single": "heading3",
+                "labels": ["underline"]
               }
             },
             "paragraph": {
@@ -57,7 +58,8 @@
                 "label": "Paragraph",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "multi": "paragraph"
+                "multi": "paragraph",
+                "labels": ["underline"]
               }
             },
             "link": {
@@ -92,7 +94,8 @@
                 "label": "Title",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "single": "heading3"
+                "single": "heading3",
+                "labels": ["underline"]
               }
             },
             "small_image": {
@@ -117,7 +120,8 @@
                 "label": "Paragraph",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "multi": "paragraph"
+                "multi": "paragraph",
+                "labels": ["underline"]
               }
             },
             "link": {
@@ -159,7 +163,8 @@
                 "label": "Title",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "single": "heading3"
+                "single": "heading3",
+                "labels": ["underline"]
               }
             },
             "link": {
@@ -193,7 +198,8 @@
                 "label": "Title",
                 "placeholder": "",
                 "allowTargetBlank": false,
-                "single": "heading3"
+                "single": "heading3",
+                "labels": ["underline"]
               }
             },
             "paragraph": {
@@ -202,7 +208,8 @@
                 "label": "Paragraph",
                 "placeholder": "",
                 "allowTargetBlank": true,
-                "multi": "paragraph"
+                "multi": "paragraph",
+                "labels": ["underline"]
               }
             },
             "image": {
