@@ -2642,6 +2642,17 @@ export type SpecialtyDocument<Lang extends string = string> = prismicT.PrismicDo
 /** Content for Team Page documents */
 interface TeamPageDocumentData {
     /**
+     * Leadership field in *Team Page*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.leadership[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    leadership: prismicT.GroupField<Simplify<TeamPageDocumentDataLeadershipItem>>;
+    /**
      * Slice Zone field in *Team Page*
      *
      * - **Field Type**: Slice Zone
@@ -2652,6 +2663,52 @@ interface TeamPageDocumentData {
      *
      */
     slices: prismicT.SliceZone<TeamPageDocumentDataSlicesSlice>;
+}
+/**
+ * Item in Team Page → Leadership
+ *
+ */
+export interface TeamPageDocumentDataLeadershipItem {
+    /**
+     * Headshot field in *Team Page → Leadership*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.leadership[].headshot
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    headshot: prismicT.ImageField<never>;
+    /**
+     * Name field in *Team Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.leadership[].name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Title field in *Team Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.leadership[].title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Paragraph field in *Team Page → Leadership*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: team_page.leadership[].paragraph
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    paragraph: prismicT.RichTextField;
 }
 /**
  * Slice for *Team Page → Slice Zone*
@@ -2972,16 +3029,6 @@ export interface TeamSegmentSliceDefaultItem {
      *
      */
     title: prismicT.RichTextField;
-    /**
-     * Paragraph field in *TeamSegment → Items*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: team_segment.items[].paragraph
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    paragraph: prismicT.RichTextField;
 }
 /**
  * Default variation for TeamSegment Slice
@@ -3011,6 +3058,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, EtcPageDocumentData, EtcPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocumentDataAwardsItem, ProjectDocumentDataPublicationsItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, TeamPageDocumentData, TeamPageDocumentDataSlicesSlice, TeamPageDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice, TeamSegmentSliceDefaultPrimary, TeamSegmentSliceDefaultItem, TeamSegmentSliceDefault, TeamSegmentSliceVariation, TeamSegmentSlice };
+        export type { AboutPageDocumentData, AboutPageDocumentDataTextBlurb1Item, AboutPageDocumentDataTextBlurb2Item, AboutPageDocumentDataTextBlurb3Item, AboutPageDocumentDataLeadershipItem, AboutPageDocument, AdditionalProjectDocumentData, AdditionalProjectDocumentDataImagesItem, AdditionalProjectDocument, ArticleDocumentData, ArticleDocument, CareersPageDocumentData, CareersPageDocumentDataArchitecturalTeamItem, CareersPageDocumentDataInteriorDesignTeamItem, CareersPageDocument, EtcPageDocumentData, EtcPageDocument, FooterDocumentData, FooterDocumentDataInquiriesItem, FooterDocumentDataSlcHqItem, FooterDocumentDataCareersItem, FooterDocumentDataStgItem, FooterDocument, HomepageDocumentData, HomepageDocumentDataCarouselItem, HomepageDocumentDataTextBlurb1Item, HomepageDocumentDataTextBlurb2Item, HomepageDocumentDataTextBlurb3Item, HomepageDocumentDataTextBlurb4Item, HomepageDocument, PositionDocumentData, PositionDocument, ProjectDocumentData, ProjectDocumentDataTextBlurbItem, ProjectDocumentDataImageCarouselItem, ProjectDocumentDataQuoteItem, ProjectDocumentDataAwardsItem, ProjectDocumentDataPublicationsItem, ProjectDocument, ProjectsPageDocumentData, ProjectsPageDocumentDataSlicesSlice, ProjectsPageDocument, SectorDocumentData, SectorDocumentDataSlicesSlice, SectorDocument, ServicesPageDocumentData, ServicesPageDocumentDataArchitectureItem, ServicesPageDocumentDataDesignItem, ServicesPageDocumentDataPlanningItem, ServicesPageDocumentDataSustainabilityItem, ServicesPageDocument, SpecialtyDocumentData, SpecialtyDocument, TeamPageDocumentData, TeamPageDocumentDataLeadershipItem, TeamPageDocumentDataSlicesSlice, TeamPageDocument, AllDocumentTypes, FeaturedProjectsSliceDefaultItem, FeaturedProjectsSliceDefault, FeaturedProjectsSliceVariation, FeaturedProjectsSlice, ServiceSliceDefaultPrimary, ServiceSliceDefault, ServiceSliceDoubleImagePrimary, ServiceSliceDoubleImage, ServiceSliceVariation, ServiceSlice, SpecialtiesSliceDefaultItem, SpecialtiesSliceDefault, SpecialtiesSliceVariation, SpecialtiesSlice, TeamSegmentSliceDefaultPrimary, TeamSegmentSliceDefaultItem, TeamSegmentSliceDefault, TeamSegmentSliceVariation, TeamSegmentSlice };
     }
 }

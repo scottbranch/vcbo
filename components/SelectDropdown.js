@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react"
-import { Button } from "./Button"
+import { useState } from "react"
 import { DownArrow } from "../components/DownArrow"
 import Link from "next/link"
-import { createClient } from "../prismicio"
 
 export default function SelectDropdown(props) {
   const { items, defaultText, className } = props

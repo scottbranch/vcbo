@@ -2,7 +2,16 @@ import { PrismicRichText } from "@prismicio/react"
 import { useState } from "react"
 
 export const Headshot = (props) => {
-  const { image, name, title, paragraph, className, onClick, active } = props
+  const {
+    image,
+    name,
+    title,
+    paragraph,
+    className,
+    onClick,
+    active,
+    showPlus,
+  } = props
 
   return (
     <div className={className} onClick={onClick}>
@@ -12,7 +21,7 @@ export const Headshot = (props) => {
           <p className="leader-title font-medium mt-4">{name}</p>
           <p>{title}</p>
         </span>
-        <p>{active ? "-" : "+"}</p>
+        {showPlus ? <p>{active ? "-" : "+"}</p> : ""}
       </div>
       <div className={`headshot-content ml-4`}>
         <PrismicRichText field={paragraph} />

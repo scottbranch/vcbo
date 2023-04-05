@@ -80,6 +80,12 @@ export default function About(props) {
               <PrismicRichText
                 field={about?.data?.text_blurb_1[0]?.paragraph}
               />
+              <Button
+                link="/about/team"
+                text="View our team"
+                theme="dark"
+                className="team-button mt-8"
+              />
             </ScrollAnimate>
           </div>
           <ScrollAnimate className="grid col-span-8 mx-auto grid-cols-8 mt-20 md:mt-0">
@@ -137,21 +143,7 @@ export default function About(props) {
             </ScrollAnimate>
           </div>
           <div className="col-span-6 md:col-span-2"></div>
-          <div className="col-span-8 mt-8 md:mt-40 mb-10">
-            <ScrollAnimate>
-              <h3>Leadership</h3>
-            </ScrollAnimate>
-          </div>
-          <HeadshotWrapper headshots={about?.data?.leadership} />
         </div>
-        <ScrollAnimate className="mt-10">
-          <Button
-            link="/about/team"
-            text="Team"
-            theme="dark"
-            className="team-button"
-          />
-        </ScrollAnimate>
       </div>
     </>
   )

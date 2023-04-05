@@ -2,10 +2,11 @@ import ScrollAnimate from "../../components/ScrollAnimate"
 import { useEffect, useState } from "react"
 import { Lines } from "../../components/Lines"
 import { HeadshotWrapper } from "../../components/HeadshotWrapper"
+import { HeadshotWrapperSegment } from "../../components/HeadshotWrapperSegment"
 import { createClient } from "../../prismicio"
 import { BackArrow } from "../../components/BackArrow"
 import Link from "next/link"
-import Head from "next/head"
+import TeamDropdown from "../../components/teamDropdown"
 
 export async function getStaticProps({ previewData }) {
   const client = createClient({ previewData })
@@ -31,7 +32,7 @@ export default function About(props) {
     }
     setLoaded(true)
 
-    console.log({ team })
+    console.log("stuff ", team?.data?.slices)
   }, [])
 
   return (
@@ -46,15 +47,35 @@ export default function About(props) {
           </Link>
           <p className="about-breadcrumb-team">Team</p>
         </div>
-        <h1 className="mt-12 mb-20 md:mb-36">Team</h1>
-        {team?.data?.slices?.map((item, index) => (
-          <ScrollAnimate className="mb-20">
-            <h3 className="mb-5 md:mb-8 pl-3">
-              {item?.primary?.team_segment[0]?.text}
-            </h3>
-            <HeadshotWrapper headshots={item?.items} />
+        <div className="grid grid-cols-4 mt-12 mb-20 md:mb-36">
+          <h1 className="col-span-2">Team</h1>
+          <TeamDropdown
+            className="col-start-1 col-span-4 mt-10 mt-0 md:col-start-4"
+            defaultText="All Team"
+            items={team?.data?.slices}
+          />
+        </div>
+        <div className="col-span-8 mt-8 md:mt-40 mb-10 team-segment principals">
+          <ScrollAnimate>
+            <h3 className="mb-5 md:mb-8 pl-3">Principals</h3>
+            <HeadshotWrapper headshots={team?.data?.leadership} />
           </ScrollAnimate>
-        ))}
+        </div>
+        {team?.data?.slices?.map((item, index) => {
+          const formattedTitle = item?.primary?.team_segment[0]?.text
+            .replace(/\s+/g, "-")
+            .toLowerCase()
+
+          console.log(formattedTitle)
+          return (
+            <ScrollAnimate className={`mb-20 team-segment ${formattedTitle}`}>
+              <h3 className="mb-5 md:mb-8 pl-3">
+                {item?.primary?.team_segment[0]?.text}
+              </h3>
+              <HeadshotWrapperSegment headshots={item?.items} />
+            </ScrollAnimate>
+          )
+        })}
       </div>
     </>
   )

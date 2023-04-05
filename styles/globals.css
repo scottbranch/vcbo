@@ -1007,6 +1007,70 @@ sup {
   z-index: 100;
 }
 
+.show-segment {
+  display: block;
+}
+
+.hide-segment {
+  display: none;
+}
+
+.team-filter {
+  top: 32px;
+  background: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .team-filter {
+    top: 42px;
+  }
+}
+
+.team-filter .specialties {
+  box-shadow: 3px 1px 8px rgba(85, 82, 82, 0.2);
+}
+
+.team-select-button {
+  font-weight: 500;
+}
+
+.team-filter .specialties li a {
+  border: none !important;
+  color: var(--black) !important;
+  transition: all 250ms ease;
+}
+
+.team-filter .specialties li a:hover {
+  transition: all 250ms ease;
+  background-color: #dcdada !important;
+  color: var(--black) !important;
+}
+
+.team-filter .specialties li:hover {
+  color: var(--black) !important;
+}
+
+.team-filter .specialties li:last-child a:after {
+  display: none;
+}
+
+.team-filter .specialties li a:after {
+  content: "";
+  width: 100%;
+  border: none !important;
+  height: 1px;
+  display: block;
+  background: #7d7a7a;
+  position: absolute;
+  bottom: 0;
+}
+
+.team-filter .specialties li a {
+  background: #f0eeee;
+  margin: 0 !important;
+  padding-left: 35px !important;
+}
+
 .filter-dropdown.open {
   opacity: 1;
   visibility: visible;
@@ -1036,6 +1100,10 @@ sup {
   background: #545152;
 }
 
+.filter-dropdown.team-filter li a.sector:hover {
+  color: var(--black) !important;
+}
+
 .filter-dropdown li a {
   color: var(--lightGrey) !important;
   transition: 150ms ease;
@@ -1048,6 +1116,10 @@ sup {
 .filter-dropdown .specialties li:hover {
   color: var(--white) !important;
   background: #545152;
+}
+
+.filter-dropdown.team-filter .specialties li:hover {
+  color: var(--black) !important;
 }
 
 .filter-dropdown li a:hover {
@@ -1448,12 +1520,12 @@ h4.tagname.active {
 }
 
 .team-button {
-  max-width: 130px;
+  max-width: 197px;
 }
 
 .team-button .first,
 .team-button .last {
-  max-width: 130px;
+  max-width: 197px;
 }
 
 .about-page ol li {

@@ -11,6 +11,40 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
+    "leadership": [
+      {
+        "headshot": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43"
+        },
+        "name": [
+          {
+            "type": "paragraph",
+            "text": "Laboris ea aute aute consectetur ullamco tempor in velit non tempor excepteur excepteur.",
+            "spans": []
+          }
+        ],
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Veniam qui labore fugiat ex ea in ea. Non nisi enim cupidatat consequat aliqua labore occaecat esse ea labore sunt sit veniam aliquip.",
+            "spans": []
+          }
+        ],
+        "paragraph": [
+          {
+            "type": "paragraph",
+            "text": "Labore sit aliquip anim veniam nulla magna tempor aliqua cillum incididunt qui Lorem occaecat.",
+            "spans": []
+          }
+        ]
+      }
+    ],
     "slices": []
   }
 }

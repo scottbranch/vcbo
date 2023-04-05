@@ -37,6 +37,7 @@ export const HeadshotWrapper = (props) => {
                 open === index ? "open-headshot" : ""
               }`}
               onClick={() => toggleClick(index)}
+              showPlus
             />
           </ScrollAnimate>
         )

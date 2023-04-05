@@ -44,6 +44,16 @@ export const Footer = (props) => {
                 <p>{data?.stg[0]?.street[0]?.text}</p>
                 <p>{data?.stg[0]?.city[0]?.text}</p>
               </div>
+              <div className="col-start-1 col-span-2 mt-10 sm:ml-4">
+                <p className="small-subhead mb-4">
+                  <a
+                    className="small-subhead mb-4"
+                    href="https://projects.vcbo.com/"
+                  >
+                    FILE TRANSFER
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

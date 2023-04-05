@@ -472,7 +472,16 @@
       }
     },
     "etc_page": {},
-    "team_page": {}
+    "team_page": {
+      "leadership": {
+        "paragraph": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    }
   },
   "slices": {
     "Specialties": {
@@ -511,14 +520,7 @@
     "TeamSegment": {
       "default": {
         "primary": {},
-        "items": {
-          "paragraph": {
-            "config": {
-              "patternType": "PARAGRAPH",
-              "blocks": 1
-            }
-          }
-        }
+        "items": {}
       }
     }
   }

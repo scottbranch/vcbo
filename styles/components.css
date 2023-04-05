@@ -514,6 +514,14 @@ header.mobile-menu-active .mobile-overlay {
   transform: rotate(-45deg);
 }
 
+.headshotSegment:hover {
+  cursor: auto !important;
+}
+
+.headshotSegment:hover .leader-title {
+  text-decoration: none !important;
+}
+
 .headshot {
   overflow: hidden;
 }
