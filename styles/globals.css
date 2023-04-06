@@ -1032,6 +1032,10 @@ sup {
 
 .team-select-button {
   font-weight: 500;
+  font-family: "founders";
+  font-size: 20px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .team-filter .specialties li a {
