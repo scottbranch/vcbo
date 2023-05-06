@@ -1819,6 +1819,16 @@ export interface ProjectDocumentDataTextBlurbItem {
      */
     heading: prismicT.RichTextField;
     /**
+     * Completed Date field in *Project → Text Blurb*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.text_blurb[].completed_date
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    completed_date: prismicT.RichTextField;
+    /**
      * Paragraph field in *Project → Text Blurb*
      *
      * - **Field Type**: Rich Text

@@ -94,7 +94,7 @@ export default function Article(props) {
             <PrismicRichText field={position?.data?.description} />
             <Button
               className="mt-4 apply-button"
-              link="mailto:info@vcbo.com"
+              link="mailto:info@vcbo.com,humanresources@vcbo.com"
               text="Apply"
             />
           </div>

@@ -69,14 +69,21 @@ export default function Careers(props) {
         <div className="grid grid-cols-4 mt-24 md:mt-60">
           <ScrollAnimate className="col-span-4 md:col-span-1 mb-8 md:mb-0">
             <h4>
-              Architectural
+              Open
               <br className="hidden md:block" />
-              Team
+              Positions
             </h4>
           </ScrollAnimate>
           <ScrollAnimate className="col-span-2 md:col-span-1">
             <p className="small-subhead">POSITION</p>
             {careers?.data?.architectural_team?.map((item) => (
+              <p className="mt-6">
+                <a href={item?.link?.url} target={item?.link?.target}>
+                  {item?.position[0]?.text}
+                </a>
+              </p>
+            ))}
+            {careers?.data?.interior_design_team?.map((item) => (
               <p className="mt-6">
                 <a href={item?.link?.url} target={item?.link?.target}>
                   {item?.position[0]?.text}
@@ -89,33 +96,11 @@ export default function Careers(props) {
             {careers?.data?.architectural_team?.map((item) => (
               <p className="mt-6">{item?.location[0]?.text}</p>
             ))}
-          </ScrollAnimate>
-        </div>
-        <ScrollAnimate className="grid grid-cols-4 mt-24 md:mt-60">
-          <div className="col-span-4 md:col-span-1 mb-8 md:mb-0">
-            <h4>
-              Interior Design
-              <br className="hidden md:block" />
-              Team
-            </h4>
-          </div>
-          <div className="col-span-2 md:col-span-1">
-            <p className="small-subhead">POSITION</p>
-            {careers?.data?.interior_design_team?.map((item) => (
-              <p className="mt-6">
-                <a href={item?.link?.url} target={item?.link?.target}>
-                  {item?.position[0]?.text}
-                </a>
-              </p>
-            ))}
-          </div>
-          <div className="col-span-1">
-            <p className="small-subhead">LOCATION</p>
             {careers?.data?.interior_design_team?.map((item) => (
               <p className="mt-6">{item?.location[0]?.text}</p>
             ))}
-          </div>
-        </ScrollAnimate>
+          </ScrollAnimate>
+        </div>
         <ScrollAnimate className="grid grid-cols-4 mt-24 mb-24 md:mt-60 md:mb-60">
           <div className="col-span-4 md:col-span-1 mb-4 md:mb-0">
             <h4>Benefits</h4>

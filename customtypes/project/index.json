@@ -17,7 +17,9 @@
         "config": {
           "label": "Sector",
           "select": "document",
-          "customtypes": ["sector"]
+          "customtypes": [
+            "sector"
+          ]
         }
       },
       "specialty": {
@@ -25,7 +27,9 @@
         "config": {
           "label": "Specialty",
           "select": "document",
-          "customtypes": ["specialty"]
+          "customtypes": [
+            "specialty"
+          ]
         }
       },
       "name": {
@@ -35,7 +39,9 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-          "labels": ["underline"]
+          "labels": [
+            "underline"
+          ]
         }
       },
       "client": {
@@ -54,7 +60,9 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-          "labels": ["underline"]
+          "labels": [
+            "underline"
+          ]
         }
       },
       "sq_ft": {
@@ -97,6 +105,15 @@
                 "multi": "heading2"
               }
             },
+            "completed_date": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Completed Date",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
             "paragraph": {
               "type": "StructuredText",
               "config": {
@@ -104,7 +121,9 @@
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                "labels": ["underline"]
+                "labels": [
+                  "underline"
+                ]
               }
             }
           }
@@ -154,7 +173,9 @@
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "multi": "paragraph,hyperlink,preformatted,strong,em",
-                "labels": ["underline"]
+                "labels": [
+                  "underline"
+                ]
               }
             },
             "source": {
@@ -164,7 +185,9 @@
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-                "labels": ["underline"]
+                "labels": [
+                  "underline"
+                ]
               }
             }
           }

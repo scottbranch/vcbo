@@ -13,6 +13,12 @@
             "patternType": "PARAGRAPH",
             "blocks": 1
           }
+        },
+        "completed_date": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
         }
       },
       "headline": {

@@ -31,8 +31,6 @@ export default function About(props) {
       document.body.classList.remove("sector")
     }
     setLoaded(true)
-
-    console.log("stuff ", team?.data?.slices)
   }, [])
 
   return (
@@ -47,7 +45,7 @@ export default function About(props) {
           </Link>
           <p className="about-breadcrumb-team">Team</p>
         </div>
-        <div className="grid grid-cols-4 mt-12 mb-20 md:mb-36">
+        <div className="grid grid-cols-4 mt-12 mb-20 md:mb-20">
           <h1 className="col-span-2">Team</h1>
           <TeamDropdown
             className="col-start-1 col-span-4 mt-10 mt-0 md:col-start-4"
@@ -55,18 +53,17 @@ export default function About(props) {
             items={team?.data?.slices}
           />
         </div>
-        <div className="col-span-8 mt-8 md:mt-40 mb-10 team-segment principals">
-          <ScrollAnimate>
-            <h3 className="mb-5 md:mb-8 pl-3">Principals</h3>
-            <HeadshotWrapper headshots={team?.data?.leadership} />
-          </ScrollAnimate>
-        </div>
+
+        <ScrollAnimate className="col-span-8 mt-8 md:mt-0 mb-10 team-segment principals">
+          <h3 className="mb-5 md:mb-8 pl-3">Principals</h3>
+          <HeadshotWrapper headshots={team?.data?.leadership} />
+        </ScrollAnimate>
+
         {team?.data?.slices?.map((item, index) => {
           const formattedTitle = item?.primary?.team_segment[0]?.text
             .replace(/\s+/g, "-")
             .toLowerCase()
 
-          console.log(formattedTitle)
           return (
             <ScrollAnimate className={`mb-20 team-segment ${formattedTitle}`}>
               <h3 className="mb-5 md:mb-8 pl-3">

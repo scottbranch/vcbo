@@ -147,6 +147,13 @@ export default function Project(props) {
               <h3 className="max-w-md project-name mb-2 md:mb-0">
                 {pageData?.text_blurb[0]?.heading[0]?.text}
               </h3>
+              {pageData?.text_blurb[0]?.completed_date.length !== 0 ? (
+                <p className="small-subhead mb-4 mt-2">
+                  Completed: {pageData?.text_blurb[0]?.completed_date[0]?.text}
+                </p>
+              ) : (
+                ""
+              )}
             </ScrollAnimate>
             <div className="mt-12">
               <ScrollAnimate className="project-text-blurb">
