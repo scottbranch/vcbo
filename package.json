@@ -13,7 +13,7 @@
     "@prismicio/react": "^2.5.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "intersection-observer": "^0.12.2",
-    "next": "latest",
+    "next": "13.4.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-filter-search": "^1.1.11",
