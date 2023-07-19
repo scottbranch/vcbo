@@ -11,8 +11,6 @@ import { BackArrow } from "../../components/BackArrow"
 import { Lines } from "../../components/Lines"
 import Link from "next/link"
 import Head from "next/head"
-import { useRouter } from 'next/router'
-
 
 // Fetch project content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -39,12 +37,11 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
-    fallback: true,
+    fallback: false,
   }
 }
 
 export default function Project(props) {
-  const router = useRouter();
   const { page, projects } = props
   const [filteredProjects, setFilteredProjects] = useState()
   const [projectIndex, setProjectIndex] = useState()
@@ -53,9 +50,7 @@ export default function Project(props) {
   const [loaded, setLoaded] = useState(false)
   const [sliderIndex, setSliderIndex] = useState(1)
 
-  const pageData = page?.data;
-
-  if (router.isFallback) <p>Data is loading</p>
+  const pageData = page?.data
 
   useEffect(() => {
     if (process.browser) {
@@ -79,6 +74,8 @@ export default function Project(props) {
     setNextProject(filteredProjects[projectIndex + 1])
 
     setLoaded(true)
+
+    console.log({ pageData })
   }, [projectIndex, nextProject, previousProject])
 
   const settings = {

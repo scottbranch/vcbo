@@ -12,7 +12,6 @@ import ScrollTrigger from "react-scroll-trigger"
 import { BackArrow } from "../../../components/BackArrow"
 import Link from "next/link"
 import Head from "next/head"
-import { useRouter } from "next/router"
 
 // Fetch specialty content from prismic
 export async function getStaticProps({ params, previewData }) {
@@ -50,12 +49,11 @@ export async function getStaticPaths() {
 
   return {
     paths: pages.map((page) => prismicH.asLink(page)),
-    fallback: true,
+    fallback: false,
   }
 }
 
 export default function Sectors(props) {
-  const router = useRouter()
   const { page, projects, dropdownItems, additionalProjects } = props
 
   const [projectResults, setProjectResults] = useState()
@@ -74,8 +72,6 @@ export default function Sectors(props) {
       document.body.classList.remove("dark-mode")
     }
   }
-
-  if (router.isFallback) <p>Data is loading</p>
 
   useEffect(() => {
     if (process.browser) {
