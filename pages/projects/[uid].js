@@ -55,9 +55,7 @@ export default function Project(props) {
 
   const pageData = page?.data;
 
-  if(router.isFallback) {
-    <p>Data is loading</p>
-  }
+  if (router.isFallback) <p>Data is loading</p>
 
   useEffect(() => {
     if (process.browser) {
