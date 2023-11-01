@@ -54,6 +54,11 @@ export const Footer = (props) => {
                   </a>
                 </p>
               </div>
+              <div className="col-start-3 col-span-2 ml-4 mt-10">
+                <p className="small-subhead mb-4">HI</p>
+                <p>{data?.hawaii[0]?.street[0]?.text}</p>
+                <p>{data?.hawaii[0]?.city[0]?.text}</p>
+              </div>
             </div>
           </div>
         </div>

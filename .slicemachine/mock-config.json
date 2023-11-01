@@ -449,6 +449,20 @@
             "blocks": 1
           }
         }
+      },
+      "hawaii": {
+        "street": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        },
+        "city": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
       }
     },
     "position": {

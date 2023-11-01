@@ -124,6 +124,32 @@
             }
           }
         }
+      },
+      "hawaii": {
+        "type": "Group",
+        "config": {
+          "label": "HI",
+          "fields": {
+            "street": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Street",
+                "placeholder": "",
+                "allowTargetBlank": false,
+                "single": "paragraph"
+              }
+            },
+            "city": {
+              "type": "StructuredText",
+              "config": {
+                "label": "City",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
       }
     }
   }
