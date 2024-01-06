@@ -1,0 +1,93 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "unlisted_page",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "heading": [
+      {
+        "type": "heading1",
+        "text": "Tongue",
+        "spans": []
+      }
+    ],
+    "sub_heading": [
+      {
+        "type": "heading2",
+        "text": "Audience",
+        "spans": []
+      }
+    ],
+    "body": [
+      {
+        "type": "paragraph",
+        "text": "Cillum non pariatur exercitation ipsum elit mollit deserunt enim ut et pariatur. Quis nisi veniam excepteur commodo exercitation eu in dolore cillum aute. Ad velit do reprehenderit culpa aute ea minim in elit excepteur consectetur.",
+        "spans": []
+      }
+    ],
+    "hero_image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04"
+    },
+    "publications_heading": [
+      {
+        "type": "heading2",
+        "text": "Compound",
+        "spans": []
+      }
+    ],
+    "publications_description": [
+      {
+        "type": "paragraph",
+        "text": "Commodo dolore nulla ipsum et aliquip irure.",
+        "spans": []
+      }
+    ],
+    "files": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+        },
+        "link": {
+          "link_type": "Media",
+          "name": "mock",
+          "kind": "image",
+          "url": "https://source.unsplash.com/random",
+          "size": "10kB"
+        },
+        "title": [
+          {
+            "type": "heading3",
+            "text": "Cabin",
+            "spans": []
+          }
+        ],
+        "sub_heading": [
+          {
+            "type": "paragraph",
+            "text": "Elit nulla sint culpa ullamco adipisicing incididunt minim enim esse enim deserunt.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

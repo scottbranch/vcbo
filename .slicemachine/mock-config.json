@@ -501,6 +501,52 @@
           }
         }
       }
+    },
+    "unlisted_page": {
+      "heading": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "sub_heading": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "body": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "publications_heading": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "publications_description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "files": {
+        "title": {
+          "config": {
+            "patternType": "HEADING",
+            "blocks": 1
+          }
+        },
+        "sub_heading": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
     }
   },
   "slices": {

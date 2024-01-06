@@ -2757,7 +2757,145 @@ interface TeamPageDocumentData {
  */
 export type TeamPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<TeamPageDocumentData>, "team_page", Lang>;
 
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument | TeamPageDocument;
+/**
+ * Item in *Unlisted Page → Files*
+ */
+export interface UnlistedPageDocumentDataFilesItem {
+	/**
+	 * Image field in *Unlisted Page → Files*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.files[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+	
+	/**
+	 * Link field in *Unlisted Page → Files*
+	 *
+	 * - **Field Type**: Link to Media
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.files[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkToMediaField;
+	
+	/**
+	 * Title field in *Unlisted Page → Files*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.files[].title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.TitleField;
+	
+	/**
+	 * Sub Heading field in *Unlisted Page → Files*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.files[].sub_heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	sub_heading: prismic.RichTextField;
+}
+
+/**
+ * Content for Unlisted Page documents
+ */
+interface UnlistedPageDocumentData {
+	/**
+	 * Heading field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.TitleField;
+	
+	/**
+	 * Sub Heading field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.sub_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	sub_heading: prismic.TitleField;
+	
+	/**
+	 * Body field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.body
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+	
+	/**
+	 * Hero Image field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.hero_image
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Publications Heading field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Title
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.publications_heading
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	publications_heading: prismic.TitleField;
+	
+	/**
+	 * Publications Description field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.publications_description
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	publications_description: prismic.RichTextField;
+	
+	/**
+	 * Files field in *Unlisted Page*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: unlisted_page.files[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	files: prismic.GroupField<Simplify<UnlistedPageDocumentDataFilesItem>>;
+}
+
+/**
+ * Unlisted Page document from Prismic
+ *
+ * - **API ID**: `unlisted_page`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type UnlistedPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<UnlistedPageDocumentData>, "unlisted_page", Lang>;
+
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument | TeamPageDocument | UnlistedPageDocument;
 
 /**
  * Primary content in *FeaturedProjects → Items*
@@ -3115,6 +3253,8 @@ declare module "@prismicio/client" {
 			SpecialtyDocumentData,
 			TeamPageDocument,
 			TeamPageDocumentData,
+			UnlistedPageDocument,
+			UnlistedPageDocumentData,
 			AllDocumentTypes,
 			FeaturedProjectsSlice,
 			FeaturedProjectsSliceVariation,
