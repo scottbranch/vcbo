@@ -115,6 +115,7 @@ export default function Services(props) {
                 specialty={item?.sub_heading[0]?.text}
                 image={item?.image?.url}
                 url={item?.link?.url}
+                target={item?.link?.target}
               />
             )
           })}

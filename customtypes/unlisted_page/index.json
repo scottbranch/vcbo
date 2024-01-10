@@ -83,7 +83,8 @@
               "config": {
                 "label": "Link",
                 "placeholder": "",
-                "select": "media"
+                "allowTargetBlank": true,
+                "select": null
               }
             },
             "title": {

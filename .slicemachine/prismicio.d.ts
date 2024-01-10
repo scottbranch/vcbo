@@ -2774,12 +2774,12 @@ export interface UnlistedPageDocumentDataFilesItem {
 	/**
 	 * Link field in *Unlisted Page → Files*
 	 *
-	 * - **Field Type**: Link to Media
+	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
 	 * - **API ID Path**: unlisted_page.files[].link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
-	link: prismic.LinkToMediaField;
+	link: prismic.LinkField;
 	
 	/**
 	 * Title field in *Unlisted Page → Files*
