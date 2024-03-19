@@ -21,6 +21,7 @@ export async function getStaticProps({ params, previewData }) {
   const projects = await client.getAllByType("project", {
     fetchLinks: ["sector.name", "specialty.name"],
   })
+
   const dropdownItems = await client.getAllByType("sector", {
     fetchLinks: ["specialty.name"],
   })
@@ -88,6 +89,13 @@ export default function Sectors(props) {
       document.body.classList.remove("single-project")
     }
 
+    const placeholderSectorsArray = []
+    pageData.slices[0].items.map((item) => {
+      placeholderSectorsArray.push(item.specialty.slug)
+    })
+
+    const sectorTitles = placeholderSectorsArray
+
     const filteredProjects = projectResults.filter(
       (project) => project.data.sector.uid === page.uid
     )
@@ -101,29 +109,41 @@ export default function Sectors(props) {
         return acc
       }, {})
     )
-    setReducedProjects(reducedProjects)
+
+    // Ordering the projects in order that is set by the CMS (hacky but works)
+    let rearrangedProjects = []
+    reducedProjects.map((item, index) => {
+      const indexToMoveTo = item[0].data.specialty.slug
+      const indexOfSpecialty = sectorTitles.indexOf(indexToMoveTo)
+      rearrangedProjects[indexOfSpecialty] = item
+    })
+
+    setReducedProjects(rearrangedProjects)
 
     setSpecialtyData(reducedProjects[0][0]?.data?.specialty?.data)
 
     setSliceValue(specialtyData !== undefined ? "0,4" : "0")
 
-    if (page?.data?.name[0]?.text === "K-12") {
-      const sortedArray = []
+    // OLD CODE TO MANUALLY SORT K-12.
+    // SHOULDNT NEED IT ANYMORE BUT KEEPING IT COMMENTED JUST IN CASE.
 
-      reducedProjects.map((item) => {
-        item[0].data.specialty.uid === "elementary"
-          ? sortedArray.splice(0, 0, item)
-          : item[0].data.specialty.uid === "middle-junior"
-          ? sortedArray.splice(1, 0, item)
-          : item[0].data.specialty.uid === "high"
-          ? sortedArray.splice(2, 0, item)
-          : item[0].data.specialty.uid === "specialty"
-          ? sortedArray.splice(2, 0, item)
-          : null
-      })
+    // if (page?.data?.name[0]?.text === "K-12") {
+    //   const sortedArray = []
 
-      setReducedProjects(sortedArray)
-    }
+    //   reducedProjects.map((item) => {
+    //     item[0].data.specialty.uid === "elementary"
+    //       ? sortedArray.splice(0, 0, item)
+    //       : item[0].data.specialty.uid === "middle-junior"
+    //       ? sortedArray.splice(1, 0, item)
+    //       : item[0].data.specialty.uid === "high"
+    //       ? sortedArray.splice(2, 0, item)
+    //       : item[0].data.specialty.uid === "specialty"
+    //       ? sortedArray.splice(2, 0, item)
+    //       : null
+    //   })
+
+    //   setReducedProjects(sortedArray)
+    // }
 
     setSortedSectors(
       dropdownItems.sort((a, b) => {
@@ -182,7 +202,6 @@ export default function Sectors(props) {
             {page?.data?.name[0]?.text}
           </h3>
         </ScrollAnimate>
-        {console.log(reducedProjects)}
         {reducedProjects?.map((array) => {
           return (
             <div
