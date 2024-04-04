@@ -90,9 +90,13 @@ export default function Sectors(props) {
     }
 
     const placeholderSectorsArray = []
+    console.log({ pageData })
+
     pageData.slices[0].items.map((item) => {
       placeholderSectorsArray.push(item.specialty.slug)
     })
+
+    console.log({ placeholderSectorsArray })
 
     const sectorTitles = placeholderSectorsArray
 
@@ -110,15 +114,21 @@ export default function Sectors(props) {
       }, {})
     )
 
-    // Ordering the projects in order that is set by the CMS (hacky but works)
-    let rearrangedProjects = []
-    reducedProjects.map((item, index) => {
-      const indexToMoveTo = item[0].data.specialty.slug
-      const indexOfSpecialty = sectorTitles.indexOf(indexToMoveTo)
-      rearrangedProjects[indexOfSpecialty] = item
-    })
+    if (reducedProjects.length > 1) {
+      // Ordering the projects in order that is set by the CMS (hacky but works)
+      let rearrangedProjects = []
+      reducedProjects.map((item, index) => {
+        const indexToMoveTo = item[0].data.specialty.slug
+        const indexOfSpecialty = sectorTitles.indexOf(indexToMoveTo)
+        rearrangedProjects[indexOfSpecialty] = item
+      })
 
-    setReducedProjects(rearrangedProjects)
+      setReducedProjects(rearrangedProjects)
+    } else {
+      setReducedProjects(reducedProjects)
+    }
+
+    console.log({ reducedProjects })
 
     setSpecialtyData(reducedProjects[0][0]?.data?.specialty?.data)
 
