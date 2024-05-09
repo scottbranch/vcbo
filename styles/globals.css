@@ -1164,6 +1164,30 @@ sup {
   opacity: 0.6;
 }
 
+@media screen and (min-width: 769px) {
+  .filtered-project img {
+    min-height: 335px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .filtered-project img {
+    min-height: 500px;
+  }
+}
+
+@media screen and (min-width: 1540px) {
+  .filtered-project img {
+    min-height: 500px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .sector-projects .filtered-project img {
+    min-height: 248px;
+  }
+}
+
 .filtered-project .project-name {
   font-family: "Founders";
   font-style: normal;
