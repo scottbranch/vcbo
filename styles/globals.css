@@ -1188,6 +1188,18 @@ sup {
   }
 }
 
+@media screen and (min-width: 1023px) {
+  .sector-projects .filtered-project img {
+    min-height: 340px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .sector-projects .filtered-project img {
+    min-height: 430px;
+  }
+}
+
 .filtered-project .project-name {
   font-family: "Founders";
   font-style: normal;
