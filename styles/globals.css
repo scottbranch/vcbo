@@ -1166,7 +1166,13 @@ sup {
 
 @media screen and (min-width: 769px) {
   .filtered-project img {
-    min-height: 335px;
+    min-height: 310px;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .filtered-project img {
+    min-height: 420px;
   }
 }
 
@@ -1178,25 +1184,31 @@ sup {
 
 @media screen and (min-width: 1540px) {
   .filtered-project img {
-    min-height: 500px;
+    min-height: 520px;
   }
 }
 
 @media screen and (min-width: 769px) {
-  .sector-projects .filtered-project img {
+  .sector-projects-4 .filtered-project img {
+    min-height: 160px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .sector-projects-4 .filtered-project img {
     min-height: 248px;
   }
 }
 
 @media screen and (min-width: 1023px) {
-  .sector-projects .filtered-project img {
+  .sector-projects-2 .filtered-project img {
     min-height: 340px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .sector-projects .filtered-project img {
-    min-height: 430px;
+  .sector-projects-2 .filtered-project img {
+    min-height: 520px;
   }
 }
 

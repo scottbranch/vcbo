@@ -215,10 +215,10 @@ export default function Sectors(props) {
         {reducedProjects?.map((array) => {
           return (
             <div
-              className={`grid sector-projects ${
+              className={`grid ${
                 specialtyData !== undefined
-                  ? "grid grid-cols-4 mt-5 md:mt-10"
-                  : "grid-cols-1 md:grid-cols-2"
+                  ? "grid grid-cols-4 mt-5 md:mt-10 sector-projects-4"
+                  : "grid-cols-1 md:grid-cols-2 sector-projects-2"
               } mt-5 md:mt-10`}
             >
               {specialtyData !== undefined ? (
