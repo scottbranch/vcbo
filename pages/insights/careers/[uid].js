@@ -86,11 +86,13 @@ export default function Article(props) {
       : null
 
   function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-      )
-      .join("&")
+    const formData = new FormData()
+
+    for (const key of Object.keys(data)) {
+      formData.append(key, data[key])
+    }
+
+    return formData
   }
 
   const submitForm = (e) => {
@@ -98,6 +100,7 @@ export default function Article(props) {
     e.preventDefault()
     fetch("/", {
       method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": e.target.getAttribute("name"),
         ...formState,
