@@ -121,6 +121,13 @@ export default function Article(props) {
     setFormState({ ...formState, [e.target.name]: e.target.value })
   }
 
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files)
+    const currentFile = files[0]
+
+    setFormState({ ...formState, [e.target.name]: currentFile })
+  }
+
   return (
     <>
       <Head>
@@ -283,7 +290,7 @@ export default function Article(props) {
                   </p>
                 </div>
                 <input
-                  onChange={handleChange}
+                  onChange={handleFileChange}
                   id="resume-field"
                   name="resume"
                   type="file"
@@ -305,7 +312,7 @@ export default function Article(props) {
                   </p>
                 </div>
                 <input
-                  onChange={handleChange}
+                  onChange={handleFileChange}
                   id="coverLetter-field"
                   name="coverLetter"
                   type="file"
