@@ -98,7 +98,6 @@ export default function Article(props) {
     e.preventDefault()
     fetch("/", {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": e.target.getAttribute("name"),
         ...formState,
@@ -197,6 +196,7 @@ export default function Article(props) {
             className="mt-5"
             onSubmit={submitForm}
             netlify
+            enctype="multipart/form-data"
           >
             <div hidden aria-hidden="true">
               <label>
