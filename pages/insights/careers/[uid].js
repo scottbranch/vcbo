@@ -196,6 +196,7 @@ export default function Article(props) {
             data-netlify-honeypot="bot-field"
             className="mt-5"
             onSubmit={submitForm}
+            netlify
           >
             <div hidden aria-hidden="true">
               <label>
