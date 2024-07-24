@@ -23,3 +23,27 @@ export const Button = (props) => {
     </a>
   )
 }
+
+export const RealButton = (props) => {
+  const { className, text, type, theme, onClick } = props
+  return (
+    <button
+      className={`button-row ${theme === "dark" ? "dark" : ""} ${className}`}
+      onClick={onClick}
+      type={type}
+    >
+      <div>
+        <span className="first">
+          <span>{text} </span>
+          <div className="white-arrow">
+            <Arrow theme={`${theme === "dark" ? "" : "dark"}`} />
+          </div>
+        </span>
+        <span className="last">
+          <span>{text}</span>{" "}
+          <Arrow theme={`${theme === "dark" ? "dark" : ""}`} />
+        </span>
+      </div>
+    </button>
+  )
+}

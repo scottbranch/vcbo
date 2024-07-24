@@ -1613,3 +1613,124 @@ h4.tagname.active {
   margin-left: 30px;
   font-family: "founders";
 }
+
+/* apply modal */
+.apply-modal-outer {
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms ease;
+}
+
+.apply-modal-outer.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.apply-modal-container {
+  width: 100%;
+  max-width: 650px;
+  background-color: var(--lightestGrey);
+  padding: 50px 70px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+@media screen and (max-height: 1230px) {
+  .apply-modal-container {
+    top: 30px;
+    transform: translateX(-50%);
+    margin-bottom: 30px;
+  }
+}
+
+.form-input {
+  border: 1px solid var(--mediumGrey);
+  background: transparent;
+  border-radius: 5px;
+  display: block;
+  height: 43px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 0 10px;
+}
+
+.form-input {
+  outline: none;
+}
+
+.file-outer {
+  width: 100%;
+  height: 95px;
+  border: 1px solid var(--mediumGrey);
+  background: transparent;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.file-outer input:hover {
+  cursor: pointer;
+}
+
+.file-outer input[type="file"] {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: -82px;
+  font-size: 12px;
+  color: var(--darkestGrey);
+}
+
+.upload-text img {
+  width: 26px;
+}
+
+.upload-text p {
+  color: var(--mediumGrey);
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.small-subhead-form {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.apply-modal-outer .close-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+
+.apply-modal-outer .close-button:hover {
+  cursor: pointer;
+}
+
+.apply-modal-outer .close-button span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--black);
+  display: block;
+  position: absolute;
+}
+
+.apply-modal-outer .close-button span:first-child {
+  transform: rotate(45deg);
+}
+
+.apply-modal-outer .close-button span:last-child {
+  transform: rotate(-45deg);
+}
