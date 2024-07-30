@@ -336,7 +336,7 @@ export default function Article(props) {
             </div>
             <div className="text-right">
               {successState === true ? (
-                "Thank you for applying!"
+                <p className="mt-10">Thank you for applying!</p>
               ) : (
                 <RealButton
                   type="submit"
