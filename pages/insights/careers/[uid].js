@@ -250,6 +250,7 @@ export default function Article(props) {
               <input
                 required
                 value={position?.data?.title[0]?.text}
+                name="position"
                 className="form-input"
               ></input>
             </div>
