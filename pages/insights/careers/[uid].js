@@ -102,6 +102,7 @@ export default function Article(props) {
       method: "POST",
       body: encode({
         "form-name": e.target.getAttribute("name"),
+        position: position?.data?.title[0]?.text,
         ...formState,
       }),
     })
