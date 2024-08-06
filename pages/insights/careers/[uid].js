@@ -6,7 +6,7 @@ import { PrismicRichText } from "@prismicio/react"
 import Link from "next/link"
 import { Lines } from "../../../components/Lines"
 import { BackArrow } from "../../../components/BackArrow"
-import { Button } from "../../../components/Button"
+import { Button, RealButton } from "../../../components/Button"
 import Head from "next/head"
 
 export async function getStaticProps({ params, previewData }) {
@@ -35,6 +35,10 @@ export async function getStaticPaths() {
 export default function Article(props) {
   const { position } = props
   const [loaded, setLoaded] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [successState, setSuccessState] = useState(false)
+  const [formState, setFormState] = useState({})
+
   useEffect(() => {
     if (process.browser) {
       document.body.classList.remove("homepage")
@@ -44,7 +48,87 @@ export default function Article(props) {
       document.body.classList.remove("sector")
     }
     setLoaded(true)
+
+    console.log({ position })
   }, [])
+
+  const firstNameField =
+    typeof document !== `undefined`
+      ? document.getElementById("firstName-field")
+      : null
+  const lastNameField =
+    typeof document !== `undefined`
+      ? document.getElementById("lastName-field")
+      : null
+  const positionField =
+    typeof document !== `undefined`
+      ? document.getElementById("position-field")
+      : null
+  const emailField =
+    typeof document !== `undefined`
+      ? document.getElementById("email-field")
+      : null
+  const phoneNumberField =
+    typeof document !== `undefined`
+      ? document.getElementById("phoneNumber-field")
+      : null
+  const resumeField =
+    typeof document !== `undefined`
+      ? document.getElementById("resume-field")
+      : null
+  const coverLetterField =
+    typeof document !== `undefined`
+      ? document.getElementById("coverLetter-field")
+      : null
+  const portfolioField =
+    typeof document !== `undefined`
+      ? document.getElementById("portfolio-field")
+      : null
+
+  function encode(data) {
+    const formData = new FormData()
+
+    for (const key of Object.keys(data)) {
+      formData.append(key, data[key])
+    }
+
+    return formData
+  }
+
+  const submitForm = (e) => {
+    console.log({ formState })
+    e.preventDefault()
+    fetch("/", {
+      method: "POST",
+      body: encode({
+        "form-name": e.target.getAttribute("name"),
+        position: position?.data?.title[0]?.text,
+        ...formState,
+      }),
+    })
+      .then(() => {
+        setSuccessState(true)
+        firstNameField.value = ""
+        lastNameField.value = ""
+        emailField.value = ""
+        phoneNumberField.value = ""
+        resumeField.value = ""
+        coverLetterField.value = ""
+        portfolioField.value = ""
+      })
+      .catch((error) => alert(error))
+  }
+
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value })
+  }
+
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files)
+    const currentFile = files[0]
+
+    setFormState({ ...formState, [e.target.name]: currentFile })
+  }
 
   return (
     <>
@@ -93,11 +177,177 @@ export default function Article(props) {
           <div className="col-start-1 md:col-start-2 col-span-4 md:col-span-2 article-body ml-4 mr-4">
             <PrismicRichText field={position?.data?.description} />
             <Button
-              className="mt-4 apply-button"
-              link="mailto:info@vcbo.com,humanresources@vcbo.com"
+              className="mt-4 apply-button hover:cursor-pointer"
+              onClick={() => setModalOpen(true)}
               text="Apply"
             />
           </div>
+        </div>
+      </div>
+
+      {/* APPLY MODAL */}
+      <div
+        className={`apply-modal-outer w-full h-full z-50 fixed top-0 left-0 ${
+          modalOpen ? "open" : ""
+        }`}
+      >
+        <div className="apply-modal-container">
+          <div className="close-button" onClick={() => setModalOpen(false)}>
+            <span></span>
+            <span></span>
+          </div>
+          <h4>Apply</h4>
+          <p className="text-sm">Fields marked with * are required</p>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            className="mt-5"
+            onSubmit={submitForm}
+            netlify
+            enctype="multipart/form-data"
+          >
+            <div hidden aria-hidden="true">
+              <label>
+                Don't fill this out if you're human:
+                <input name="bot-field" />
+              </label>
+            </div>
+            <div>
+              <label className="uppercase small-subhead small-subhead-form">
+                First Name*
+              </label>
+              <input
+                onChange={handleChange}
+                id="firstName-field"
+                name="firstName"
+                type="text"
+                maxLength="100"
+                required
+                className="form-input"
+              ></input>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                Last Name*
+              </label>
+              <input
+                onChange={handleChange}
+                id="lastName-field"
+                name="lastName"
+                type="text"
+                maxLength="100"
+                required
+                className="form-input"
+              ></input>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                Position applying for*
+              </label>
+              <input
+                required
+                value={position?.data?.title[0]?.text}
+                name="position"
+                className="form-input"
+              ></input>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                Email*
+              </label>
+              <input
+                onChange={handleChange}
+                id="email-field"
+                name="email"
+                type="email"
+                maxLength="100"
+                required
+                className="form-input"
+              ></input>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                Phone Number*
+              </label>
+              <input
+                onChange={handleChange}
+                id="phoneNumber-field"
+                name="phoneNumber"
+                type="tel"
+                maxLength="100"
+                required
+                className="form-input"
+              ></input>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                RESUME (PDF,DOC) *
+              </label>
+              <div className="file-outer">
+                <div className="upload-text text-center">
+                  <img className="m-auto" src="/cloud.png" />
+                  <p className="uppercase text-xs font-medium">
+                    Click to upload resume
+                  </p>
+                </div>
+                <input
+                  onChange={handleFileChange}
+                  id="resume-field"
+                  name="resume"
+                  type="file"
+                  required
+                  className="file-input"
+                  accept=".pdf,.doc,.docx"
+                />
+              </div>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                COVER LETTER (PDF,DOC)
+              </label>
+              <div className="file-outer">
+                <div className="upload-text text-center">
+                  <img className="m-auto" src="/cloud.png" />
+                  <p className="uppercase text-xs font-medium">
+                    Click to upload cover letter
+                  </p>
+                </div>
+                <input
+                  onChange={handleFileChange}
+                  id="coverLetter-field"
+                  name="coverLetter"
+                  type="file"
+                  className="file-input"
+                  accept=".pdf,.doc,.docx"
+                />
+              </div>
+            </div>
+            <div className="mt-5">
+              <label className="uppercase small-subhead small-subhead-form">
+                LINK TO PROFESSIONAL PORTFOLIO
+              </label>
+              <input
+                onChange={handleChange}
+                id="portfolio-field"
+                name="portfolio"
+                type="text"
+                className="form-input"
+              ></input>
+            </div>
+            <div className="text-right">
+              {successState === true ? (
+                <p className="mt-10">Thank you for applying!</p>
+              ) : (
+                <RealButton
+                  type="submit"
+                  className="mt-10 apply-button"
+                  text="Apply"
+                />
+              )}
+            </div>
+          </form>
         </div>
       </div>
     </>
