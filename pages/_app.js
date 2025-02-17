@@ -8,8 +8,12 @@ import { PrismicPreview } from "@prismicio/next"
 import { repositoryName } from "../prismicio"
 import Head from "next/head"
 import Script from "next/script"
+import { useEffect } from "react"
 
 export default function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    console.log("PAGE PROPS ", pageProps)
+  })
   return (
     <>
       <Script
@@ -43,7 +47,7 @@ export default function MyApp({ Component, pageProps }) {
             />
           </Head>
           <div className="page-wrapper relative">
-            <Header />
+            <Header data={pageProps?.navigation?.data} />
             <Component {...pageProps} />
             <Footer data={pageProps?.footer?.data} />
           </div>

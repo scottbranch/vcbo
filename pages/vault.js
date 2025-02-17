@@ -12,9 +12,10 @@ export async function getStaticProps({ previewData }) {
 
   const unlistedPage = await client.getByUID("unlisted_page", "vault")
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
-    props: { unlistedPage, footer }, // Will be passed to the sectors component as props
+    props: { unlistedPage, footer, navigation }, // Will be passed to the sectors component as props
   }
 }
 

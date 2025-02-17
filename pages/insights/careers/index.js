@@ -9,9 +9,10 @@ export async function getStaticProps({ previewData }) {
 
   const careers = await client.getByUID("careers_page", "careers")
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
-    props: { careers, footer }, // Will be passed to the sectors component as props
+    props: { careers, footer, navigation }, // Will be passed to the sectors component as props
   }
 }
 

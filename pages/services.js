@@ -11,9 +11,10 @@ export async function getStaticProps({ previewData }) {
 
   const services = await client.getByUID("services_page", "services")
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
-    props: { services, footer }, // Will be passed to the sectors component as props
+    props: { services, footer, navigation }, // Will be passed to the sectors component as props
   }
 }
 
@@ -32,8 +33,6 @@ export default function Services(props) {
     }
 
     setLoaded(true)
-
-    console.log({ services })
   }, [])
 
   const showColumn = (name) => {

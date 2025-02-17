@@ -30,6 +30,7 @@ export async function getStaticProps({ params, previewData }) {
     fetchLinks: ["sector.name", "specialty.name"],
   })
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
     props: {
@@ -38,6 +39,7 @@ export async function getStaticProps({ params, previewData }) {
       dropdownItems,
       additionalProjects,
       footer,
+      navigation,
     },
   }
 }
