@@ -9,7 +9,6 @@ export const Header = (props) => {
   const [scrollDirection, setScrollDirection] = useState()
   const [scrollPosition, setInitialScrollPosition] = useState()
   const [activeMobileMenu, setActiveMobileMenu] = useState(null)
-  const [hasBanner, setHasBanner] = useState(true)
   const [bannerOpen, setBannerOpen] = useState(true)
 
   const router = useRouter()
@@ -119,7 +118,7 @@ export const Header = (props) => {
             ? "remove-bg"
             : "show-bg"
         }
-        ${hasBanner && bannerOpen ? "has-banner" : ""}
+        ${data?.show_banner && bannerOpen ? "has-banner" : ""}
         `}
       >
         <div className="container mx-auto ">
@@ -182,7 +181,7 @@ export const Header = (props) => {
                   return (
                     <li>
                       <Link
-                        className="text-[19px] font-normal"
+                        className="text-[19px] leading-[19px] font-normal"
                         href={item?.link?.url ? item?.link?.url : "#"}
                       >
                         {item?.label}
@@ -206,7 +205,7 @@ export const Header = (props) => {
                   return (
                     <li>
                       <Link
-                        className="text-[19px] font-normal"
+                        className="text-[19px] leading-[19px] font-normal"
                         href={item?.link?.url ? item?.link?.url : "#"}
                       >
                         {item?.label}
@@ -230,7 +229,7 @@ export const Header = (props) => {
                   return (
                     <li>
                       <Link
-                        className="text-[19px] font-normal"
+                        className="text-[19px] leading-[19px] font-normal"
                         href={item?.link?.url ? item?.link?.url : "#"}
                       >
                         {item?.label}
@@ -255,7 +254,7 @@ export const Header = (props) => {
                   return (
                     <li>
                       <Link
-                        className="text-[19px] font-normal"
+                        className="text-[19px] leading-[19px] font-normal"
                         href={item?.link?.url ? item?.link?.url : "#"}
                       >
                         {item?.label}

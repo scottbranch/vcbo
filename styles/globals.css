@@ -270,7 +270,7 @@
 .nav-dropdown li a {
   opacity: 0;
   visibility: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   transform: translateX(-10px);
   transition: 250ms ease;
 }
