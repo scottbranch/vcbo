@@ -16,9 +16,10 @@ export async function getStaticProps({ previewData }) {
   })
   const etcPage = await client.getByUID("etc_page", "etc-page")
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
-    props: { articles, etcPage, footer },
+    props: { articles, etcPage, footer, navigation },
   }
 }
 

@@ -1,0 +1,194 @@
+{
+  "id": "navigation",
+  "label": "Navigation",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "show_banner": {
+        "type": "Boolean",
+        "config": {
+          "label": "Show Banner",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
+      },
+      "banner_text": {
+        "type": "Text",
+        "config": {
+          "label": "Banner Text",
+          "placeholder": ""
+        }
+      },
+      "banner_link": {
+        "type": "Link",
+        "config": {
+          "label": "Banner Link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "banner_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Banner Link Text",
+          "placeholder": ""
+        }
+      },
+      "nav_1_label": {
+        "type": "Text",
+        "config": {
+          "label": "Nav 1 Label",
+          "placeholder": ""
+        }
+      },
+      "nav_1_link": {
+        "type": "Link",
+        "config": {
+          "label": "Nav 1 Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "nav_1_dropdown": {
+        "type": "Group",
+        "config": {
+          "label": "Nav 1 Dropdown",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "nav_2_label": {
+        "type": "Text",
+        "config": {
+          "label": "Nav 2 Label",
+          "placeholder": ""
+        }
+      },
+      "nav_2_link": {
+        "type": "Link",
+        "config": {
+          "label": "Nav 2 Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "nav_2_dropdown": {
+        "type": "Group",
+        "config": {
+          "label": "Nav 2 Dropdown",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "nav_3_label": {
+        "type": "Text",
+        "config": {
+          "label": "Nav 3 Label",
+          "placeholder": ""
+        }
+      },
+      "nav_3_link": {
+        "type": "Link",
+        "config": {
+          "label": "Nav 3 Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "nav_3_dropdown": {
+        "type": "Group",
+        "config": {
+          "label": "Nav 3 Dropdown",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "nav_4_label": {
+        "type": "Text",
+        "config": {
+          "label": "Nav 4 Label",
+          "placeholder": ""
+        }
+      },
+      "nav_4_link": {
+        "type": "Link",
+        "config": {
+          "label": "Nav 4 Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "nav_4_dropdown": {
+        "type": "Group",
+        "config": {
+          "label": "Nav 4 Dropdown",
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label",
+                "placeholder": ""
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

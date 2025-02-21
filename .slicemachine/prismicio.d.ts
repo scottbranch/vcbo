@@ -1468,6 +1468,299 @@ interface HomepageDocumentData {
 export type HomepageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
 
 /**
+ * Item in *Navigation → Nav 1 Dropdown*
+ */
+export interface NavigationDocumentDataNav1DropdownItem {
+	/**
+	 * Label field in *Navigation → Nav 1 Dropdown*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_1_dropdown[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Navigation → Nav 1 Dropdown*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_1_dropdown[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Item in *Navigation → Nav 2 Dropdown*
+ */
+export interface NavigationDocumentDataNav2DropdownItem {
+	/**
+	 * Label field in *Navigation → Nav 2 Dropdown*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_2_dropdown[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Navigation → Nav 2 Dropdown*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_2_dropdown[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Item in *Navigation → Nav 3 Dropdown*
+ */
+export interface NavigationDocumentDataNav3DropdownItem {
+	/**
+	 * Label field in *Navigation → Nav 3 Dropdown*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_3_dropdown[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Navigation → Nav 3 Dropdown*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_3_dropdown[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Item in *Navigation → Nav 4 Dropdown*
+ */
+export interface NavigationDocumentDataNav4DropdownItem {
+	/**
+	 * Label field in *Navigation → Nav 4 Dropdown*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_4_dropdown[].label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	label: prismic.KeyTextField;
+	
+	/**
+	 * Link field in *Navigation → Nav 4 Dropdown*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_4_dropdown[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+}
+
+/**
+ * Content for Navigation documents
+ */
+interface NavigationDocumentData {
+	/**
+	 * Show Banner field in *Navigation*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: navigation.show_banner
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	show_banner: prismic.BooleanField;
+	
+	/**
+	 * Banner Text field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.banner_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	banner_text: prismic.KeyTextField;
+	
+	/**
+	 * Banner Link field in *Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.banner_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	banner_link: prismic.LinkField;
+	
+	/**
+	 * Banner Link Text field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.banner_link_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	banner_link_text: prismic.KeyTextField;
+	
+	/**
+	 * Nav 1 Label field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_1_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	nav_1_label: prismic.KeyTextField;
+	
+	/**
+	 * Nav 1 Link field in *Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_1_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	nav_1_link: prismic.LinkField;
+	
+	/**
+	 * Nav 1 Dropdown field in *Navigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_1_dropdown[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	nav_1_dropdown: prismic.GroupField<Simplify<NavigationDocumentDataNav1DropdownItem>>;
+	
+	/**
+	 * Nav 2 Label field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_2_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	nav_2_label: prismic.KeyTextField;
+	
+	/**
+	 * Nav 2 Link field in *Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_2_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	nav_2_link: prismic.LinkField;
+	
+	/**
+	 * Nav 2 Dropdown field in *Navigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_2_dropdown[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	nav_2_dropdown: prismic.GroupField<Simplify<NavigationDocumentDataNav2DropdownItem>>;
+	
+	/**
+	 * Nav 3 Label field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_3_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	nav_3_label: prismic.KeyTextField;
+	
+	/**
+	 * Nav 3 Link field in *Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_3_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	nav_3_link: prismic.LinkField;
+	
+	/**
+	 * Nav 3 Dropdown field in *Navigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_3_dropdown[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	nav_3_dropdown: prismic.GroupField<Simplify<NavigationDocumentDataNav3DropdownItem>>;
+	
+	/**
+	 * Nav 4 Label field in *Navigation*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_4_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	nav_4_label: prismic.KeyTextField;
+	
+	/**
+	 * Nav 4 Link field in *Navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_4_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	nav_4_link: prismic.LinkField;
+	
+	/**
+	 * Nav 4 Dropdown field in *Navigation*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.nav_4_dropdown[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	nav_4_dropdown: prismic.GroupField<Simplify<NavigationDocumentDataNav4DropdownItem>>;
+}
+
+/**
+ * Navigation document from Prismic
+ *
+ * - **API ID**: `navigation`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
+
+/**
  * Content for Position documents
  */
 interface PositionDocumentData {
@@ -2895,7 +3188,7 @@ interface UnlistedPageDocumentData {
  */
 export type UnlistedPageDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<UnlistedPageDocumentData>, "unlisted_page", Lang>;
 
-export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument | TeamPageDocument | UnlistedPageDocument;
+export type AllDocumentTypes = AboutPageDocument | AdditionalProjectDocument | ArticleDocument | CareersPageDocument | EtcPageDocument | FooterDocument | HomepageDocument | NavigationDocument | PositionDocument | ProjectDocument | ProjectsPageDocument | SectorDocument | ServicesPageDocument | SpecialtyDocument | TeamPageDocument | UnlistedPageDocument;
 
 /**
  * Primary content in *FeaturedProjects → Items*
@@ -3239,6 +3532,8 @@ declare module "@prismicio/client" {
 			FooterDocumentData,
 			HomepageDocument,
 			HomepageDocumentData,
+			NavigationDocument,
+			NavigationDocumentData,
 			PositionDocument,
 			PositionDocumentData,
 			ProjectDocument,

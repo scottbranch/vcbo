@@ -65,6 +65,13 @@ export const Footer = (props) => {
         <div className="grid grid-cols-4 mt-20 md:mt-40 lower-footer">
           <div className="col-span-4 md:col-span-2 md:col-start-3 grid items-center grid-cols-4">
             <a
+              href="https://www.linkedin.com/company/vcbo/ "
+              target="_blank"
+              className="ml-1 md:ml-4"
+            >
+              <span>LinkedIn</span>
+            </a>
+            <a
               href=" https://www.instagram.com/vcboarchitecture/"
               target="_blank"
               className="ml-1 md:ml-4"
@@ -72,25 +79,11 @@ export const Footer = (props) => {
               <span>Instagram</span>
             </a>
             <a
-              href="https://twitter.com/VCBOArchitects"
-              target="_blank"
-              className="ml-1 md:ml-4"
-            >
-              <span>Twitter</span>
-            </a>
-            <a
               href="https://www.facebook.com/VCBOArchitecture "
               target="_blank"
               className="ml-1 md:ml-4"
             >
               <span>Facebook</span>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/vcbo/ "
-              target="_blank"
-              className="ml-1 md:ml-4"
-            >
-              <span>LinkedIn</span>
             </a>
           </div>
           <div className="mt-7 md:mt-0 col-start-1 col-span-2 footer-copyright">

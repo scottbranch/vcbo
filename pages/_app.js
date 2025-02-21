@@ -43,7 +43,7 @@ export default function MyApp({ Component, pageProps }) {
             />
           </Head>
           <div className="page-wrapper relative">
-            <Header />
+            <Header data={pageProps?.navigation?.data} />
             <Component {...pageProps} />
             <Footer data={pageProps?.footer?.data} />
           </div>

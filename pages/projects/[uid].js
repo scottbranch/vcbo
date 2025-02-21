@@ -23,9 +23,10 @@ export async function getStaticProps({ params, previewData }) {
     fetchLinks: ["sector.name"],
   })
   const footer = await client.getSingle("footer")
+  const navigation = await client.getSingle("navigation")
 
   return {
-    props: { page, projects, footer },
+    props: { page, projects, footer, navigation },
   }
 }
 
