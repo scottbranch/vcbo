@@ -92,7 +92,7 @@ export const Header = (props) => {
   return (
     <>
       {bannerOpen && data?.show_banner ? (
-        <div className="banner flex items-center justify-center fixed w-full h-[50px]">
+        <div className="banner flex items-center justify-center fixed w-full">
           <div className="flex items-center justify-center flex-col sm:flex-row gap-[3px] sm:gap-[20px] text-center">
             <p className="text-black">{data?.banner_text}</p>
             <Link
@@ -308,14 +308,6 @@ export const Header = (props) => {
                       d="M58.4594 42.077C50.0359 42.077 43.9752 35.5581 43.9752 25.2427C43.9752 14.9274 50.0301 8.40838 58.4594 8.40838C66.4417 8.40838 71.1556 13.4428 72.1251 20.3843H77.6866C76.4791 10.2978 69.8378 3.48541 58.4594 3.48541C47.081 3.48541 38.1176 12.3338 38.1176 25.2427C38.1176 38.1516 47.0056 47 58.4594 47C69.9133 47 77.0248 39.6126 77.8143 28.8337H72.2645C71.7071 36.4206 66.9178 42.0712 58.4594 42.0712V42.077Z"
                       fill="#0A0707"
                     />
-                    <path
-                      d="M156.563 6.98252C158.45 6.98252 160 5.50974 160 3.49126C160 1.47278 158.45 0 156.563 0C154.677 0 153.144 1.47278 153.144 3.49126C153.144 5.50974 154.694 6.98252 156.563 6.98252ZM156.563 0.586766C158.131 0.586766 159.379 1.78964 159.379 3.49126C159.379 5.19288 158.131 6.39575 156.563 6.39575C154.996 6.39575 153.765 5.17528 153.765 3.49126C153.765 1.80724 155.013 0.586766 156.563 0.586766Z"
-                      fill="#0A0707"
-                    />
-                    <path
-                      d="M156.035 4.07804H156.621C156.999 4.07804 157.167 4.213 157.19 4.6296C157.231 5.0286 157.266 5.20463 157.359 5.29852H158.322C158.189 5.16356 158.171 4.9934 158.131 4.45944C158.09 4.01937 157.864 3.80813 157.469 3.73185C157.922 3.65557 158.264 3.30938 158.264 2.77542C158.264 2.0713 157.794 1.63123 156.865 1.63123H155.106V5.29852H156.029V4.07804H156.035ZM156.035 2.39989H156.639C157.074 2.39989 157.3 2.55245 157.3 2.87517C157.3 3.22136 157.074 3.35045 156.639 3.35045H156.035V2.39402V2.39989Z"
-                      fill="#0A0707"
-                    />
                   </svg>
                 </Link>
                 <button
@@ -468,16 +460,13 @@ export const Header = (props) => {
                 <div className="grid grid-cols-4 lower-footer md:flex md:flex-row-reverse md:justify-between">
                   <div className="flex social-links">
                     <Link href="#" className="mr-5">
+                      LinkedIn
+                    </Link>
+                    <Link href="#" className="mr-5">
                       Instagram
                     </Link>
                     <Link href="#" className="mr-5">
-                      Twitter
-                    </Link>
-                    <Link href="#" className="mr-5">
                       Facebook
-                    </Link>
-                    <Link href="#" className="mr-5">
-                      LinkedIn
                     </Link>
                   </div>
                   <div className="mt-7 md:mt-0 col-start-1 col-span-2 copyright">

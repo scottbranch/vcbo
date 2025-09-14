@@ -156,6 +156,8 @@
 .banner {
   z-index: 51;
   top: 0;
+  height: auto;
+  padding: 10px 49px 10px 0px;
 }
 
 .banner .banner-link {
