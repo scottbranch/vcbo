@@ -94,9 +94,11 @@ export default function Sectors(props) {
     const placeholderSectorsArray = []
     console.log({ pageData })
 
-    pageData.slices[0].items.map((item) => {
-      placeholderSectorsArray.push(item.specialty.slug)
-    })
+    if (pageData?.slices?.[0]?.items) {
+      pageData.slices[0].items.map((item) => {
+        placeholderSectorsArray.push(item.specialty.slug)
+      })
+    }
 
     console.log({ placeholderSectorsArray })
 
@@ -116,25 +118,38 @@ export default function Sectors(props) {
       }, {})
     )
 
+    console.log("About to set reducedProjects:", reducedProjects)
+
     if (reducedProjects.length > 1) {
       // Ordering the projects in order that is set by the CMS (hacky but works)
       let rearrangedProjects = []
       reducedProjects.map((item, index) => {
         const indexToMoveTo = item[0].data.specialty.slug
         const indexOfSpecialty = sectorTitles.indexOf(indexToMoveTo)
-        rearrangedProjects[indexOfSpecialty] = item
+
+        // If index is found and valid, use it; otherwise append to end
+        if (indexOfSpecialty >= 0) {
+          rearrangedProjects[indexOfSpecialty] = item
+        } else {
+          // Fallback: if specialty not found in sectorTitles, add to end
+          rearrangedProjects.push(item)
+        }
       })
 
+      // Filter out empty slots and ensure we have a proper array
+      rearrangedProjects = rearrangedProjects.filter(
+        (item) => item !== undefined
+      )
+
+      console.log("Setting rearranged projects:", rearrangedProjects)
       setReducedProjects(rearrangedProjects)
     } else {
       setReducedProjects(reducedProjects)
     }
 
-    console.log({ reducedProjects })
+    setSpecialtyData(reducedProjects[0]?.[0]?.data?.specialty?.data)
 
-    setSpecialtyData(reducedProjects[0][0]?.data?.specialty?.data)
-
-    setSliceValue(specialtyData !== undefined ? "0,4" : "0")
+    setSliceValue(reducedProjects.length > 1 ? 4 : 0)
 
     // OLD CODE TO MANUALLY SORT K-12.
     // SHOULDNT NEED IT ANYMORE BUT KEEPING IT COMMENTED JUST IN CASE.
@@ -214,9 +229,10 @@ export default function Sectors(props) {
             {page?.data?.name[0]?.text}
           </h3>
         </ScrollAnimate>
-        {reducedProjects?.map((array) => {
+        {reducedProjects?.map((array, arrayIndex) => {
           return (
             <div
+              key={`specialty-${arrayIndex}`}
               className={`grid ${
                 specialtyData !== undefined
                   ? "grid grid-cols-4 mt-5 md:mt-10 sector-projects-4"
@@ -232,23 +248,32 @@ export default function Sectors(props) {
                 ""
               )}
 
-              {array.slice(sliceValue)?.map((project, index) => {
-                return (
-                  <ScrollAnimate className="col-span-2 md:col-span-1 mr-4">
-                    <FilteredProject
-                      className={`${specialtyData !== undefined ? "" : "mb-5"}`}
-                      title={project?.data?.name[0]?.text}
-                      specialty={project?.data?.specialty?.data?.name[0]?.text}
-                      image={
-                        project?.data?.hero_image?.url === undefined
-                          ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
-                          : project?.data?.hero_image?.url
-                      }
-                      url={project?.url}
-                    />
-                  </ScrollAnimate>
-                )
-              })}
+              {array
+                .slice(0, sliceValue || array.length)
+                ?.map((project, index) => {
+                  return (
+                    <ScrollAnimate
+                      key={`project-${project.id || index}`}
+                      className="col-span-2 md:col-span-1 mr-4"
+                    >
+                      <FilteredProject
+                        className={`${
+                          specialtyData !== undefined ? "" : "mb-5"
+                        }`}
+                        title={project?.data?.name[0]?.text}
+                        specialty={
+                          project?.data?.specialty?.data?.name[0]?.text
+                        }
+                        image={
+                          project?.data?.hero_image?.url === undefined
+                            ? "https://images.prismic.io/vcbo/f1555895-ef3f-4b44-8084-8528938bdd79_fallback-image.png?auto=compress,format"
+                            : project?.data?.hero_image?.url
+                        }
+                        url={project?.url}
+                      />
+                    </ScrollAnimate>
+                  )
+                })}
             </div>
           )
         })}
