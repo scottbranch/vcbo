@@ -29,7 +29,7 @@ export const Header = (props) => {
       var lastScrollTop = 0
       // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
       setInitialScrollPosition(
-        window.pageYOffset || document.documentElement.scrollTop
+        window.pageYOffset || document.documentElement.scrollTop,
       )
 
       window.addEventListener(
@@ -45,7 +45,7 @@ export const Header = (props) => {
           }
           lastScrollTop = st <= 0 ? 0 : st // For Mobile or negative scrolling
         },
-        false
+        false,
       )
 
       const bannerOpen = localStorage.getItem("bannerOpen")
@@ -71,6 +71,8 @@ export const Header = (props) => {
 
   const handleMobileLinkClick = (e, dropdownItems, index, link) => {
     e.preventDefault()
+
+    console.log("test")
 
     if (dropdownItems.length > 0) {
       setActiveMobileMenu(index)
@@ -327,7 +329,7 @@ export const Header = (props) => {
                         e,
                         data?.nav_1_dropdown,
                         0,
-                        data?.nav_1_link?.url
+                        data?.nav_1_link?.url,
                       )
                     }
                   >
@@ -343,7 +345,12 @@ export const Header = (props) => {
                         <li>
                           <Link
                             className="text-[12px] font-normal"
-                            href={item?.link?.url ? item?.link?.url : "#"}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              router.push(item?.link?.url)
+                              setMenuOpen(false)
+                            }}
                           >
                             {item?.label}
                           </Link>
@@ -359,7 +366,7 @@ export const Header = (props) => {
                         e,
                         data?.nav_2_dropdown,
                         1,
-                        data?.nav_2_link?.url
+                        data?.nav_2_link?.url,
                       )
                     }
                   >
@@ -375,7 +382,12 @@ export const Header = (props) => {
                         <li>
                           <Link
                             className="text-[12px] font-normal"
-                            href={item?.link?.url ? item?.link?.url : "#"}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              router.push(item?.link?.url)
+                              setMenuOpen(false)
+                            }}
                           >
                             {item?.label}
                           </Link>
@@ -391,7 +403,7 @@ export const Header = (props) => {
                         e,
                         data?.nav_3_dropdown,
                         2,
-                        data?.nav_3_link?.url
+                        data?.nav_3_link?.url,
                       )
                     }
                   >
@@ -407,7 +419,12 @@ export const Header = (props) => {
                         <li>
                           <Link
                             className="text-[12px] font-normal"
-                            href={item?.link?.url ? item?.link?.url : "#"}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              router.push(item?.link?.url)
+                              setMenuOpen(false)
+                            }}
                           >
                             {item?.label}
                           </Link>
@@ -423,7 +440,7 @@ export const Header = (props) => {
                         e,
                         data?.nav_4_dropdown,
                         3,
-                        data?.nav_4_link?.url
+                        data?.nav_4_link?.url,
                       )
                     }
                   >
@@ -439,7 +456,12 @@ export const Header = (props) => {
                         <li>
                           <Link
                             className="text-[12px] font-normal"
-                            href={item?.link?.url ? item?.link?.url : "#"}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              router.push(item?.link?.url)
+                              setMenuOpen(false)
+                            }}
                           >
                             {item?.label}
                           </Link>

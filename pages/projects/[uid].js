@@ -63,20 +63,20 @@ export default function Project(props) {
 
     const currentSector = pageData?.sector?.data?.name[0]?.text
     const filteredProjects = projects.filter(
-      (project) => project?.data?.sector?.data?.name[0]?.text === currentSector
+      (project) => project?.data?.sector?.data?.name[0]?.text === currentSector,
     )
 
     setFilteredProjects(filteredProjects)
 
     setProjectIndex(
-      filteredProjects?.findIndex((project) => project.uid === page?.uid)
+      filteredProjects?.findIndex((project) => project.uid === page?.uid),
     )
     setPreviousProject(filteredProjects[projectIndex - 1])
     setNextProject(filteredProjects[projectIndex + 1])
 
     setLoaded(true)
 
-    console.log({ pageData })
+    console.log("page data ", pageData?.display_bottom_content)
   }, [projectIndex, nextProject, previousProject])
 
   const settings = {
@@ -134,12 +134,22 @@ export default function Project(props) {
             </ScrollAnimate>
           </div>
           <div className="col-start-1 col-span-4">
-            <ScrollAnimate>
-              <img
-                className="block w-full mt-10 md:mt-24 project-full-image"
-                src={pageData?.hero_image?.url}
-              />
-            </ScrollAnimate>
+            {pageData?.hero_carousel?.length === 0 ? (
+              <ScrollAnimate>
+                <img
+                  className="block w-full mt-10 md:mt-24 project-full-image"
+                  src={pageData?.hero_image?.url}
+                />
+              </ScrollAnimate>
+            ) : (
+              <ScrollAnimate className="mt-10 md:mt-24">
+                <Slider {...settings}>
+                  {pageData?.hero_carousel?.map((item) => {
+                    return <img className="w-full" src={item.image.url} />
+                  })}
+                </Slider>
+              </ScrollAnimate>
+            )}
           </div>
         </div>
         <div className="grid grid-cols-4 mt-24 gap-x-8">
@@ -163,156 +173,173 @@ export default function Project(props) {
             </div>
           </div>
         </div>
+
         <div className="grid grid-cols-4 mt-32">
-          <div className="col-start-1 col-span-1 detail-item">
-            <ScrollAnimate>
-              <p className="small-subhead mb-4">Services</p>
-              <p className="small-content">
-                {page?.tags?.map((tag, index, arr) => {
-                  const returnComma = arr.length - 1 === index ? "" : ","
-                  return (
-                    <>
-                      {tag}
-                      {returnComma}
-                      <br />
-                    </>
-                  )
-                })}
-              </p>
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-2 col-span-1 detail-item ml-4">
-            <ScrollAnimate>
-              <p className="small-subhead mb-4">Project Size</p>
-              <p className="small-content">{pageData?.sq_ft[0]?.text} SqFt</p>
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-3 col-span-1 detail-item ml-4">
-            <ScrollAnimate>
-              <p className="small-subhead mb-4">Client</p>
-              <p className="small-content">{pageData?.client[0]?.text}</p>
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-4 col-span-1 detail-item ml-4">
-            <ScrollAnimate>
-              <p className="small-subhead mb-4">Location</p>
-              <p className="small-content">
-                {pageData?.project_location[0]?.text}
-              </p>
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-2 col-span-3 mt-32">
-            <ScrollAnimate>
-              <img className="w-full" src={pageData?.content_image_1?.url} />
-            </ScrollAnimate>
-          </div>
-          <p className="hidden md:flex carousel-count small-subhead col-start-2 col-span-1 items-end justify-items-end">
-            <div className="w-full text-right mr-5">
-              <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
-              {`${pageData?.image_carousel?.length}`}
-            </div>
-          </p>
-          <div className="md:col-start-3 col-span-4 md:col-span-2 mt-4">
-            <ScrollAnimate>
-              <Slider {...settings}>
-                {pageData?.image_carousel?.map((item) => {
-                  return <img className="w-full" src={item.image.url} />
-                })}
-              </Slider>
-            </ScrollAnimate>
-            <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex md:hidden justify-items-end">
-              <div className="w-full text-right mr-5 mt-2">
-                <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
-                {`${pageData?.image_carousel?.length}`}
+          {pageData?.display_bottom_content === true ||
+          pageData?.display_bottom_content === null ? (
+            <>
+              <div className="col-start-1 col-span-1 detail-item">
+                <ScrollAnimate>
+                  <p className="small-subhead mb-4">Services</p>
+                  <p className="small-content">
+                    {page?.tags?.map((tag, index, arr) => {
+                      const returnComma = arr.length - 1 === index ? "" : ","
+                      return (
+                        <>
+                          {tag}
+                          {returnComma}
+                          <br />
+                        </>
+                      )
+                    })}
+                  </p>
+                </ScrollAnimate>
               </div>
-            </p>
-          </div>
-          <div className="col-start-1 col-span-4 mt-40">
-            <ScrollAnimate>
-              <img
-                className="w-full  project-full-image"
-                src={pageData?.hero_image_2?.url}
-              />
-            </ScrollAnimate>
-          </div>
-          {pageData?.quote[0]?.quote_text.length === 0 ? (
+              <div className="col-start-2 col-span-1 detail-item ml-4">
+                <ScrollAnimate>
+                  <p className="small-subhead mb-4">Project Size</p>
+                  <p className="small-content">
+                    {pageData?.sq_ft[0]?.text} SqFt
+                  </p>
+                </ScrollAnimate>
+              </div>
+              <div className="col-start-3 col-span-1 detail-item ml-4">
+                <ScrollAnimate>
+                  <p className="small-subhead mb-4">Client</p>
+                  <p className="small-content">{pageData?.client[0]?.text}</p>
+                </ScrollAnimate>
+              </div>
+              <div className="col-start-4 col-span-1 detail-item ml-4">
+                <ScrollAnimate>
+                  <p className="small-subhead mb-4">Location</p>
+                  <p className="small-content">
+                    {pageData?.project_location[0]?.text}
+                  </p>
+                </ScrollAnimate>
+              </div>
+              <div className="col-start-2 col-span-3 mt-32">
+                <ScrollAnimate>
+                  <img
+                    className="w-full"
+                    src={pageData?.content_image_1?.url}
+                  />
+                </ScrollAnimate>
+              </div>
+              <p className="hidden md:flex carousel-count small-subhead col-start-2 col-span-1 items-end justify-items-end">
+                <div className="w-full text-right mr-5">
+                  <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
+                  {`${pageData?.image_carousel?.length}`}
+                </div>
+              </p>
+              <div className="md:col-start-3 col-span-4 md:col-span-2 mt-4">
+                <ScrollAnimate>
+                  <Slider {...settings}>
+                    {pageData?.image_carousel?.map((item) => {
+                      return <img className="w-full" src={item.image.url} />
+                    })}
+                  </Slider>
+                </ScrollAnimate>
+                <p className="carousel-count small-subhead col-start-2 col-span-1 items-end flex md:hidden justify-items-end">
+                  <div className="w-full text-right mr-5 mt-2">
+                    <span>{`${sliderIndex}`}&nbsp;</span> /{" "}
+                    {`${pageData?.image_carousel?.length}`}
+                  </div>
+                </p>
+              </div>
+              <div className="col-start-1 col-span-4 mt-40">
+                <ScrollAnimate>
+                  <img
+                    className="w-full  project-full-image"
+                    src={pageData?.hero_image_2?.url}
+                  />
+                </ScrollAnimate>
+              </div>
+              {pageData?.quote[0]?.quote_text.length === 0 ? (
+                ""
+              ) : (
+                <div className="col-start-1 col-span-3 mt-40 md:pl-64">
+                  <ScrollAnimate>
+                    <h4 className="quote-text">
+                      <PrismicRichText field={pageData?.quote[0]?.quote_text} />
+                    </h4>
+                    <h4 className="mt-6 font-medium">
+                      —{pageData?.quote[0]?.source[0]?.text}
+                    </h4>
+                  </ScrollAnimate>
+                </div>
+              )}
+              {pageData?.awards.length === 0 ? (
+                <div></div>
+              ) : (
+                <div className="awards-container col-start-2 col-span-1 mt-10 md:mt-32">
+                  <ScrollAnimate>
+                    <h4 className="underline">Awards</h4>
+                    <ul>
+                      {pageData?.awards.map((award) => {
+                        return (
+                          <li class="mb-1">
+                            <a
+                              className="body-large"
+                              href={award?.link?.url}
+                              target={award?.link?.target}
+                            >
+                              {award?.link_text[0]?.text}
+                            </a>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </ScrollAnimate>
+                </div>
+              )}
+              {pageData?.publications.length === 0 ? (
+                <div></div>
+              ) : (
+                <div className="awards-container col-start-2 lg:col-start-3 col-span-1 mt-10 md:mt-32">
+                  <ScrollAnimate>
+                    <h4 className="underline">Publications</h4>
+                    <ul>
+                      {pageData?.publications.map((publication) => {
+                        return (
+                          <li class="mb-1">
+                            <a
+                              className="body-large"
+                              href={publication?.link?.url}
+                              target={publication?.link?.target}
+                            >
+                              {publication?.link_text[0]?.text}
+                            </a>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </ScrollAnimate>
+                </div>
+              )}
+              <div className="col-start-3 col-span-2 mt-40">
+                <ScrollAnimate>
+                  <img
+                    className="w-full"
+                    src={pageData?.content_image_2?.url}
+                  />
+                </ScrollAnimate>
+              </div>
+              <div className="col-start-1 col-span-2 mt-8">
+                <ScrollAnimate>
+                  <img
+                    className="w-full mb-8"
+                    src={pageData?.content_image_3?.url}
+                  />
+                </ScrollAnimate>
+                <ScrollAnimate className="concluding-statement">
+                  <PrismicRichText field={pageData?.concluding_statement} />
+                </ScrollAnimate>
+              </div>
+            </>
+          ) : (
             ""
-          ) : (
-            <div className="col-start-1 col-span-3 mt-40 md:pl-64">
-              <ScrollAnimate>
-                <h4 className="quote-text">
-                  <PrismicRichText field={pageData?.quote[0]?.quote_text} />
-                </h4>
-                <h4 className="mt-6 font-medium">
-                  —{pageData?.quote[0]?.source[0]?.text}
-                </h4>
-              </ScrollAnimate>
-            </div>
           )}
-          {pageData?.awards.length === 0 ? (
-            <div></div>
-          ) : (
-            <div className="awards-container col-start-2 col-span-1 mt-10 md:mt-32">
-              <ScrollAnimate>
-                <h4 className="underline">Awards</h4>
-                <ul>
-                  {pageData?.awards.map((award) => {
-                    return (
-                      <li class="mb-1">
-                        <a
-                          className="body-large"
-                          href={award?.link?.url}
-                          target={award?.link?.target}
-                        >
-                          {award?.link_text[0]?.text}
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </ScrollAnimate>
-            </div>
-          )}
-          {pageData?.publications.length === 0 ? (
-            <div></div>
-          ) : (
-            <div className="awards-container col-start-2 lg:col-start-3 col-span-1 mt-10 md:mt-32">
-              <ScrollAnimate>
-                <h4 className="underline">Publications</h4>
-                <ul>
-                  {pageData?.publications.map((publication) => {
-                    return (
-                      <li class="mb-1">
-                        <a
-                          className="body-large"
-                          href={publication?.link?.url}
-                          target={publication?.link?.target}
-                        >
-                          {publication?.link_text[0]?.text}
-                        </a>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </ScrollAnimate>
-            </div>
-          )}
-          <div className="col-start-3 col-span-2 mt-40">
-            <ScrollAnimate>
-              <img className="w-full" src={pageData?.content_image_2?.url} />
-            </ScrollAnimate>
-          </div>
-          <div className="col-start-1 col-span-2 mt-8">
-            <ScrollAnimate>
-              <img
-                className="w-full mb-8"
-                src={pageData?.content_image_3?.url}
-              />
-            </ScrollAnimate>
-            <ScrollAnimate className="concluding-statement">
-              <PrismicRichText field={pageData?.concluding_statement} />
-            </ScrollAnimate>
-          </div>
+
           <div className="col-span-2"></div>
           <div className="col-span-2 md:col-span-1 col-start-3 md:col-start-4 pagination grid-cols-2 grid mt-40  ml-2 md:ml-4">
             {nextProject === undefined && previousProject === undefined ? (

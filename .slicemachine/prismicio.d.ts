@@ -1874,6 +1874,21 @@ interface PositionDocumentData {
 export type PositionDocument<Lang extends string = string> = prismic.PrismicDocumentWithUID<Simplify<PositionDocumentData>, "position", Lang>;
 
 /**
+ * Item in *Project → Hero Carousel*
+ */
+export interface ProjectDocumentDataHeroCarouselItem {
+	/**
+	 * Image field in *Project → Hero Carousel*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: project.hero_carousel[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
  * Item in *Project → Text Blurb*
  */
 export interface ProjectDocumentDataTextBlurbItem {
@@ -2025,6 +2040,18 @@ interface ProjectDocumentData {
 	specialty: prismic.ContentRelationshipField<"specialty">;
 	
 	/**
+	 * Display Bottom Content field in *Project*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: true
+	 * - **API ID Path**: project.display_bottom_content
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	display_bottom_content: prismic.BooleanField;
+	
+	/**
 	 * Name field in *Project*
 	 *
 	 * - **Field Type**: Rich Text
@@ -2089,6 +2116,17 @@ interface ProjectDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	hero_image: prismic.ImageField<never>;
+	
+	/**
+	 * Hero Carousel field in *Project*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: project.hero_carousel[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	hero_carousel: prismic.GroupField<Simplify<ProjectDocumentDataHeroCarouselItem>>;
 	
 	/**
 	 * Text Blurb field in *Project*

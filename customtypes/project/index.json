@@ -32,6 +32,15 @@
           ]
         }
       },
+      "display_bottom_content": {
+        "type": "Boolean",
+        "config": {
+          "label": "Display Bottom Content",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": true
+        }
+      },
       "name": {
         "type": "StructuredText",
         "config": {
@@ -89,6 +98,22 @@
           "label": "Hero Image",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "hero_carousel": {
+        "type": "Group",
+        "config": {
+          "label": "Hero Carousel",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
         }
       },
       "text_blurb": {
