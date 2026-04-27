@@ -83,6 +83,7 @@ export default function Project(props) {
     className: "project-carousel",
     autoplay: true,
     autoplaySpeed: 6500,
+    pauseOnHover: false,
     arrows: false,
     dots: true,
     infinite: true,
