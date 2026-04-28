@@ -610,6 +610,10 @@ button.overlay-close {
   transform: translateY(0);
 }
 
+.scroll-item.active.project-full-image {
+  transform: translateX(-50%) translateY(0);
+}
+
 /* CAROUSEL STUFF */
 .slick-track {
   display: flex !important;

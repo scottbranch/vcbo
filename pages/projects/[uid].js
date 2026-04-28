@@ -143,7 +143,7 @@ export default function Project(props) {
                 />
               </ScrollAnimate>
             ) : (
-              <ScrollAnimate className="mt-10 md:mt-24">
+              <ScrollAnimate className="mt-10 md:mt-24 project-full-image">
                 <Slider {...settings}>
                   {pageData?.hero_carousel?.map((item) => {
                     return <img className="w-full" src={item.image.url} />
@@ -176,48 +176,47 @@ export default function Project(props) {
         </div>
 
         <div className="grid grid-cols-4 mt-32">
+          <div className="col-start-1 col-span-1 detail-item">
+            <ScrollAnimate>
+              <p className="small-subhead mb-4">Services</p>
+              <p className="small-content">
+                {page?.tags?.map((tag, index, arr) => {
+                  const returnComma = arr.length - 1 === index ? "" : ","
+                  return (
+                    <>
+                      {tag}
+                      {returnComma}
+                      <br />
+                    </>
+                  )
+                })}
+              </p>
+            </ScrollAnimate>
+          </div>
+          <div className="col-start-2 col-span-1 detail-item ml-4">
+            <ScrollAnimate>
+              <p className="small-subhead mb-4">Project Size</p>
+              <p className="small-content">{pageData?.sq_ft[0]?.text} SqFt</p>
+            </ScrollAnimate>
+          </div>
+          <div className="col-start-3 col-span-1 detail-item ml-4">
+            <ScrollAnimate>
+              <p className="small-subhead mb-4">Client</p>
+              <p className="small-content">{pageData?.client[0]?.text}</p>
+            </ScrollAnimate>
+          </div>
+          <div className="col-start-4 col-span-1 detail-item ml-4">
+            <ScrollAnimate>
+              <p className="small-subhead mb-4">Location</p>
+              <p className="small-content">
+                {pageData?.project_location[0]?.text}
+              </p>
+            </ScrollAnimate>
+          </div>
+
           {pageData?.display_bottom_content === true ||
           pageData?.display_bottom_content === null ? (
             <>
-              <div className="col-start-1 col-span-1 detail-item">
-                <ScrollAnimate>
-                  <p className="small-subhead mb-4">Services</p>
-                  <p className="small-content">
-                    {page?.tags?.map((tag, index, arr) => {
-                      const returnComma = arr.length - 1 === index ? "" : ","
-                      return (
-                        <>
-                          {tag}
-                          {returnComma}
-                          <br />
-                        </>
-                      )
-                    })}
-                  </p>
-                </ScrollAnimate>
-              </div>
-              <div className="col-start-2 col-span-1 detail-item ml-4">
-                <ScrollAnimate>
-                  <p className="small-subhead mb-4">Project Size</p>
-                  <p className="small-content">
-                    {pageData?.sq_ft[0]?.text} SqFt
-                  </p>
-                </ScrollAnimate>
-              </div>
-              <div className="col-start-3 col-span-1 detail-item ml-4">
-                <ScrollAnimate>
-                  <p className="small-subhead mb-4">Client</p>
-                  <p className="small-content">{pageData?.client[0]?.text}</p>
-                </ScrollAnimate>
-              </div>
-              <div className="col-start-4 col-span-1 detail-item ml-4">
-                <ScrollAnimate>
-                  <p className="small-subhead mb-4">Location</p>
-                  <p className="small-content">
-                    {pageData?.project_location[0]?.text}
-                  </p>
-                </ScrollAnimate>
-              </div>
               <div className="col-start-2 col-span-3 mt-32">
                 <ScrollAnimate>
                   <img
