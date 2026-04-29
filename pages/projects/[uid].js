@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { BackArrow } from "../../components/BackArrow"
 import { Lines } from "../../components/Lines"
+import { NextArrow, PrevArrow } from "../../components/CarouselArrow"
 import Link from "next/link"
 import Head from "next/head"
 
@@ -84,7 +85,9 @@ export default function Project(props) {
     autoplay: true,
     autoplaySpeed: 6500,
     pauseOnHover: false,
-    arrows: false,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     dots: true,
     infinite: true,
     speed: 1700,
