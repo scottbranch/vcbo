@@ -55,7 +55,7 @@ export async function getServerSideProps({ res }) {
     projects.forEach((project) => {
       urls.push({
         loc: `${SITE_URL}/projects/${project.uid}`,
-        lastmod: project.last_publication_date,
+        lastmod: new Date(project.last_publication_date).toISOString(),
         priority: "0.7",
       })
     })
@@ -75,7 +75,7 @@ export async function getServerSideProps({ res }) {
     sectors.forEach((sector) => {
       urls.push({
         loc: `${SITE_URL}/projects/sector/${sector.uid}`,
-        lastmod: sector.last_publication_date,
+        lastmod: new Date(sector.last_publication_date).toISOString(),
         priority: "0.6",
       })
     })
@@ -95,7 +95,7 @@ export async function getServerSideProps({ res }) {
     specialties.forEach((specialty) => {
       urls.push({
         loc: `${SITE_URL}/projects/specialty/${specialty.uid}`,
-        lastmod: specialty.last_publication_date,
+        lastmod: new Date(specialty.last_publication_date).toISOString(),
         priority: "0.6",
       })
     })
@@ -115,7 +115,7 @@ export async function getServerSideProps({ res }) {
     articles.forEach((article) => {
       urls.push({
         loc: `${SITE_URL}/insights/articles/${article.uid}`,
-        lastmod: article.last_publication_date,
+        lastmod: new Date(article.last_publication_date).toISOString(),
         priority: "0.6",
       })
     })
@@ -135,7 +135,7 @@ export async function getServerSideProps({ res }) {
     positions.forEach((position) => {
       urls.push({
         loc: `${SITE_URL}/insights/careers/${position.uid}`,
-        lastmod: position.last_publication_date,
+        lastmod: new Date(position.last_publication_date).toISOString(),
         priority: "0.5",
       })
     })
