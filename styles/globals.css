@@ -23,9 +23,9 @@
 }
 
 .single-project .slick-dots {
-  transform: translateX(-96%);
+  /* transform: translateX(-96%);
   bottom: 0;
-  margin-left: 1.25rem;
+  margin-left: 1.25rem; */
 }
 
 @media screen and (max-width: 768px) {
@@ -33,12 +33,52 @@
     transform: translateX(0%);
     left: 0;
     text-align: left;
-    bottom: -25px;
+    bottom: -25px; /* update for deploy */
   }
 }
 
 .single-project .slick-dots li {
   width: 12px;
+}
+
+/* Custom Carousel Arrows */
+.custom-next-arrow,
+.custom-prev-arrow {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-next-arrow:hover,
+.custom-prev-arrow:hover {
+  opacity: 0.7;
+}
+
+.custom-next-arrow::before,
+.custom-prev-arrow::before {
+  display: none;
+}
+
+.custom-next-arrow {
+  right: 40px !important;
+}
+
+.custom-prev-arrow {
+  left: 40px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-next-arrow {
+    right: 10px;
+  }
+
+  .custom-prev-arrow {
+    left: 10px;
+  }
 }
 
 @layer utilities {
@@ -608,6 +648,10 @@ button.overlay-close {
 .scroll-item.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+.scroll-item.active.project-full-image {
+  transform: translateX(-50%) translateY(0);
 }
 
 /* CAROUSEL STUFF */
